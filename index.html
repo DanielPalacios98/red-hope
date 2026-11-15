@@ -6,7 +6,9 @@
     <meta name="theme-color" content="#070a12" />
     <meta name="description" content="RED HOPE v2.0: crónica interactiva bilingüe entre Marte y la Tierra." />
     <title>RED HOPE · Crónica de dos mundos</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./map.css" />
     <link rel="stylesheet" href="./media.css" />
   </head>
   <body>
@@ -48,9 +50,11 @@
         <p class="lede compact" id="map-lede">Los puntos de partida conectan un escenario de la historia con un análogo terrestre. La selección fija la ruta narrativa y el paquete de generación audiovisual.</p>
         <div class="route-grid" id="route-grid" aria-live="polite"></div>
         <div class="map-context">
-          <div class="context-panel mars-panel"><div class="panel-label">MARTE · CAPA DE RELIEVE</div><div class="contour-map mars-contour"><span class="map-pin">●</span><span class="map-caption" id="mars-map-caption">Selecciona una ruta</span></div><small>Referencia educativa: MOLA / NASA. Las coordenadas del libreto se validan antes de la versión final.</small></div>
-          <div class="context-panel earth-panel"><div class="panel-label">TIERRA · CAMPO DE ENTRENAMIENTO</div><div class="contour-map earth-contour"><span class="map-pin earth-pin">●</span><span class="map-caption" id="earth-map-caption">Selecciona un análogo</span></div><small>El mapa es contexto narrativo: no sustituye una medición científica ni una instrucción operativa.</small></div>
+          <div class="context-panel mars-panel"><div class="panel-label">MARTE · CAPA DE RELIEVE</div><div id="map-mars" class="leaflet-map" role="img" aria-label="Mapa de Marte con relieve MOLA"></div><small id="mars-map-caption">Selecciona una ruta · NASA MOLA / Viking / OpenPlanetaryMap</small></div>
+          <div class="context-panel earth-panel"><div class="panel-label">TIERRA · CAMPO DE ENTRENAMIENTO</div><div id="map-earth" class="leaflet-map" role="img" aria-label="Mapa satelital del campo terrestre"></div><small id="earth-map-caption">Selecciona un análogo · Esri World Imagery / NASA SRTM</small></div>
         </div>
+        <div class="map-intel"><div><span class="panel-label">CAPA NASA SPACE APPS</span><h3 id="map-route-title">Selecciona una ruta para cargar sus datos</h3><p id="map-route-narrative">El mapa usa los mismos servicios cartográficos del HTML original: relieve marciano MOLA/Viking y satélite terrestre Esri.</p></div><a id="earth-engine-link" class="secondary-link" href="https://nasa-space-apps-2026-514719.projects.earthengine.app/view/mision-analoga-marte" target="_blank" rel="noopener noreferrer">Abrir escáner Earth Engine ↗</a></div>
+        <div class="map-training-grid"><div class="context-panel"><div class="panel-label">PRUEBAS DEL CAMPO</div><ul id="map-tasks" class="map-list"><li>Selecciona una ruta.</li></ul></div><div class="context-panel"><div class="panel-label">TELEMETRÍA EDUCATIVA</div><div class="table-scroll"><table class="map-telemetry"><thead><tr><th>Variable</th><th>Marte</th><th>Análogo</th></tr></thead><tbody id="map-telemetry-body"></tbody></table></div></div></div>
         <div class="map-footer"><div class="notice notice-warn" id="route-notice">Selecciona una de las tres rutas para continuar.</div><button class="primary-button" id="start-route" type="button" disabled>Confirmar ruta <span>→</span></button></div>
       </section>
 
@@ -75,6 +79,7 @@
               <div class="video-placeholder" id="video-placeholder"><div class="placeholder-orbit"><span></span></div><div class="placeholder-kicker">ESCENA VISUAL PENDIENTE DE GENERACIÓN</div><h3 id="placeholder-title">—</h3><p id="placeholder-copy">La ruta ya está fijada. Aquí se conectará el MP4 maestro y después su variante HLS.</p><div class="placeholder-meta"><span id="placeholder-asset">assetPrefix: —</span><span>sin fallback cruzado</span></div></div>
               <div class="video-caption" id="video-caption">La imagen se generará siguiendo el escenario seleccionado; el audio y los subtítulos se conectarán por idioma.</div>
               <audio id="scene-audio" class="scene-audio is-hidden" controls preload="metadata"></audio>
+              <div class="media-note" id="audio-status" aria-live="polite">ELEVENLABS · cola bilingüe preparada</div>
             </div>
             <div class="scene-copy"><div class="scene-copy-head"><span class="eyebrow">VIÑETA <span id="scene-index">—</span></span><span class="science-chip" id="science-chip">NASA · CONTEXTO</span></div><div id="scene-script" class="scene-script"></div></div>
             <div class="decision-panel"><div class="decision-head"><div><div class="eyebrow">DECISIÓN DE CAMPO</div><h3 id="decision-title">Elige cómo responder</h3></div><span id="decision-state" class="decision-state">DECISIÓN ABIERTA</span></div><div id="choices" class="choices"></div><div id="continue-wrap" class="continue-wrap"></div></div>
@@ -87,6 +92,7 @@
       <footer class="footer"><span>RED HOPE v2.0 · Prototipo educativo para NASA Space Apps Challenge</span><span>Medios v2: pendientes de generación y QA</span></footer>
     </main>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js" defer></script>
     <script type="module" src="./app.js"></script>
   </body>

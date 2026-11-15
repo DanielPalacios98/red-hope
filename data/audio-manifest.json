@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "2.0.0",
+  "provider": "ElevenLabs",
+  "status": "queue-ready-voice-ids-pending",
+  "sourceStory": "data/story.json",
+  "languages": ["es", "en"],
+  "nodeCount": 103,
+  "choiceCount": 96,
+  "requiredTracks": 206,
+  "readyTracks": 0,
+  "captionsRequired": 206,
+  "voiceCasting": {
+    "status": "pending",
+    "roles": ["MIRA", "ELENA", "SAMIR", "NIA", "MATEO"],
+    "voiceIds": {
+      "MIRA": null,
+      "ELENA": null,
+      "SAMIR": null,
+      "NIA": null,
+      "MATEO": null
+    }
+  },
+  "outputPattern": "production/audio/red-hope-v2.0/{language}/{nodeCode}.mp3",
+  "captionPattern": "production/audio/red-hope-v2.0/{language}/{nodeCode}.vtt",
+  "policy": "No v1 audio is mapped into the v2 story. A track becomes playable only after an approved ElevenLabs export is placed at the output path."
+}

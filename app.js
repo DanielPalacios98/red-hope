@@ -6,9 +6,10 @@ const ui = {
   en: { mission: 'MISSION READY', openMap: 'Open mission map', mapTitle: 'Choose where your training begins', mapLead: 'Each starting point connects a story setting with an Earth analogue. Your selection fixes the narrative route and audiovisual generation package.', confirm: 'Confirm route', change: 'Change language', back: '← Back to map', decision: 'Choose your response', open: 'DECISION OPEN', continue: 'Continue', restart: 'Restart mission', pending: 'VISUAL SCENE PENDING GENERATION', pendingCopy: 'The route is fixed. The master MP4 and its HLS variant will be connected here.', audioPending: 'V2 audio and captions pending connection', science: 'NASA · CONTEXT', routeRequired: 'Select one of the three routes to continue.', selected: 'Route selected', end: 'MISSION RECORD COMPLETE' }
 };
 
-const state = { language: localStorage.getItem('redHope.audioLanguage') || 'es', route: localStorage.getItem('redHope.route') || null, nodeId: null, marks: [], choiceHistory: [], visited: [], ending: null, story: null, routes: null };
+const state = { language: localStorage.getItem('redHope.audioLanguage') || 'es', route: localStorage.getItem('redHope.route') || null, nodeId: null, marks: [], choiceHistory: [], visited: [], ending: null, story: null, routes: null, mapResources: null, audioManifest: null };
 const videoPlayers = { a: '#scene-video-a', b: '#scene-video-b' };
 const hlsInstances = { a: null, b: null };
+const missionMaps = { mars: null, earth: null, marsMarker: null, earthMarker: null };
 let activeVideoKey = 'a';
 const routeColors = { jezero: '#ff713f', arcadia: '#5fd5d4', arsia: '#a57cff' };
 const routeNumbers = { jezero: '01', arcadia: '02', arsia: '03' };
@@ -21,11 +22,49 @@ function routeTitle(route) { return state.language === 'en' ? routeTitlesEn[rout
 function routeEarth(route) { return state.language === 'en' ? routeEarthEn[route.id] : route.earthAnalog; }
 function setText(selector, value) { const node = $(selector); if (node) node.textContent = value; }
 function showToast(message) { const toast = $('#toast'); toast.textContent = message; toast.classList.add('is-visible'); window.clearTimeout(showToast.timer); showToast.timer = window.setTimeout(() => toast.classList.remove('is-visible'), 2800); }
-function screen(name) { ['language', 'map', 'story'].forEach((id) => $(`#screen-${id}`).classList.toggle('is-hidden', id !== name)); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+function screen(name) { ['language', 'map', 'story'].forEach((id) => $(`#screen-${id}`).classList.toggle('is-hidden', id !== name)); window.scrollTo({ top: 0, behavior: 'smooth' }); if (name === 'map') window.setTimeout(ensureMissionMaps, 80); }
 function asText(value) { return Array.isArray(value) ? value.join('\n') : String(value || ''); }
 function routeById(id) { return state.routes?.routes?.find((route) => route.id === id); }
 function nodeById(id) { return state.story?.nodes?.find((node) => node.id === id); }
 function activeRoute() { return routeById(state.route); }
+
+function routeMapData(route) { return state.mapResources?.routes?.[route?.id] || null; }
+
+function ensureMissionMaps() {
+  if (!state.mapResources || !window.L || !$('#map-mars') || !$('#map-earth')) return;
+  const route = activeRoute() || state.routes?.routes?.[0];
+  if (!route) return;
+  const data = routeMapData(route); const tiles = state.mapResources.tiles;
+  if (!missionMaps.mars) {
+    missionMaps.mars = window.L.map('map-mars', { zoomControl: false, attributionControl: true }).setView(data.mars.coordinates, data.mars.zoom);
+    window.L.control.zoom({ position: 'bottomright' }).addTo(missionMaps.mars);
+    window.L.tileLayer(tiles.mars.url, { attribution: tiles.mars.attribution, maxZoom: tiles.mars.maxZoom }).addTo(missionMaps.mars);
+    missionMaps.marsMarker = window.L.circleMarker(data.mars.coordinates, { radius: 10, color: '#fde047', weight: 3, fillColor: '#ef4444', fillOpacity: 0.75 }).addTo(missionMaps.mars);
+  }
+  if (!missionMaps.earth) {
+    missionMaps.earth = window.L.map('map-earth', { zoomControl: false, attributionControl: true }).setView(data.earth.coordinates, data.earth.zoom);
+    window.L.control.zoom({ position: 'bottomright' }).addTo(missionMaps.earth);
+    window.L.tileLayer(tiles.earth.url, { attribution: tiles.earth.attribution, maxZoom: tiles.earth.maxZoom }).addTo(missionMaps.earth);
+    missionMaps.earthMarker = window.L.circleMarker(data.earth.coordinates, { radius: 11, color: '#38bdf8', weight: 3, fillColor: '#22c55e', fillOpacity: 0.7 }).addTo(missionMaps.earth);
+  }
+  updateMissionMaps(route);
+}
+
+function updateMissionMaps(route) {
+  const data = routeMapData(route); if (!data) return;
+  if (missionMaps.mars) { missionMaps.mars.setView(data.mars.coordinates, data.mars.zoom); missionMaps.marsMarker.setLatLng(data.mars.coordinates); missionMaps.mars.invalidateSize(); }
+  if (missionMaps.earth) { missionMaps.earth.setView(data.earth.coordinates, data.earth.zoom); missionMaps.earthMarker.setLatLng(data.earth.coordinates); missionMaps.earth.invalidateSize(); }
+}
+
+function renderRouteIntel(route) {
+  const data = routeMapData(route); if (!data) return;
+  setText('#mars-map-caption', data.mars.label); setText('#earth-map-caption', data.earth.label);
+  setText('#map-route-title', routeTitle(route));
+  setText('#map-route-narrative', `${route.earthAnalog} funciona como campo terrestre para estudiar ${route.scienceFocus.join(', ')}. Las capas son referencias educativas, no telemetría en vivo.`);
+  const tasks = $('#map-tasks'); tasks.innerHTML = data.tasks.map((task, index) => `<li><strong>Prueba ${index + 1}</strong> ${task}</li>`).join('');
+  $('#map-telemetry-body').innerHTML = data.telemetry.map((row) => `<tr><td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td></tr>`).join('');
+  ensureMissionMaps(); updateMissionMaps(route);
+}
 
 function applyLanguage() {
   document.documentElement.lang = state.language;
@@ -61,8 +100,7 @@ function renderRouteCards() {
 function selectRoute(id) {
   const route = routeById(id); if (!route) return;
   state.route = id; localStorage.setItem('redHope.route', id); renderRouteCards();
-  setText('#mars-map-caption', `${route.mars.location} · ${route.mars.latitude}°, ${route.mars.longitude}°`);
-  setText('#earth-map-caption', `${route.earth.location} · ${route.earth.elevationMeters} m`);
+  renderRouteIntel(route);
   $('#route-notice').textContent = `${state.language === 'en' ? routeTitle(route) : routeLabels[id]} · ${routeEarth(route)}`;
   $('#route-notice').classList.remove('notice-warn');
   $('#start-route').disabled = false;
@@ -134,6 +172,8 @@ function renderMedia(node, route) {
   if (audioSource) { audio.src = audioSource; audio.classList.remove('is-hidden'); } else { audio.pause(); audio.removeAttribute('src'); audio.classList.add('is-hidden'); }
   ['a', 'b'].forEach((key) => { const track = $(`#scene-track-${key}`); if (captionsSource) { track.src = captionsSource; track.srclang = state.language; track.label = state.language === 'es' ? 'Español' : 'English'; } else track.removeAttribute('src'); });
   setText('#video-caption', audioSource ? `${state.language.toUpperCase()} · audio conectado` : t('audioPending'));
+  const manifest = state.audioManifest;
+  if (manifest) setText('#audio-status', `ELEVENLABS · ${manifest.readyTracks}/${manifest.requiredTracks} pistas listas · ${state.language.toUpperCase()} · ${manifest.voiceCasting.status === 'pending' ? 'voces por asignar' : 'casting aprobado'}`);
 }
 
 function renderScience(route) {
@@ -178,7 +218,7 @@ function startRoute() { const route = activeRoute(); if (!route) { showToast(t('
 function restart() { state.nodeId = null; state.marks = []; state.choiceHistory = []; state.visited = []; state.ending = null; screen('map'); renderRouteCards(); if (state.route) selectRoute(state.route); }
 
 async function boot() {
-  try { const [story, routes] = await Promise.all([fetch('./data/story.json').then((r) => r.json()), fetch('./data/routes.json').then((r) => r.json())]); state.story = story; state.routes = routes; applyLanguage(); renderRouteCards(); if (state.route) selectRoute(state.route); $('#open-map').disabled = false; }
+  try { const [story, routes, mapResources, audioManifest] = await Promise.all([fetch('./data/story.json').then((r) => r.json()), fetch('./data/routes.json').then((r) => r.json()), fetch('./data/map-resources.json').then((r) => r.json()), fetch('./data/audio-manifest.json').then((r) => r.json())]); state.story = story; state.routes = routes; state.mapResources = mapResources; state.audioManifest = audioManifest; applyLanguage(); renderRouteCards(); if (state.route) selectRoute(state.route); $('#open-map').disabled = false; }
   catch (error) { console.error(error); showToast('No se pudo cargar el paquete narrativo.'); }
 }
 

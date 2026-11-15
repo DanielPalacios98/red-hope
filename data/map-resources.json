@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "source": "Historia.html · recursos cartográficos preservados del prototipo original",
+  "earthEngineUrl": "https://nasa-space-apps-2026-514719.projects.earthengine.app/view/mision-analoga-marte",
+  "tiles": {
+    "mars": {
+      "url": "https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-2/all/{z}/{x}/{y}.png",
+      "attribution": "NASA MOLA / Viking / OpenPlanetaryMap",
+      "maxZoom": 10
+    },
+    "earth": {
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      "attribution": "Esri / Maxar / NASA SRTM",
+      "maxZoom": 17
+    }
+  },
+  "routes": {
+    "jezero": {
+      "mars": {"coordinates": [18.38, 77.58], "zoom": 6, "label": "Marte: Cráter Jezero (18.38° N, 77.58° E)"},
+      "earth": {"coordinates": [-1.469, -78.855], "zoom": 14, "label": "Tierra: Gran Arenal del Chimborazo (4,350 m)"},
+      "tasks": ["Conducir el rover de 6 ruedas sobre la ceniza sin patinar.", "Extraer un testigo de roca volcánica.", "Calibrar las cámaras donde no hay referencias visuales."],
+      "telemetry": [["Inclinación", "2°–10° · MOLA", "5.2°–9.1° · SRTM"], ["Presión", "6.1 hPa · Marte", "580 hPa · Chimborazo"], ["NDVI", "0.000 · Marte", "0.045 · Tierra"]]
+    },
+    "arcadia": {
+      "mars": {"coordinates": [39.20, 8.00], "zoom": 5, "label": "Marte: Arcadia Planitia (39.20° N, 188.00° E)"},
+      "earth": {"coordinates": [-22.150, -67.850], "zoom": 13, "label": "Tierra: Desierto de Siloli (4,550 m)"},
+      "tasks": ["Pasar el radar GPR sobre el terreno salino.", "Perforar la costra congelada sin mezclar capas.", "Anclar paneles frente a las ráfagas."],
+      "telemetry": [["Inclinación", "0.5°–3° · MOLA", "1.1°–2.8° · SRTM"], ["Presión", "7.5 hPa · Marte", "570 hPa · Tierra"], ["Blanco", "Hielo subsuperficial", "Costra salina congelada"]]
+    },
+    "arsia": {
+      "mars": {"coordinates": [-9.00, -121.00], "zoom": 6, "label": "Marte: Flancos de Arsia Mons (9.00° S, 239.00° E)"},
+      "earth": {"coordinates": [-36.050, -69.200], "zoom": 13, "label": "Tierra: La Payunia, Mendoza (2,200 m)"},
+      "tasks": ["Descender con cuerda y arnés por una entrada volcánica.", "Escanear la bóveda con LiDAR 3D.", "Colocar repetidores sin perder la comunicación."],
+      "telemetry": [["Pendiente", "4°–15° · MOLA", "4.5°–13° · SRTM"], ["Radiación", "230 mSv/año · Marte", "2.4 mSv/año · Tierra"], ["Roca", "Basalto", "Basalto y escoria"]]
+    }
+  }
+}
