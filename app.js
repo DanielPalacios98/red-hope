@@ -22,7 +22,7 @@ function routeTitle(route) { return state.language === 'en' ? routeTitlesEn[rout
 function routeEarth(route) { return state.language === 'en' ? routeEarthEn[route.id] : route.earthAnalog; }
 function setText(selector, value) { const node = $(selector); if (node) node.textContent = value; }
 function showToast(message) { const toast = $('#toast'); toast.textContent = message; toast.classList.add('is-visible'); window.clearTimeout(showToast.timer); showToast.timer = window.setTimeout(() => toast.classList.remove('is-visible'), 2800); }
-function screen(name) { ['language', 'intro', 'map', 'story'].forEach((id) => $(`#screen-${id}`).classList.toggle('is-hidden', id !== name)); window.scrollTo({ top: 0, behavior: 'smooth' }); if (name === 'map') window.setTimeout(ensureMissionMaps, 80); }
+function screen(name) { ['language', 'intro', 'map', 'story'].forEach((id) => $(`#screen-${id}`).classList.toggle('is-hidden', id !== name)); document.body.classList.toggle('story-mode', name === 'story'); window.scrollTo({ top: 0, behavior: 'smooth' }); if (name === 'map') window.setTimeout(ensureMissionMaps, 80); }
 function asText(value) { return Array.isArray(value) ? value.join('\n') : String(value || ''); }
 function routeById(id) { return state.routes?.routes?.find((route) => route.id === id); }
 function nodeById(id) { return state.story?.nodes?.find((node) => node.id === id); }
