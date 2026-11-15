@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Recuperación en la ladera · JR</title>
+  <desc id="desc">Panel de novela gráfica de RED HOPE en GRAN ARENAL DEL CHIMBORAZO · ECUADOR.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#182433"/><stop offset="1" stop-color="#090d16"/></linearGradient>
+    <linearGradient id="wash" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".82"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="1200" cy="210" r="190" fill="#e5b36b" opacity=".14" filter="url(#glow)"/>
+  
+    <path d="M0 480 Q230 430 410 465 Q650 505 840 420 Q1070 315 1250 390 Q1450 470 1600 390 L1600 900 L0 900Z" fill="#4a3b39"/>
+    <path d="M0 540 Q260 475 460 540 T900 510 T1300 490 T1600 530 L1600 900 L0 900Z" fill="#6b5144"/>
+    <path d="M620 500 L820 170 L1010 500Z" fill="#2b3038" stroke="#d7c1a0" stroke-width="5"/><path d="M745 300 L820 170 L880 300" fill="#ebeee8" opacity=".8"/>
+    <path d="M0 760 Q300 690 620 760 T1260 735 T1600 770" fill="none" stroke="#e0b578" stroke-width="9" opacity=".45"/>
+    <circle cx="1240" cy="280" r="42" fill="#e5b36b" opacity=".72"/><path d="M180 650 l100 -60 90 38 -112 76z M1250 630 l120 -70 100 44 -130 80z" fill="#2e2525" stroke="#d49d6b" stroke-width="4"/>
+  
+  <rect width="1600" height="900" fill="url(#wash)"/>
+  <g opacity=".32" fill="none" stroke="#ff713f" stroke-width="2"><path d="M60 130 H1540"/><path d="M60 140 H940"/><path d="M60 760 H1540"/><path d="M60 772 H700"/></g>
+  <text x="76" y="74" fill="#f4f1e9" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="24" letter-spacing="6">RED HOPE</text>
+  <text x="76" y="108" fill="#9eabc1" font-family="Inter,Arial,sans-serif" font-size="14" letter-spacing="4">CRÓNICA DE DOS MUNDOS · SIMULACIÓN TERRESTRE</text>
+  <text x="1520" y="82" text-anchor="end" fill="#ff713f" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="24" letter-spacing="4">JR</text>
+  <text x="104" y="230" fill="#ff713f" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="17" letter-spacing="4">RUTA JEZERO · RELIEVE Y CENIZA VOLCÁNICA</text>
+  <text x="104" y="360" fill="#f4f1e9" font-family="Georgia,serif" font-weight="500" font-size="52"><tspan x="104" dy="0">Recuperación en la ladera</tspan></text>
+  <rect x="104" y="630" width="620" height="72" rx="8" fill="#070a12" fill-opacity=".72" stroke="#ff713f" stroke-opacity=".7"/>
+  <text x="132" y="674" fill="#dbe5ef" font-family="Inter,Arial,sans-serif" font-size="18" letter-spacing="2">GRAN ARENAL DEL CHIMBORAZO · ECUADOR</text>
+  <text x="104" y="820" fill="#9eabc1" font-family="Inter,Arial,sans-serif" font-size="15" letter-spacing="3">VIÑETA INTERACTIVA · DECISIÓN Y DATOS NASA</text>
+</svg>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ampliar el símbolo de la escotilla · IE-C</title>
+  <desc id="desc">Panel de novela gráfica de RED HOPE en MASSACHUSETTS · TIERRA.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#111c2b"/><stop offset="1" stop-color="#090d16"/></linearGradient>
+    <linearGradient id="wash" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".82"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="1200" cy="210" r="190" fill="#efb16a" opacity=".14" filter="url(#glow)"/>
+  
+    <path d="M0 610 L0 500 L260 500 L320 430 L520 430 L590 500 L850 500 L930 450 L1180 450 L1280 520 L1600 520 L1600 900 L0 900Z" fill="#1d2a3a"/>
+    <path d="M0 710 Q400 620 780 720 T1600 680 L1600 900 L0 900Z" fill="#0c131e"/>
+    <path d="M0 716 Q390 642 805 728 T1600 690" fill="none" stroke="#5fd5d4" stroke-width="4" opacity=".35"/>
+    <rect x="1050" y="270" width="22" height="250" rx="10" fill="#303e51"/><rect x="1034" y="284" width="56" height="118" rx="26" fill="#0a111a" stroke="#ff713f" stroke-width="3"/><circle cx="1062" cy="312" r="10" fill="#ff5e4f"/><circle cx="1062" cy="344" r="10" fill="#e6b45b"/><circle cx="1062" cy="376" r="10" fill="#5fd5d4"/>
+    <path d="M1160 520 L1160 390 L1450 390 L1450 520" fill="#172334" stroke="#7890a6" stroke-width="4"/><path d="M1140 390 L1305 280 L1470 390" fill="#1d3042" stroke="#9baec1" stroke-width="4"/>
+  
+  <rect width="1600" height="900" fill="url(#wash)"/>
+  <g opacity=".32" fill="none" stroke="#ff713f" stroke-width="2"><path d="M60 130 H1540"/><path d="M60 140 H940"/><path d="M60 760 H1540"/><path d="M60 772 H700"/></g>
+  <text x="76" y="74" fill="#f4f1e9" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="24" letter-spacing="6">RED HOPE</text>
+  <text x="76" y="108" fill="#9eabc1" font-family="Inter,Arial,sans-serif" font-size="14" letter-spacing="4">CRÓNICA DE DOS MUNDOS · SIMULACIÓN TERRESTRE</text>
+  <text x="1520" y="82" text-anchor="end" fill="#ff713f" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="24" letter-spacing="4">IE-C</text>
+  <text x="104" y="230" fill="#ff713f" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="17" letter-spacing="4">CASETA DE SEGURIDAD · EVIDENCIA</text>
+  <text x="104" y="360" fill="#f4f1e9" font-family="Georgia,serif" font-weight="500" font-size="52"><tspan x="104" dy="0">Ampliar el símbolo de la</tspan><tspan x="104" dy="58">escotilla</tspan></text>
+  <rect x="104" y="630" width="620" height="72" rx="8" fill="#070a12" fill-opacity=".72" stroke="#ff713f" stroke-opacity=".7"/>
+  <text x="132" y="674" fill="#dbe5ef" font-family="Inter,Arial,sans-serif" font-size="18" letter-spacing="2">MASSACHUSETTS · TIERRA</text>
+  <text x="104" y="820" fill="#9eabc1" font-family="Inter,Arial,sans-serif" font-size="15" letter-spacing="3">VIÑETA INTERACTIVA · DECISIÓN Y DATOS NASA</text>
+</svg>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Descargar el archivo mientras se prepara la extracción · P4-C</title>
+  <desc id="desc">Panel de novela gráfica de RED HOPE en LA PAYUNIA · MENDOZA.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#211a29"/><stop offset="1" stop-color="#090d16"/></linearGradient>
+    <linearGradient id="wash" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".82"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="1200" cy="210" r="190" fill="#d49467" opacity=".14" filter="url(#glow)"/>
+  
+    <path d="M0 460 Q220 360 420 470 Q650 570 850 430 Q1070 285 1250 430 Q1420 550 1600 420 L1600 900 L0 900Z" fill="#3b2a32"/>
+    <path d="M0 630 Q300 540 620 640 T1240 600 T1600 650 L1600 900 L0 900Z" fill="#5d3f3b"/>
+    <path d="M200 630 Q300 485 405 630 M420 650 Q530 430 650 650 M1170 640 Q1260 500 1360 640" fill="none" stroke="#c8866e" stroke-width="25" opacity=".58"/>
+    <path d="M0 760 Q360 685 770 758 T1600 730" fill="none" stroke="#e3a26d" stroke-width="7" opacity=".45"/>
+    <path d="M1020 640 C1040 530 1120 500 1200 550 C1240 580 1240 650 1265 710 L1000 710Z" fill="#161820" stroke="#a57cff" stroke-width="5"/>
+    <path d="M1010 675 L890 520 M900 520 L930 520" stroke="#e6b45b" stroke-width="6" fill="none"/>
+  
+  <rect width="1600" height="900" fill="url(#wash)"/>
+  <g opacity=".32" fill="none" stroke="#a57cff" stroke-width="2"><path d="M60 130 H1540"/><path d="M60 140 H940"/><path d="M60 760 H1540"/><path d="M60 772 H700"/></g>
+  <text x="76" y="74" fill="#f4f1e9" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="24" letter-spacing="6">RED HOPE</text>
+  <text x="76" y="108" fill="#9eabc1" font-family="Inter,Arial,sans-serif" font-size="14" letter-spacing="4">CRÓNICA DE DOS MUNDOS · SIMULACIÓN TERRESTRE</text>
+  <text x="1520" y="82" text-anchor="end" fill="#a57cff" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="24" letter-spacing="4">P4-C</text>
+  <text x="104" y="230" fill="#a57cff" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="17" letter-spacing="4">RUTA ARSIA · BASALTO, CUERDA Y SOMBRA</text>
+  <text x="104" y="360" fill="#f4f1e9" font-family="Georgia,serif" font-weight="500" font-size="52"><tspan x="104" dy="0">Descargar el archivo mientras</tspan><tspan x="104" dy="58">se prepara la extracción</tspan></text>
+  <rect x="104" y="630" width="620" height="72" rx="8" fill="#070a12" fill-opacity=".72" stroke="#a57cff" stroke-opacity=".7"/>
+  <text x="132" y="674" fill="#dbe5ef" font-family="Inter,Arial,sans-serif" font-size="18" letter-spacing="2">LA PAYUNIA · MENDOZA</text>
+  <text x="104" y="820" fill="#9eabc1" font-family="Inter,Arial,sans-serif" font-size="15" letter-spacing="3">VIÑETA INTERACTIVA · DECISIÓN Y DATOS NASA</text>
+</svg>

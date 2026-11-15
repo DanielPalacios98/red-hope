@@ -71,13 +71,14 @@
           </aside>
           <div class="story-main">
             <div class="video-frame" id="video-frame">
-              <div class="video-chrome"><span id="scene-code">—</span><span id="media-status">VIDEO V2 PENDIENTE</span></div>
+              <div class="video-chrome"><span id="scene-code">—</span><span id="media-status">MEDIO VISUAL · CARGANDO</span></div>
               <div class="video-stage" aria-live="polite">
                 <video id="scene-video-a" class="video-layer is-active is-hidden" playsinline preload="metadata" controls><track id="scene-track-a" kind="captions" /></video>
                 <video id="scene-video-b" class="video-layer is-hidden" playsinline preload="metadata" controls><track id="scene-track-b" kind="captions" /></video>
+                <img id="scene-image" class="scene-image is-hidden" alt="" decoding="async" />
               </div>
-              <div class="video-placeholder" id="video-placeholder"><div class="placeholder-orbit"><span></span></div><div class="placeholder-kicker">ESCENA VISUAL PENDIENTE DE GENERACIÓN</div><h3 id="placeholder-title">—</h3><p id="placeholder-copy">La ruta ya está fijada. Aquí se conectará el MP4 maestro y después su variante HLS.</p><div class="placeholder-meta"><span id="placeholder-asset">assetPrefix: —</span><span>sin fallback cruzado</span></div></div>
-              <div class="video-caption" id="video-caption">La imagen se generará siguiendo el escenario seleccionado; el audio y los subtítulos se conectarán por idioma.</div>
+              <div class="video-placeholder is-hidden" id="video-placeholder"><div class="placeholder-orbit"><span></span></div><div class="placeholder-kicker">ESCENA VISUAL NO DISPONIBLE</div><h3 id="placeholder-title">—</h3><p id="placeholder-copy">La viñeta no pudo cargar su imagen narrativa.</p><div class="placeholder-meta"><span id="placeholder-asset">assetPrefix: —</span><span>revisar conexión</span></div></div>
+              <div class="video-caption" id="video-caption">La viñeta se mostrará como panel de novela gráfica; el audio y los subtítulos se conectarán por idioma.</div>
               <audio id="scene-audio" class="scene-audio is-hidden" controls preload="metadata"></audio>
               <div class="media-note" id="audio-status" aria-live="polite">ELEVENLABS · cola bilingüe preparada</div>
             </div>
@@ -89,7 +90,7 @@
         </div>
       </section>
 
-      <footer class="footer"><span>RED HOPE v2.0 · Prototipo educativo para NASA Space Apps Challenge</span><span>Medios v2: pendientes de generación y QA</span></footer>
+      <footer class="footer"><span>RED HOPE v2.0 · Prototipo educativo para NASA Space Apps Challenge</span><span>HLS + paneles de novela gráfica · audio por idioma</span></footer>
     </main>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>

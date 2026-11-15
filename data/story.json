@@ -131,7 +131,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/i1.svg",
+        "imageAlt": "El semáforo · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -162,7 +164,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/i1_a.svg",
+        "imageAlt": "Pedir a Brad el código que usaban cuando trabajaban juntos · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -193,7 +197,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/i1_b.svg",
+        "imageAlt": "Llamar a tu madre y enviarle una copia de la tarjeta · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -224,7 +230,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/i1_c.svg",
+        "imageAlt": "Acompañar a Brad hasta la caseta de seguridad del colegio · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -292,7 +300,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/ib.svg",
+        "imageAlt": "La nota de voz · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -323,7 +333,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/ib_a.svg",
+        "imageAlt": "Escuchar el audio del taller · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -354,7 +366,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/ib_b.svg",
+        "imageAlt": "Escuchar el audio del almacén · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -385,7 +399,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/ib_c.svg",
+        "imageAlt": "Escuchar el audio del túnel · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -453,7 +469,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/im.svg",
+        "imageAlt": "La llamada de tu madre · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -484,7 +502,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/im_a.svg",
+        "imageAlt": "Seguir la factura de los taladros · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -515,7 +535,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/im_b.svg",
+        "imageAlt": "Seguir la compra de sensores de hielo · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -546,7 +568,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/im_c.svg",
+        "imageAlt": "Seguir el envío de cuerdas y repetidores · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -614,7 +638,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/ie.svg",
+        "imageAlt": "El registro de seguridad · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -645,7 +671,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/ie_a.svg",
+        "imageAlt": "Ampliar el símbolo del contenedor de herramientas · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -676,7 +704,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/ie_b.svg",
+        "imageAlt": "Ampliar el símbolo del depósito de agua · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -708,7 +738,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/shared/ie_c.svg",
+        "imageAlt": "Ampliar el símbolo de la escotilla · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -747,7 +779,9 @@
         "audioVoices": {
           "es": "HR Elena",
           "en": "David Boles - Well-spoken and Calm"
-        }
+        },
+        "image": "./media/images/v2/jezero/j0.svg",
+        "imageAlt": "Briefing de Jezero y el Gran Arenal del Chimborazo · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -828,7 +862,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j1.svg",
+        "imageAlt": "El vehículo en la ceniza · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -859,7 +895,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j1_a.svg",
+        "imageAlt": "Subir en diagonal por una franja compacta · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -890,7 +928,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j1_b.svg",
+        "imageAlt": "Rodear la cuesta por el camino pedregoso · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -921,7 +961,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j1_c.svg",
+        "imageAlt": "Intentar la subida directa por la ceniza · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1007,7 +1049,9 @@
           "earthTrainingVerified": true,
           "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
         },
-        "audioProvider": "ElevenLabs"
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/jr.svg",
+        "imageAlt": "Recuperación en la ladera · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1028,8 +1072,10 @@
           "es": "./media/audio/v2/es/jr-a.vtt",
           "en": null
         },
-        "status": "audio-ready-visual-pending",
-        "audioProvider": "ElevenLabs"
+        "status": "image-novel-graphic-ready",
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/jr_a.svg",
+        "imageAlt": "Pedir el torno de apoyo · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1050,8 +1096,10 @@
           "es": "./media/audio/v2/es/jr-b.vtt",
           "en": null
         },
-        "status": "audio-ready-visual-pending",
-        "audioProvider": "ElevenLabs"
+        "status": "image-novel-graphic-ready",
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/jr_b.svg",
+        "imageAlt": "Retroceder hasta la franja compacta · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1072,8 +1120,10 @@
           "es": "./media/audio/v2/es/jr-c.vtt",
           "en": null
         },
-        "status": "audio-ready-visual-pending",
-        "audioProvider": "ElevenLabs"
+        "status": "image-novel-graphic-ready",
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/jr_c.svg",
+        "imageAlt": "Descargar el taladro y reconocer el rodeo · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1170,8 +1220,10 @@
           "es": "./media/audio/v2/es/j2-j1a.vtt",
           "en": null
         },
-        "status": "audio-ready-visual-pending",
-        "audioProvider": "ElevenLabs"
+        "status": "image-novel-graphic-ready",
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j2_j1a.svg",
+        "imageAlt": "El testigo de roca · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1268,8 +1320,10 @@
           "es": "./media/audio/v2/es/j2-j1b.vtt",
           "en": null
         },
-        "status": "audio-ready-visual-pending",
-        "audioProvider": "ElevenLabs"
+        "status": "image-novel-graphic-ready",
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j2_j1b.svg",
+        "imageAlt": "El testigo de roca · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1366,8 +1420,10 @@
           "es": "./media/audio/v2/es/j2-jra.vtt",
           "en": null
         },
-        "status": "audio-ready-visual-pending",
-        "audioProvider": "ElevenLabs"
+        "status": "image-novel-graphic-ready",
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j2_jra.svg",
+        "imageAlt": "El testigo de roca · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1464,8 +1520,10 @@
           "es": "./media/audio/v2/es/j2-jrb.vtt",
           "en": null
         },
-        "status": "audio-ready-visual-pending",
-        "audioProvider": "ElevenLabs"
+        "status": "image-novel-graphic-ready",
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j2_jrb.svg",
+        "imageAlt": "El testigo de roca · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1562,8 +1620,10 @@
           "es": "./media/audio/v2/es/j2-jrc.vtt",
           "en": null
         },
-        "status": "audio-ready-visual-pending",
-        "audioProvider": "ElevenLabs"
+        "status": "image-novel-graphic-ready",
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j2_jrc.svg",
+        "imageAlt": "El testigo de roca · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1585,8 +1645,10 @@
           "es": "./media/audio/v2/es/j2-a.vtt",
           "en": null
         },
-        "status": "audio-ready-visual-pending",
-        "audioProvider": "ElevenLabs"
+        "status": "image-novel-graphic-ready",
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j2_a.svg",
+        "imageAlt": "Perforar por intervalos · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1608,8 +1670,10 @@
           "es": "./media/audio/v2/es/j2-b.vtt",
           "en": null
         },
-        "status": "audio-ready-visual-pending",
-        "audioProvider": "ElevenLabs"
+        "status": "image-novel-graphic-ready",
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j2_b.svg",
+        "imageAlt": "Cambiar a una veta lateral y documentar el desvío · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1631,8 +1695,10 @@
           "es": "./media/audio/v2/es/j2-c.vtt",
           "en": null
         },
-        "status": "audio-ready-visual-pending",
-        "audioProvider": "ElevenLabs"
+        "status": "image-novel-graphic-ready",
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j2_c.svg",
+        "imageAlt": "Completar dos lecturas antes de reanudar · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1724,8 +1790,10 @@
           "es": "./media/audio/v2/es/j3.vtt",
           "en": null
         },
-        "status": "audio-ready-visual-pending",
-        "audioProvider": "ElevenLabs"
+        "status": "image-novel-graphic-ready",
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j3.svg",
+        "imageAlt": "La cámara y la señal · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1747,8 +1815,10 @@
           "es": "./media/audio/v2/es/j3-a.vtt",
           "en": null
         },
-        "status": "audio-ready-visual-pending",
-        "audioProvider": "ElevenLabs"
+        "status": "image-novel-graphic-ready",
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j3_a.svg",
+        "imageAlt": "Estimar de dónde llega la señal · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1770,8 +1840,10 @@
           "es": "./media/audio/v2/es/j3-b.vtt",
           "en": null
         },
-        "status": "audio-ready-visual-pending",
-        "audioProvider": "ElevenLabs"
+        "status": "image-novel-graphic-ready",
+        "audioProvider": "ElevenLabs",
+        "image": "./media/images/v2/jezero/j3_b.svg",
+        "imageAlt": "Apagar el enlace y grabar en la memoria de la cámara · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1793,7 +1865,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/jezero/j3_c.svg",
+        "imageAlt": "Grabar el ritmo de las transmisiones · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1910,7 +1984,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/jezero/j4.svg",
+        "imageAlt": "La esclusa enterrada · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1932,7 +2008,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/jezero/j4_a.svg",
+        "imageAlt": "Abrir el acceso de servicio · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1954,7 +2032,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/jezero/j4_b.svg",
+        "imageAlt": "Liberar la esclusa desde fuera · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -1977,7 +2057,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/jezero/j4_c.svg",
+        "imageAlt": "Copiar el registro por el enlace de mantenimiento mientras la tripulación evacúa a James · GRAN ARENAL DEL CHIMBORAZO · ECUADOR"
       }
     },
     {
@@ -2016,7 +2098,9 @@
         "audioVoices": {
           "es": "HR Elena",
           "en": "David Boles - Well-spoken and Calm"
-        }
+        },
+        "image": "./media/images/v2/arcadia/a0.svg",
+        "imageAlt": "Briefing de Arcadia Planitia y el desierto de Siloli · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2089,7 +2173,9 @@
           "resolution": "1280x720",
           "earthTrainingVerified": true,
           "embeddedAudio": "none; ElevenLabs track remains separate"
-        }
+        },
+        "image": "./media/images/v2/arcadia/a1.svg",
+        "imageAlt": "Dos ecos bajo la sal · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2110,7 +2196,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a1_a.svg",
+        "imageAlt": "Cruzar el terreno en una segunda dirección · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2131,7 +2219,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a1_b.svg",
+        "imageAlt": "Comparar la lectura con una parcela de referencia · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2152,7 +2242,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a1_c.svg",
+        "imageAlt": "Ajustar el radar para distinguir las capas superficiales · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2222,7 +2314,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/ar.svg",
+        "imageAlt": "Calibración en la llanura · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2243,7 +2337,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/ar_a.svg",
+        "imageAlt": "Repetir la pasada cruzando la primera trayectoria · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2264,7 +2360,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/ar_b.svg",
+        "imageAlt": "Calibrar el radar en la parcela de referencia · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2285,7 +2383,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/ar_c.svg",
+        "imageAlt": "Combinar una lectura superficial con la sonda auxiliar · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2369,7 +2469,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a2_a1a.svg",
+        "imageAlt": "El núcleo congelado · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2453,7 +2555,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a2_a1b.svg",
+        "imageAlt": "El núcleo congelado · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2537,7 +2641,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a2_ara.svg",
+        "imageAlt": "El núcleo congelado · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2621,7 +2727,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a2_arb.svg",
+        "imageAlt": "El núcleo congelado · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2705,7 +2813,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a2_arc.svg",
+        "imageAlt": "El núcleo congelado · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2727,7 +2837,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a2_a.svg",
+        "imageAlt": "Aumentar el calor por etapas · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2749,7 +2861,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a2_b.svg",
+        "imageAlt": "Perforar en el borde de la formación · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2771,7 +2885,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a2_c.svg",
+        "imageAlt": "Extraer un núcleo corto y sellarlo · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2855,7 +2971,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a3.svg",
+        "imageAlt": "Paneles en la ráfaga · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2877,7 +2995,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a3_a.svg",
+        "imageAlt": "Bajar los paneles y reforzar los anclajes · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2899,7 +3019,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a3_b.svg",
+        "imageAlt": "Separar el control remoto de la instalación · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -2921,7 +3043,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a3_c.svg",
+        "imageAlt": "Montar un banco auxiliar mientras tu equipo fija los paneles · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -3035,7 +3159,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a4.svg",
+        "imageAlt": "La planta de hielo · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -3057,7 +3183,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a4_a.svg",
+        "imageAlt": "Alimentar los habitáculos y abrir sus esclusas · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -3079,7 +3207,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a4_b.svg",
+        "imageAlt": "Aislar el archivo y extraerlo durante la evacuación · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -3102,7 +3232,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arcadia/a4_c.svg",
+        "imageAlt": "Rastrear el apagón antes de transferir el control a la agencia · DESIERTO DE SILOLI · BOLIVIA"
       }
     },
     {
@@ -3141,7 +3273,9 @@
         "audioVoices": {
           "es": "HR Elena",
           "en": "David Boles - Well-spoken and Calm"
-        }
+        },
+        "image": "./media/images/v2/arsia/p0.svg",
+        "imageAlt": "Briefing de Arsia Mons y La Payunia · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3220,7 +3354,9 @@
           "resolution": "1280x720",
           "earthTrainingVerified": true,
           "embeddedAudio": "none; ElevenLabs track remains separate"
-        }
+        },
+        "image": "./media/images/v2/arsia/p1.svg",
+        "imageAlt": "El descenso · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3241,7 +3377,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p1_a.svg",
+        "imageAlt": "Bajar por el centro con el equipo de aseguramiento · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3262,7 +3400,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p1_b.svg",
+        "imageAlt": "Detenerte en el rellano para observar la pared · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3283,7 +3423,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p1_c.svg",
+        "imageAlt": "Pedir que bajen primero el escáner y después descender con las manos libres · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3359,7 +3501,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/pr.svg",
+        "imageAlt": "Aseguramiento en el tubo de lava · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3380,7 +3524,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/pr_a.svg",
+        "imageAlt": "Guiar el izado desde la línea de apoyo · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3401,7 +3547,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/pr_b.svg",
+        "imageAlt": "Descender con el equipo hasta el rellano · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3422,7 +3570,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/pr_c.svg",
+        "imageAlt": "Pedir que cambien el ángulo de la línea auxiliar · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3506,7 +3656,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p2_p1a.svg",
+        "imageAlt": "Lo que esconde la bóveda · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3590,7 +3742,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p2_p1b.svg",
+        "imageAlt": "Lo que esconde la bóveda · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3674,7 +3828,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p2_pra.svg",
+        "imageAlt": "Lo que esconde la bóveda · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3758,7 +3914,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p2_prb.svg",
+        "imageAlt": "Lo que esconde la bóveda · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3842,7 +4000,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p2_prc.svg",
+        "imageAlt": "Lo que esconde la bóveda · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3864,7 +4024,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p2_a.svg",
+        "imageAlt": "Completar el modelo desde dos posiciones · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3886,7 +4048,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p2_b.svg",
+        "imageAlt": "Escanear primero el corredor de salida y sus fracturas · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3908,7 +4072,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p2_c.svg",
+        "imageAlt": "Escanear el recodo con mayor resolución · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -3986,7 +4152,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p3.svg",
+        "imageAlt": "Voces detrás de la roca · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -4008,7 +4176,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p3_a.svg",
+        "imageAlt": "Tender un enlace por cable hasta la entrada · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -4030,7 +4200,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p3_b.svg",
+        "imageAlt": "Montar dos repetidores orientados hacia el interior · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -4052,7 +4224,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p3_c.svg",
+        "imageAlt": "Mantener un puesto de relevo en el recodo y grabar la orden falsa · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -4169,7 +4343,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p4.svg",
+        "imageAlt": "El refugio bajo el volcán · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -4191,7 +4367,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p4_a.svg",
+        "imageAlt": "Evacuar a James por la galería lateral · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -4213,7 +4391,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p4_b.svg",
+        "imageAlt": "Abrir una salida por el pozo de mantenimiento · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -4235,7 +4415,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/arsia/p4_c.svg",
+        "imageAlt": "Descargar el archivo mientras se prepara la extracción · LA PAYUNIA · MENDOZA"
       }
     },
     {
@@ -4352,7 +4534,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/shared/f1.svg",
+        "imageAlt": "La última transmisión · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -4373,7 +4557,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/shared/f1_a.svg",
+        "imageAlt": "Publicar con ayuda de la prensa · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -4394,7 +4580,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/shared/f1_b.svg",
+        "imageAlt": "Entregar el material por el enlace de la agencia · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -4415,7 +4603,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/shared/f1_c.svg",
+        "imageAlt": "Guiar un reconocimiento del siguiente emplazamiento · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -4438,7 +4628,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/shared/final_a.svg",
+        "imageAlt": "Los nombres · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -4460,7 +4652,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/shared/final_b.svg",
+        "imageAlt": "Dos llaves · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -4482,7 +4676,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/shared/final_c.svg",
+        "imageAlt": "La silla ocupada · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -4504,7 +4700,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/shared/final_d.svg",
+        "imageAlt": "La segunda baliza · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -4525,7 +4723,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/shared/final_e.svg",
+        "imageAlt": "Antes del cierre · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -4546,7 +4746,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/shared/final_f.svg",
+        "imageAlt": "La voz de James · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -4567,7 +4769,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/shared/final_g.svg",
+        "imageAlt": "El vehículo vacío · MASSACHUSETTS · TIERRA"
       }
     },
     {
@@ -4593,7 +4797,9 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "image-novel-graphic-ready-audio-pending",
+        "image": "./media/images/v2/shared/final_h.svg",
+        "imageAlt": "El depósito · MASSACHUSETTS · TIERRA"
       }
     }
   ],

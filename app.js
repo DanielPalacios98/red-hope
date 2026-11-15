@@ -2,8 +2,8 @@ const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 
 const ui = {
-  es: { mission: 'PREPARANDO MISIÓN', openMap: 'Abrir mapa de misión', mapTitle: 'Elige dónde comienza tu entrenamiento', mapLead: 'Los puntos de partida conectan un escenario de la historia con un análogo terrestre. La selección fija la ruta narrativa y el paquete de generación audiovisual.', confirm: 'Confirmar ruta', change: 'Cambiar idioma', back: '← Volver al mapa', decision: 'Elige cómo responder', open: 'DECISIÓN ABIERTA', continue: 'Continuar', restart: 'Reiniciar misión', pending: 'ESCENA VISUAL PENDIENTE DE GENERACIÓN', pendingCopy: 'La ruta ya está fijada. Aquí se conectará el MP4 maestro y después su variante HLS.', audioPending: 'Audio y subtítulos v2 pendientes de conectar', science: 'NASA · CONTEXTO', routeRequired: 'Selecciona una de las tres rutas para continuar.', selected: 'Ruta seleccionada', end: 'REGISTRO COMPLETADO' },
-  en: { mission: 'MISSION READY', openMap: 'Open mission map', mapTitle: 'Choose where your training begins', mapLead: 'Each starting point connects a story setting with an Earth analogue. Your selection fixes the narrative route and audiovisual generation package.', confirm: 'Confirm route', change: 'Change language', back: '← Back to map', decision: 'Choose your response', open: 'DECISION OPEN', continue: 'Continue', restart: 'Restart mission', pending: 'VISUAL SCENE PENDING GENERATION', pendingCopy: 'The route is fixed. The master MP4 and its HLS variant will be connected here.', audioPending: 'V2 audio and captions pending connection', science: 'NASA · CONTEXT', routeRequired: 'Select one of the three routes to continue.', selected: 'Route selected', end: 'MISSION RECORD COMPLETE' }
+  es: { mission: 'PREPARANDO MISIÓN', openMap: 'Abrir mapa de misión', mapTitle: 'Elige dónde comienza tu entrenamiento', mapLead: 'Los puntos de partida conectan un escenario de la historia con un análogo terrestre. La selección fija la ruta narrativa y el paquete de generación audiovisual.', confirm: 'Confirmar ruta', change: 'Cambiar idioma', back: '← Volver al mapa', decision: 'Elige cómo responder', open: 'DECISIÓN ABIERTA', continue: 'Continuar', restart: 'Reiniciar misión', pending: 'ESCENA VISUAL PENDIENTE DE GENERACIÓN', pendingCopy: 'La viñeta se presenta como panel de novela gráfica mientras la ruta conserva sus decisiones y datos.', audioPending: 'Audio y subtítulos v2 pendientes de conectar', science: 'NASA · CONTEXTO', routeRequired: 'Selecciona una de las tres rutas para continuar.', selected: 'Ruta seleccionada', end: 'REGISTRO COMPLETADO' },
+  en: { mission: 'MISSION READY', openMap: 'Open mission map', mapTitle: 'Choose where your training begins', mapLead: 'Each starting point connects a story setting with an Earth analogue. Your selection fixes the narrative route and audiovisual generation package.', confirm: 'Confirm route', change: 'Change language', back: '← Back to map', decision: 'Choose your response', open: 'DECISION OPEN', continue: 'Continue', restart: 'Restart mission', pending: 'VISUAL SCENE PENDING GENERATION', pendingCopy: 'The vignette is presented as a graphic-novel panel while your choices and science data remain active.', audioPending: 'V2 audio and captions pending connection', science: 'NASA · CONTEXT', routeRequired: 'Select one of the three routes to continue.', selected: 'Route selected', end: 'MISSION RECORD COMPLETE' }
 };
 
 const state = { language: localStorage.getItem('redHope.audioLanguage') || 'es', route: localStorage.getItem('redHope.route') || null, nodeId: null, marks: [], choiceHistory: [], visited: [], ending: null, story: null, routes: null, mapResources: null, audioManifest: null };
@@ -133,6 +133,14 @@ function renderStoryHeader(route) {
 
 function videoElement(key) { return $(videoPlayers[key]); }
 function clearVideoSource(key) { const video = videoElement(key); if (hlsInstances[key]) { hlsInstances[key].destroy(); hlsInstances[key] = null; } video.pause(); video.removeAttribute('src'); video.load(); }
+function imageRouteForNode(node, route) {
+  const id = String(node.id || '').toLowerCase();
+  if (id.startsWith('i')) return 'shared';
+  if (id.startsWith('j')) return 'jezero';
+  if (id.startsWith('a')) return 'arcadia';
+  if (id.startsWith('p')) return 'arsia';
+  return route.id;
+}
 function prepareVideoSource(key, source) {
   const video = videoElement(key);
   clearVideoSource(key);
@@ -162,13 +170,15 @@ function prepareAndSwapVideo(source) {
   else standby.addEventListener('canplay', swap, { once: true });
 }
 function renderMedia(node, route) {
-  const placeholder = $('#video-placeholder'); const audio = $('#scene-audio');
+  const placeholder = $('#video-placeholder'); const sceneImage = $('#scene-image'); const audio = $('#scene-audio');
   const visual = node.media?.visual;
+  const imageSource = node.media?.image || `./media/images/v2/${imageRouteForNode(node, route)}/${node.id}.svg`;
   const audioSource = node.media?.audio?.[state.language];
   const captionsSource = node.media?.captions?.[state.language];
   setText('#scene-code', node.code);
+  sceneImage.classList.add('is-hidden'); sceneImage.removeAttribute('src'); sceneImage.onerror = () => { sceneImage.classList.add('is-hidden'); placeholder.classList.remove('is-hidden'); setText('#media-status', 'IMAGEN NO DISPONIBLE'); };
   if (visual) { prepareAndSwapVideo(visual); placeholder.classList.add('is-hidden'); setText('#media-status', visual.endsWith('.m3u8') ? 'HLS V2 · BUFFER SWAP' : 'MP4 V2 · BUFFER SWAP'); }
-  else { ['a', 'b'].forEach((key) => { clearVideoSource(key); videoElement(key).classList.add('is-hidden'); videoElement(key).classList.toggle('is-active', key === activeVideoKey); }); placeholder.classList.remove('is-hidden'); setText('#media-status', 'VIDEO V2 PENDIENTE'); setText('#placeholder-title', routeTitle(route)); setText('#placeholder-copy', t('pendingCopy')); setText('#placeholder-asset', `assetPrefix: ${route.assetPrefix}`); }
+  else { ['a', 'b'].forEach((key) => { clearVideoSource(key); videoElement(key).classList.add('is-hidden'); videoElement(key).classList.toggle('is-active', key === activeVideoKey); }); sceneImage.src = imageSource; sceneImage.alt = node.media?.imageAlt || `${node.title} · ${routeEarth(route)}`; sceneImage.classList.remove('is-hidden'); placeholder.classList.add('is-hidden'); setText('#media-status', 'IMAGEN · NOVELA GRÁFICA'); setText('#placeholder-title', node.title); setText('#placeholder-copy', t('pendingCopy')); setText('#placeholder-asset', `image: ${imageSource}`); }
   if (audioSource) { audio.src = audioSource; audio.classList.remove('is-hidden'); } else { audio.pause(); audio.removeAttribute('src'); audio.classList.add('is-hidden'); }
   ['a', 'b'].forEach((key) => { const track = $(`#scene-track-${key}`); if (captionsSource) { track.src = captionsSource; track.srclang = state.language; track.label = state.language === 'es' ? 'Español' : 'English'; } else track.removeAttribute('src'); });
   setText('#video-caption', audioSource ? `${state.language.toUpperCase()} · audio conectado` : t('audioPending'));
