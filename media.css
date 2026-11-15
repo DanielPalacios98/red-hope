@@ -103,3 +103,134 @@ body.story-mode .ending-panel{position:absolute;top:calc(100svh + 360px);left:cl
   body.story-mode .choice-button .choice-effect{display:none}
   body.story-mode .science-panel{left:12px;right:12px}.story-mode .ending-panel{left:12px;right:12px}
 }
+
+/* Mission-centered UX: keep the cinematic frame clear and decisions readable. */
+body.story-mode .story-heading{
+  top:clamp(82px,11svh,112px);
+  left:50%;
+  right:auto;
+  width:min(1000px,calc(100% - 48px));
+  transform:translateX(-50%);
+  display:block;
+  text-align:center;
+}
+body.story-mode .story-heading > div{width:100%}
+body.story-mode .story-heading h2{
+  max-width:760px;
+  margin:6px auto 0;
+  font-size:clamp(28px,3.6vw,52px);
+  line-height:1.04;
+  letter-spacing:-.035em;
+}
+body.story-mode .story-heading .text-button{
+  position:absolute;
+  top:0;
+  right:0;
+  font-size:12px;
+}
+body.story-mode .scene-copy{
+  left:50%;
+  right:auto;
+  width:min(1040px,calc(100% - 48px));
+  transform:translateX(-50%);
+  bottom:clamp(190px,24vh,240px);
+  padding:38px 24px 12px;
+  background:linear-gradient(180deg,transparent 0%,#070a12b8 34%,#070a12e8 78%,#070a12f5 100%);
+}
+body.story-mode .scene-copy-head{
+  max-width:920px;
+  margin:0 auto;
+  font-size:11px;
+}
+body.story-mode .scene-script{
+  max-width:920px;
+  max-height:17vh;
+  overflow-y:auto;
+  margin:10px auto 0;
+  padding-right:8px;
+  font-size:clamp(15px,1.35vw,20px);
+  line-height:1.42;
+  text-shadow:0 2px 16px #000;
+  scrollbar-color:#5fd5d4 #101724;
+}
+body.story-mode .decision-panel{
+  left:50%;
+  right:auto;
+  width:min(1040px,calc(100% - 48px));
+  transform:translateX(-50%);
+  bottom:18px;
+  padding:0 18px 4px;
+  text-align:center;
+  background:linear-gradient(180deg,transparent,#070a12e8 52%);
+}
+body.story-mode .decision-head{
+  justify-content:center;
+  gap:12px;
+  margin-bottom:5px;
+}
+body.story-mode .decision-head .eyebrow,
+body.story-mode .decision-head .decision-state{font-size:10px}
+body.story-mode .decision-panel h3{
+  margin:0;
+  font-size:clamp(19px,2vw,26px);
+}
+body.story-mode .choices{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  margin-top:6px;
+}
+body.story-mode .choice-button{
+  min-height:60px;
+  padding:10px 12px;
+  text-align:left;
+}
+body.story-mode .choice-button .choice-number{margin-bottom:4px;font-size:10px}
+body.story-mode .choice-button .choice-label{font-size:12px;line-height:1.25}
+body.story-mode .choice-button .choice-effect{margin-top:5px;font-size:10px}
+body.story-mode .continue-wrap{display:flex;justify-content:center;margin-top:6px}
+body.story-mode .primary-button{min-height:42px;padding:10px 18px;font-size:13px}
+
+@media (max-width:900px){
+  body.story-mode .story-heading{top:82px;width:calc(100% - 32px)}
+  body.story-mode .story-heading h2{max-width:650px;font-size:clamp(27px,5.5vw,43px)}
+  body.story-mode .story-heading .text-button{font-size:11px}
+  body.story-mode .scene-copy{
+    left:16px;
+    right:16px;
+    width:auto;
+    bottom:clamp(220px,30vh,300px);
+    transform:none;
+    padding:30px 16px 10px;
+  }
+  body.story-mode .scene-script{max-height:18vh;font-size:15px;line-height:1.38}
+  body.story-mode .decision-panel{
+    left:16px;
+    right:16px;
+    width:auto;
+    transform:none;
+    bottom:12px;
+    padding:0 4px 2px;
+  }
+  body.story-mode .choices{grid-template-columns:1fr;gap:6px}
+  body.story-mode .choice-button{min-height:54px}
+}
+
+@media (max-width:620px){
+  body.story-mode .story-heading{top:74px;width:calc(100% - 24px)}
+  body.story-mode .story-heading h2{max-width:100%;font-size:27px}
+  body.story-mode .story-heading .text-button{top:-2px;right:0;font-size:10px}
+  body.story-mode .scene-copy{
+    left:12px;
+    right:12px;
+    bottom:clamp(230px,32vh,310px);
+    padding:24px 12px 8px;
+  }
+  body.story-mode .scene-copy-head{font-size:9px}
+  body.story-mode .scene-script{max-height:17vh;font-size:14px;line-height:1.34}
+  body.story-mode .decision-panel{left:12px;right:12px;bottom:8px}
+  body.story-mode .decision-head{gap:6px;margin-bottom:3px}
+  body.story-mode .decision-panel h3{font-size:19px}
+  body.story-mode .choice-button{min-height:48px;padding:8px 10px}
+  body.story-mode .choice-button .choice-label{font-size:11px}
+  body.story-mode .choice-button .choice-effect{display:none}
+}
