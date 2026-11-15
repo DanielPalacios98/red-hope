@@ -172,12 +172,13 @@ function prepareAndSwapVideo(source) {
 }
 function renderMedia(node, route) {
   const placeholder = $('#video-placeholder'); const sceneImage = $('#scene-image'); const audio = $('#scene-audio');
-  const visual = node.media?.visual;
-  const imageSource = node.media?.image || `./media/images/v2/${imageRouteForNode(node, route)}/${node.id}.svg`;
+  const visual = window.RH?.noVideo?.has(node.id) ? null : node.media?.visual;
+  const imageFallback = node.media?.image || `./media/images/v2/${imageRouteForNode(node, route)}/${node.id}.svg`;
+  const imageSource = imageFallback.replace(/\.svg$/, '.webp');
   const audioSource = node.media?.audio?.[state.language];
   const captionsSource = node.media?.captions?.[state.language];
   setText('#scene-code', node.code);
-  sceneImage.classList.add('is-hidden'); sceneImage.removeAttribute('src'); sceneImage.onerror = () => { sceneImage.classList.add('is-hidden'); placeholder.classList.remove('is-hidden'); setText('#media-status', 'IMAGEN NO DISPONIBLE'); };
+  sceneImage.classList.add('is-hidden'); sceneImage.removeAttribute('src'); sceneImage.onerror = () => { if (sceneImage.src.endsWith('.webp') && imageFallback !== imageSource) { sceneImage.src = imageFallback; return; } sceneImage.classList.add('is-hidden'); placeholder.classList.remove('is-hidden'); setText('#media-status', 'IMAGEN NO DISPONIBLE'); };
   if (visual) { prepareAndSwapVideo(visual); placeholder.classList.add('is-hidden'); setText('#media-status', visual.endsWith('.m3u8') ? 'HLS V2 · BUFFER SWAP' : 'MP4 V2 · BUFFER SWAP'); }
   else { ['a', 'b'].forEach((key) => { clearVideoSource(key); videoElement(key).classList.add('is-hidden'); videoElement(key).classList.toggle('is-active', key === activeVideoKey); }); sceneImage.src = imageSource; sceneImage.alt = node.media?.imageAlt || `${node.title} · ${routeEarth(route)}`; sceneImage.classList.remove('is-hidden'); placeholder.classList.add('is-hidden'); setText('#media-status', 'IMAGEN · NOVELA GRÁFICA'); setText('#placeholder-title', node.title); setText('#placeholder-copy', t('pendingCopy')); setText('#placeholder-asset', `image: ${imageSource}`); }
   if (audioSource) { audio.src = audioSource; audio.classList.remove('is-hidden'); } else { audio.pause(); audio.removeAttribute('src'); audio.classList.add('is-hidden'); }
@@ -221,15 +222,15 @@ function renderNode(nodeId) {
     actions.appendChild(continueButton); $('#continue-wrap').appendChild(actions);
   }
   $('#decision-state').textContent = state.ending ? t('end') : node.choices.length ? t('open') : 'ESCENA';
-  $('#ending-panel').classList.toggle('is-hidden', !state.ending); if (state.ending) { setText('#ending-title', node.title); setText('#ending-copy', script); }
+  $('#ending-panel').classList.toggle('is-hidden', !state.ending); if (state.ending) { setText('#ending-title', node.title); setText('#ending-copy', [script, window.RH?.epilogue?.(state.language)].filter(Boolean).join(' ')); }
   updateProgress();
 }
 
-function inferNext(node) { const text = asText(node.script); const targetCode = text.match(/(?:Continúa en|Ve a)\s+([A-Z0-9-]+)/i)?.[1]; if (!targetCode) return null; return state.story.nodes.find((candidate) => candidate.code.toUpperCase() === targetCode.toUpperCase()) || null; }
-function choose(node, choice) { state.choiceHistory.push({ from: node.id, choice: choice.id, target: choice.target, conditions: choice.conditions || [] }); applyChoiceEffects(choice); renderNode(choice.target); }
+function inferNext(node) { const ruled = window.RH?.next?.(node.id, state.marks); if (ruled) return nodeById(ruled); const text = asText(node.script); const targetCode = text.match(/(?:Continúa en|Ve a)\s+(Final\s+[A-H]\b|[A-Z0-9-]+)/i)?.[1]; if (!targetCode) return null; return state.story.nodes.find((candidate) => candidate.code.toUpperCase() === targetCode.toUpperCase()) || null; }
+function choose(node, choice) { state.choiceHistory.push({ from: node.id, choice: choice.id, target: choice.target, conditions: choice.conditions || [] }); if (window.RH?.outcome) { const r = window.RH.outcome(choice.target, state.marks); state.marks = r.marks; if (r.added.length) showToast(`📓 + ${r.added.join(', ')}`); } else applyChoiceEffects(choice); renderNode(choice.target); }
 function updateProgress() { const total = state.story?.nodes?.length || 1; const visited = state.visited.length; $('#progress-fill').style.width = `${Math.max(18, Math.min(100, 18 + (visited / total) * 82))}%`; }
 
-function startRoute() { const route = activeRoute(); if (!route) { showToast(t('routeRequired')); return; } state.nodeId = route.startNode; state.visited = []; state.marks = []; state.choiceHistory = []; screen('story'); renderNode(route.startNode); }
+function startRoute() { const route = activeRoute(); if (!route) { showToast(t('routeRequired')); return; } state.nodeId = route.startNode; state.visited = []; state.marks = window.RH?.startMarks?.() || []; state.choiceHistory = []; screen('story'); renderNode(route.startNode); }
 function restart() { state.nodeId = null; state.marks = []; state.choiceHistory = []; state.visited = []; state.ending = null; screen('map'); renderRouteCards(); if (state.route) selectRoute(state.route); }
 
 async function boot() {
