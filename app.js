@@ -215,7 +215,12 @@ function renderNode(nodeId) {
   const choices = $('#choices'); choices.innerHTML = '';
   node.choices.forEach((choice, index) => { const button = document.createElement('button'); button.type = 'button'; button.className = 'choice-button'; button.innerHTML = `<span class="choice-number">OPCIÓN ${String(index + 1).padStart(2, '0')}</span><span class="choice-label">${choice.label}</span><span class="choice-effect">${conditionLabel(choice)}</span>`; button.addEventListener('click', () => choose(node, choice)); choices.appendChild(button); });
   $('#continue-wrap').innerHTML = '';
-  if (!node.choices.length && !state.ending) { const button = document.createElement('button'); button.type = 'button'; button.className = 'primary-button'; button.textContent = `${t('continue')} →`; const next = inferNext(node); if (next) button.addEventListener('click', () => renderNode(next.id)); else button.disabled = true; $('#continue-wrap').appendChild(button); }
+  if (!node.choices.length && !state.ending) {
+    const next = inferNext(node); const actions = document.createElement('div'); actions.className = 'transition-actions';
+    const continueButton = document.createElement('button'); continueButton.type = 'button'; continueButton.className = 'primary-button'; continueButton.textContent = `${state.language === 'en' ? 'Continue with' : 'Continuar en'} ${routeEarth(route)} →`; if (next) continueButton.addEventListener('click', () => renderNode(next.id)); else continueButton.disabled = true;
+    const changeButton = document.createElement('button'); changeButton.type = 'button'; changeButton.className = 'secondary-button'; changeButton.textContent = state.language === 'en' ? 'Choose another scenario' : 'Elegir otro escenario'; changeButton.addEventListener('click', () => screen('map'));
+    actions.append(continueButton, changeButton); $('#continue-wrap').appendChild(actions);
+  }
   $('#decision-state').textContent = state.ending ? t('end') : node.choices.length ? t('open') : 'ESCENA';
   $('#ending-panel').classList.toggle('is-hidden', !state.ending); if (state.ending) { setText('#ending-title', node.title); setText('#ending-copy', script); }
   updateProgress();
