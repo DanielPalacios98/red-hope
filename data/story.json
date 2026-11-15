@@ -112,16 +112,26 @@
         }
       ],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/i1/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/i1.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/i1.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/i1-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -133,16 +143,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/i1-a/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/i1-a.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/i1-a.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/i1-a-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -154,16 +174,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/i1-b/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/i1-b.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/i1-b.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/i1-b-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -175,16 +205,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/i1-c/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/i1-c.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/i1-c.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/i1-c-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -233,16 +273,26 @@
         }
       ],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/ib/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/ib.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/ib.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/ib-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -254,16 +304,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/ib-a/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/ib-a.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/ib-a.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/ib-a-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -275,16 +335,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/ib-b/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/ib-b.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/ib-b.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/ib-b-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -296,16 +366,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/ib-c/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/ib-c.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/ib-c.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/ib-c-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -354,16 +434,26 @@
         }
       ],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/im/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/im.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/im.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/im-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -375,16 +465,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/im-a/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/im-a.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/im-a.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/im-a-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -396,16 +496,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/im-b/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/im-b.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/im-b.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/im-b-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -417,16 +527,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/im-c/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/im-c.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/im-c.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/im-c-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -475,16 +595,26 @@
         }
       ],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/ie/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/ie.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/ie.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/ie-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -496,16 +626,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/ie-a/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/ie-a.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/ie-a.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/ie-a-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -517,16 +657,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/ie-b/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/ie-b.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/ie-b.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/ie-b-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -539,16 +689,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/shared/ie-c/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/ie-c.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/ie-c.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/shared/ie-c-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -562,7 +722,7 @@
       ],
       "choices": [],
       "media": {
-        "visual": "media/video/v2/jezero/master.m3u8",
+        "visual": "./media/video/v2/jezero/master.m3u8",
         "audio": {
           "es": "./media/audio/v2/es/j0.mp3",
           "en": "./media/audio/v2/en/j0.mp3"
@@ -572,7 +732,7 @@
           "en": "./media/audio/v2/en/j0.vtt"
         },
         "status": "earth-training-visual-and-bilingual-audio-ready",
-        "visualMp4": "media/video/v2/jezero/j0-training-earth.mp4",
+        "visualMp4": "./media/video/v2/jezero/j0-training-earth.mp4",
         "qa": {
           "provider": "Google Flow",
           "mp4": "passed",
@@ -651,11 +811,11 @@
       "media": {
         "visual": "./media/video/v2/jezero/j1/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j1.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j1.vtt",
           "en": null
         },
         "status": "earth-training-visual-ready-audio-pending",
@@ -666,8 +826,9 @@
           "hls": "passed",
           "resolution": "1280x720",
           "earthTrainingVerified": true,
-          "embeddedAudio": "none; ElevenLabs track remains separate"
-        }
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -679,16 +840,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/jezero/j1-a/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j1-a.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j1-a.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/jezero/j1-a-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -700,16 +871,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/jezero/j1-b/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j1-b.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j1-b.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/jezero/j1-b-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -721,16 +902,26 @@
       ],
       "choices": [],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/jezero/j1-c/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j1-c.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j1-c.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/jezero/j1-c-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -797,16 +988,26 @@
         }
       ],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/jezero/jr/master.m3u8",
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/jr.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/jr.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/jezero/jr-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached"
+        },
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -820,14 +1021,15 @@
       "media": {
         "visual": null,
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/jr-a.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/jr-a.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "audio-ready-visual-pending",
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -841,14 +1043,15 @@
       "media": {
         "visual": null,
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/jr-b.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/jr-b.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "audio-ready-visual-pending",
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -862,14 +1065,15 @@
       "media": {
         "visual": null,
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/jr-c.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/jr-c.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "audio-ready-visual-pending",
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -959,14 +1163,15 @@
       "media": {
         "visual": null,
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-j1a.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-j1a.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "audio-ready-visual-pending",
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -1056,14 +1261,15 @@
       "media": {
         "visual": null,
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-j1b.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-j1b.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "audio-ready-visual-pending",
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -1153,14 +1359,15 @@
       "media": {
         "visual": null,
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-jra.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-jra.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "audio-ready-visual-pending",
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -1250,14 +1457,15 @@
       "media": {
         "visual": null,
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-jrb.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-jrb.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "audio-ready-visual-pending",
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -1347,14 +1555,15 @@
       "media": {
         "visual": null,
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-jrc.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-jrc.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "audio-ready-visual-pending",
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -1369,14 +1578,15 @@
       "media": {
         "visual": null,
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-a.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-a.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "audio-ready-visual-pending",
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -1391,14 +1601,15 @@
       "media": {
         "visual": null,
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-b.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-b.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "audio-ready-visual-pending",
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -1413,14 +1624,15 @@
       "media": {
         "visual": null,
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-c.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j2-c.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "audio-ready-visual-pending",
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -1505,14 +1717,15 @@
       "media": {
         "visual": null,
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j3.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j3.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "audio-ready-visual-pending",
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -1527,14 +1740,15 @@
       "media": {
         "visual": null,
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j3-a.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j3-a.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "audio-ready-visual-pending",
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -1549,14 +1763,15 @@
       "media": {
         "visual": null,
         "audio": {
-          "es": null,
+          "es": "./media/audio/v2/es/j3-b.mp3",
           "en": null
         },
         "captions": {
-          "es": null,
+          "es": "./media/audio/v2/es/j3-b.vtt",
           "en": null
         },
-        "status": "not-generated"
+        "status": "audio-ready-visual-pending",
+        "audioProvider": "ElevenLabs"
       }
     },
     {
@@ -1776,7 +1991,7 @@
       ],
       "choices": [],
       "media": {
-        "visual": "media/video/v2/arcadia/master.m3u8",
+        "visual": "./media/video/v2/arcadia/master.m3u8",
         "audio": {
           "es": "./media/audio/v2/es/a0.mp3",
           "en": "./media/audio/v2/en/a0.mp3"
@@ -1786,7 +2001,7 @@
           "en": "./media/audio/v2/en/a0.vtt"
         },
         "status": "earth-training-visual-and-bilingual-audio-ready",
-        "visualMp4": "media/video/v2/arcadia/a0-training-earth.mp4",
+        "visualMp4": "./media/video/v2/arcadia/a0-training-earth.mp4",
         "qa": {
           "provider": "Google Flow",
           "mp4": "passed",
@@ -2901,7 +3116,7 @@
       ],
       "choices": [],
       "media": {
-        "visual": "media/video/v2/arsia/master.m3u8",
+        "visual": "./media/video/v2/arsia/master.m3u8",
         "audio": {
           "es": "./media/audio/v2/es/p0.mp3",
           "en": "./media/audio/v2/en/p0.mp3"
@@ -2911,7 +3126,7 @@
           "en": "./media/audio/v2/en/p0.vtt"
         },
         "status": "earth-training-visual-and-bilingual-audio-ready",
-        "visualMp4": "media/video/v2/arsia/p0-training-earth.mp4",
+        "visualMp4": "./media/video/v2/arsia/p0-training-earth.mp4",
         "qa": {
           "provider": "Google Flow",
           "mp4": "passed",

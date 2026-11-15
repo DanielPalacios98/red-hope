@@ -1,19 +1,28 @@
 {
   "schemaVersion": "2.0.0",
   "provider": "ElevenLabs",
-  "status": "partial-bilingual-openings",
+  "status": "partial-bilingual-audio",
   "sourceStory": "data/story.json",
-  "languages": ["es", "en"],
+  "languages": [
+    "es",
+    "en"
+  ],
   "nodeCount": 103,
   "choiceCount": 96,
   "requiredTracks": 206,
-  "readyTracks": 6,
+  "readyTracks": 41,
   "readyNodes": 3,
   "captionsRequired": 206,
-  "captionsReady": 6,
+  "captionsReady": 41,
   "voiceCasting": {
     "status": "partial-approved",
-    "roles": ["MIRA", "ELENA", "SAMIR", "NIA", "MATEO"],
+    "roles": [
+      "MIRA",
+      "ELENA",
+      "SAMIR",
+      "NIA",
+      "MATEO"
+    ],
     "voiceIds": {
       "MIRA": null,
       "ELENA": null,

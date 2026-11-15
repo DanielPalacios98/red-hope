@@ -1,9 +1,9 @@
 {
   "schemaVersion": "2.0.0",
   "provider": "ElevenLabs",
-  "status": "partial-bilingual-openings",
+  "status": "partial-bilingual-audio",
   "sourceStory": "data/story.json",
-  "generatedAt": "2026-11-15T14:19:46.902Z",
+  "generatedAt": "2026-11-15T15:26:41.628Z",
   "summary": {
     "nodes": 103,
     "languages": [
@@ -11,7 +11,7 @@
       "en"
     ],
     "tracks": 206,
-    "ready": 6
+    "ready": 41
   },
   "items": [
     {
@@ -25,7 +25,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/i1.mp3",
       "captions": "media/audio/v2/es/i1.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "i1-en",
@@ -51,7 +51,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/i1-a.mp3",
       "captions": "media/audio/v2/es/i1-a.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "i1-a-en",
@@ -77,7 +77,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/i1-b.mp3",
       "captions": "media/audio/v2/es/i1-b.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "i1-b-en",
@@ -103,7 +103,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/i1-c.mp3",
       "captions": "media/audio/v2/es/i1-c.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "i1-c-en",
@@ -129,7 +129,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/ib.mp3",
       "captions": "media/audio/v2/es/ib.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "ib-en",
@@ -155,7 +155,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/ib-a.mp3",
       "captions": "media/audio/v2/es/ib-a.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "ib-a-en",
@@ -181,7 +181,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/ib-b.mp3",
       "captions": "media/audio/v2/es/ib-b.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "ib-b-en",
@@ -207,7 +207,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/ib-c.mp3",
       "captions": "media/audio/v2/es/ib-c.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "ib-c-en",
@@ -233,7 +233,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/im.mp3",
       "captions": "media/audio/v2/es/im.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "im-en",
@@ -259,7 +259,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/im-a.mp3",
       "captions": "media/audio/v2/es/im-a.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "im-a-en",
@@ -285,7 +285,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/im-b.mp3",
       "captions": "media/audio/v2/es/im-b.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "im-b-en",
@@ -311,7 +311,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/im-c.mp3",
       "captions": "media/audio/v2/es/im-c.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "im-c-en",
@@ -337,7 +337,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/ie.mp3",
       "captions": "media/audio/v2/es/ie.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "ie-en",
@@ -363,7 +363,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/ie-a.mp3",
       "captions": "media/audio/v2/es/ie-a.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "ie-a-en",
@@ -389,7 +389,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/ie-b.mp3",
       "captions": "media/audio/v2/es/ie-b.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "ie-b-en",
@@ -415,7 +415,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/ie-c.mp3",
       "captions": "media/audio/v2/es/ie-c.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "ie-c-en",
@@ -467,7 +467,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j1.mp3",
       "captions": "media/audio/v2/es/j1.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j1-en",
@@ -493,7 +493,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j1-a.mp3",
       "captions": "media/audio/v2/es/j1-a.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j1-a-en",
@@ -519,7 +519,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j1-b.mp3",
       "captions": "media/audio/v2/es/j1-b.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j1-b-en",
@@ -545,7 +545,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j1-c.mp3",
       "captions": "media/audio/v2/es/j1-c.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j1-c-en",
@@ -571,7 +571,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/jr.mp3",
       "captions": "media/audio/v2/es/jr.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "jr-en",
@@ -597,7 +597,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/jr-a.mp3",
       "captions": "media/audio/v2/es/jr-a.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "jr-a-en",
@@ -623,7 +623,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/jr-b.mp3",
       "captions": "media/audio/v2/es/jr-b.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "jr-b-en",
@@ -649,7 +649,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/jr-c.mp3",
       "captions": "media/audio/v2/es/jr-c.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "jr-c-en",
@@ -675,7 +675,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j2-j1a.mp3",
       "captions": "media/audio/v2/es/j2-j1a.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j2-j1a-en",
@@ -701,7 +701,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j2-j1b.mp3",
       "captions": "media/audio/v2/es/j2-j1b.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j2-j1b-en",
@@ -727,7 +727,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j2-jra.mp3",
       "captions": "media/audio/v2/es/j2-jra.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j2-jra-en",
@@ -753,7 +753,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j2-jrb.mp3",
       "captions": "media/audio/v2/es/j2-jrb.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j2-jrb-en",
@@ -779,7 +779,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j2-jrc.mp3",
       "captions": "media/audio/v2/es/j2-jrc.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j2-jrc-en",
@@ -805,7 +805,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j2-a.mp3",
       "captions": "media/audio/v2/es/j2-a.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j2-a-en",
@@ -831,7 +831,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j2-b.mp3",
       "captions": "media/audio/v2/es/j2-b.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j2-b-en",
@@ -857,7 +857,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j2-c.mp3",
       "captions": "media/audio/v2/es/j2-c.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j2-c-en",
@@ -883,7 +883,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j3.mp3",
       "captions": "media/audio/v2/es/j3.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j3-en",
@@ -909,7 +909,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j3-a.mp3",
       "captions": "media/audio/v2/es/j3-a.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j3-a-en",
@@ -935,7 +935,7 @@
       "translationStatus": "not-required",
       "output": "media/audio/v2/es/j3-b.mp3",
       "captions": "media/audio/v2/es/j3-b.vtt",
-      "status": "pending-voice-id"
+      "status": "ready"
     },
     {
       "id": "j3-b-en",
