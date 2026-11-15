@@ -57,9 +57,9 @@
       return { marks: next, added, removed };
     },
     next(nodeId, marks) { return NEXT[nodeId] ? NEXT[nodeId](marks) : null; },
-    // Conserva la marca narrativa para las reglas de finales y su clave de
-    // epílogo para que la elección de Brad no se pierda al iniciar una ruta.
-    startMarks() { const c = firstClue(); return c && CLUE[c] ? [c, CLUE[c]] : []; },
+    // La bitácora muestra solo la marca del libreto. CLUE se reserva para el
+    // epílogo y no se mezcla con las marcas jugables de la ruta.
+    startMarks() { const c = firstClue(); return c && CLUE[c] ? [c] : []; },
     epilogue(lang) { const c = firstClue(); const k = c && CLUE[c]; return k ? (EPI[lang] || EPI.es)[k] : ''; },
     rules: { OUT, NEXT }
   };
