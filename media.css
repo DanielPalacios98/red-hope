@@ -18,3 +18,30 @@
 @media (max-width:900px){.video-frame .video-layer{min-height:360px}}
 @media (max-width:620px){.video-frame .video-layer{min-height:315px}}
 @media (max-width:900px){.intro-grid{grid-template-columns:1fr}.intro-art,.intro-art img{min-height:300px}.intro-copy{padding:22px}}
+
+/* Netflix-like narrative overlay: the story breathes over the image/video. */
+.story-main{position:relative}
+.video-frame{border:0;border-radius:14px;box-shadow:0 28px 80px #0009}
+.scene-copy,.decision-panel,.science-panel,.ending-panel{border:0;box-shadow:none}
+.scene-copy{position:relative;z-index:4;margin:clamp(-190px,-14vw,-125px) 28px 0;padding:86px 28px 20px;border-radius:0;background:linear-gradient(180deg,transparent 0%,#080b13b8 30%,#080b13f2 74%,#080b13 100%)}
+.scene-copy-head{align-items:center}
+.scene-script{color:#fff;text-shadow:0 2px 18px #000;max-width:960px}
+.decision-panel{position:relative;z-index:5;margin:0 28px;padding:16px 28px 24px;border-radius:0 0 14px 14px;background:#080b13}
+.decision-panel h3{font-size:clamp(24px,3vw,34px)}
+.choice-button{border:1px solid #ffffff24;background:#111827d9;backdrop-filter:blur(8px);transition:background .2s,border-color .2s,transform .2s}
+.choice-button:hover{border-color:var(--cyan);background:#1a2b3ae8;transform:translateY(-2px)}
+.science-panel{padding:24px 0 4px;background:transparent}
+.ending-panel{margin-left:28px;margin-right:28px;background:linear-gradient(120deg,#241823cc,#121822cc);border-radius:12px}
+
+@media (max-width:900px){
+  .scene-copy{margin:-130px 18px 0;padding:66px 20px 16px}
+  .decision-panel{margin:0 18px;padding:15px 20px 20px}
+  .ending-panel{margin-left:18px;margin-right:18px}
+}
+
+@media (max-width:620px){
+  .scene-copy{margin:-105px 10px 0;padding:54px 14px 12px}
+  .decision-panel{margin:0 10px;padding:13px 14px 18px}
+  .choice-button{min-height:92px;padding:14px}
+  .ending-panel{margin-left:10px;margin-right:10px}
+}
