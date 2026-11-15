@@ -27,7 +27,7 @@ for (const node of story.nodes) {
       translationStatus: language === 'es' ? 'not-required' : 'pending',
       output: manifest.outputPattern.replace('{language}', language).replace('{nodeCode}', node.code.toLowerCase()),
       captions: manifest.captionPattern.replace('{language}', language).replace('{nodeCode}', node.code.toLowerCase()),
-      status: language === 'es' ? 'pending-voice-id' : 'pending-translation'
+      status: fs.existsSync(path.join(root, manifest.outputPattern.replace('{language}', language).replace('{nodeCode}', node.code.toLowerCase()))) ? 'ready' : (language === 'es' ? 'pending-voice-id' : 'pending-translation')
     });
   }
 }
@@ -38,7 +38,7 @@ const queue = {
   status: manifest.status,
   sourceStory: manifest.sourceStory,
   generatedAt: new Date().toISOString(),
-  summary: { nodes: story.nodes.length, languages: manifest.languages, tracks: items.length, ready: 0 },
+  summary: { nodes: story.nodes.length, languages: manifest.languages, tracks: items.length, ready: items.filter((item) => item.status === 'ready').length },
   items
 };
 const output = path.join(root, 'data', 'audio-generation-queue.json');

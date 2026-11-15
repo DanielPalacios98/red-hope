@@ -1,16 +1,18 @@
 {
   "schemaVersion": "2.0.0",
   "provider": "ElevenLabs",
-  "status": "queue-ready-voice-ids-pending",
+  "status": "partial-bilingual-openings",
   "sourceStory": "data/story.json",
   "languages": ["es", "en"],
   "nodeCount": 103,
   "choiceCount": 96,
   "requiredTracks": 206,
-  "readyTracks": 0,
+  "readyTracks": 6,
+  "readyNodes": 3,
   "captionsRequired": 206,
+  "captionsReady": 6,
   "voiceCasting": {
-    "status": "pending",
+    "status": "partial-approved",
     "roles": ["MIRA", "ELENA", "SAMIR", "NIA", "MATEO"],
     "voiceIds": {
       "MIRA": null,
@@ -18,9 +20,13 @@
       "SAMIR": null,
       "NIA": null,
       "MATEO": null
+    },
+    "voiceNames": {
+      "es": "HR Elena",
+      "en": "David Boles - Well-spoken and Calm"
     }
   },
-  "outputPattern": "production/audio/red-hope-v2.0/{language}/{nodeCode}.mp3",
-  "captionPattern": "production/audio/red-hope-v2.0/{language}/{nodeCode}.vtt",
+  "outputPattern": "media/audio/v2/{language}/{nodeCode}.mp3",
+  "captionPattern": "media/audio/v2/{language}/{nodeCode}.vtt",
   "policy": "No v1 audio is mapped into the v2 story. A track becomes playable only after an approved ElevenLabs export is placed at the output path."
 }

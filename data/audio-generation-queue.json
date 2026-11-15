@@ -1,9 +1,9 @@
 {
   "schemaVersion": "2.0.0",
   "provider": "ElevenLabs",
-  "status": "queue-ready-voice-ids-pending",
+  "status": "partial-bilingual-openings",
   "sourceStory": "data/story.json",
-  "generatedAt": "2026-11-15T14:04:05.121Z",
+  "generatedAt": "2026-11-15T14:19:46.902Z",
   "summary": {
     "nodes": 103,
     "languages": [
@@ -11,7 +11,7 @@
       "en"
     ],
     "tracks": 206,
-    "ready": 0
+    "ready": 6
   },
   "items": [
     {
@@ -23,8 +23,8 @@
       "text": "El semáforo. Opción 1: Pedir a Brad el código que usaban cuando trabajaban juntos. Opción 2: Llamar a tu madre y enviarle una copia de la tarjeta. Opción 3: Acompañar a Brad hasta la caseta de seguridad del colegio.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/i1.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/i1.vtt",
+      "output": "media/audio/v2/es/i1.mp3",
+      "captions": "media/audio/v2/es/i1.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -36,8 +36,8 @@
       "text": "El semáforo. Opción 1: Pedir a Brad el código que usaban cuando trabajaban juntos. Opción 2: Llamar a tu madre y enviarle una copia de la tarjeta. Opción 3: Acompañar a Brad hasta la caseta de seguridad del colegio.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/i1.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/i1.vtt",
+      "output": "media/audio/v2/en/i1.mp3",
+      "captions": "media/audio/v2/en/i1.vtt",
       "status": "pending-translation"
     },
     {
@@ -49,8 +49,8 @@
       "text": "Viñeta. Te dice «marea baja». James reconocerá la frase incluso si la radio falla y solo puedes enviar texto. Anota CÓDIGO. Ve a IB.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/i1-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/i1-a.vtt",
+      "output": "media/audio/v2/es/i1-a.mp3",
+      "captions": "media/audio/v2/es/i1-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -62,8 +62,8 @@
       "text": "Viñeta. Te dice «marea baja». James reconocerá la frase incluso si la radio falla y solo puedes enviar texto. Anota CÓDIGO. Ve a IB.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/i1-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/i1-a.vtt",
+      "output": "media/audio/v2/en/i1-a.mp3",
+      "captions": "media/audio/v2/en/i1-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -75,8 +75,8 @@
       "text": "Viñeta. Ella consigue que una periodista verifique los archivos y se compromete a publicar las pruebas desde la Tierra si tú se las envías. Anota PRENSA. Ve a IM.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/i1-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/i1-b.vtt",
+      "output": "media/audio/v2/es/i1-b.mp3",
+      "captions": "media/audio/v2/es/i1-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -88,8 +88,8 @@
       "text": "Viñeta. Ella consigue que una periodista verifique los archivos y se compromete a publicar las pruebas desde la Tierra si tú se las envías. Anota PRENSA. Ve a IM.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/i1-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/i1-b.vtt",
+      "output": "media/audio/v2/en/i1-b.mp3",
+      "captions": "media/audio/v2/en/i1-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -101,8 +101,8 @@
       "text": "Viñeta. Allí puede informar del secuestro sin exponerse en la calle. Antes de irse, te dibuja el símbolo de mantenimiento que usaba la tripulación del carguero. Anota SÍMBOLO. Ve a IE.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/i1-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/i1-c.vtt",
+      "output": "media/audio/v2/es/i1-c.mp3",
+      "captions": "media/audio/v2/es/i1-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -114,8 +114,8 @@
       "text": "Viñeta. Allí puede informar del secuestro sin exponerse en la calle. Antes de irse, te dibuja el símbolo de mantenimiento que usaba la tripulación del carguero. Anota SÍMBOLO. Ve a IE.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/i1-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/i1-c.vtt",
+      "output": "media/audio/v2/en/i1-c.mp3",
+      "captions": "media/audio/v2/en/i1-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -127,8 +127,8 @@
       "text": "Viñeta. En el auditorio anuncian el inicio de la carrera por establecer una colonia marciana. Te inscribes sin avisar a tus padres. Al salir, tu teléfono recibe tres grabaciones que Brad dejó programadas. Solo una puede reproducirse antes de que el servidor borre los archivos. Para volar debes terminar el colegio, cumplir dieciocho años y superar las tres pruebas del campo elegido.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/ib.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/ib.vtt",
+      "output": "media/audio/v2/es/ib.mp3",
+      "captions": "media/audio/v2/es/ib.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -140,8 +140,8 @@
       "text": "Viñeta. En el auditorio anuncian el inicio de la carrera por establecer una colonia marciana. Te inscribes sin avisar a tus padres. Al salir, tu teléfono recibe tres grabaciones que Brad dejó programadas. Solo una puede reproducirse antes de que el servidor borre los archivos. Para volar debes terminar el colegio, cumplir dieciocho años y superar las tres pruebas del campo elegido.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/ib.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/ib.vtt",
+      "output": "media/audio/v2/en/ib.mp3",
+      "captions": "media/audio/v2/en/ib.vtt",
       "status": "pending-translation"
     },
     {
@@ -153,8 +153,8 @@
       "text": "Viñeta. La grabación recoge el número de serie del taladro de James y la orden de enviarlo a Jezero. Presentas el número a la reclutadora y solicitas el campo de Ecuador. Ve a J0.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/ib-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/ib-a.vtt",
+      "output": "media/audio/v2/es/ib-a.mp3",
+      "captions": "media/audio/v2/es/ib-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -166,8 +166,8 @@
       "text": "Viñeta. La grabación recoge el número de serie del taladro de James y la orden de enviarlo a Jezero. Presentas el número a la reclutadora y solicitas el campo de Ecuador. Ve a J0.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/ib-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/ib-a.vtt",
+      "output": "media/audio/v2/en/ib-a.mp3",
+      "captions": "media/audio/v2/en/ib-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -179,8 +179,8 @@
       "text": "Viñeta. Oyes a James corregir una lectura de radar. La persona al otro lado responde que necesita esos datos en Arcadia. Enseñas el fragmento a la agencia y solicitas el campo de Bolivia. Ve a A0.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/ib-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/ib-b.vtt",
+      "output": "media/audio/v2/es/ib-b.mp3",
+      "captions": "media/audio/v2/es/ib-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -192,8 +192,8 @@
       "text": "Viñeta. Oyes a James corregir una lectura de radar. La persona al otro lado responde que necesita esos datos en Arcadia. Enseñas el fragmento a la agencia y solicitas el campo de Bolivia. Ve a A0.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/ib-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/ib-b.vtt",
+      "output": "media/audio/v2/en/ib-b.mp3",
+      "captions": "media/audio/v2/en/ib-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -205,8 +205,8 @@
       "text": "Viñeta. Se oye a James dictar la profundidad de un pozo. La etiqueta del archivo dice Arsia Mons. Entregas esa pista y solicitas el campo de Argentina. Ve a P0.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/ib-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/ib-c.vtt",
+      "output": "media/audio/v2/es/ib-c.mp3",
+      "captions": "media/audio/v2/es/ib-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -218,8 +218,8 @@
       "text": "Viñeta. Se oye a James dictar la profundidad de un pozo. La etiqueta del archivo dice Arsia Mons. Entregas esa pista y solicitas el campo de Argentina. Ve a P0.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/ib-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/ib-c.vtt",
+      "output": "media/audio/v2/en/ib-c.mp3",
+      "captions": "media/audio/v2/en/ib-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -231,8 +231,8 @@
       "text": "Viñeta. En el colegio te inscribes a escondidas en el programa. Por la tarde, tu madre te presenta a la periodista. Ha reconocido tres facturas en la tarjeta de Brad. Una puede cotejarse hoy con los registros que conserva la agencia. Para volar debes terminar el colegio, cumplir dieciocho años y superar las tres pruebas del campo elegido.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/im.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/im.vtt",
+      "output": "media/audio/v2/es/im.mp3",
+      "captions": "media/audio/v2/es/im.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -244,8 +244,8 @@
       "text": "Viñeta. En el colegio te inscribes a escondidas en el programa. Por la tarde, tu madre te presenta a la periodista. Ha reconocido tres facturas en la tarjeta de Brad. Una puede cotejarse hoy con los registros que conserva la agencia. Para volar debes terminar el colegio, cumplir dieciocho años y superar las tres pruebas del campo elegido.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/im.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/im.vtt",
+      "output": "media/audio/v2/en/im.mp3",
+      "captions": "media/audio/v2/en/im.vtt",
       "status": "pending-translation"
     },
     {
@@ -257,8 +257,8 @@
       "text": "Viñeta. La factura vincula a un proveedor de Nueva Era con el manifiesto de Jezero. La periodista conserva el documento y tú te preparas en Ecuador. Ve a J0.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/im-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/im-a.vtt",
+      "output": "media/audio/v2/es/im-a.mp3",
+      "captions": "media/audio/v2/es/im-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -270,8 +270,8 @@
       "text": "Viñeta. La factura vincula a un proveedor de Nueva Era con el manifiesto de Jezero. La periodista conserva el documento y tú te preparas en Ecuador. Ve a J0.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/im-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/im-a.vtt",
+      "output": "media/audio/v2/en/im-a.mp3",
+      "captions": "media/audio/v2/en/im-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -283,8 +283,8 @@
       "text": "Viñeta. Un intermediario pagó los sensores destinados a Arcadia. La periodista empieza a investigar sus cuentas y tú pides entrenar en Bolivia. Ve a A0.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/im-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/im-b.vtt",
+      "output": "media/audio/v2/es/im-b.mp3",
+      "captions": "media/audio/v2/es/im-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -296,8 +296,8 @@
       "text": "Viñeta. Un intermediario pagó los sensores destinados a Arcadia. La periodista empieza a investigar sus cuentas y tú pides entrenar en Bolivia. Ve a A0.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/im-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/im-b.vtt",
+      "output": "media/audio/v2/en/im-b.mp3",
+      "captions": "media/audio/v2/en/im-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -309,8 +309,8 @@
       "text": "Viñeta. La factura identifica el vuelo que llevó las cuerdas a Arsia Mons. La periodista busca a quienes cargaron la nave y tú eliges el campo de Argentina. Ve a P0.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/im-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/im-c.vtt",
+      "output": "media/audio/v2/es/im-c.mp3",
+      "captions": "media/audio/v2/es/im-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -322,8 +322,8 @@
       "text": "Viñeta. La factura identifica el vuelo que llevó las cuerdas a Arsia Mons. La periodista busca a quienes cargaron la nave y tú eliges el campo de Argentina. Ve a P0.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/im-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/im-c.vtt",
+      "output": "media/audio/v2/en/im-c.mp3",
+      "captions": "media/audio/v2/en/im-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -335,8 +335,8 @@
       "text": "Viñeta. El personal de seguridad presenta a Brad ante un enlace de la agencia. Después de inscribirte en secreto en el auditorio, vuelves a la caseta. El enlace ha encontrado el símbolo que dibujó Brad en tres imágenes de cargamentos. Te deja examinar una antes de que cierren el archivo. Para volar debes terminar el colegio, cumplir dieciocho años y superar las tres pruebas del campo elegido.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/ie.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/ie.vtt",
+      "output": "media/audio/v2/es/ie.mp3",
+      "captions": "media/audio/v2/es/ie.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -348,8 +348,8 @@
       "text": "Viñeta. El personal de seguridad presenta a Brad ante un enlace de la agencia. Después de inscribirte en secreto en el auditorio, vuelves a la caseta. El enlace ha encontrado el símbolo que dibujó Brad en tres imágenes de cargamentos. Te deja examinar una antes de que cierren el archivo. Para volar debes terminar el colegio, cumplir dieciocho años y superar las tres pruebas del campo elegido.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/ie.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/ie.vtt",
+      "output": "media/audio/v2/en/ie.mp3",
+      "captions": "media/audio/v2/en/ie.vtt",
       "status": "pending-translation"
     },
     {
@@ -361,8 +361,8 @@
       "text": "Viñeta. El símbolo señala un compartimiento con el número de serie de la broca de James. El manifiesto lo sitúa en Jezero. Solicitas el campo de Ecuador. Ve a J0.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/ie-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/ie-a.vtt",
+      "output": "media/audio/v2/es/ie-a.mp3",
+      "captions": "media/audio/v2/es/ie-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -374,8 +374,8 @@
       "text": "Viñeta. El símbolo señala un compartimiento con el número de serie de la broca de James. El manifiesto lo sitúa en Jezero. Solicitas el campo de Ecuador. Ve a J0.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/ie-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/ie-a.vtt",
+      "output": "media/audio/v2/en/ie-a.mp3",
+      "captions": "media/audio/v2/en/ie-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -387,8 +387,8 @@
       "text": "Viñeta. El símbolo está junto a una toma de emergencia. El registro la sitúa en Arcadia. Solicitas el campo de Bolivia para aprender a intervenir en una instalación como esa. Ve a A0.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/ie-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/ie-b.vtt",
+      "output": "media/audio/v2/es/ie-b.mp3",
+      "captions": "media/audio/v2/es/ie-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -400,8 +400,8 @@
       "text": "Viñeta. El símbolo está junto a una toma de emergencia. El registro la sitúa en Arcadia. Solicitas el campo de Bolivia para aprender a intervenir en una instalación como esa. Ve a A0.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/ie-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/ie-b.vtt",
+      "output": "media/audio/v2/en/ie-b.mp3",
+      "captions": "media/audio/v2/en/ie-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -413,8 +413,8 @@
       "text": "Viñeta. El símbolo funciona como marca de mantenimiento junto a una compuerta de Arsia Mons. Brad te muestra cómo reconocerlo incluso si la imagen llega incompleta. Solicitas el campo de Argentina. Ve a P0. Ruta de Jezero",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/ie-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/ie-c.vtt",
+      "output": "media/audio/v2/es/ie-c.mp3",
+      "captions": "media/audio/v2/es/ie-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -426,8 +426,8 @@
       "text": "Viñeta. El símbolo funciona como marca de mantenimiento junto a una compuerta de Arsia Mons. Brad te muestra cómo reconocerlo incluso si la imagen llega incompleta. Solicitas el campo de Argentina. Ve a P0. Ruta de Jezero",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/ie-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/ie-c.vtt",
+      "output": "media/audio/v2/en/ie-c.mp3",
+      "captions": "media/audio/v2/en/ie-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -439,9 +439,9 @@
       "text": "Viñeta. En una pantalla, el entrenador superpone el mapa del antiguo delta de Jezero al perfil del Gran Arenal. En una esquina aparece el vehículo Perseverance. Entrenador. Una carga de 30 kg conserva su masa en los dos mundos. En Marte pesa alrededor del 38 % de lo que pesa aquí. Van a entrenar cómo subir por la ceniza, extraer un testigo de roca y calibrar las cámaras en un paisaje con pocas referencias visuales. Continúa en J1.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j0.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j0.vtt",
-      "status": "pending-voice-id"
+      "output": "media/audio/v2/es/j0.mp3",
+      "captions": "media/audio/v2/es/j0.vtt",
+      "status": "ready"
     },
     {
       "id": "j0-en",
@@ -452,9 +452,9 @@
       "text": "Viñeta. En una pantalla, el entrenador superpone el mapa del antiguo delta de Jezero al perfil del Gran Arenal. En una esquina aparece el vehículo Perseverance. Entrenador. Una carga de 30 kg conserva su masa en los dos mundos. En Marte pesa alrededor del 38 % de lo que pesa aquí. Van a entrenar cómo subir por la ceniza, extraer un testigo de roca y calibrar las cámaras en un paisaje con pocas referencias visuales. Continúa en J1.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j0.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j0.vtt",
-      "status": "pending-translation"
+      "output": "media/audio/v2/en/j0.mp3",
+      "captions": "media/audio/v2/en/j0.vtt",
+      "status": "ready"
     },
     {
       "id": "j1-es",
@@ -465,8 +465,8 @@
       "text": "Viñeta. Las ruedas del vehículo de seis ruedas se hunden en la ceniza del Gran Arenal. Jezero también tiene pendientes y material suelto. En Marte, el vehículo pesará menos, pero seguirá teniendo la misma masa. Entrenador. Lleva el equipo de perforación al puesto de arriba. Mira el terreno antes de mover las ruedas.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j1.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j1.vtt",
+      "output": "media/audio/v2/es/j1.mp3",
+      "captions": "media/audio/v2/es/j1.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -478,8 +478,8 @@
       "text": "Viñeta. Las ruedas del vehículo de seis ruedas se hunden en la ceniza del Gran Arenal. Jezero también tiene pendientes y material suelto. En Marte, el vehículo pesará menos, pero seguirá teniendo la misma masa. Entrenador. Lleva el equipo de perforación al puesto de arriba. Mira el terreno antes de mover las ruedas.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j1.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j1.vtt",
+      "output": "media/audio/v2/en/j1.mp3",
+      "captions": "media/audio/v2/en/j1.vtt",
       "status": "pending-translation"
     },
     {
@@ -491,8 +491,8 @@
       "text": "Viñeta. Llegas con todo el equipo. Marca BATERÍA. Tendrás energía para repetir una medición. Ve a J2-J1A.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j1-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j1-a.vtt",
+      "output": "media/audio/v2/es/j1-a.mp3",
+      "captions": "media/audio/v2/es/j1-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -504,8 +504,8 @@
       "text": "Viñeta. Llegas con todo el equipo. Marca BATERÍA. Tendrás energía para repetir una medición. Ve a J2-J1A.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j1-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j1-a.vtt",
+      "output": "media/audio/v2/en/j1-a.mp3",
+      "captions": "media/audio/v2/en/j1-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -517,8 +517,8 @@
       "text": "Viñeta. El rodeo consume la reserva, pero desde arriba reconoces una cresta que luego podrás localizar en el mapa de Jezero. Marca CRESTA. Ve a J2-J1B.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j1-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j1-b.vtt",
+      "output": "media/audio/v2/es/j1-b.mp3",
+      "captions": "media/audio/v2/es/j1-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -530,8 +530,8 @@
       "text": "Viñeta. El rodeo consume la reserva, pero desde arriba reconoces una cresta que luego podrás localizar en el mapa de Jezero. Marca CRESTA. Ve a J2-J1B.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j1-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j1-b.vtt",
+      "output": "media/audio/v2/en/j1-b.mp3",
+      "captions": "media/audio/v2/en/j1-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -543,8 +543,8 @@
       "text": "Viñeta. La ceniza cede y las ruedas patinan. Sueltas el mando. El entrenador inmoviliza el vehículo antes de que se deslice. Ve a JR.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j1-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j1-c.vtt",
+      "output": "media/audio/v2/es/j1-c.mp3",
+      "captions": "media/audio/v2/es/j1-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -556,8 +556,8 @@
       "text": "Viñeta. La ceniza cede y las ruedas patinan. Sueltas el mando. El entrenador inmoviliza el vehículo antes de que se deslice. Ve a JR.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j1-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j1-c.vtt",
+      "output": "media/audio/v2/en/j1-c.mp3",
+      "captions": "media/audio/v2/en/j1-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -569,8 +569,8 @@
       "text": "Entrenador. Elige cómo completar la maniobra antes de seguir.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/jr.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/jr.vtt",
+      "output": "media/audio/v2/es/jr.mp3",
+      "captions": "media/audio/v2/es/jr.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -582,8 +582,8 @@
       "text": "Entrenador. Elige cómo completar la maniobra antes de seguir.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/jr.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/jr.vtt",
+      "output": "media/audio/v2/en/jr.mp3",
+      "captions": "media/audio/v2/en/jr.vtt",
       "status": "pending-translation"
     },
     {
@@ -595,8 +595,8 @@
       "text": "Viñeta. Enganchas el vehículo bajo supervisión y el torno lo saca de la ceniza. Marca TORNO. Ve a J2-JRA.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/jr-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/jr-a.vtt",
+      "output": "media/audio/v2/es/jr-a.mp3",
+      "captions": "media/audio/v2/es/jr-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -608,8 +608,8 @@
       "text": "Viñeta. Enganchas el vehículo bajo supervisión y el torno lo saca de la ceniza. Marca TORNO. Ve a J2-JRA.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/jr-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/jr-a.vtt",
+      "output": "media/audio/v2/en/jr-a.mp3",
+      "captions": "media/audio/v2/en/jr-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -621,8 +621,8 @@
       "text": "Viñeta. El vehículo vuelve a terreno firme. Subes en diagonal y conservas la carga de repuesto. Marca BATERÍA. Ve a J2-JRB.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/jr-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/jr-b.vtt",
+      "output": "media/audio/v2/es/jr-b.mp3",
+      "captions": "media/audio/v2/es/jr-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -634,8 +634,8 @@
       "text": "Viñeta. El vehículo vuelve a terreno firme. Subes en diagonal y conservas la carga de repuesto. Marca BATERÍA. Ve a J2-JRB.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/jr-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/jr-b.vtt",
+      "output": "media/audio/v2/en/jr-b.mp3",
+      "captions": "media/audio/v2/en/jr-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -647,8 +647,8 @@
       "text": "Viñeta. Tu equipo traslada el taladro mientras encuentras un paso protegido por la cresta. Marca CRESTA. Ve a J2-JRC.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/jr-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/jr-c.vtt",
+      "output": "media/audio/v2/es/jr-c.mp3",
+      "captions": "media/audio/v2/es/jr-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -660,8 +660,8 @@
       "text": "Viñeta. Tu equipo traslada el taladro mientras encuentras un paso protegido por la cresta. Marca CRESTA. Ve a J2-JRC.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/jr-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/jr-c.vtt",
+      "output": "media/audio/v2/en/jr-c.mp3",
+      "captions": "media/audio/v2/en/jr-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -673,8 +673,8 @@
       "text": "Viñeta. La batería de repuesto llega intacta. Puedes ensayar una segunda medición, pero la broca ya vibra al entrar en el basalto.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j2-j1a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j2-j1a.vtt",
+      "output": "media/audio/v2/es/j2-j1a.mp3",
+      "captions": "media/audio/v2/es/j2-j1a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -686,8 +686,8 @@
       "text": "Viñeta. La batería de repuesto llega intacta. Puedes ensayar una segunda medición, pero la broca ya vibra al entrar en el basalto.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j2-j1a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j2-j1a.vtt",
+      "output": "media/audio/v2/en/j2-j1a.mp3",
+      "captions": "media/audio/v2/en/j2-j1a.vtt",
       "status": "pending-translation"
     },
     {
@@ -699,8 +699,8 @@
       "text": "Viñeta. Por el rodeo entras al puesto alto. Desde allí ves dos vetas y una nube de ceniza que amenaza con tapar la cámara.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j2-j1b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j2-j1b.vtt",
+      "output": "media/audio/v2/es/j2-j1b.mp3",
+      "captions": "media/audio/v2/es/j2-j1b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -712,8 +712,8 @@
       "text": "Viñeta. Por el rodeo entras al puesto alto. Desde allí ves dos vetas y una nube de ceniza que amenaza con tapar la cámara.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j2-j1b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j2-j1b.vtt",
+      "output": "media/audio/v2/en/j2-j1b.mp3",
+      "captions": "media/audio/v2/en/j2-j1b.vtt",
       "status": "pending-translation"
     },
     {
@@ -725,8 +725,8 @@
       "text": "Viñeta. El torno deja el taladro junto a un bloque de basalto poco uniforme. La vibración empieza al rozar la primera veta.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j2-jra.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j2-jra.vtt",
+      "output": "media/audio/v2/es/j2-jra.mp3",
+      "captions": "media/audio/v2/es/j2-jra.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -738,8 +738,8 @@
       "text": "Viñeta. El torno deja el taladro junto a un bloque de basalto poco uniforme. La vibración empieza al rozar la primera veta.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j2-jra.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j2-jra.vtt",
+      "output": "media/audio/v2/en/j2-jra.mp3",
+      "captions": "media/audio/v2/en/j2-jra.vtt",
       "status": "pending-translation"
     },
     {
@@ -751,8 +751,8 @@
       "text": "Viñeta. Regresas por la franja compacta con la batería intacta. La evaluadora prepara el sensor mientras la broca empieza a calentarse.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j2-jrb.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j2-jrb.vtt",
+      "output": "media/audio/v2/es/j2-jrb.mp3",
+      "captions": "media/audio/v2/es/j2-jrb.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -764,8 +764,8 @@
       "text": "Viñeta. Regresas por la franja compacta con la batería intacta. La evaluadora prepara el sensor mientras la broca empieza a calentarse.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j2-jrb.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j2-jrb.vtt",
+      "output": "media/audio/v2/en/j2-jrb.mp3",
+      "captions": "media/audio/v2/en/j2-jrb.vtt",
       "status": "pending-translation"
     },
     {
@@ -777,8 +777,8 @@
       "text": "Viñeta. El rodeo termina junto a una pared fracturada. Puedes cambiar de veta, aunque tendrás que documentar el desvío.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j2-jrc.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j2-jrc.vtt",
+      "output": "media/audio/v2/es/j2-jrc.mp3",
+      "captions": "media/audio/v2/es/j2-jrc.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -790,8 +790,8 @@
       "text": "Viñeta. El rodeo termina junto a una pared fracturada. Puedes cambiar de veta, aunque tendrás que documentar el desvío.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j2-jrc.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j2-jrc.vtt",
+      "output": "media/audio/v2/en/j2-jrc.mp3",
+      "captions": "media/audio/v2/en/j2-jrc.vtt",
       "status": "pending-translation"
     },
     {
@@ -803,8 +803,8 @@
       "text": "Viñeta. Obtienes un testigo intacto y practicas cómo detener y reanudar el taladro sin atascarlo. Marca PULSOS. Viñeta de transición. El testigo intacto sigue sujeto al portamuestras. Desde ese soporte puedes calibrar la cámara sin mover el vehículo. Ve a J3.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j2-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j2-a.vtt",
+      "output": "media/audio/v2/es/j2-a.mp3",
+      "captions": "media/audio/v2/es/j2-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -816,8 +816,8 @@
       "text": "Viñeta. Obtienes un testigo intacto y practicas cómo detener y reanudar el taladro sin atascarlo. Marca PULSOS. Viñeta de transición. El testigo intacto sigue sujeto al portamuestras. Desde ese soporte puedes calibrar la cámara sin mover el vehículo. Ve a J3.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j2-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j2-a.vtt",
+      "output": "media/audio/v2/en/j2-a.mp3",
+      "captions": "media/audio/v2/en/j2-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -829,8 +829,8 @@
       "text": "Viñeta. La muestra es más corta, pero aprendes a reconocer roca con fracturas ocultas. Marca FISURA. Viñeta de transición. La veta lateral dejó el vehículo fuera del recorrido marcado. Desde allí una de las cámaras capta el reflejo de metal entre las piedras. Ve a J3.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j2-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j2-b.vtt",
+      "output": "media/audio/v2/es/j2-b.mp3",
+      "captions": "media/audio/v2/es/j2-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -842,8 +842,8 @@
       "text": "Viñeta. La muestra es más corta, pero aprendes a reconocer roca con fracturas ocultas. Marca FISURA. Viñeta de transición. La veta lateral dejó el vehículo fuera del recorrido marcado. Desde allí una de las cámaras capta el reflejo de metal entre las piedras. Ve a J3.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j2-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j2-b.vtt",
+      "output": "media/audio/v2/en/j2-b.mp3",
+      "captions": "media/audio/v2/en/j2-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -855,8 +855,8 @@
       "text": "Viñeta. Si tienes BATERÍA, úsala y bórrala. Si te falta, el equipo instala una batería de apoyo y tienes que repetir la calibración. El registro de ambas lecturas revela el patrón de vibración de una máquina cercana. Marca VIBRACIÓN. Viñeta de transición. La cámara y el sensor del taladro coinciden en un pulso. El equipo te deja comparar ambos registros durante la prueba. Ve a J3.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j2-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j2-c.vtt",
+      "output": "media/audio/v2/es/j2-c.mp3",
+      "captions": "media/audio/v2/es/j2-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -868,8 +868,8 @@
       "text": "Viñeta. Si tienes BATERÍA, úsala y bórrala. Si te falta, el equipo instala una batería de apoyo y tienes que repetir la calibración. El registro de ambas lecturas revela el patrón de vibración de una máquina cercana. Marca VIBRACIÓN. Viñeta de transición. La cámara y el sensor del taladro coinciden en un pulso. El equipo te deja comparar ambos registros durante la prueba. Ve a J3.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j2-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j2-c.vtt",
+      "output": "media/audio/v2/en/j2-c.mp3",
+      "captions": "media/audio/v2/en/j2-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -881,8 +881,8 @@
       "text": "Viñeta. Calibras las cámaras con rocas de referencia. En una toma aparece una baliza que no figura en el inventario del campo. Desde la cabina, la evaluadora confirma que el mismo emisor contacta con un receptor en Jezero.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j3.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j3.vtt",
+      "output": "media/audio/v2/es/j3.mp3",
+      "captions": "media/audio/v2/es/j3.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -894,8 +894,8 @@
       "text": "Viñeta. Calibras las cámaras con rocas de referencia. En una toma aparece una baliza que no figura en el inventario del campo. Desde la cabina, la evaluadora confirma que el mismo emisor contacta con un receptor en Jezero.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j3.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j3.vtt",
+      "output": "media/audio/v2/en/j3.mp3",
+      "captions": "media/audio/v2/en/j3.vtt",
       "status": "pending-translation"
     },
     {
@@ -907,8 +907,8 @@
       "text": "Viñeta. Con CRESTA, acotas el punto usando el mapa. Si te falta, haces una segunda toma desde otro puesto. Marca COORDENADAS. Viñeta de transición. La tripulación dibuja un corredor de aproximación con las coordenadas que reuniste. Ve a J4.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j3-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j3-a.vtt",
+      "output": "media/audio/v2/es/j3-a.mp3",
+      "captions": "media/audio/v2/es/j3-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -920,8 +920,8 @@
       "text": "Viñeta. Con CRESTA, acotas el punto usando el mapa. Si te falta, haces una segunda toma desde otro puesto. Marca COORDENADAS. Viñeta de transición. La tripulación dibuja un corredor de aproximación con las coordenadas que reuniste. Ve a J4.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j3-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j3-a.vtt",
+      "output": "media/audio/v2/en/j3-a.mp3",
+      "captions": "media/audio/v2/en/j3-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -933,8 +933,8 @@
       "text": "Viñeta. El emisor deja de recibir respuesta. Conservas un fotograma legible con las marcas de la baliza. Marca IMAGEN. Viñeta de transición. Durante la aproximación, comparas las marcas del fotograma con las de una baliza enterrada. Ve a J4.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j3-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j3-b.vtt",
+      "output": "media/audio/v2/es/j3-b.mp3",
+      "captions": "media/audio/v2/es/j3-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -946,8 +946,8 @@
       "text": "Viñeta. El emisor deja de recibir respuesta. Conservas un fotograma legible con las marcas de la baliza. Marca IMAGEN. Viñeta de transición. Durante la aproximación, comparas las marcas del fotograma con las de una baliza enterrada. Ve a J4.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j3-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j3-b.vtt",
+      "output": "media/audio/v2/en/j3-b.mp3",
+      "captions": "media/audio/v2/en/j3-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -959,8 +959,8 @@
       "text": "Viñeta. Registras un breve intervalo de silencio entre los envíos. Si tienes VIBRACIÓN, distingues además cuándo se pone en marcha el equipo conectado a la baliza. Marca INTERVALO. Viñeta de transición. Pides a la tripulación esperar el silencio que detectaste antes de transmitir hacia el módulo. Ve a J4.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j3-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j3-c.vtt",
+      "output": "media/audio/v2/es/j3-c.mp3",
+      "captions": "media/audio/v2/es/j3-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -972,8 +972,8 @@
       "text": "Viñeta. Registras un breve intervalo de silencio entre los envíos. Si tienes VIBRACIÓN, distingues además cuándo se pone en marcha el equipo conectado a la baliza. Marca INTERVALO. Viñeta de transición. Pides a la tripulación esperar el silencio que detectaste antes de transmitir hacia el módulo. Ve a J4.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j3-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j3-c.vtt",
+      "output": "media/audio/v2/en/j3-c.mp3",
+      "captions": "media/audio/v2/en/j3-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -985,8 +985,8 @@
       "text": "Viñeta. Ya tienes dieciocho años y tu acreditación. Meses después del despegue, llegas a Jezero con la tripulación de la agencia. Entre dos lomas encuentras el módulo. James está al otro lado de una esclusa atascada. El equipo de seguridad mantiene abierta la vía de retirada. James, por radio. Dentro hay un registro de los envíos. Puedo llevármelo si conseguimos abrir.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j4.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j4.vtt",
+      "output": "media/audio/v2/es/j4.mp3",
+      "captions": "media/audio/v2/es/j4.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -998,8 +998,8 @@
       "text": "Viñeta. Ya tienes dieciocho años y tu acreditación. Meses después del despegue, llegas a Jezero con la tripulación de la agencia. Entre dos lomas encuentras el módulo. James está al otro lado de una esclusa atascada. El equipo de seguridad mantiene abierta la vía de retirada. James, por radio. Dentro hay un registro de los envíos. Puedo llevármelo si conseguimos abrir.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j4.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j4.vtt",
+      "output": "media/audio/v2/en/j4.mp3",
+      "captions": "media/audio/v2/en/j4.vtt",
       "status": "pending-translation"
     },
     {
@@ -1011,8 +1011,8 @@
       "text": "Viñeta. Con COORDENADAS o FISURA, ubicas el acceso sin atravesar el sector vigilado. Si te faltan ambas, pides un reconocimiento desde el vehículo y James sale cuando regresa la patrulla de la agencia. En ambos casos, sale con el registro. Marca PRUEBAS. Viñeta de transición. James se quita el polvo de la manga. «La salida de servicio daba al otro lado de donde esperaban que apareciéramos». Ve a F1.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j4-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j4-a.vtt",
+      "output": "media/audio/v2/es/j4-a.mp3",
+      "captions": "media/audio/v2/es/j4-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1024,8 +1024,8 @@
       "text": "Viñeta. Con COORDENADAS o FISURA, ubicas el acceso sin atravesar el sector vigilado. Si te faltan ambas, pides un reconocimiento desde el vehículo y James sale cuando regresa la patrulla de la agencia. En ambos casos, sale con el registro. Marca PRUEBAS. Viñeta de transición. James se quita el polvo de la manga. «La salida de servicio daba al otro lado de donde esperaban que apareciéramos». Ve a F1.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j4-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j4-a.vtt",
+      "output": "media/audio/v2/en/j4-a.mp3",
+      "captions": "media/audio/v2/en/j4-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -1037,8 +1037,8 @@
       "text": "Viñeta. Con TORNO o PULSOS, desbloqueas la cubierta a tiempo para que James saque la unidad de datos. Marca PRUEBAS. Si te faltan ambos, la tripulación abre la cubierta y evacúa a James mientras la unidad queda dentro. Viñeta de transición. En el hangar todavía se oye el torno. James mira por la ventanilla y te hace un gesto con la mano. Ve a F1.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j4-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j4-b.vtt",
+      "output": "media/audio/v2/es/j4-b.mp3",
+      "captions": "media/audio/v2/es/j4-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1050,8 +1050,8 @@
       "text": "Viñeta. Con TORNO o PULSOS, desbloqueas la cubierta a tiempo para que James saque la unidad de datos. Marca PRUEBAS. Si te faltan ambos, la tripulación abre la cubierta y evacúa a James mientras la unidad queda dentro. Viñeta de transición. En el hangar todavía se oye el torno. James mira por la ventanilla y te hace un gesto con la mano. Ve a F1.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j4-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j4-b.vtt",
+      "output": "media/audio/v2/en/j4-b.mp3",
+      "captions": "media/audio/v2/en/j4-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -1063,8 +1063,8 @@
       "text": "Viñeta. Con INTERVALO o CÓDIGO, consigues la copia completa. Marca PRUEBAS. Si te faltan ambos, solo recibes una cabecera. Con IMAGEN, demuestras que la baliza registrada en Ecuador pertenece al módulo. En ese caso, marca RASTRO. Viñeta de transición. Junto a la nave, cierras por última vez el enlace de mantenimiento que usaste durante la evacuación. Ve a F1. Ruta de Arcadia Planitia",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/j4-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/j4-c.vtt",
+      "output": "media/audio/v2/es/j4-c.mp3",
+      "captions": "media/audio/v2/es/j4-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1076,8 +1076,8 @@
       "text": "Viñeta. Con INTERVALO o CÓDIGO, consigues la copia completa. Marca PRUEBAS. Si te faltan ambos, solo recibes una cabecera. Con IMAGEN, demuestras que la baliza registrada en Ecuador pertenece al módulo. En ese caso, marca RASTRO. Viñeta de transición. Junto a la nave, cierras por última vez el enlace de mantenimiento que usaste durante la evacuación. Ve a F1. Ruta de Arcadia Planitia",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/j4-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/j4-c.vtt",
+      "output": "media/audio/v2/en/j4-c.mp3",
+      "captions": "media/audio/v2/en/j4-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -1089,9 +1089,9 @@
       "text": "Viñeta. El mapa orbital cambia a un corte del subsuelo. La evaluadora señala las capas donde los datos orbitales sugieren la presencia de hielo. Entrenador. Aquí las sales complican la lectura del radar. En Marte, además, el hielo muy frío endurece la perforación y puede sublimarse si queda expuesto. A igual velocidad, el viento de Siloli ejerce más fuerza sobre un panel porque el aire es más denso. Harán tres pruebas: detectar un blanco enterrado, extraer un núcleo congelado y montar paneles frente a las ráfagas. En superficie usen la protección ultravioleta del campo. Continúa en A1.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a0.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a0.vtt",
-      "status": "pending-voice-id"
+      "output": "media/audio/v2/es/a0.mp3",
+      "captions": "media/audio/v2/es/a0.vtt",
+      "status": "ready"
     },
     {
       "id": "a0-en",
@@ -1102,9 +1102,9 @@
       "text": "Viñeta. El mapa orbital cambia a un corte del subsuelo. La evaluadora señala las capas donde los datos orbitales sugieren la presencia de hielo. Entrenador. Aquí las sales complican la lectura del radar. En Marte, además, el hielo muy frío endurece la perforación y puede sublimarse si queda expuesto. A igual velocidad, el viento de Siloli ejerce más fuerza sobre un panel porque el aire es más denso. Harán tres pruebas: detectar un blanco enterrado, extraer un núcleo congelado y montar paneles frente a las ráfagas. En superficie usen la protección ultravioleta del campo. Continúa en A1.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a0.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a0.vtt",
-      "status": "pending-translation"
+      "output": "media/audio/v2/en/a0.mp3",
+      "captions": "media/audio/v2/en/a0.vtt",
+      "status": "ready"
     },
     {
       "id": "a1-es",
@@ -1115,8 +1115,8 @@
       "text": "Viñeta. Empujas un carro con radar por el campo de Siloli. En Arcadia, el equipo buscará hielo enterrado. Aquí practicas sobre un blanco instalado bajo un terreno salino. En la pantalla aparecen dos ecos muy parecidos.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a1.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a1.vtt",
+      "output": "media/audio/v2/es/a1.mp3",
+      "captions": "media/audio/v2/es/a1.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1128,8 +1128,8 @@
       "text": "Viñeta. Empujas un carro con radar por el campo de Siloli. En Arcadia, el equipo buscará hielo enterrado. Aquí practicas sobre un blanco instalado bajo un terreno salino. En la pantalla aparecen dos ecos muy parecidos.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a1.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a1.vtt",
+      "output": "media/audio/v2/en/a1.mp3",
+      "captions": "media/audio/v2/en/a1.vtt",
       "status": "pending-translation"
     },
     {
@@ -1141,8 +1141,8 @@
       "text": "Viñeta. El eco del blanco coincide en las dos pasadas. Marca MAPA. Ve a A2-A1A.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a1-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a1-a.vtt",
+      "output": "media/audio/v2/es/a1-a.mp3",
+      "captions": "media/audio/v2/es/a1-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1154,8 +1154,8 @@
       "text": "Viñeta. El eco del blanco coincide en las dos pasadas. Marca MAPA. Ve a A2-A1A.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a1-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a1-a.vtt",
+      "output": "media/audio/v2/en/a1-a.mp3",
+      "captions": "media/audio/v2/en/a1-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -1167,8 +1167,8 @@
       "text": "Viñeta. Aprendes a identificar el patrón de la costra salina. Marca FILTRO. Ve a A2-A1B.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a1-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a1-b.vtt",
+      "output": "media/audio/v2/es/a1-b.mp3",
+      "captions": "media/audio/v2/es/a1-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1180,8 +1180,8 @@
       "text": "Viñeta. Aprendes a identificar el patrón de la costra salina. Marca FILTRO. Ve a A2-A1B.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a1-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a1-b.vtt",
+      "output": "media/audio/v2/en/a1-b.mp3",
+      "captions": "media/audio/v2/en/a1-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -1193,8 +1193,8 @@
       "text": "Viñeta. La costra ocupa casi toda la pantalla. El eco del blanco desaparece y la evaluadora te pide una comprobación antes de autorizar la perforación. Ve a AR.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a1-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a1-c.vtt",
+      "output": "media/audio/v2/es/a1-c.mp3",
+      "captions": "media/audio/v2/es/a1-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1206,8 +1206,8 @@
       "text": "Viñeta. La costra ocupa casi toda la pantalla. El eco del blanco desaparece y la evaluadora te pide una comprobación antes de autorizar la perforación. Ve a AR.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a1-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a1-c.vtt",
+      "output": "media/audio/v2/en/a1-c.mp3",
+      "captions": "media/audio/v2/en/a1-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -1219,8 +1219,8 @@
       "text": "Entrenador. Elige cómo completar la maniobra antes de seguir.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/ar.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/ar.vtt",
+      "output": "media/audio/v2/es/ar.mp3",
+      "captions": "media/audio/v2/es/ar.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1232,8 +1232,8 @@
       "text": "Entrenador. Elige cómo completar la maniobra antes de seguir.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/ar.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/ar.vtt",
+      "output": "media/audio/v2/en/ar.mp3",
+      "captions": "media/audio/v2/en/ar.vtt",
       "status": "pending-translation"
     },
     {
@@ -1245,8 +1245,8 @@
       "text": "Viñeta. Los dos perfiles coinciden sobre el blanco. Marca MAPA. Ve a A2-ARA.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/ar-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/ar-a.vtt",
+      "output": "media/audio/v2/es/ar-a.mp3",
+      "captions": "media/audio/v2/es/ar-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1258,8 +1258,8 @@
       "text": "Viñeta. Los dos perfiles coinciden sobre el blanco. Marca MAPA. Ve a A2-ARA.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/ar-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/ar-a.vtt",
+      "output": "media/audio/v2/en/ar-a.mp3",
+      "captions": "media/audio/v2/en/ar-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -1271,8 +1271,8 @@
       "text": "Viñeta. Reconoces el eco de la sal y lo distingues del blanco enterrado. Marca FILTRO. Ve a A2-ARB.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/ar-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/ar-b.vtt",
+      "output": "media/audio/v2/es/ar-b.mp3",
+      "captions": "media/audio/v2/es/ar-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1284,8 +1284,8 @@
       "text": "Viñeta. Reconoces el eco de la sal y lo distingues del blanco enterrado. Marca FILTRO. Ve a A2-ARB.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/ar-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/ar-b.vtt",
+      "output": "media/audio/v2/en/ar-b.mp3",
+      "captions": "media/audio/v2/en/ar-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -1297,8 +1297,8 @@
       "text": "Viñeta. La sonda confirma el blanco y el radar dibuja dónde se adelgaza la costra. Marca COSTRA. Ve a A2-ARC.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/ar-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/ar-c.vtt",
+      "output": "media/audio/v2/es/ar-c.mp3",
+      "captions": "media/audio/v2/es/ar-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1310,8 +1310,8 @@
       "text": "Viñeta. La sonda confirma el blanco y el radar dibuja dónde se adelgaza la costra. Marca COSTRA. Ve a A2-ARC.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/ar-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/ar-c.vtt",
+      "output": "media/audio/v2/en/ar-c.mp3",
+      "captions": "media/audio/v2/en/ar-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -1323,8 +1323,8 @@
       "text": "Viñeta. Los perfiles señalan el centro del blanco, pero una capa dura cubre el acceso directo.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a2-a1a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a2-a1a.vtt",
+      "output": "media/audio/v2/es/a2-a1a.mp3",
+      "captions": "media/audio/v2/es/a2-a1a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1336,8 +1336,8 @@
       "text": "Viñeta. Los perfiles señalan el centro del blanco, pero una capa dura cubre el acceso directo.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a2-a1a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a2-a1a.vtt",
+      "output": "media/audio/v2/en/a2-a1a.mp3",
+      "captions": "media/audio/v2/en/a2-a1a.vtt",
       "status": "pending-translation"
     },
     {
@@ -1349,8 +1349,8 @@
       "text": "Viñeta. El patrón de la sal desaparece de tu lectura y deja visible una franja más delgada. Debes recuperar la muestra sin mezclar las capas.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a2-a1b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a2-a1b.vtt",
+      "output": "media/audio/v2/es/a2-a1b.mp3",
+      "captions": "media/audio/v2/es/a2-a1b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1362,8 +1362,8 @@
       "text": "Viñeta. El patrón de la sal desaparece de tu lectura y deja visible una franja más delgada. Debes recuperar la muestra sin mezclar las capas.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a2-a1b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a2-a1b.vtt",
+      "output": "media/audio/v2/en/a2-a1b.mp3",
+      "captions": "media/audio/v2/en/a2-a1b.vtt",
       "status": "pending-translation"
     },
     {
@@ -1375,8 +1375,8 @@
       "text": "Viñeta. La segunda pasada revela que el blanco está desplazado hacia el borde. El taladro ya está montado en el centro.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a2-ara.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a2-ara.vtt",
+      "output": "media/audio/v2/es/a2-ara.mp3",
+      "captions": "media/audio/v2/es/a2-ara.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1388,8 +1388,8 @@
       "text": "Viñeta. La segunda pasada revela que el blanco está desplazado hacia el borde. El taladro ya está montado en el centro.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a2-ara.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a2-ara.vtt",
+      "output": "media/audio/v2/en/a2-ara.mp3",
+      "captions": "media/audio/v2/en/a2-ara.vtt",
       "status": "pending-translation"
     },
     {
@@ -1401,8 +1401,8 @@
       "text": "Viñeta. La parcela de referencia te permite distinguir la costra del suelo congelado. Al perforar aparece la primera capa húmeda.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a2-arb.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a2-arb.vtt",
+      "output": "media/audio/v2/es/a2-arb.mp3",
+      "captions": "media/audio/v2/es/a2-arb.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1414,8 +1414,8 @@
       "text": "Viñeta. La parcela de referencia te permite distinguir la costra del suelo congelado. Al perforar aparece la primera capa húmeda.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a2-arb.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a2-arb.vtt",
+      "output": "media/audio/v2/en/a2-arb.mp3",
+      "captions": "media/audio/v2/en/a2-arb.vtt",
       "status": "pending-translation"
     },
     {
@@ -1427,8 +1427,8 @@
       "text": "Viñeta. La sonda auxiliar hace visible el punto más delgado. Tu compañera pregunta si perforar ahí o conservar una muestra superficial.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a2-arc.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a2-arc.vtt",
+      "output": "media/audio/v2/es/a2-arc.mp3",
+      "captions": "media/audio/v2/es/a2-arc.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1440,8 +1440,8 @@
       "text": "Viñeta. La sonda auxiliar hace visible el punto más delgado. Tu compañera pregunta si perforar ahí o conservar una muestra superficial.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a2-arc.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a2-arc.vtt",
+      "output": "media/audio/v2/en/a2-arc.mp3",
+      "captions": "media/audio/v2/en/a2-arc.vtt",
       "status": "pending-translation"
     },
     {
@@ -1453,8 +1453,8 @@
       "text": "Viñeta. Atraviesas la costra y conservas la estructura del núcleo. Marca SONDA. Viñeta de transición. Tu muestra conserva las capas de hielo y sal. La evaluadora te pide mantener alimentado el equipo que la conserva mientras montas los paneles. Ve a A3.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a2-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a2-a.vtt",
+      "output": "media/audio/v2/es/a2-a.mp3",
+      "captions": "media/audio/v2/es/a2-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1466,8 +1466,8 @@
       "text": "Viñeta. Atraviesas la costra y conservas la estructura del núcleo. Marca SONDA. Viñeta de transición. Tu muestra conserva las capas de hielo y sal. La evaluadora te pide mantener alimentado el equipo que la conserva mientras montas los paneles. Ve a A3.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a2-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a2-a.vtt",
+      "output": "media/audio/v2/en/a2-a.mp3",
+      "captions": "media/audio/v2/en/a2-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -1479,8 +1479,8 @@
       "text": "Viñeta. Con MAPA o COSTRA, eliges el borde más delgado. Si te faltan ambos, necesitas una perforación de reconocimiento. Llegas al final con combustible de sobra para el equipo de apoyo. Marca RESERVA. Viñeta de transición. Traes el combustible del equipo de apoyo. Puedes conectar otro banco si la instalación pierde corriente. Ve a A3.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a2-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a2-b.vtt",
+      "output": "media/audio/v2/es/a2-b.mp3",
+      "captions": "media/audio/v2/es/a2-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1492,8 +1492,8 @@
       "text": "Viñeta. Con MAPA o COSTRA, eliges el borde más delgado. Si te faltan ambos, necesitas una perforación de reconocimiento. Llegas al final con combustible de sobra para el equipo de apoyo. Marca RESERVA. Viñeta de transición. Traes el combustible del equipo de apoyo. Puedes conectar otro banco si la instalación pierde corriente. Ve a A3.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a2-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a2-b.vtt",
+      "output": "media/audio/v2/en/a2-b.mp3",
+      "captions": "media/audio/v2/en/a2-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -1505,8 +1505,8 @@
       "text": "Viñeta. La evaluadora valida la muestra superficial y te enseña a aislar una toma del circuito para contener una fuga. Marca SELLO. Viñeta de transición. Dejas el núcleo en el contenedor sellado antes de salir. Junto a los paneles reconoces un corte de aislamiento igual al que practicaron. Ve a A3.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a2-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a2-c.vtt",
+      "output": "media/audio/v2/es/a2-c.mp3",
+      "captions": "media/audio/v2/es/a2-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1518,8 +1518,8 @@
       "text": "Viñeta. La evaluadora valida la muestra superficial y te enseña a aislar una toma del circuito para contener una fuga. Marca SELLO. Viñeta de transición. Dejas el núcleo en el contenedor sellado antes de salir. Junto a los paneles reconoces un corte de aislamiento igual al que practicaron. Ve a A3.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a2-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a2-c.vtt",
+      "output": "media/audio/v2/en/a2-c.mp3",
+      "captions": "media/audio/v2/en/a2-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -1531,8 +1531,8 @@
       "text": "Viñeta. Una ráfaga levanta un extremo de los paneles. En el receptor aparece al mismo tiempo una orden de apagado con el logotipo de la agencia. La evaluadora dice que ella jamás envió esa orden.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a3.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a3.vtt",
+      "output": "media/audio/v2/es/a3.mp3",
+      "captions": "media/audio/v2/es/a3.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1544,8 +1544,8 @@
       "text": "Viñeta. Una ráfaga levanta un extremo de los paneles. En el receptor aparece al mismo tiempo una orden de apagado con el logotipo de la agencia. La evaluadora dice que ella jamás envió esa orden.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a3.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a3.vtt",
+      "output": "media/audio/v2/en/a3.mp3",
+      "captions": "media/audio/v2/en/a3.vtt",
       "status": "pending-translation"
     },
     {
@@ -1557,8 +1557,8 @@
       "text": "Viñeta. El conjunto resiste el viento y sostiene los equipos esenciales. Marca ANCLAJES. Viñeta de transición. El equipo baja los paneles durante la aproximación y deja solo los circuitos esenciales en marcha. Ve a A4.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a3-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a3-a.vtt",
+      "output": "media/audio/v2/es/a3-a.mp3",
+      "captions": "media/audio/v2/es/a3-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1570,8 +1570,8 @@
       "text": "Viñeta. El conjunto resiste el viento y sostiene los equipos esenciales. Marca ANCLAJES. Viñeta de transición. El equipo baja los paneles durante la aproximación y deja solo los circuitos esenciales en marcha. Ve a A4.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a3-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a3-a.vtt",
+      "output": "media/audio/v2/en/a3-a.mp3",
+      "captions": "media/audio/v2/en/a3-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -1583,8 +1583,8 @@
       "text": "Viñeta. Conservas el suministro en modo local y guardas el identificador del emisor. Marca EMISOR. Viñeta de transición. Pides arrancar el control en modo local. En el panel aparece el mismo identificador que registraste en Siloli. Ve a A4.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a3-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a3-b.vtt",
+      "output": "media/audio/v2/es/a3-b.mp3",
+      "captions": "media/audio/v2/es/a3-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1596,8 +1596,8 @@
       "text": "Viñeta. Conservas el suministro en modo local y guardas el identificador del emisor. Marca EMISOR. Viñeta de transición. Pides arrancar el control en modo local. En el panel aparece el mismo identificador que registraste en Siloli. Ve a A4.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a3-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a3-b.vtt",
+      "output": "media/audio/v2/en/a3-b.mp3",
+      "captions": "media/audio/v2/en/a3-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -1609,8 +1609,8 @@
       "text": "Viñeta. Con RESERVA, terminas las conexiones antes de que caiga la alimentación. Si te falta, pides apoyo y repites la prueba de carga. Marca ENERGÍA. Viñeta de transición. La tripulación lleva el banco auxiliar que aprendiste a montar. Puede sostener un circuito más si lo conectas a tiempo. Ve a A4.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a3-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a3-c.vtt",
+      "output": "media/audio/v2/es/a3-c.mp3",
+      "captions": "media/audio/v2/es/a3-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1622,8 +1622,8 @@
       "text": "Viñeta. Con RESERVA, terminas las conexiones antes de que caiga la alimentación. Si te falta, pides apoyo y repites la prueba de carga. Marca ENERGÍA. Viñeta de transición. La tripulación lleva el banco auxiliar que aprendiste a montar. Puede sostener un circuito más si lo conectas a tiempo. Ve a A4.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a3-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a3-c.vtt",
+      "output": "media/audio/v2/en/a3-c.mp3",
+      "captions": "media/audio/v2/en/a3-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -1635,8 +1635,8 @@
       "text": "Viñeta. Llegas a Arcadia Planitia tras terminar el colegio, cumplir dieciocho años y superar el entrenamiento. En la planta, alguien ha cortado la corriente de los módulos. James se refugia en la sala de control. En el panel de emergencia hay indicadores para un archivo de contratos y para los habitáculos donde retienen al resto de los ingenieros. James, por el intercomunicador. La reserva se agota. Dime a qué circuito le damos corriente.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a4.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a4.vtt",
+      "output": "media/audio/v2/es/a4.mp3",
+      "captions": "media/audio/v2/es/a4.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1648,8 +1648,8 @@
       "text": "Viñeta. Llegas a Arcadia Planitia tras terminar el colegio, cumplir dieciocho años y superar el entrenamiento. En la planta, alguien ha cortado la corriente de los módulos. James se refugia en la sala de control. En el panel de emergencia hay indicadores para un archivo de contratos y para los habitáculos donde retienen al resto de los ingenieros. James, por el intercomunicador. La reserva se agota. Dime a qué circuito le damos corriente.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a4.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a4.vtt",
+      "output": "media/audio/v2/en/a4.mp3",
+      "captions": "media/audio/v2/en/a4.vtt",
       "status": "pending-translation"
     },
     {
@@ -1661,8 +1661,8 @@
       "text": "Viñeta. La tripulación evacúa a James y a los demás ingenieros. Con ENERGÍA o ANCLAJES, mantienes vivo el archivo mientras James lo copia. Marca PRUEBAS si tienes alguna de esas marcas. Viñeta de transición. Los ingenieros evacuados ocupan dos filas de asientos. James se sienta junto a la compuerta. Ve a F1.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a4-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a4-a.vtt",
+      "output": "media/audio/v2/es/a4-a.mp3",
+      "captions": "media/audio/v2/es/a4-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1674,8 +1674,8 @@
       "text": "Viñeta. La tripulación evacúa a James y a los demás ingenieros. Con ENERGÍA o ANCLAJES, mantienes vivo el archivo mientras James lo copia. Marca PRUEBAS si tienes alguna de esas marcas. Viñeta de transición. Los ingenieros evacuados ocupan dos filas de asientos. James se sienta junto a la compuerta. Ve a F1.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a4-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a4-a.vtt",
+      "output": "media/audio/v2/en/a4-a.mp3",
+      "captions": "media/audio/v2/en/a4-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -1687,8 +1687,8 @@
       "text": "Viñeta. Con SELLO o SONDA, separas el circuito averiado sin perder el registro. Marca PRUEBAS. Si te faltan ambas, la unidad se apaga y solo se recupera durante la evacuación el tablero de operaciones. Marca RASTRO. James y los demás salen con la tripulación. Viñeta de transición. Al cerrar la planta, la tripulación etiqueta la toma del archivo que aislaste. James lleva consigo el número del circuito. Ve a F1.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a4-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a4-b.vtt",
+      "output": "media/audio/v2/es/a4-b.mp3",
+      "captions": "media/audio/v2/es/a4-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1700,8 +1700,8 @@
       "text": "Viñeta. Con SELLO o SONDA, separas el circuito averiado sin perder el registro. Marca PRUEBAS. Si te faltan ambas, la unidad se apaga y solo se recupera durante la evacuación el tablero de operaciones. Marca RASTRO. James y los demás salen con la tripulación. Viñeta de transición. Al cerrar la planta, la tripulación etiqueta la toma del archivo que aislaste. James lleva consigo el número del circuito. Ve a F1.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a4-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a4-b.vtt",
+      "output": "media/audio/v2/en/a4-b.mp3",
+      "captions": "media/audio/v2/en/a4-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -1713,8 +1713,8 @@
       "text": "Viñeta. Con EMISOR o FILTRO, separas la señal intrusa, guardas su historial y encuentras las órdenes firmadas. Marca PRUEBAS. Si te faltan ambos, guardas solo la hora y el origen aproximado del apagón. Marca RASTRO. La tripulación evacúa a los ingenieros. Viñeta de transición. En el informe de evacuación guardas la hora exacta en que volvió la corriente. James quiere compararla con las órdenes de la planta. Ve a F1. Ruta de Arsia Mons",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/a4-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/a4-c.vtt",
+      "output": "media/audio/v2/es/a4-c.mp3",
+      "captions": "media/audio/v2/es/a4-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1726,8 +1726,8 @@
       "text": "Viñeta. Con EMISOR o FILTRO, separas la señal intrusa, guardas su historial y encuentras las órdenes firmadas. Marca PRUEBAS. Si te faltan ambos, guardas solo la hora y el origen aproximado del apagón. Marca RASTRO. La tripulación evacúa a los ingenieros. Viñeta de transición. En el informe de evacuación guardas la hora exacta en que volvió la corriente. James quiere compararla con las órdenes de la planta. Ve a F1. Ruta de Arsia Mons",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/a4-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/a4-c.vtt",
+      "output": "media/audio/v2/en/a4-c.mp3",
+      "captions": "media/audio/v2/en/a4-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -1739,9 +1739,9 @@
       "text": "Viñeta. El entrenador proyecta una imagen orbital de una abertura oscura en Arsia Mons. Al lado pone una fotografía del tubo de lava donde vas a entrenar. Entrenador. En Marte buscamos cavidades que puedan servir de refugio. Aquí vas a descender con cuerda y arnés, escanear la bóveda en tres dimensiones y restablecer la comunicación desde el interior del tubo. Continúa en P1.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p0.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p0.vtt",
-      "status": "pending-voice-id"
+      "output": "media/audio/v2/es/p0.mp3",
+      "captions": "media/audio/v2/es/p0.vtt",
+      "status": "ready"
     },
     {
       "id": "p0-en",
@@ -1752,9 +1752,9 @@
       "text": "Viñeta. El entrenador proyecta una imagen orbital de una abertura oscura en Arsia Mons. Al lado pone una fotografía del tubo de lava donde vas a entrenar. Entrenador. En Marte buscamos cavidades que puedan servir de refugio. Aquí vas a descender con cuerda y arnés, escanear la bóveda en tres dimensiones y restablecer la comunicación desde el interior del tubo. Continúa en P1.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p0.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p0.vtt",
-      "status": "pending-translation"
+      "output": "media/audio/v2/en/p0.mp3",
+      "captions": "media/audio/v2/en/p0.vtt",
+      "status": "ready"
     },
     {
       "id": "p1-es",
@@ -1765,8 +1765,8 @@
       "text": "Viñeta. En La Payunia, el entrenador verifica el arnés y la línea de seguridad. Bajo la entrada del tubo de lava hay un rellano y, más abajo, una cámara oscura.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p1.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p1.vtt",
+      "output": "media/audio/v2/es/p1.mp3",
+      "captions": "media/audio/v2/es/p1.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1778,8 +1778,8 @@
       "text": "Viñeta. En La Payunia, el entrenador verifica el arnés y la línea de seguridad. Bajo la entrada del tubo de lava hay un rellano y, más abajo, una cámara oscura.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p1.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p1.vtt",
+      "output": "media/audio/v2/en/p1.mp3",
+      "captions": "media/audio/v2/en/p1.vtt",
       "status": "pending-translation"
     },
     {
@@ -1791,8 +1791,8 @@
       "text": "Viñeta. Alcanzas directamente la cámara y aprendes a guiar una carga suspendida. Marca IZADO. Ve a P2-P1A.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p1-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p1-a.vtt",
+      "output": "media/audio/v2/es/p1-a.mp3",
+      "captions": "media/audio/v2/es/p1-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1804,8 +1804,8 @@
       "text": "Viñeta. Alcanzas directamente la cámara y aprendes a guiar una carga suspendida. Marca IZADO. Ve a P2-P1A.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p1-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p1-a.vtt",
+      "output": "media/audio/v2/en/p1-a.mp3",
+      "captions": "media/audio/v2/en/p1-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -1817,8 +1817,8 @@
       "text": "Viñeta. Ves una fisura que explica por qué parte del techo quedó fuera del mapa. Marca RELLANO. Ve a P2-P1B.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p1-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p1-b.vtt",
+      "output": "media/audio/v2/es/p1-b.mp3",
+      "captions": "media/audio/v2/es/p1-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1830,8 +1830,8 @@
       "text": "Viñeta. Ves una fisura que explica por qué parte del techo quedó fuera del mapa. Marca RELLANO. Ve a P2-P1B.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p1-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p1-b.vtt",
+      "output": "media/audio/v2/en/p1-b.mp3",
+      "captions": "media/audio/v2/en/p1-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -1843,8 +1843,8 @@
       "text": "Viñeta. La bolsa del escáner gira y se engancha en un saliente. El entrenador detiene el descenso. Tu equipo puede recuperar el escáner desde la línea de apoyo. Ve a PR.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p1-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p1-c.vtt",
+      "output": "media/audio/v2/es/p1-c.mp3",
+      "captions": "media/audio/v2/es/p1-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1856,8 +1856,8 @@
       "text": "Viñeta. La bolsa del escáner gira y se engancha en un saliente. El entrenador detiene el descenso. Tu equipo puede recuperar el escáner desde la línea de apoyo. Ve a PR.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p1-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p1-c.vtt",
+      "output": "media/audio/v2/en/p1-c.mp3",
+      "captions": "media/audio/v2/en/p1-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -1869,8 +1869,8 @@
       "text": "Entrenador. Elige cómo completar la maniobra antes de seguir.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/pr.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/pr.vtt",
+      "output": "media/audio/v2/es/pr.mp3",
+      "captions": "media/audio/v2/es/pr.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1882,8 +1882,8 @@
       "text": "Entrenador. Elige cómo completar la maniobra antes de seguir.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/pr.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/pr.vtt",
+      "output": "media/audio/v2/en/pr.mp3",
+      "captions": "media/audio/v2/en/pr.vtt",
       "status": "pending-translation"
     },
     {
@@ -1895,8 +1895,8 @@
       "text": "Viñeta. La bolsa vuelve al borde y baja por el centro sin rozar la roca. Marca IZADO. Ve a P2-PRA.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/pr-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/pr-a.vtt",
+      "output": "media/audio/v2/es/pr-a.mp3",
+      "captions": "media/audio/v2/es/pr-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1908,8 +1908,8 @@
       "text": "Viñeta. La bolsa vuelve al borde y baja por el centro sin rozar la roca. Marca IZADO. Ve a P2-PRA.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/pr-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/pr-a.vtt",
+      "output": "media/audio/v2/en/pr-a.mp3",
+      "captions": "media/audio/v2/en/pr-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -1921,8 +1921,8 @@
       "text": "Viñeta. Desde allí señalas el saliente y ves una fisura por encima. El equipo libera la bolsa desde arriba. Marca RELLANO. Ve a P2-PRB.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/pr-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/pr-b.vtt",
+      "output": "media/audio/v2/es/pr-b.mp3",
+      "captions": "media/audio/v2/es/pr-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1934,8 +1934,8 @@
       "text": "Viñeta. Desde allí señalas el saliente y ves una fisura por encima. El equipo libera la bolsa desde arriba. Marca RELLANO. Ve a P2-PRB.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/pr-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/pr-b.vtt",
+      "output": "media/audio/v2/en/pr-b.mp3",
+      "captions": "media/audio/v2/en/pr-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -1947,8 +1947,8 @@
       "text": "Viñeta. La bolsa pasa por un punto firme que también serviría para montar el repetidor. Marca ANCLAJE. Ve a P2-PRC.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/pr-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/pr-c.vtt",
+      "output": "media/audio/v2/es/pr-c.mp3",
+      "captions": "media/audio/v2/es/pr-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1960,8 +1960,8 @@
       "text": "Viñeta. La bolsa pasa por un punto firme que también serviría para montar el repetidor. Marca ANCLAJE. Ve a P2-PRC.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/pr-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/pr-c.vtt",
+      "output": "media/audio/v2/en/pr-c.mp3",
+      "captions": "media/audio/v2/en/pr-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -1973,8 +1973,8 @@
       "text": "Viñeta. Desde el fondo de la cámara ves un saliente que tapa parte del corredor de regreso. El escáner espera en la línea de izado.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p2-p1a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p2-p1a.vtt",
+      "output": "media/audio/v2/es/p2-p1a.mp3",
+      "captions": "media/audio/v2/es/p2-p1a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -1986,8 +1986,8 @@
       "text": "Viñeta. Desde el fondo de la cámara ves un saliente que tapa parte del corredor de regreso. El escáner espera en la línea de izado.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p2-p1a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p2-p1a.vtt",
+      "output": "media/audio/v2/en/p2-p1a.mp3",
+      "captions": "media/audio/v2/en/p2-p1a.vtt",
       "status": "pending-translation"
     },
     {
@@ -1999,8 +1999,8 @@
       "text": "Viñeta. Sigues la fisura que viste desde el rellano. En la pantalla, la grieta desaparece justo donde el techo se curva.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p2-p1b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p2-p1b.vtt",
+      "output": "media/audio/v2/es/p2-p1b.mp3",
+      "captions": "media/audio/v2/es/p2-p1b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2012,8 +2012,8 @@
       "text": "Viñeta. Sigues la fisura que viste desde el rellano. En la pantalla, la grieta desaparece justo donde el techo se curva.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p2-p1b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p2-p1b.vtt",
+      "output": "media/audio/v2/en/p2-p1b.mp3",
+      "captions": "media/audio/v2/en/p2-p1b.vtt",
       "status": "pending-translation"
     },
     {
@@ -2025,8 +2025,8 @@
       "text": "Viñeta. El equipo deja el escáner a salvo bajo el pozo. Desde esa posición, una costilla de basalto impide medir la mitad de la bóveda.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p2-pra.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p2-pra.vtt",
+      "output": "media/audio/v2/es/p2-pra.mp3",
+      "captions": "media/audio/v2/es/p2-pra.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2038,8 +2038,8 @@
       "text": "Viñeta. El equipo deja el escáner a salvo bajo el pozo. Desde esa posición, una costilla de basalto impide medir la mitad de la bóveda.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p2-pra.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p2-pra.vtt",
+      "output": "media/audio/v2/en/p2-pra.mp3",
+      "captions": "media/audio/v2/en/p2-pra.vtt",
       "status": "pending-translation"
     },
     {
@@ -2051,8 +2051,8 @@
       "text": "Viñeta. La bolsa queda libre. Desde el rellano puedes ver el extremo de la fisura, pero el corredor sigue fuera del barrido.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p2-prb.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p2-prb.vtt",
+      "output": "media/audio/v2/es/p2-prb.mp3",
+      "captions": "media/audio/v2/es/p2-prb.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2064,8 +2064,8 @@
       "text": "Viñeta. La bolsa queda libre. Desde el rellano puedes ver el extremo de la fisura, pero el corredor sigue fuera del barrido.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p2-prb.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p2-prb.vtt",
+      "output": "media/audio/v2/en/p2-prb.mp3",
+      "captions": "media/audio/v2/en/p2-prb.vtt",
       "status": "pending-translation"
     },
     {
@@ -2077,8 +2077,8 @@
       "text": "Viñeta. Tras liberar la bolsa, descubres que el punto de anclaje domina un recodo que no aparece en el mapa.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p2-prc.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p2-prc.vtt",
+      "output": "media/audio/v2/es/p2-prc.mp3",
+      "captions": "media/audio/v2/es/p2-prc.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2090,8 +2090,8 @@
       "text": "Viñeta. Tras liberar la bolsa, descubres que el punto de anclaje domina un recodo que no aparece en el mapa.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p2-prc.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p2-prc.vtt",
+      "output": "media/audio/v2/en/p2-prc.mp3",
+      "captions": "media/audio/v2/en/p2-prc.vtt",
       "status": "pending-translation"
     },
     {
@@ -2103,8 +2103,8 @@
       "text": "Viñeta. Si tienes RELLANO, ya sabes dónde montar la segunda estación. Si te falta, haces un recorrido adicional con el equipo. Marca MAPA 3D. Viñeta de transición. Tu modelo completo muestra dónde se pierde la línea de visión. Elige cómo mantener el enlace al doblar ese punto. Ve a P3.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p2-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p2-a.vtt",
+      "output": "media/audio/v2/es/p2-a.mp3",
+      "captions": "media/audio/v2/es/p2-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2116,8 +2116,8 @@
       "text": "Viñeta. Si tienes RELLANO, ya sabes dónde montar la segunda estación. Si te falta, haces un recorrido adicional con el equipo. Marca MAPA 3D. Viñeta de transición. Tu modelo completo muestra dónde se pierde la línea de visión. Elige cómo mantener el enlace al doblar ese punto. Ve a P3.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p2-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p2-a.vtt",
+      "output": "media/audio/v2/en/p2-a.mp3",
+      "captions": "media/audio/v2/en/p2-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -2129,8 +2129,8 @@
       "text": "Viñeta. La evaluadora cierra un tramo inestable. Aprendes a detectar dónde podrían caer fragmentos sobre la ruta. Marca TECHO. Viñeta de transición. La evacuación del tramo fracturado deja libre solo el corredor del regreso. Hay que mantener la radio operativa desde ese lado. Ve a P3.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p2-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p2-b.vtt",
+      "output": "media/audio/v2/es/p2-b.mp3",
+      "captions": "media/audio/v2/es/p2-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2142,8 +2142,8 @@
       "text": "Viñeta. La evaluadora cierra un tramo inestable. Aprendes a detectar dónde podrían caer fragmentos sobre la ruta. Marca TECHO. Viñeta de transición. La evacuación del tramo fracturado deja libre solo el corredor del regreso. Hay que mantener la radio operativa desde ese lado. Ve a P3.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p2-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p2-b.vtt",
+      "output": "media/audio/v2/en/p2-b.mp3",
+      "captions": "media/audio/v2/en/p2-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -2155,8 +2155,8 @@
       "text": "Viñeta. Encuentras una galería lateral fuera de la línea de visión de la entrada. El equipo completa el barrido general mientras tú registras esa salida. Marca GALERÍA. Viñeta de transición. La galería lateral permite rodear el recodo sin usar el tramo cerrado. El equipo espera tu orden para restablecer el enlace. Ve a P3.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p2-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p2-c.vtt",
+      "output": "media/audio/v2/es/p2-c.mp3",
+      "captions": "media/audio/v2/es/p2-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2168,8 +2168,8 @@
       "text": "Viñeta. Encuentras una galería lateral fuera de la línea de visión de la entrada. El equipo completa el barrido general mientras tú registras esa salida. Marca GALERÍA. Viñeta de transición. La galería lateral permite rodear el recodo sin usar el tramo cerrado. El equipo espera tu orden para restablecer el enlace. Ve a P3.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p2-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p2-c.vtt",
+      "output": "media/audio/v2/en/p2-c.mp3",
+      "captions": "media/audio/v2/en/p2-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -2181,8 +2181,8 @@
       "text": "Viñeta. La radio pierde señal al doblar el recodo. Entonces se cuela una transmisión externa. Alguien pide a tu equipo que avance por el tramo que acaba de cerrar la evaluadora.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p3.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p3.vtt",
+      "output": "media/audio/v2/es/p3.mp3",
+      "captions": "media/audio/v2/es/p3.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2194,8 +2194,8 @@
       "text": "Viñeta. La radio pierde señal al doblar el recodo. Entonces se cuela una transmisión externa. Alguien pide a tu equipo que avance por el tramo que acaba de cerrar la evaluadora.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p3.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p3.vtt",
+      "output": "media/audio/v2/en/p3.mp3",
+      "captions": "media/audio/v2/en/p3.vtt",
       "status": "pending-translation"
     },
     {
@@ -2207,8 +2207,8 @@
       "text": "Viñeta. Recuperas la comunicación con el control de superficie y el intruso pierde acceso al circuito. Marca CABLE. Viñeta de transición. La tripulación lleva el enlace por cable hasta el borde del derrumbe. Ve a P4.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p3-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p3-a.vtt",
+      "output": "media/audio/v2/es/p3-a.mp3",
+      "captions": "media/audio/v2/es/p3-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2220,8 +2220,8 @@
       "text": "Viñeta. Recuperas la comunicación con el control de superficie y el intruso pierde acceso al circuito. Marca CABLE. Viñeta de transición. La tripulación lleva el enlace por cable hasta el borde del derrumbe. Ve a P4.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p3-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p3-a.vtt",
+      "output": "media/audio/v2/en/p3-a.mp3",
+      "captions": "media/audio/v2/en/p3-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -2233,8 +2233,8 @@
       "text": "Viñeta. Con ANCLAJE, aprovechas el punto que marcaste. Si te falta, el equipo hace una prueba de cobertura para localizarlo. Marca RED. Viñeta de transición. Antes de entrar montas el primer repetidor. La segunda estación debe quedar del otro lado del recodo. Ve a P4.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p3-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p3-b.vtt",
+      "output": "media/audio/v2/es/p3-b.mp3",
+      "captions": "media/audio/v2/es/p3-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2246,8 +2246,8 @@
       "text": "Viñeta. Con ANCLAJE, aprovechas el punto que marcaste. Si te falta, el equipo hace una prueba de cobertura para localizarlo. Marca RED. Viñeta de transición. Antes de entrar montas el primer repetidor. La segunda estación debe quedar del otro lado del recodo. Ve a P4.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p3-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p3-b.vtt",
+      "output": "media/audio/v2/en/p3-b.mp3",
+      "captions": "media/audio/v2/en/p3-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -2259,8 +2259,8 @@
       "text": "Viñeta. El enlace funciona por turnos. En la grabación queda el identificador que usó el intruso. Marca GRABACIÓN. Viñeta de transición. Repasas la grabación de la orden falsa. Cerca de la entrada reconoces el mismo identificador en el terminal de emergencia. Ve a P4.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p3-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p3-c.vtt",
+      "output": "media/audio/v2/es/p3-c.mp3",
+      "captions": "media/audio/v2/es/p3-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2272,8 +2272,8 @@
       "text": "Viñeta. El enlace funciona por turnos. En la grabación queda el identificador que usó el intruso. Marca GRABACIÓN. Viñeta de transición. Repasas la grabación de la orden falsa. Cerca de la entrada reconoces el mismo identificador en el terminal de emergencia. Ve a P4.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p3-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p3-c.vtt",
+      "output": "media/audio/v2/en/p3-c.mp3",
+      "captions": "media/audio/v2/en/p3-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -2285,8 +2285,8 @@
       "text": "Viñeta. Tras acreditar las tres pruebas y cumplir dieciocho años, viajas con la agencia a Arsia Mons. Nueva Era instaló su módulo dentro de una cavidad. Un derrumbe separa la entrada del refugio donde se encuentra James. La tripulación asegura la zona antes de entrar. James, por el terminal de emergencia. Tengo el registro de los secuestros. La batería de este terminal apenas aguanta.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p4.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p4.vtt",
+      "output": "media/audio/v2/es/p4.mp3",
+      "captions": "media/audio/v2/es/p4.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2298,8 +2298,8 @@
       "text": "Viñeta. Tras acreditar las tres pruebas y cumplir dieciocho años, viajas con la agencia a Arsia Mons. Nueva Era instaló su módulo dentro de una cavidad. Un derrumbe separa la entrada del refugio donde se encuentra James. La tripulación asegura la zona antes de entrar. James, por el terminal de emergencia. Tengo el registro de los secuestros. La batería de este terminal apenas aguanta.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p4.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p4.vtt",
+      "output": "media/audio/v2/en/p4.mp3",
+      "captions": "media/audio/v2/en/p4.vtt",
       "status": "pending-translation"
     },
     {
@@ -2311,8 +2311,8 @@
       "text": "Viñeta. Con GALERÍA o MAPA 3D, guías a la tripulación por un paso que permite sacar también el registro. Marca PRUEBAS. Si te faltan ambos, el equipo localiza un paso estrecho y evacúa a James. El registro queda en el refugio. Viñeta de transición. Antes de subir a la nave, James traza en tu bitácora el contorno de la galería por la que salió. Ve a F1.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p4-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p4-a.vtt",
+      "output": "media/audio/v2/es/p4-a.mp3",
+      "captions": "media/audio/v2/es/p4-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2324,8 +2324,8 @@
       "text": "Viñeta. Con GALERÍA o MAPA 3D, guías a la tripulación por un paso que permite sacar también el registro. Marca PRUEBAS. Si te faltan ambos, el equipo localiza un paso estrecho y evacúa a James. El registro queda en el refugio. Viñeta de transición. Antes de subir a la nave, James traza en tu bitácora el contorno de la galería por la que salió. Ve a F1.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p4-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p4-a.vtt",
+      "output": "media/audio/v2/en/p4-a.mp3",
+      "captions": "media/audio/v2/en/p4-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -2337,8 +2337,8 @@
       "text": "Viñeta. Con TECHO o IZADO, ayudas a instalar la línea por un tramo estable. Suben James y el equipo de almacenamiento. Marca PRUEBAS. Si te faltan ambos, la tripulación monta un rescate asistido y solo sube a James antes del cierre del pozo. Viñeta de transición. Devuelves el equipo de izado a la tripulación. Desde la nave, James pregunta si aún queda alguien cerca del pozo. Ve a F1.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p4-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p4-b.vtt",
+      "output": "media/audio/v2/es/p4-b.mp3",
+      "captions": "media/audio/v2/es/p4-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2350,8 +2350,8 @@
       "text": "Viñeta. Con TECHO o IZADO, ayudas a instalar la línea por un tramo estable. Suben James y el equipo de almacenamiento. Marca PRUEBAS. Si te faltan ambos, la tripulación monta un rescate asistido y solo sube a James antes del cierre del pozo. Viñeta de transición. Devuelves el equipo de izado a la tripulación. Desde la nave, James pregunta si aún queda alguien cerca del pozo. Ve a F1.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p4-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p4-b.vtt",
+      "output": "media/audio/v2/en/p4-b.mp3",
+      "captions": "media/audio/v2/en/p4-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -2363,8 +2363,8 @@
       "text": "Viñeta. Con CABLE o RED, instalas un enlace a tiempo. Marca PRUEBAS. Si te faltan ambos, la descarga se corta. Si tienes GRABACIÓN o SÍMBOLO, puedes vincular una parte del archivo con el equipo de Nueva Era. En ese caso, marca RASTRO. La tripulación lleva a James a la superficie. Viñeta de transición. En la esclusa, James te entrega el terminal de emergencia con el que intentaste recibir el registro. Ve a F1.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/p4-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/p4-c.vtt",
+      "output": "media/audio/v2/es/p4-c.mp3",
+      "captions": "media/audio/v2/es/p4-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2376,8 +2376,8 @@
       "text": "Viñeta. Con CABLE o RED, instalas un enlace a tiempo. Marca PRUEBAS. Si te faltan ambos, la descarga se corta. Si tienes GRABACIÓN o SÍMBOLO, puedes vincular una parte del archivo con el equipo de Nueva Era. En ese caso, marca RASTRO. La tripulación lleva a James a la superficie. Viñeta de transición. En la esclusa, James te entrega el terminal de emergencia con el que intentaste recibir el registro. Ve a F1.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/p4-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/p4-c.vtt",
+      "output": "media/audio/v2/en/p4-c.mp3",
+      "captions": "media/audio/v2/en/p4-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -2389,8 +2389,8 @@
       "text": "Viñeta. James ya está a bordo de la nave que lo llevará a la Tierra. Desde el módulo de la agencia, puedes decidir qué hacer con lo que recuperaste. La oportunidad de enviar un archivo grande se cierra cuando la estación orbital sale del alcance.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/f1.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/f1.vtt",
+      "output": "media/audio/v2/es/f1.mp3",
+      "captions": "media/audio/v2/es/f1.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2402,8 +2402,8 @@
       "text": "Viñeta. James ya está a bordo de la nave que lo llevará a la Tierra. Desde el módulo de la agencia, puedes decidir qué hacer con lo que recuperaste. La oportunidad de enviar un archivo grande se cierra cuando la estación orbital sale del alcance.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/f1.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/f1.vtt",
+      "output": "media/audio/v2/en/f1.mp3",
+      "captions": "media/audio/v2/en/f1.vtt",
       "status": "pending-translation"
     },
     {
@@ -2415,8 +2415,8 @@
       "text": "Viñeta. Si tienes PRUEBAS y PRENSA, la periodista verifica el archivo y llama a las familias. Ve a Final A. Si tienes PRUEBAS y te falta PRENSA, la editora guarda el archivo y busca una segunda fuente. Ve a Final E. Si te faltan las PRUEBAS, envías una grabación con el testimonio de James. Ve a Final F.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/f1-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/f1-a.vtt",
+      "output": "media/audio/v2/es/f1-a.mp3",
+      "captions": "media/audio/v2/es/f1-a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2428,8 +2428,8 @@
       "text": "Viñeta. Si tienes PRUEBAS y PRENSA, la periodista verifica el archivo y llama a las familias. Ve a Final A. Si tienes PRUEBAS y te falta PRENSA, la editora guarda el archivo y busca una segunda fuente. Ve a Final E. Si te faltan las PRUEBAS, envías una grabación con el testimonio de James. Ve a Final F.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/f1-a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/f1-a.vtt",
+      "output": "media/audio/v2/en/f1-a.mp3",
+      "captions": "media/audio/v2/en/f1-a.vtt",
       "status": "pending-translation"
     },
     {
@@ -2441,8 +2441,8 @@
       "text": "Viñeta. Si tienes PRUEBAS, envías el archivo cifrado y la agencia prepara una intervención. Ve a Final B. Si te faltan las PRUEBAS, entregas el material disponible y la agencia abre una investigación con el testimonio de James. Ve a Final C.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/f1-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/f1-b.vtt",
+      "output": "media/audio/v2/es/f1-b.mp3",
+      "captions": "media/audio/v2/es/f1-b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2454,8 +2454,8 @@
       "text": "Viñeta. Si tienes PRUEBAS, envías el archivo cifrado y la agencia prepara una intervención. Ve a Final B. Si te faltan las PRUEBAS, entregas el material disponible y la agencia abre una investigación con el testimonio de James. Ve a Final C.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/f1-b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/f1-b.vtt",
+      "output": "media/audio/v2/en/f1-b.mp3",
+      "captions": "media/audio/v2/en/f1-b.vtt",
       "status": "pending-translation"
     },
     {
@@ -2467,8 +2467,8 @@
       "text": "Viñeta. Si tienes PRUEBAS, dejas el original bajo custodia y guías un reconocimiento para seguir el cargamento. Ve a Final D. Si te faltan las PRUEBAS y tienes RASTRO, cruzas tu pista con los sensores y detectas un vehículo abandonado. Ve a Final G. Si te faltan ambas marcas, James recuerda la identificación de la nave y la tripulación encuentra el registro de vuelo. Ve a Final H.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/f1-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/f1-c.vtt",
+      "output": "media/audio/v2/es/f1-c.mp3",
+      "captions": "media/audio/v2/es/f1-c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2480,8 +2480,8 @@
       "text": "Viñeta. Si tienes PRUEBAS, dejas el original bajo custodia y guías un reconocimiento para seguir el cargamento. Ve a Final D. Si te faltan las PRUEBAS y tienes RASTRO, cruzas tu pista con los sensores y detectas un vehículo abandonado. Ve a Final G. Si te faltan ambas marcas, James recuerda la identificación de la nave y la tripulación encuentra el registro de vuelo. Ve a Final H.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/f1-c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/f1-c.vtt",
+      "output": "media/audio/v2/en/f1-c.mp3",
+      "captions": "media/audio/v2/en/f1-c.vtt",
       "status": "pending-translation"
     },
     {
@@ -2493,8 +2493,8 @@
       "text": "Viñeta 1. El día que James regresa a Massachusetts, la periodista publica los contratos y los nombres de quienes financiaron los secuestros. Las familias reciben por fin una lista de los traslados. Viñeta 2. Tu madre gira el teléfono para que veas a James en la cocina de casa. Sobre la mesa está la maqueta que dejó a medio armar. James. Guardé la pieza que faltaba. La ponemos cuando vuelvas.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/final a.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/final a.vtt",
+      "output": "media/audio/v2/es/final a.mp3",
+      "captions": "media/audio/v2/es/final a.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2506,8 +2506,8 @@
       "text": "Viñeta 1. El día que James regresa a Massachusetts, la periodista publica los contratos y los nombres de quienes financiaron los secuestros. Las familias reciben por fin una lista de los traslados. Viñeta 2. Tu madre gira el teléfono para que veas a James en la cocina de casa. Sobre la mesa está la maqueta que dejó a medio armar. James. Guardé la pieza que faltaba. La ponemos cuando vuelvas.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/final a.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/final a.vtt",
+      "output": "media/audio/v2/en/final a.mp3",
+      "captions": "media/audio/v2/en/final a.vtt",
       "status": "pending-translation"
     },
     {
@@ -2519,8 +2519,8 @@
       "text": "Viñeta 1. La agencia usa los registros para intervenir el emplazamiento y asegurar sus archivos. James vuelve a Massachusetts y declara ante los investigadores. Desde su escondite, Brad recibe un mensaje de James: «Ya estoy en casa». Viñeta 2. En Marte, te entregan una llave del primer laboratorio civil montado con el equipo recuperado. La otra se la queda la ingeniera que lo operará contigo. Cuando abren la puerta, en el lugar del antiguo tablero de órdenes hay una lista de experimentos propuestos por los equipos de ambos mundos.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/final b.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/final b.vtt",
+      "output": "media/audio/v2/es/final b.mp3",
+      "captions": "media/audio/v2/es/final b.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2532,8 +2532,8 @@
       "text": "Viñeta 1. La agencia usa los registros para intervenir el emplazamiento y asegurar sus archivos. James vuelve a Massachusetts y declara ante los investigadores. Desde su escondite, Brad recibe un mensaje de James: «Ya estoy en casa». Viñeta 2. En Marte, te entregan una llave del primer laboratorio civil montado con el equipo recuperado. La otra se la queda la ingeniera que lo operará contigo. Cuando abren la puerta, en el lugar del antiguo tablero de órdenes hay una lista de experimentos propuestos por los equipos de ambos mundos.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/final b.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/final b.vtt",
+      "output": "media/audio/v2/en/final b.mp3",
+      "captions": "media/audio/v2/en/final b.vtt",
       "status": "pending-translation"
     },
     {
@@ -2545,8 +2545,8 @@
       "text": "Viñeta 1. James vuelve a casa. Al día siguiente declara sobre lo ocurrido. Si anotaste RASTRO, dibuja junto a los investigadores la conexión entre tu pista y las instalaciones. Si te falta esa marca, empieza por nombrar a las personas que recuerda del carguero. Viñeta 2. A las tres de la tarde, como el día que desapareció, tu madre te manda una foto de la cocina. James está sentado frente a la ventana con dos tazones de cereal. Uno es el tuyo.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/final c.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/final c.vtt",
+      "output": "media/audio/v2/es/final c.mp3",
+      "captions": "media/audio/v2/es/final c.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2558,8 +2558,8 @@
       "text": "Viñeta 1. James vuelve a casa. Al día siguiente declara sobre lo ocurrido. Si anotaste RASTRO, dibuja junto a los investigadores la conexión entre tu pista y las instalaciones. Si te falta esa marca, empieza por nombrar a las personas que recuerda del carguero. Viñeta 2. A las tres de la tarde, como el día que desapareció, tu madre te manda una foto de la cocina. James está sentado frente a la ventana con dos tazones de cereal. Uno es el tuyo.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/final c.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/final c.vtt",
+      "output": "media/audio/v2/en/final c.mp3",
+      "captions": "media/audio/v2/en/final c.vtt",
       "status": "pending-translation"
     },
     {
@@ -2571,8 +2571,8 @@
       "text": "Viñeta 1. Ves partir la nave de James hacia la Tierra desde el módulo de la agencia. Antes de perder el enlace, llega el informe del reconocimiento. El carguero que buscabas está vacío, pero sigue transmitiendo una baliza de carga. Viñeta 2. En la imagen de radar, tres puntos responden a la baliza. Uno se mueve. La tripulación prepara el vehículo y tú vuelves a abrir la bitácora.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/final d.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/final d.vtt",
+      "output": "media/audio/v2/es/final d.mp3",
+      "captions": "media/audio/v2/es/final d.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2584,8 +2584,8 @@
       "text": "Viñeta 1. Ves partir la nave de James hacia la Tierra desde el módulo de la agencia. Antes de perder el enlace, llega el informe del reconocimiento. El carguero que buscabas está vacío, pero sigue transmitiendo una baliza de carga. Viñeta 2. En la imagen de radar, tres puntos responden a la baliza. Uno se mueve. La tripulación prepara el vehículo y tú vuelves a abrir la bitácora.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/final d.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/final d.vtt",
+      "output": "media/audio/v2/en/final d.mp3",
+      "captions": "media/audio/v2/en/final d.vtt",
       "status": "pending-translation"
     },
     {
@@ -2597,8 +2597,8 @@
       "text": "Viñeta. De regreso en Massachusetts, James identifica para la editora a otra persona que firmó los registros. Esa noche, la redacción llama a la segunda fuente. Desde Marte, ves aparecer los contratos junto a los nombres de quienes confirmaron su origen.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/final e.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/final e.vtt",
+      "output": "media/audio/v2/es/final e.mp3",
+      "captions": "media/audio/v2/es/final e.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2610,8 +2610,8 @@
       "text": "Viñeta. De regreso en Massachusetts, James identifica para la editora a otra persona que firmó los registros. Esa noche, la redacción llama a la segunda fuente. Desde Marte, ves aparecer los contratos junto a los nombres de quienes confirmaron su origen.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/final e.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/final e.vtt",
+      "output": "media/audio/v2/en/final e.mp3",
+      "captions": "media/audio/v2/en/final e.vtt",
       "status": "pending-translation"
     },
     {
@@ -2623,8 +2623,8 @@
       "text": "Viñeta. Tras escuchar la entrevista, una familia llama a la redacción. Su hija mandó una foto de la misma nave. James reconoce en ella a otra persona desaparecida y entrega la imagen a los investigadores.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/final f.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/final f.vtt",
+      "output": "media/audio/v2/es/final f.mp3",
+      "captions": "media/audio/v2/es/final f.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2636,8 +2636,8 @@
       "text": "Viñeta. Tras escuchar la entrevista, una familia llama a la redacción. Su hija mandó una foto de la misma nave. James reconoce en ella a otra persona desaparecida y entrega la imagen a los investigadores.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/final f.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/final f.vtt",
+      "output": "media/audio/v2/en/final f.mp3",
+      "captions": "media/audio/v2/en/final f.vtt",
       "status": "pending-translation"
     },
     {
@@ -2649,8 +2649,8 @@
       "text": "Viñeta. Alcanzas el vehículo que detectaste. En su memoria queda la última parada, un refugio que la agencia desconocía. James confirma desde la nave que en ese refugio dormía parte del equipo capturado.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/final g.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/final g.vtt",
+      "output": "media/audio/v2/es/final g.mp3",
+      "captions": "media/audio/v2/es/final g.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2662,8 +2662,8 @@
       "text": "Viñeta. Alcanzas el vehículo que detectaste. En su memoria queda la última parada, un refugio que la agencia desconocía. James confirma desde la nave que en ese refugio dormía parte del equipo capturado.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/final g.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/final g.vtt",
+      "output": "media/audio/v2/en/final g.mp3",
+      "captions": "media/audio/v2/en/final g.vtt",
       "status": "pending-translation"
     },
     {
@@ -2675,8 +2675,8 @@
       "text": "Viñeta. Desde Marte envías a James el registro de vuelo. Al llegar a la Tierra, él acompaña a los investigadores al depósito. Detrás de una cortina encuentran la maqueta de un módulo igual al que estaba construyendo cuando desapareció. Última viñeta según tu primera pista En cualquiera de los ocho finales, lee la última viñeta que corresponde al reto que seguiste después del semáforo. Si pasaste por IB. La grabación que conservaste de Brad queda adjunta al informe de la misión. Si pasaste por IM. Tu madre y la periodista reciben aviso cuando James sube a la nave. Si pasaste por IE. El enlace de la agencia agrega al informe el dibujo que Brad hizo en la caseta.",
       "textSourceLanguage": "es",
       "translationStatus": "not-required",
-      "output": "production/audio/red-hope-v2.0/es/final h.mp3",
-      "captions": "production/audio/red-hope-v2.0/es/final h.vtt",
+      "output": "media/audio/v2/es/final h.mp3",
+      "captions": "media/audio/v2/es/final h.vtt",
       "status": "pending-voice-id"
     },
     {
@@ -2688,8 +2688,8 @@
       "text": "Viñeta. Desde Marte envías a James el registro de vuelo. Al llegar a la Tierra, él acompaña a los investigadores al depósito. Detrás de una cortina encuentran la maqueta de un módulo igual al que estaba construyendo cuando desapareció. Última viñeta según tu primera pista En cualquiera de los ocho finales, lee la última viñeta que corresponde al reto que seguiste después del semáforo. Si pasaste por IB. La grabación que conservaste de Brad queda adjunta al informe de la misión. Si pasaste por IM. Tu madre y la periodista reciben aviso cuando James sube a la nave. Si pasaste por IE. El enlace de la agencia agrega al informe el dibujo que Brad hizo en la caseta.",
       "textSourceLanguage": "es",
       "translationStatus": "pending",
-      "output": "production/audio/red-hope-v2.0/en/final h.mp3",
-      "captions": "production/audio/red-hope-v2.0/en/final h.vtt",
+      "output": "media/audio/v2/en/final h.mp3",
+      "captions": "media/audio/v2/en/final h.vtt",
       "status": "pending-translation"
     }
   ]

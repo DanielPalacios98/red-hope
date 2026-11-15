@@ -31,17 +31,18 @@ const items = story.nodes.map((node) => {
   const routeId = routeForCode(node.code);
   const route = routes[routeId];
   const routeText = route ? `${route.earth} ${route.action}` : 'Use the selected Earth training location and keep the visual language consistent with that route.';
-  const ready = ['J0', 'A0', 'P0'].includes(node.code);
+  const outputMp4 = `media/video/v2/${routeId === 'shared' ? 'shared' : routeId}/${node.code.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-training-earth.mp4`;
+  const ready = fs.existsSync(path.join(root, outputMp4));
   return {
     id: node.id,
     nodeCode: node.code,
     routeId,
-    status: ready ? 'earth-opening-render-ready' : 'pending-google-video-render',
+    status: ready ? 'earth-training-render-ready' : 'pending-google-video-render',
     earthOnlyAction: true,
     sceneBrief: storyBrief(node),
     prompt: `${globalPrompt} ${routeText} Stage the scene as a visual interpretation of: ${storyBrief(node)}`,
     negativePrompt,
-    outputMp4: `media/video/v2/${routeId === 'shared' ? 'shared' : routeId}/${node.code.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-earth.mp4`,
+    outputMp4,
     outputHls: `media/video/v2/${routeId === 'shared' ? 'shared' : routeId}/master.m3u8`,
     audioPolicy: 'Generate visuals without embedded dialogue; attach approved ElevenLabs ES/EN tracks after MP4 QA.'
   };
@@ -53,7 +54,7 @@ const queue = {
   sourceStory: 'data/story.json',
   selectionRequired: true,
   selectionKey: 'route',
-  summary: { nodes: items.length, openingsReady: items.filter((item) => item.status === 'earth-opening-render-ready').length, pending: items.filter((item) => item.status !== 'earth-opening-render-ready').length },
+  summary: { nodes: items.length, visualsReady: items.filter((item) => item.status === 'earth-training-render-ready').length, pending: items.filter((item) => item.status !== 'earth-training-render-ready').length },
   items
 };
 fs.writeFileSync(path.join(root, 'data', 'video-generation-queue.json'), `${JSON.stringify(queue, null, 2)}\n`);

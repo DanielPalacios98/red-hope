@@ -564,14 +564,14 @@
       "media": {
         "visual": "media/video/v2/jezero/master.m3u8",
         "audio": {
-          "es": null,
-          "en": null
+          "es": "./media/audio/v2/es/j0.mp3",
+          "en": "./media/audio/v2/en/j0.mp3"
         },
         "captions": {
-          "es": null,
-          "en": null
+          "es": "./media/audio/v2/es/j0.vtt",
+          "en": "./media/audio/v2/en/j0.vtt"
         },
-        "status": "earth-training-visual-ready-audio-pending",
+        "status": "earth-training-visual-and-bilingual-audio-ready",
         "visualMp4": "media/video/v2/jezero/j0-training-earth.mp4",
         "qa": {
           "provider": "Google Flow",
@@ -580,8 +580,13 @@
           "resolution": "1280x720",
           "durationSeconds": 8.042667,
           "verifiedOn": "2026-11-15",
-          "embeddedAudio": "preview-only; bilingual ElevenLabs tracks still pending",
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached",
           "earthTrainingVerified": true
+        },
+        "audioProvider": "ElevenLabs",
+        "audioVoices": {
+          "es": "HR Elena",
+          "en": "David Boles - Well-spoken and Calm"
         }
       }
     },
@@ -644,7 +649,7 @@
         }
       ],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/jezero/j1/master.m3u8",
         "audio": {
           "es": null,
           "en": null
@@ -653,7 +658,16 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/jezero/j1-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "none; ElevenLabs track remains separate"
+        }
       }
     },
     {
@@ -1764,14 +1778,14 @@
       "media": {
         "visual": "media/video/v2/arcadia/master.m3u8",
         "audio": {
-          "es": null,
-          "en": null
+          "es": "./media/audio/v2/es/a0.mp3",
+          "en": "./media/audio/v2/en/a0.mp3"
         },
         "captions": {
-          "es": null,
-          "en": null
+          "es": "./media/audio/v2/es/a0.vtt",
+          "en": "./media/audio/v2/en/a0.vtt"
         },
-        "status": "earth-training-visual-ready-audio-pending",
+        "status": "earth-training-visual-and-bilingual-audio-ready",
         "visualMp4": "media/video/v2/arcadia/a0-training-earth.mp4",
         "qa": {
           "provider": "Google Flow",
@@ -1780,8 +1794,13 @@
           "resolution": "1280x720",
           "durationSeconds": 8.042667,
           "verifiedOn": "2026-11-15",
-          "embeddedAudio": "preview-only; bilingual ElevenLabs tracks still pending",
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached",
           "earthTrainingVerified": true
+        },
+        "audioProvider": "ElevenLabs",
+        "audioVoices": {
+          "es": "HR Elena",
+          "en": "David Boles - Well-spoken and Calm"
         }
       }
     },
@@ -1837,7 +1856,7 @@
         }
       ],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/arcadia/a1/master.m3u8",
         "audio": {
           "es": null,
           "en": null
@@ -1846,7 +1865,16 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/arcadia/a1-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "none; ElevenLabs track remains separate"
+        }
       }
     },
     {
@@ -2875,14 +2903,14 @@
       "media": {
         "visual": "media/video/v2/arsia/master.m3u8",
         "audio": {
-          "es": null,
-          "en": null
+          "es": "./media/audio/v2/es/p0.mp3",
+          "en": "./media/audio/v2/en/p0.mp3"
         },
         "captions": {
-          "es": null,
-          "en": null
+          "es": "./media/audio/v2/es/p0.vtt",
+          "en": "./media/audio/v2/en/p0.vtt"
         },
-        "status": "earth-training-visual-ready-audio-pending",
+        "status": "earth-training-visual-and-bilingual-audio-ready",
         "visualMp4": "media/video/v2/arsia/p0-training-earth.mp4",
         "qa": {
           "provider": "Google Flow",
@@ -2891,8 +2919,13 @@
           "resolution": "1280x720",
           "durationSeconds": 8.042667,
           "verifiedOn": "2026-11-15",
-          "embeddedAudio": "preview-only; bilingual ElevenLabs tracks still pending",
+          "embeddedAudio": "preview-only; separate bilingual ElevenLabs tracks attached",
           "earthTrainingVerified": true
+        },
+        "audioProvider": "ElevenLabs",
+        "audioVoices": {
+          "es": "HR Elena",
+          "en": "David Boles - Well-spoken and Calm"
         }
       }
     },
@@ -2954,7 +2987,7 @@
         }
       ],
       "media": {
-        "visual": null,
+        "visual": "./media/video/v2/arsia/p1/master.m3u8",
         "audio": {
           "es": null,
           "en": null
@@ -2963,7 +2996,16 @@
           "es": null,
           "en": null
         },
-        "status": "not-generated"
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "./media/video/v2/arsia/p1-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "earthTrainingVerified": true,
+          "embeddedAudio": "none; ElevenLabs track remains separate"
+        }
       }
     },
     {
