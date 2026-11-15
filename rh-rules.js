@@ -46,7 +46,7 @@
 
   window.RH = {
     // Escenas con video que no corresponden a su escena: se muestran con su ilustración
-    noVideo: new Set([]), // cuando existan j1_a.svg, j1_b.svg y jr.svg, pon aquí: 'j1_a', 'j1_b', 'jr'
+    noVideo: new Set(['j1_a', 'j1_b', 'jr']),
     outcome(target, marks) {
       const f = OUT[target]; const m = [...marks];
       if (!f) return { marks: m, added: [], removed: [] };
