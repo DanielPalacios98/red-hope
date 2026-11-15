@@ -3,184 +3,91 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#090a0d" />
-    <title>RED HOPE — Las tres medallas</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <meta name="theme-color" content="#070a12" />
+    <meta name="description" content="RED HOPE v2.0: crónica interactiva bilingüe entre Marte y la Tierra." />
+    <title>RED HOPE · Crónica de dos mundos</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./media.css" />
   </head>
   <body>
-    <div class="app-shell" id="appShell">
+    <div class="starfield" aria-hidden="true"></div>
+    <main class="app-shell">
       <header class="topbar">
-        <div class="brand-lockup">
+        <a class="brand" href="#top" aria-label="RED HOPE inicio">
           <span class="brand-mark">RH</span>
-          <div>
-            <p class="eyebrow">NASA analog mission / 2050</p>
-            <h1>RED HOPE</h1>
-          </div>
-        </div>
-        <div class="top-actions" aria-label="Controles de misión">
-          <button class="icon-button" id="scienceButton" type="button" title="Abrir panel científico">⌁ <span>Ciencia</span></button>
-          <button class="icon-button" id="missionMapButton" type="button" title="Abrir mapas y misión">⌖ <span>Mapa / misión</span></button>
-          <button class="icon-button" id="captionsButton" type="button" title="Activar subtítulos">CC</button>
-          <button class="icon-button" id="muteButton" type="button" title="Silenciar audio">♫</button>
-          <button class="icon-button" id="restartButton" type="button" title="Reiniciar misión">↺</button>
-        </div>
+          <span><strong>RED HOPE</strong><small>CRÓNICA DE DOS MUNDOS · V2.0</small></span>
+        </a>
+        <div class="mission-status" id="mission-status">PREPARANDO MISIÓN</div>
       </header>
 
-      <main class="mission-layout">
-        <aside class="mission-rail" aria-label="Estado de misión">
-          <div class="rail-heading">
-            <span>CADete / 15–18</span>
-            <span class="live-dot">● LIVE</span>
-          </div>
-          <div class="medal-panel">
-            <p class="eyebrow">Medallas de entrenamiento</p>
-            <div class="medals" id="medals" aria-label="Medallas conseguidas">
-              <span class="medal" data-medal="1">01</span>
-              <span class="medal" data-medal="2">02</span>
-              <span class="medal" data-medal="3">03</span>
-            </div>
-          </div>
-          <div class="telemetry-card">
-            <div class="telemetry-line"><span>CONTROL ROVER</span><strong id="roverValue">50%</strong></div>
-            <div class="meter"><span id="roverMeter"></span></div>
-            <div class="telemetry-line"><span>EQUIPO</span><strong id="equipmentValue">100%</strong></div>
-            <div class="meter"><span id="equipmentMeter"></span></div>
-            <div class="telemetry-line"><span>RIESGO DE RUTA</span><strong id="riskValue">0%</strong></div>
-            <div class="meter danger"><span id="riskMeter"></span></div>
-          </div>
-          <div class="rail-log" id="railLog" aria-live="polite">
-            <p class="eyebrow">Bitácora</p>
-            <p>Esperando inicio de misión.</p>
-          </div>
-          <button class="rail-button" id="logButton" type="button">Abrir bitácora completa <span>↗</span></button>
-        </aside>
+      <div class="progress-track" aria-label="Progreso de la misión">
+        <span id="progress-fill"></span>
+      </div>
 
-        <section class="story-stage" aria-label="Escena interactiva">
-          <div class="stage-header">
-            <div>
-              <p class="eyebrow" id="stageScene">PRÓLOGO</p>
-              <h2 id="stageTitle">06:45 en el año 2050</h2>
-            </div>
-            <div class="progress-readout"><span id="nodeReadout">01</span><span>/ 21</span></div>
-          </div>
+      <section id="screen-language" class="screen screen-language" aria-labelledby="language-title">
+        <div class="eyebrow">ARCHIVO DE MISIÓN · 2050</div>
+        <h1 id="language-title">Una señal. Tres terrenos. Tu decisión cambia el registro.</h1>
+        <p class="lede">Elige el idioma de la voz y los subtítulos antes de abrir el mapa de entrenamiento.</p>
+        <div class="language-grid" role="group" aria-label="Seleccionar idioma">
+          <button class="language-card is-selected" data-language="es" type="button">
+            <span class="language-code">ES</span><span><strong>Español</strong><small>Voz y subtítulos en español</small></span><span class="check">✓</span>
+          </button>
+          <button class="language-card" data-language="en" type="button">
+            <span class="language-code">EN</span><span><strong>English</strong><small>Voice and captions in English</small></span><span class="check">✓</span>
+          </button>
+        </div>
+        <div class="notice notice-info" id="language-notice">La selección se guarda en este dispositivo y activa el primer gesto de audio en móviles.</div>
+        <button class="primary-button" id="open-map" type="button">Abrir mapa de misión <span>→</span></button>
+      </section>
 
-          <div class="media-frame" id="mediaFrame">
-            <div class="media-placeholder" id="mediaPlaceholder">
-              <div class="placeholder-grid"></div>
-              <div class="placeholder-copy">
-                <span class="placeholder-kicker">PLACA VISUAL PENDIENTE</span>
-                <strong id="placeholderTitle">La historia continúa en producción</strong>
-                <small>La interacción, audio y datos científicos ya están activos.</small>
+      <section id="screen-map" class="screen is-hidden" aria-labelledby="map-title">
+        <div class="screen-heading">
+          <div><div class="eyebrow">PASO 01 · MAPA DE RUTAS</div><h2 id="map-title">Elige dónde comienza tu entrenamiento</h2></div>
+          <button class="text-button" id="change-language" type="button">Cambiar idioma</button>
+        </div>
+        <p class="lede compact" id="map-lede">Los puntos de partida conectan un escenario de la historia con un análogo terrestre. La selección fija la ruta narrativa y el paquete de generación audiovisual.</p>
+        <div class="route-grid" id="route-grid" aria-live="polite"></div>
+        <div class="map-context">
+          <div class="context-panel mars-panel"><div class="panel-label">MARTE · CAPA DE RELIEVE</div><div class="contour-map mars-contour"><span class="map-pin">●</span><span class="map-caption" id="mars-map-caption">Selecciona una ruta</span></div><small>Referencia educativa: MOLA / NASA. Las coordenadas del libreto se validan antes de la versión final.</small></div>
+          <div class="context-panel earth-panel"><div class="panel-label">TIERRA · CAMPO DE ENTRENAMIENTO</div><div class="contour-map earth-contour"><span class="map-pin earth-pin">●</span><span class="map-caption" id="earth-map-caption">Selecciona un análogo</span></div><small>El mapa es contexto narrativo: no sustituye una medición científica ni una instrucción operativa.</small></div>
+        </div>
+        <div class="map-footer"><div class="notice notice-warn" id="route-notice">Selecciona una de las tres rutas para continuar.</div><button class="primary-button" id="start-route" type="button" disabled>Confirmar ruta <span>→</span></button></div>
+      </section>
+
+      <section id="screen-story" class="screen is-hidden" aria-labelledby="scene-title">
+        <div class="story-heading">
+          <div><div class="eyebrow" id="route-kicker">RUTA DE MISIÓN</div><h2 id="scene-title">Cargando escena…</h2></div>
+          <button class="text-button" id="back-to-map" type="button">← Volver al mapa</button>
+        </div>
+        <div class="story-layout">
+          <aside class="story-rail">
+            <div class="rail-card"><span class="rail-label">RUTA ACTIVA</span><strong id="active-route">—</strong><small id="active-earth">—</small></div>
+            <div class="rail-card"><span class="rail-label">MARCAS DE CAMPO</span><div class="marks" id="marks"><span class="empty-mark">Aún no hay marcas</span></div></div>
+            <div class="rail-card"><span class="rail-label">BITÁCORA</span><ol id="log-list"><li>Ruta seleccionada</li></ol></div>
+          </aside>
+          <div class="story-main">
+            <div class="video-frame" id="video-frame">
+              <div class="video-chrome"><span id="scene-code">—</span><span id="media-status">VIDEO V2 PENDIENTE</span></div>
+              <div class="video-stage" aria-live="polite">
+                <video id="scene-video-a" class="video-layer is-active is-hidden" playsinline preload="metadata" controls><track id="scene-track-a" kind="captions" /></video>
+                <video id="scene-video-b" class="video-layer is-hidden" playsinline preload="metadata" controls><track id="scene-track-b" kind="captions" /></video>
               </div>
+              <div class="video-placeholder" id="video-placeholder"><div class="placeholder-orbit"><span></span></div><div class="placeholder-kicker">ESCENA VISUAL PENDIENTE DE GENERACIÓN</div><h3 id="placeholder-title">—</h3><p id="placeholder-copy">La ruta ya está fijada. Aquí se conectará el MP4 maestro y después su variante HLS.</p><div class="placeholder-meta"><span id="placeholder-asset">assetPrefix: —</span><span>sin fallback cruzado</span></div></div>
+              <div class="video-caption" id="video-caption">La imagen se generará siguiendo el escenario seleccionado; el audio y los subtítulos se conectarán por idioma.</div>
+              <audio id="scene-audio" class="scene-audio is-hidden" controls preload="metadata"></audio>
             </div>
-            <video id="sceneVideo" class="scene-video" playsinline preload="metadata"></video>
-            <div class="media-vignette"></div>
-            <div class="media-status"><span id="mediaMode">MVP / MP4 local</span><span id="mediaDuration">—</span></div>
-            <div class="caption" id="caption" role="status"></div>
-            <button class="start-overlay" id="startButton" type="button">
-              <span class="play-glyph">▶</span>
-              <span>Iniciar misión</span>
-            </button>
+            <div class="scene-copy"><div class="scene-copy-head"><span class="eyebrow">VIÑETA <span id="scene-index">—</span></span><span class="science-chip" id="science-chip">NASA · CONTEXTO</span></div><div id="scene-script" class="scene-script"></div></div>
+            <div class="decision-panel"><div class="decision-head"><div><div class="eyebrow">DECISIÓN DE CAMPO</div><h3 id="decision-title">Elige cómo responder</h3></div><span id="decision-state" class="decision-state">DECISIÓN ABIERTA</span></div><div id="choices" class="choices"></div><div id="continue-wrap" class="continue-wrap"></div></div>
+            <div class="science-panel"><div><div class="eyebrow">CAPA EDUCATIVA</div><h3>Qué estás observando</h3></div><div id="science-content"></div></div>
+            <div class="ending-panel is-hidden" id="ending-panel"><div class="eyebrow">REGISTRO COMPLETADO</div><h3 id="ending-title">—</h3><p id="ending-copy">—</p><button class="primary-button" id="restart-mission" type="button">Reiniciar misión <span>↺</span></button></div>
           </div>
-
-          <div class="scene-controls">
-            <button class="control-button" id="playButton" type="button">▶ Reproducir</button>
-            <button class="control-button" id="showChoicesButton" type="button">Abrir decisiones</button>
-            <span class="control-note" id="controlNote">Las decisiones aparecerán sobre el final de la escena.</span>
-          </div>
-
-          <section class="choice-panel" id="choicePanel" aria-live="polite" aria-label="Decisiones del jugador">
-            <div class="choice-heading">
-              <div>
-                <p class="eyebrow">DECISIÓN DE CAMPO</p>
-                <h3 id="choiceQuestion">Elige cómo responder</h3>
-              </div>
-              <span class="choice-lock" id="choiceLock">BLOQUEADO</span>
-            </div>
-            <div class="choices" id="choices"></div>
-          </section>
-        </section>
-      </main>
-    </div>
-
-    <div class="drawer" id="scienceDrawer" aria-hidden="true">
-      <div class="drawer-card">
-        <button class="drawer-close" data-close="scienceDrawer" type="button">×</button>
-        <p class="eyebrow">NASA DATA LAYER</p>
-        <h2>Lo que estás aprendiendo</h2>
-        <p class="drawer-intro">Este panel distingue una fuente NASA de una analogía terrestre o una licencia narrativa.</p>
-        <div id="scienceContent"></div>
-      </div>
-    </div>
-
-    <div class="drawer" id="logDrawer" aria-hidden="true">
-      <div class="drawer-card log-card">
-        <button class="drawer-close" data-close="logDrawer" type="button">×</button>
-        <p class="eyebrow">MISSION LOG</p>
-        <h2>Decisiones registradas</h2>
-        <div id="logContent"></div>
-      </div>
-    </div>
-
-    <div class="drawer intel-drawer" id="missionIntelDrawer" aria-hidden="true">
-      <div class="drawer-card intel-card">
-        <button class="drawer-close" data-close="missionIntelDrawer" type="button">×</button>
-        <div class="intel-heading">
-          <div>
-            <p class="eyebrow">CAPA DE MISIÓN / NASA SPACE APPS</p>
-            <h2>Mapa, historia y objetivo</h2>
-          </div>
-          <span class="intel-live">DATOS DE CONTEXTO</span>
         </div>
-        <p class="drawer-intro">Elige un escenario para comparar su análogo terrestre, el paisaje marciano y las tres pruebas que desbloquean la historia.</p>
-        <div class="intel-tabs" role="tablist" aria-label="Capa de misión">
-          <button class="intel-tab active" data-intel-tab="map" role="tab" aria-selected="true" type="button">MAPA</button>
-          <button class="intel-tab" data-intel-tab="story" role="tab" aria-selected="false" type="button">HISTORIA</button>
-          <button class="intel-tab" data-intel-tab="mission" role="tab" aria-selected="false" type="button">MISIÓN</button>
-        </div>
-        <div class="intel-panel active" id="intelMapPanel" data-intel-panel="map">
-          <label class="intel-select-label" for="missionSiteSelect">Escenario de entrenamiento</label>
-          <select class="intel-select" id="missionSiteSelect"></select>
-          <div class="map-grid">
-            <article class="map-card">
-              <div class="map-card-heading"><span id="intelMarsTitle">Marte</span><small>NASA MOLA / Viking · contexto de superficie</small></div>
-              <div class="map-box" id="mapMars"></div>
-            </article>
-            <article class="map-card">
-              <div class="map-card-heading"><span id="intelEarthTitle">Tierra</span><small>Esri World Imagery · análogo terrestre</small></div>
-              <div class="map-box" id="mapEarth"></div>
-            </article>
-          </div>
-          <p class="map-attribution" id="mapAttribution">Las capas cartográficas son referencias educativas; no representan telemetría en vivo.</p>
-        </div>
-        <div class="intel-panel" id="intelStoryPanel" data-intel-panel="story" hidden>
-          <div class="story-bridge" id="storyBridge"></div>
-          <div class="chapter-track" id="chapterTrack"></div>
-        </div>
-        <div class="intel-panel" id="intelMissionPanel" data-intel-panel="mission" hidden>
-          <div class="mission-brief" id="missionBrief"></div>
-          <div class="mission-checklist" id="missionChecklist"></div>
-          <div class="mission-telemetry" id="missionTelemetry"></div>
-        </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="ending-screen" id="endingScreen" aria-hidden="true">
-      <div class="ending-card">
-        <p class="eyebrow">AUTORIZACIÓN DE EMBARQUE</p>
-        <div class="ending-medals">✦ ✦ ✦</div>
-        <h2 id="endingTitle">Tres medallas. Un horizonte rojo.</h2>
-        <p id="endingCopy"></p>
-        <div class="ending-actions">
-          <button class="primary-button" id="endingReplay" type="button">Volver a jugar</button>
-          <button class="secondary-button" id="endingScience" type="button">Revisar ciencia</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="toast" id="toast" role="status"></div>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+      <footer class="footer"><span>RED HOPE v2.0 · Prototipo educativo para NASA Space Apps Challenge</span><span>Medios v2: pendientes de generación y QA</span></footer>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js" defer></script>
     <script type="module" src="./app.js"></script>
   </body>
 </html>

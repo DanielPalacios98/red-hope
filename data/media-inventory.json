@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "2.0.0",
+  "project": "red-hope",
+  "status": "earth-training-opening-plates-ready-audio-and-full-media-pending",
+  "policy": "Only approved files or URLs are allowed to enter story.v2.0.json. Empty inventory means the frontend must keep its pending state.",
+  "visualContract": {
+    "master": "mp4-or-m3u8",
+    "hlsRequiredAfterMp4Qa": true,
+    "routePrefixes": [
+      "v2/jezero",
+      "v2/arcadia",
+      "v2/arsia"
+    ]
+  },
+  "audioContract": {
+    "languages": [
+      "es",
+      "en"
+    ],
+    "perNode": [
+      "audio.es",
+      "audio.en",
+      "captions.es",
+      "captions.en"
+    ]
+  },
+  "assets": [
+    {
+      "assetId": "j0-briefing",
+      "nodeId": "j0",
+      "routeId": "jezero",
+      "kind": "opening-plate",
+      "label": "J0 Earth training — Chimborazo",
+      "provider": "Google Flow",
+      "masterMp4": "media/video/v2/jezero/j0-training-earth.mp4",
+      "hls": "media/video/v2/jezero/master.m3u8",
+      "resolution": "1280x720",
+      "durationSeconds": 8.042667,
+      "qa": {
+        "mp4": "passed",
+        "hls": "passed",
+        "verifiedOn": "2026-11-15"
+      },
+      "audio": "embedded-preview-only"
+    },
+    {
+      "assetId": "a0-briefing",
+      "nodeId": "a0",
+      "routeId": "arcadia",
+      "kind": "opening-plate",
+      "label": "A0 Earth training — Siloli",
+      "provider": "Google Flow",
+      "masterMp4": "media/video/v2/arcadia/a0-training-earth.mp4",
+      "hls": "media/video/v2/arcadia/master.m3u8",
+      "resolution": "1280x720",
+      "durationSeconds": 8.042667,
+      "qa": {
+        "mp4": "passed",
+        "hls": "passed",
+        "verifiedOn": "2026-11-15"
+      },
+      "audio": "embedded-preview-only"
+    },
+    {
+      "assetId": "p0-briefing",
+      "nodeId": "p0",
+      "routeId": "arsia",
+      "kind": "opening-plate",
+      "label": "P0 Earth training — La Payunia",
+      "provider": "Google Flow",
+      "masterMp4": "media/video/v2/arsia/p0-training-earth.mp4",
+      "hls": "media/video/v2/arsia/master.m3u8",
+      "resolution": "1280x720",
+      "durationSeconds": 8.042667,
+      "qa": {
+        "mp4": "passed",
+        "hls": "passed",
+        "verifiedOn": "2026-11-15"
+      },
+      "audio": "embedded-preview-only"
+    }
+  ],
+  "verifiedOn": "2026-11-15",
+  "rejectedAssets": [
+    {
+      "assetId": "j0-briefing",
+      "reason": "Earth training was rendered as Mars/EVA imagery; do not connect."
+    },
+    {
+      "assetId": "a0-briefing",
+      "reason": "Earth training was rendered as Mars/EVA imagery; do not connect."
+    },
+    {
+      "assetId": "p0-briefing",
+      "reason": "Earth training was rendered as Mars/EVA imagery; do not connect."
+    }
+  ]
+}

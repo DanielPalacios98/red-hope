@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "2.0.0",
+  "project": "red-hope",
+  "revision": "v2.0",
+  "source": "story/red-hope-v2.0/story.v2.0.json",
+  "promptManifest": "production/video/red-hope-v2.0/route-prompts.v2.1-earth-training.json",
+  "selection": {
+    "screen": "mission-map",
+    "requiredBeforeVideo": true,
+    "allowedRouteIds": ["jezero", "arcadia", "arsia"],
+    "missingAssetPolicy": "show-production-pending-error; never fallback to another route"
+  },
+  "globalPrompt": "Animated cinematic graphic-novel field training on Earth, hand-painted layered backgrounds, visible illustration strokes, consistent characters and props, restrained camera movement, physically scaled wind and dust, 16:9 composition, no readable text, no logos, no subtitles, no photorealism, neutral visual performance for separate Spanish and English audio. Mars appears only in briefing overlays and narration.",
+  "routes": [
+    {
+      "id": "jezero",
+      "mapTitle": "El Lago Antiguo — Cráter Jezero",
+      "earthAnalog": "Gran Arenal del Chimborazo, Ecuador",
+      "mars": {"location": "Jezero Crater", "latitude": 18.38, "longitude": 77.58, "coordinateNote": "reference value from source script; validate before educational display"},
+      "earth": {"location": "Gran Arenal del Chimborazo", "latitude": -1.469, "longitude": -78.855, "elevationMeters": 4350},
+      "startNode": "j0",
+      "assetPrefix": "v2/jezero",
+      "scienceFocus": ["ancient delta terrain", "slope and loose ash", "rock core drilling", "camera calibration"],
+      "visualPrompt": "Animated cinematic graphic-novel scene on Mars at Jezero Crater, ancient delta terrain, layered sediment, rounded rocks and loose reddish dust, six-wheel exploration rover, human crew in consistent orange-white EVA suits, MOLA-inspired relief logic without labels, rust and cyan palette, hand-painted textures, scientific survival mystery, neutral dialogue performance for separate Spanish and English audio.",
+      "earthTrainingPrompt": "Animated cinematic graphic-novel training ground at Gran Arenal del Chimborazo in Ecuador, high-altitude volcanic ash, loose rocks, steep visible slopes, cold mountain light, same crew and rover equipment adapted for Earth training, visual match-cut potential to Jezero, no readable text or logos."
+    },
+    {
+      "id": "arcadia",
+      "mapTitle": "Cazadores de Hielo — Arcadia Planitia",
+      "earthAnalog": "Desierto de Siloli, Bolivia",
+      "mars": {"location": "Arcadia Planitia", "latitude": 39.2, "longitude": 188.0, "coordinateNote": "reference value from source script; validate before educational display"},
+      "earth": {"location": "Siloli", "latitude": -22.15, "longitude": -67.85, "elevationMeters": 4550},
+      "startNode": "a0",
+      "assetPrefix": "v2/arcadia",
+      "scienceFocus": ["subsurface radar", "salt and ice signal", "frozen core extraction", "panel wind loading"],
+      "visualPrompt": "Animated cinematic graphic-novel scene on Mars at Arcadia Planitia, broad cold northern plain, flat horizon, pale rust soil, salt-streaked surface and subsurface-ice investigation, compact GPR cart, human crew in consistent orange-white EVA suits, blue-violet atmosphere, windblown dust, hand-painted scientific suspense, neutral dialogue performance for separate Spanish and English audio.",
+      "earthTrainingPrompt": "Animated cinematic graphic-novel training ground at Siloli in Bolivia, high-altitude sandy plain, salt crust and frozen soil cues, thin cold light, same crew learning radar passes and panel anchoring, visual match-cut potential to Arcadia, no readable text or logos."
+    },
+    {
+      "id": "arsia",
+      "mapTitle": "Las Cuevas Secretas — Flancos de Arsia Mons",
+      "earthAnalog": "La Payunia, Mendoza, Argentina",
+      "mars": {"location": "Southern flanks of Arsia Mons", "latitude": -9.0, "longitude": -121.0, "coordinateNote": "reference value from source script; validate before educational display"},
+      "earth": {"location": "La Payunia", "latitude": -36.05, "longitude": -69.2, "elevationMeters": 2200},
+      "startNode": "p0",
+      "assetPrefix": "v2/arsia",
+      "scienceFocus": ["lava-tube collapse pits", "3D cave scanning", "line of sight", "cable and repeater communications"],
+      "visualPrompt": "Animated cinematic graphic-novel scene on the southern flank of Arsia Mons, dark basaltic volcanic terrain, collapse pits and possible lava-tube entrance, human crew in consistent orange-white EVA suits, tethered scanner and safety ropes, crimson dust, hard rim light, violet shadow, cyan radio light, hand-painted survival thriller, neutral dialogue performance for separate Spanish and English audio.",
+      "earthTrainingPrompt": "Animated cinematic graphic-novel training ground at La Payunia in Mendoza, Argentina, basaltic scoria, lava-tube-like volcanic formations and safe rope-training area, warm Earth air and clear visibility, same crew learning descent and scanning, visual match-cut potential to Arsia Mons, no readable text or logos."
+    }
+  ],
+  "outputContract": {
+    "visualMasterPerScene": true,
+    "audioTracks": ["es", "en"],
+    "captions": ["es", "en"],
+    "embeddedDialogue": false,
+    "languageVariantVideoOnlyForLipSync": true,
+    "hlsGeneratedAfterMp4Qa": true
+  }
+}

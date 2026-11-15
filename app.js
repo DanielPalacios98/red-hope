@@ -1,551 +1,191 @@
 const $ = (selector) => document.querySelector(selector);
-const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
-const percent = (value) => `${Math.round(clamp(Number(value)) * 100)}%`;
+const $$ = (selector) => [...document.querySelectorAll(selector)];
 
-const media = {
-  video: {
-    p001: "./media/video/p001_chimborazo_rover.mp4",
-    p002: "./media/video/p002_rover_drill.mp4",
-    p003: "./media/video/p003_rover_drift.mp4",
-    p004: "./media/video/p004_cliff_anchor.mp4",
-    p005: "./media/video/p005_camera_calibration.mp4",
-    p006: "./media/video/p006_drill_overheat.mp4",
-    p007: "./media/video/p007_gpr_scan.mp4",
-    p008: "./media/video/p008_blind_reading.mp4",
-    p009: "./media/video/p009_thermal_drill.mp4",
-    p011: "./media/video/p011_ice_crack.mp4",
-    p014: "./media/video/p014_solar_anchor.mp4",
-    p020: "./media/video/p020_spacecraft_launch.mp4"
-  },
-  poster: {
-    p001: "./media/posters/p001_chimborazo_rover.poster.jpg",
-    p002: "./media/posters/p002_rover_drill.poster.jpg",
-    p003: "./media/posters/p003_rover_drift.poster.jpg",
-    p004: "./media/posters/p004_cliff_anchor.poster.jpg",
-    p005: "./media/posters/p005_camera_calibration.poster.jpg",
-    p006: "./media/posters/p006_drill_overheat.poster.jpg",
-    p007: "./media/posters/p007_gpr_scan.poster.jpg",
-    p008: "./media/posters/p008_blind_reading.poster.jpg",
-    p009: "./media/posters/p009_thermal_drill.poster.jpg",
-    p011: "./media/posters/p011_ice_crack.poster.jpg",
-    p014: "./media/posters/p014_solar_anchor.poster.jpg",
-    p020: "./media/posters/p020_spacecraft_launch.poster.jpg"
-  },
-  audio: {
-    p001: "./media/audio/p001_prologue.wav",
-    p002: "./media/audio/p002_rover_drill.wav",
-    p003: "./media/audio/p003_rover_drift.wav",
-    p007: "./media/audio/p007_medal_one.wav",
-    p014: "./media/audio/p014_medal_two.wav",
-    p020: "./media/audio/p020_three_medals.wav"
-  }
+const ui = {
+  es: { mission: 'PREPARANDO MISIÓN', openMap: 'Abrir mapa de misión', mapTitle: 'Elige dónde comienza tu entrenamiento', mapLead: 'Los puntos de partida conectan un escenario de la historia con un análogo terrestre. La selección fija la ruta narrativa y el paquete de generación audiovisual.', confirm: 'Confirmar ruta', change: 'Cambiar idioma', back: '← Volver al mapa', decision: 'Elige cómo responder', open: 'DECISIÓN ABIERTA', continue: 'Continuar', restart: 'Reiniciar misión', pending: 'ESCENA VISUAL PENDIENTE DE GENERACIÓN', pendingCopy: 'La ruta ya está fijada. Aquí se conectará el MP4 maestro y después su variante HLS.', audioPending: 'Audio y subtítulos v2 pendientes de conectar', science: 'NASA · CONTEXTO', routeRequired: 'Selecciona una de las tres rutas para continuar.', selected: 'Ruta seleccionada', end: 'REGISTRO COMPLETADO' },
+  en: { mission: 'MISSION READY', openMap: 'Open mission map', mapTitle: 'Choose where your training begins', mapLead: 'Each starting point connects a story setting with an Earth analogue. Your selection fixes the narrative route and audiovisual generation package.', confirm: 'Confirm route', change: 'Change language', back: '← Back to map', decision: 'Choose your response', open: 'DECISION OPEN', continue: 'Continue', restart: 'Restart mission', pending: 'VISUAL SCENE PENDING GENERATION', pendingCopy: 'The route is fixed. The master MP4 and its HLS variant will be connected here.', audioPending: 'V2 audio and captions pending connection', science: 'NASA · CONTEXT', routeRequired: 'Select one of the three routes to continue.', selected: 'Route selected', end: 'MISSION RECORD COMPLETE' }
 };
 
-const scienceLibrary = {
-  "earth.chimborazo": ["ANALOGÍA TERRESTRE", "El Chimborazo funciona como campo de entrenamiento de ceniza, pendiente y frío. No es una lectura de Marte."],
-  "mars.jezero": ["NASA / VALIDADO", "Jezero conserva evidencias de un antiguo lago y un delta que Perseverance estudia mediante imágenes, perforación y núcleos de roca."],
-  "rover.traction": ["PROCEDIMIENTO", "La decisión enseña a priorizar control, anclaje y lectura del suelo antes de exigir potencia al rover."],
-  "safety.anchor": ["SEGURIDAD", "Un anclaje representa una variable de procedimiento narrativo; no es telemetría NASA en vivo."],
-  "mars.arcadia": ["NASA / CONTEXTO", "SHARAD, a bordo de MRO, estudia estructuras subsuperficiales y depósitos ricos en hielo. El punto exacto del guion se conserva como hipótesis educativa."],
-  "earth.siloli": ["ANALOGÍA TERRESTRE", "El Siloli representa una llanura fría y expuesta para aprender a proteger energía, equipo y comunicación."],
-  "mars.arsia_mons": ["NASA / VALIDADO", "HiRISE observó un pozo asociado con un tubo de lava en la región de Arsia Mons. Eso inspira la prueba de descenso y LiDAR."],
-  "earth.payunia": ["ANALOGÍA TERRESTRE", "Payunia aporta el análogo volcánico para practicar arnés, lectura de techo y repetidores."],
-  "radiation.shelter": ["NASA / CONTEXTO", "RAD mide radiación de alta energía en Marte. El juego usa el tema para enseñar medición y protección, no para inventar una lectura actual."],
-  "mission.structure": ["FICCIÓN CONTROLADA", "2050, las tres medallas y la autorización de embarque pertenecen al universo narrativo."],
-  "mars.transfer": ["ESTIMACIÓN NARRATIVA", "Los 210 días y 480 millones de kilómetros se mantienen como dato de ficción hasta completar validación de misión y trayectoria."],
-  "deep_space_communications": ["CONCEPTO EDUCATIVO", "La señal estable se presenta como problema de diseño y redundancia, no como telemetría de una misión real."]
-};
+const state = { language: localStorage.getItem('redHope.audioLanguage') || 'es', route: localStorage.getItem('redHope.route') || null, nodeId: null, marks: [], choiceHistory: [], visited: [], ending: null, story: null, routes: null };
+const videoPlayers = { a: '#scene-video-a', b: '#scene-video-b' };
+const hlsInstances = { a: null, b: null };
+let activeVideoKey = 'a';
+const routeColors = { jezero: '#ff713f', arcadia: '#5fd5d4', arsia: '#a57cff' };
+const routeNumbers = { jezero: '01', arcadia: '02', arsia: '03' };
+const routeLabels = { jezero: 'El Lago Antiguo', arcadia: 'Cazadores de Hielo', arsia: 'Las Cuevas Secretas' };
+const routeTitlesEn = { jezero: 'Ancient Lake — Jezero Crater', arcadia: 'Ice Hunters — Arcadia Planitia', arsia: 'Secret Caves — Arsia Mons Flanks' };
+const routeEarthEn = { jezero: 'Gran Arenal del Chimborazo, Ecuador', arcadia: 'Siloli Desert, Bolivia', arsia: 'La Payunia, Mendoza, Argentina' };
 
-// Capa frontal derivada de Historia.html: cada lugar conecta el entrenamiento
-// terrestre con una hipótesis de exploración marciana y con tres pruebas del guion.
-const missionSites = [
-  {
-    id: "chimborazo",
-    label: "1. El lago antiguo / Cráter Jezero",
-    earthTitle: "Tierra: Gran Arenal del Chimborazo, Ecuador",
-    marsTitle: "Marte: Cráter Jezero",
-    earthCoords: [-1.469, -78.855],
-    earthZoom: 12,
-    marsCoords: [18.38, 77.58],
-    marsZoom: 5,
-    bridge: "Perseverance estudia un antiguo delta; el Chimborazo entrena el control de ruedas, perforación y lectura óptica en terreno volcánico sin vegetación.",
-    tasks: [
-      "Conducir el rover de seis ruedas sobre la ceniza sin que patinen las llantas.",
-      "Extraer un tubito de roca volcánica dura con el taladro robot.",
-      "Calibrar las cámaras automáticas para distinguir relieves y sombras."
-    ],
-    telemetry: [
-      ["Inclinación", "2°–10° · MOLA", "5.2°–9.1° · SRTM"],
-      ["Temperatura", "Hasta −80 °C de noche · MEDA", "+11 °C / −1 °C · MODIS"],
-      ["Presión", "6.1 hPa · no respirable", "≈580 hPa · alta montaña"]
-    ]
-  },
-  {
-    id: "siloli",
-    label: "2. Cazadores de hielo / Arcadia Planitia",
-    earthTitle: "Tierra: Desierto de Siloli, Bolivia",
-    marsTitle: "Marte: Arcadia Planitia",
-    earthCoords: [-22.15, -67.85],
-    earthZoom: 11,
-    marsCoords: [39.2, 8],
-    marsZoom: 4,
-    bridge: "SHARAD y MRO inspiran la búsqueda de hielo enterrado; Siloli entrena radar GPR, perforación térmica y despliegue solar en una planicie fría.",
-    tasks: [
-      "Pasar el carrito GPR a ritmo firme para detectar hielo enterrado.",
-      "Perforar la costra salina congelada regulando el calor.",
-      "Fijar los paneles solares para resistir las ráfagas."
-    ],
-    telemetry: [
-      ["Inclinación", "0.5°–3° · MOLA", "1.1°–2.8° · SRTM"],
-      ["Temperatura", "Hasta −95 °C de noche · MRO", "+14 °C / −12 °C · MODIS"],
-      ["Agua bajo tierra", "Hielo a baja temperatura", "Costra congelada y sales"]
-    ]
-  },
-  {
-    id: "payunia",
-    label: "3. Cuevas secretas / Arsia Mons",
-    earthTitle: "Tierra: Campo volcánico Payunia, Argentina",
-    marsTitle: "Marte: flancos de Arsia Mons",
-    earthCoords: [-36.05, -69.2],
-    earthZoom: 10,
-    marsCoords: [-9, -121],
-    marsZoom: 4,
-    bridge: "HiRISE observó pozos asociados a tubos de lava; Payunia entrena descenso con arnés, LiDAR y repetidores de radio en roca basáltica.",
-    tasks: [
-      "Verificar arnés y freno antes de bajar por la entrada vertical.",
-      "Estabilizar el LiDAR y escanear el techo de la cueva en oscuridad.",
-      "Colocar antenas repetidoras sin perder el anclaje ni la señal."
-    ],
-    telemetry: [
-      ["Pendiente", "4°–15° · MOLA", "4.5°–13° · SRTM"],
-      ["Temperatura", "Hasta −90 °C · THEMIS", "Variación exterior · MODIS"],
-      ["Radiación", "Contexto RAD / refugio rocoso", "Atmósfera y campo magnético protectores"]
-    ]
-  }
-];
+function t(key) { return ui[state.language][key] || ui.es[key] || key; }
+function routeTitle(route) { return state.language === 'en' ? routeTitlesEn[route.id] : route.mapTitle; }
+function routeEarth(route) { return state.language === 'en' ? routeEarthEn[route.id] : route.earthAnalog; }
+function setText(selector, value) { const node = $(selector); if (node) node.textContent = value; }
+function showToast(message) { const toast = $('#toast'); toast.textContent = message; toast.classList.add('is-visible'); window.clearTimeout(showToast.timer); showToast.timer = window.setTimeout(() => toast.classList.remove('is-visible'), 2800); }
+function screen(name) { ['language', 'map', 'story'].forEach((id) => $(`#screen-${id}`).classList.toggle('is-hidden', id !== name)); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+function asText(value) { return Array.isArray(value) ? value.join('\n') : String(value || ''); }
+function routeById(id) { return state.routes?.routes?.find((route) => route.id === id); }
+function nodeById(id) { return state.story?.nodes?.find((node) => node.id === id); }
+function activeRoute() { return routeById(state.route); }
 
-let story;
-let currentNodeId = "p001";
-let gameState;
-let history = [];
-let started = false;
-let muted = false;
-let captionsOn = true;
-let sceneTimer;
-let selectedMissionSite = 0;
-let missionMaps = { mars: null, earth: null, marsMarker: null, earthMarker: null };
-
-const video = $("#sceneVideo");
-const audio = new Audio();
-audio.preload = "auto";
-
-function initialState() {
-  return JSON.parse(JSON.stringify(story.initialState));
+function applyLanguage() {
+  document.documentElement.lang = state.language;
+  setText('#mission-status', t('mission'));
+  setText('#open-map', t('openMap'));
+  setText('#map-title', t('mapTitle'));
+  setText('#map-lede', t('mapLead'));
+  setText('#start-route', t('confirm'));
+  setText('#change-language', t('change'));
+  setText('#back-to-map', t('back'));
+  setText('#decision-title', t('decision'));
+  setText('#decision-state', t('open'));
+  setText('#restart-mission', t('restart'));
+  localStorage.setItem('redHope.audioLanguage', state.language);
+  $$('.language-card').forEach((card) => card.classList.toggle('is-selected', card.dataset.language === state.language));
+  $('#language-notice').textContent = state.language === 'es' ? 'La selección se guarda en este dispositivo y activa el primer gesto de audio en móviles.' : 'Your choice is saved on this device and enables the first audio gesture on mobile.';
+  if (state.story && !$('#screen-story').classList.contains('is-hidden')) renderNode(state.nodeId);
+  if (state.routes && !$('#screen-map').classList.contains('is-hidden')) { renderRouteCards(); if (state.route) selectRoute(state.route); }
 }
 
-function announce(message) {
-  const toast = $("#toast");
-  toast.textContent = message;
-  toast.classList.add("show");
-  window.clearTimeout(announce.timer);
-  announce.timer = window.setTimeout(() => toast.classList.remove("show"), 2800);
-}
-
-function setMeter(id, value) {
-  $(id).style.width = percent(value);
-}
-
-function renderTelemetry() {
-  const medals = Number(gameState["training.medals"] || 0);
-  document.querySelectorAll("[data-medal]").forEach((element) => {
-    element.classList.toggle("earned", Number(element.dataset.medal) <= medals);
+function renderRouteCards() {
+  const grid = $('#route-grid');
+  grid.innerHTML = '';
+  (state.routes.routes || []).forEach((route, index) => {
+    const card = document.createElement('button');
+    card.type = 'button'; card.className = `route-card${state.route === route.id ? ' is-selected' : ''}`; card.dataset.route = route.id; card.style.setProperty('--route-glow', routeColors[route.id]);
+    card.innerHTML = `<span class="route-num">${routeNumbers[route.id] || String(index + 1).padStart(2, '0')} · ${state.language === 'en' ? 'TRAINING ROUTE' : 'RUTA DE ENTRENAMIENTO'}</span><h3>${routeTitle(route)}</h3><p>${state.language === 'en' ? 'Trains at' : 'Entrenas en'} <strong>${routeEarth(route)}</strong></p><footer><span>${route.mars.location}</span><span>${state.language === 'en' ? 'Choose' : 'Elegir'} →</span></footer>`;
+    card.addEventListener('click', () => selectRoute(route.id));
+    grid.appendChild(card);
   });
-  $("#roverValue").textContent = percent(gameState["rover.control"]);
-  $("#equipmentValue").textContent = percent(gameState["equipment.integrity"]);
-  $("#riskValue").textContent = percent(gameState["route.risk"]);
-  setMeter("#roverMeter", gameState["rover.control"]);
-  setMeter("#equipmentMeter", gameState["equipment.integrity"]);
-  setMeter("#riskMeter", gameState["route.risk"]);
 }
 
-function setRailLog(message) {
-  $("#railLog").innerHTML = `<p class="eyebrow">Bitácora</p><p>${message}</p>`;
+function selectRoute(id) {
+  const route = routeById(id); if (!route) return;
+  state.route = id; localStorage.setItem('redHope.route', id); renderRouteCards();
+  setText('#mars-map-caption', `${route.mars.location} · ${route.mars.latitude}°, ${route.mars.longitude}°`);
+  setText('#earth-map-caption', `${route.earth.location} · ${route.earth.elevationMeters} m`);
+  $('#route-notice').textContent = `${state.language === 'en' ? routeTitle(route) : routeLabels[id]} · ${routeEarth(route)}`;
+  $('#route-notice').classList.remove('notice-warn');
+  $('#start-route').disabled = false;
 }
 
-function updateCaption(node) {
-  const caption = $("#caption");
-  caption.textContent = node.narrationDraft || "";
-  caption.classList.toggle("visible", captionsOn && Boolean(node.narrationDraft));
-}
-
-function routeLabel(route) {
-  return ({ safe: "control", risk: "riesgo", recovery: "recuperación" })[route] || route || "decisión";
-}
-
-function applyEffects(effects = []) {
+function applyChoiceEffects(choice) {
+  const effects = [...(choice.effects || []), ...(choice.conditionalEffects || []).filter((effect) => effect.type === 'removeMark')];
   effects.forEach((effect) => {
-    const current = Number(gameState[effect.var] || 0);
-    if (effect.operation === "set") gameState[effect.var] = effect.value;
-    if (effect.operation === "add") gameState[effect.var] = clamp(current + effect.value);
-    if (effect.operation === "subtract") gameState[effect.var] = clamp(current - effect.value);
-  });
-  localStorage.setItem("red-hope-v1-state", JSON.stringify(gameState));
-  renderTelemetry();
-}
-
-function renderChoices(node) {
-  const container = $("#choices");
-  container.innerHTML = "";
-  const choices = node.choices || [];
-  $("#choiceQuestion").textContent = choices.length ? "Elige cómo responder" : "Escena completada";
-  $("#choiceLock").textContent = choices.length ? "BLOQUEADO" : "FINAL ABIERTO";
-  $("#choiceLock").classList.toggle("open", !choices.length);
-  $("#showChoicesButton").textContent = choices.length ? "Abrir decisiones" : "Ver final";
-  choices.forEach((choice, index) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "choice-card";
-    button.dataset.choiceId = choice.id;
-    button.innerHTML = `<span class="choice-index">OPCIÓN 0${index + 1}</span><span class="choice-label"></span><span class="choice-route">${routeLabel(choice.route)} ↗</span>`;
-    button.querySelector(".choice-label").textContent = choice.label;
-    button.addEventListener("click", () => choose(choice));
-    container.appendChild(button);
-  });
-  $("#choicePanel").classList.remove("is-open");
-}
-
-function openChoices() {
-  const node = story.nodes[currentNodeId];
-  if (!node) return;
-  if (!(node.choices || []).length) {
-    showEnding(node);
-    return;
-  }
-  $("#choicePanel").classList.add("is-open");
-  $("#choiceLock").textContent = "DECISION ABIERTA";
-  $("#choiceLock").classList.add("open");
-  $("#controlNote").textContent = "La ruta elegida modifica la telemetría y la bitácora.";
-  $("#choicePanel").scrollIntoView({ behavior: "smooth", block: "nearest" });
-}
-
-function choose(choice) {
-  const node = story.nodes[currentNodeId];
-  applyEffects(choice.effects);
-  history.push({ nodeId: currentNodeId, title: node.title, choice: choice.label, route: choice.route, next: choice.next });
-  setRailLog(`${choice.route === "risk" ? "Riesgo" : "Procedimiento"}: ${choice.label}`);
-  localStorage.setItem("red-hope-v1-history", JSON.stringify(history));
-  announce(`Ruta registrada: ${routeLabel(choice.route)}`);
-  loadNode(choice.next);
-}
-
-function resetMedia() {
-  window.clearTimeout(sceneTimer);
-  video.pause();
-  video.removeAttribute("src");
-  video.removeAttribute("poster");
-  video.classList.remove("ready");
-  video.load();
-  $("#mediaPlaceholder").style.display = "grid";
-  audio.pause();
-  audio.removeAttribute("src");
-  audio.load();
-}
-
-function loadNode(nodeId) {
-  if (!story.nodes[nodeId]) return;
-  currentNodeId = nodeId;
-  const node = story.nodes[nodeId];
-  resetMedia();
-  $("#stageScene").textContent = (node.scene || "scene").replaceAll("_", " ").toUpperCase();
-  $("#stageTitle").textContent = node.title;
-  $("#nodeReadout").textContent = String(node.page || 1).padStart(2, "0");
-  $("#placeholderTitle").textContent = node.title;
-  updateCaption(node);
-  renderChoices(node);
-  if (media.video[nodeId]) {
-    video.src = media.video[nodeId];
-    video.poster = media.poster[nodeId] || "";
-    video.classList.add("ready");
-    $("#mediaPlaceholder").style.display = "none";
-    $("#mediaMode").textContent = "MVP / MP4 local";
-  } else {
-    $("#mediaMode").textContent = "Placa pendiente / audio listo";
-  }
-  if (media.audio[nodeId]) {
-    audio.src = media.audio[nodeId];
-    audio.muted = muted;
-  }
-  $("#mediaDuration").textContent = node.targetDurationSec ? `${node.targetDurationSec}s objetivo` : "—";
-  $("#startButton").classList.toggle("hidden", started);
-  $("#playButton").textContent = started ? "Ⅱ Pausar" : "▶ Reproducir";
-  setRailLog(`Nodo ${String(node.page || 1).padStart(2, "0")}: ${node.title}`);
-  renderTelemetry();
-  renderScience(node);
-  renderMissionIntel();
-  if (started) {
-    playCurrentMedia();
-    sceneTimer = window.setTimeout(openChoices, media.video[nodeId] ? 4500 : 1800);
-  }
-}
-
-function playCurrentMedia() {
-  const videoPromise = media.video[currentNodeId] ? video.play() : Promise.resolve();
-  const audioPromise = audio.src ? audio.play() : Promise.resolve();
-  Promise.allSettled([videoPromise, audioPromise]);
-  $("#playButton").textContent = "Ⅱ Pausar";
-}
-
-function pauseCurrentMedia() {
-  video.pause();
-  audio.pause();
-  $("#playButton").textContent = "▶ Reproducir";
-}
-
-function showEnding(node) {
-  const ending = story.endings[node.endingId || "e001_mars_authorization"] || {};
-  $("#endingTitle").textContent = ending.title || "Autorización para Marte";
-  $("#endingCopy").textContent = ending.openQuestion || "El horizonte rojo queda abierto.";
-  $("#endingScreen").classList.add("open");
-  $("#endingScreen").setAttribute("aria-hidden", "false");
-}
-
-function renderScience(node) {
-  const content = $("#scienceContent");
-  content.innerHTML = "";
-  const refs = node.dataRefs || [];
-  refs.forEach((ref) => {
-    const item = scienceLibrary[ref] || ["PENDIENTE DE VALIDACIÓN", "Esta referencia todavía no puede presentarse como telemetría confirmada."];
-    const block = document.createElement("article");
-    block.className = "science-item";
-    block.innerHTML = `<span class="science-badge"></span><strong></strong><small></small>`;
-    block.querySelector(".science-badge").textContent = item[0];
-    block.querySelector("strong").textContent = ref.replaceAll("_", " ");
-    block.querySelector("small").textContent = item[1];
-    content.appendChild(block);
+    if (!effect.mark) return;
+    if (effect.type === 'removeMark') state.marks = state.marks.filter((mark) => mark !== effect.mark);
+    if (effect.type === 'addMark' && !state.marks.includes(effect.mark)) state.marks.push(effect.mark);
   });
 }
 
-function currentMissionSite() {
-  return missionSites[selectedMissionSite] || missionSites[0];
-}
-
-function chapterIndexForNode(nodeId) {
-  const page = Number(story?.nodes?.[nodeId]?.page || 1);
-  if (page < 9) return 0;
-  if (page < 15) return 1;
-  return 2;
-}
-
-function renderMissionSelector() {
-  const select = $("#missionSiteSelect");
-  if (!select.options.length) {
-    missionSites.forEach((site, index) => {
-      const option = document.createElement("option");
-      option.value = String(index);
-      option.textContent = site.label;
-      select.appendChild(option);
-    });
-    select.addEventListener("change", () => {
-      selectedMissionSite = Number(select.value);
-      renderMissionIntel();
-      if (missionMaps.mars) {
-        const site = currentMissionSite();
-        missionMaps.mars.setView(site.marsCoords, site.marsZoom);
-        missionMaps.earth.setView(site.earthCoords, site.earthZoom);
-        missionMaps.marsMarker.setLatLng(site.marsCoords);
-        missionMaps.earthMarker.setLatLng(site.earthCoords);
-        window.setTimeout(() => {
-          missionMaps.mars.invalidateSize();
-          missionMaps.earth.invalidateSize();
-        }, 80);
-      }
-    });
-  }
-  select.value = String(selectedMissionSite);
-}
-
-function ensureMissionMaps() {
-  if (missionMaps.mars || !window.L) return;
-  const site = currentMissionSite();
-  missionMaps.mars = window.L.map("mapMars", { zoomControl: false }).setView(site.marsCoords, site.marsZoom);
-  window.L.control.zoom({ position: "bottomright" }).addTo(missionMaps.mars);
-  window.L.tileLayer("https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-2/all/{z}/{x}/{y}.png", {
-    attribution: "NASA MOLA / Viking / OpenPlanetaryMap",
-    maxZoom: 8
-  }).addTo(missionMaps.mars);
-  missionMaps.marsMarker = window.L.circleMarker(site.marsCoords, {
-    radius: 10, color: "#f1c56a", weight: 2, fillColor: "#e15a46", fillOpacity: .78
-  }).addTo(missionMaps.mars);
-
-  missionMaps.earth = window.L.map("mapEarth", { zoomControl: false }).setView(site.earthCoords, site.earthZoom);
-  window.L.control.zoom({ position: "bottomright" }).addTo(missionMaps.earth);
-  window.L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
-    attribution: "Esri / Maxar / NASA SRTM",
-    maxZoom: 16
-  }).addTo(missionMaps.earth);
-  missionMaps.earthMarker = window.L.circleMarker(site.earthCoords, {
-    radius: 10, color: "#91d4d2", weight: 2, fillColor: "#36b6a3", fillOpacity: .78
-  }).addTo(missionMaps.earth);
-  window.setTimeout(() => {
-    missionMaps.mars.invalidateSize();
-    missionMaps.earth.invalidateSize();
-  }, 120);
-}
-
-function renderMissionIntel() {
-  if (!story) return;
-  const site = currentMissionSite();
-  renderMissionSelector();
-  $("#intelMarsTitle").textContent = site.marsTitle;
-  $("#intelEarthTitle").textContent = site.earthTitle;
-  $("#mapAttribution").textContent = `${site.bridge} Las capas cartográficas son referencias educativas, no telemetría en vivo.`;
-
-  const currentNode = story.nodes[currentNodeId];
-  const currentChapter = chapterIndexForNode(currentNodeId);
-  $("#storyBridge").innerHTML = "";
-  const bridgeTitle = document.createElement("strong");
-  bridgeTitle.textContent = `Página ${String(currentNode.page || 1).padStart(2, "0")}: ${currentNode.title}`;
-  const bridgeCopy = document.createElement("small");
-  bridgeCopy.textContent = currentNode.narrationDraft || site.bridge;
-  $("#storyBridge").append(bridgeTitle, bridgeCopy);
-  $("#chapterTrack").innerHTML = "";
-  missionSites.forEach((chapter, index) => {
-    const node = document.createElement("article");
-    node.className = `chapter-node${index === currentChapter ? " active" : ""}`;
-    node.innerHTML = `<span>ESCENARIO 0${index + 1}</span><strong></strong><small></small>`;
-    node.querySelector("strong").textContent = chapter.label;
-    node.querySelector("small").textContent = chapter.bridge;
-    $("#chapterTrack").appendChild(node);
-  });
-
-  $("#missionBrief").innerHTML = `<h3>${site.label}</h3><p>${site.bridge}</p>`;
-  $("#missionChecklist").innerHTML = "";
-  site.tasks.forEach((task, index) => {
-    const label = document.createElement("label");
-    label.className = "mission-check";
-    label.innerHTML = `<input type="checkbox" /><span>Prueba ${index + 1}: ${task}</span>`;
-    $("#missionChecklist").appendChild(label);
-  });
-  $("#missionTelemetry").innerHTML = `<table class="telemetry-table"><thead><tr><th>Variable</th><th>Marte</th><th>Análogo</th></tr></thead><tbody>${site.telemetry.map((row) => `<tr><td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td></tr>`).join("")}</tbody></table>`;
-}
-
-function setIntelTab(tabId) {
-  document.querySelectorAll("[data-intel-tab]").forEach((tab) => {
-    const active = tab.dataset.intelTab === tabId;
-    tab.classList.toggle("active", active);
-    tab.setAttribute("aria-selected", String(active));
-  });
-  document.querySelectorAll("[data-intel-panel]").forEach((panel) => {
-    panel.hidden = panel.dataset.intelPanel !== tabId;
-    panel.classList.toggle("active", panel.dataset.intelPanel === tabId);
-  });
-  if (tabId === "map") {
-    ensureMissionMaps();
-    window.setTimeout(() => {
-      missionMaps.mars?.invalidateSize();
-      missionMaps.earth?.invalidateSize();
-    }, 100);
-  }
+function renderMarks() {
+  const container = $('#marks');
+  container.innerHTML = state.marks.length ? state.marks.map((mark) => `<span>${mark}</span>`).join('') : '<span class="empty-mark">Aún no hay marcas</span>';
 }
 
 function renderLog() {
-  const content = $("#logContent");
-  content.innerHTML = history.length ? "" : "<p class='drawer-intro'>Todavía no has tomado una decisión.</p>";
-  history.forEach((entry, index) => {
-    const item = document.createElement("article");
-    item.className = "log-item";
-    item.innerHTML = `<strong>0${index + 1}. ${entry.title}</strong><small>${entry.choice}<br>Ruta: ${routeLabel(entry.route)} → ${entry.next}</small>`;
-    content.appendChild(item);
-  });
+  const list = $('#log-list'); list.innerHTML = '';
+  state.visited.slice(-5).forEach((id) => { const node = nodeById(id); if (!node) return; const li = document.createElement('li'); li.textContent = node.title; list.appendChild(li); });
 }
 
-function openDrawer(id) {
-  const drawer = document.getElementById(id);
-  drawer.classList.add("open");
-  drawer.setAttribute("aria-hidden", "false");
-  if (id === "logDrawer") renderLog();
-  if (id === "missionIntelDrawer") {
-    renderMissionIntel();
-    ensureMissionMaps();
-    setIntelTab("map");
-  }
+function renderStoryHeader(route) {
+  setText('#route-kicker', `${routeLabels[route.id] || route.id} · ${route.mars.location}`);
+  setText('#active-route', routeTitle(route));
+  setText('#active-earth', `${state.language === 'en' ? 'Earth analogue' : 'Análogo'}: ${routeEarth(route)}`);
 }
 
-function closeDrawer(id) {
-  const drawer = document.getElementById(id);
-  drawer.classList.remove("open");
-  drawer.setAttribute("aria-hidden", "true");
+function videoElement(key) { return $(videoPlayers[key]); }
+function clearVideoSource(key) { const video = videoElement(key); if (hlsInstances[key]) { hlsInstances[key].destroy(); hlsInstances[key] = null; } video.pause(); video.removeAttribute('src'); video.load(); }
+function prepareVideoSource(key, source) {
+  const video = videoElement(key);
+  clearVideoSource(key);
+  if (!source) return;
+  if (source.endsWith('.m3u8')) {
+    if (video.canPlayType('application/vnd.apple.mpegurl')) video.src = source;
+    else if (window.Hls?.isSupported()) { hlsInstances[key] = new window.Hls({ enableWorker: true, lowLatencyMode: false }); hlsInstances[key].loadSource(source); hlsInstances[key].attachMedia(video); }
+    else { showToast('Este navegador no soporta HLS.'); return; }
+  } else video.src = source;
+  video.classList.remove('is-hidden');
+}
+function swapVideoPlayers(nextKey) {
+  const previousKey = activeVideoKey;
+  const previous = videoElement(previousKey);
+  const next = videoElement(nextKey);
+  previous.pause(); previous.classList.remove('is-active');
+  next.classList.remove('is-hidden'); next.classList.add('is-active');
+  activeVideoKey = nextKey;
+  next.play().catch(() => {});
+}
+function prepareAndSwapVideo(source) {
+  const standbyKey = activeVideoKey === 'a' ? 'b' : 'a';
+  prepareVideoSource(standbyKey, source);
+  const standby = videoElement(standbyKey);
+  const swap = () => swapVideoPlayers(standbyKey);
+  if (standby.readyState >= 3) swap();
+  else standby.addEventListener('canplay', swap, { once: true });
+}
+function renderMedia(node, route) {
+  const placeholder = $('#video-placeholder'); const audio = $('#scene-audio');
+  const visual = node.media?.visual;
+  const audioSource = node.media?.audio?.[state.language];
+  const captionsSource = node.media?.captions?.[state.language];
+  setText('#scene-code', node.code);
+  if (visual) { prepareAndSwapVideo(visual); placeholder.classList.add('is-hidden'); setText('#media-status', visual.endsWith('.m3u8') ? 'HLS V2 · BUFFER SWAP' : 'MP4 V2 · BUFFER SWAP'); }
+  else { ['a', 'b'].forEach((key) => { clearVideoSource(key); videoElement(key).classList.add('is-hidden'); videoElement(key).classList.toggle('is-active', key === activeVideoKey); }); placeholder.classList.remove('is-hidden'); setText('#media-status', 'VIDEO V2 PENDIENTE'); setText('#placeholder-title', routeTitle(route)); setText('#placeholder-copy', t('pendingCopy')); setText('#placeholder-asset', `assetPrefix: ${route.assetPrefix}`); }
+  if (audioSource) { audio.src = audioSource; audio.classList.remove('is-hidden'); } else { audio.pause(); audio.removeAttribute('src'); audio.classList.add('is-hidden'); }
+  ['a', 'b'].forEach((key) => { const track = $(`#scene-track-${key}`); if (captionsSource) { track.src = captionsSource; track.srclang = state.language; track.label = state.language === 'es' ? 'Español' : 'English'; } else track.removeAttribute('src'); });
+  setText('#video-caption', audioSource ? `${state.language.toUpperCase()} · audio conectado` : t('audioPending'));
 }
 
-function restartMission() {
-  started = false;
-  history = [];
-  gameState = initialState();
-  localStorage.removeItem("red-hope-v1-state");
-  localStorage.removeItem("red-hope-v1-history");
-  $("#endingScreen").classList.remove("open");
-  $("#endingScreen").setAttribute("aria-hidden", "true");
-  loadNode(story.startNode || "p001");
-  announce("Misión reiniciada");
+function renderScience(route) {
+  const marsCoords = `${route.mars.latitude}°, ${route.mars.longitude}°`;
+  $('#science-content').innerHTML = `<p><strong>${route.mars.location}</strong> se presenta junto a <strong>${route.earth.location}</strong> como análogo visual de entrenamiento. La ruta usa la lógica de relieve MOLA y referencias de NASA como contexto; las coordenadas del libreto están marcadas para validación antes de exhibición científica final.</p><div class="science-list"><span>NASA MOLA</span><span>${marsCoords}</span>${route.scienceFocus.map((item) => `<span>${item}</span>`).join('')}</div>`;
 }
 
-function bindEvents() {
-  $("#startButton").addEventListener("click", () => {
-    started = true;
-    $("#startButton").classList.add("hidden");
-    playCurrentMedia();
-    sceneTimer = window.setTimeout(openChoices, media.video[currentNodeId] ? 4500 : 1800);
+function conditionLabel(choice) {
+  if (!choice.conditions?.length) return `Ruta ${choice.targetCode} →`;
+  const labels = choice.conditions.map((condition) => {
+    if (condition.type === 'hasAny') return `requiere una: ${condition.marks.join(' / ')}`;
+    if (condition.type === 'hasAll' || condition.type === 'has') return `si tienes: ${condition.marks.join(' + ')}`;
+    if (condition.type === 'lacksAll' || condition.type === 'lacks') return `si falta: ${condition.marks.join(' + ')}`;
+    if (condition.type === 'composite') return `si tienes ${condition.has.join(' + ')} y falta ${condition.lacks.join(' + ')}`;
+    if (condition.type === 'path') return `si seguiste ${condition.path}`;
+    return 'regla de campo';
   });
-  $("#playButton").addEventListener("click", () => {
-    if (!started) return $("#startButton").click();
-    if (!video.paused || !audio.paused) pauseCurrentMedia();
-    else playCurrentMedia();
-  });
-  $("#showChoicesButton").addEventListener("click", openChoices);
-  $("#scienceButton").addEventListener("click", () => openDrawer("scienceDrawer"));
-  $("#missionMapButton").addEventListener("click", () => openDrawer("missionIntelDrawer"));
-  $("#logButton").addEventListener("click", () => openDrawer("logDrawer"));
-  $("#restartButton").addEventListener("click", restartMission);
-  $("#captionsButton").addEventListener("click", () => {
-    captionsOn = !captionsOn;
-    $("#caption").classList.toggle("visible", captionsOn && Boolean(story.nodes[currentNodeId].narrationDraft));
-    $("#captionsButton").classList.toggle("active", captionsOn);
-  });
-  $("#muteButton").addEventListener("click", () => {
-    muted = !muted;
-    audio.muted = muted;
-    $("#muteButton").textContent = muted ? "♫̸" : "♫";
-  });
-  document.querySelectorAll("[data-close]").forEach((button) => button.addEventListener("click", () => closeDrawer(button.dataset.close)));
-  document.querySelectorAll("[data-intel-tab]").forEach((button) => button.addEventListener("click", () => setIntelTab(button.dataset.intelTab)));
-  $("#endingReplay").addEventListener("click", restartMission);
-  $("#endingScience").addEventListener("click", () => {
-    $("#endingScreen").classList.remove("open");
-    openDrawer("scienceDrawer");
-  });
-  video.addEventListener("ended", openChoices);
-  audio.addEventListener("ended", () => {
-    if (currentNodeId === "p020") showEnding(story.nodes[currentNodeId]);
-  });
+  return `Reglas posibles · ${labels.join(' · ')}`;
 }
+
+function renderNode(nodeId) {
+  const node = nodeById(nodeId); const route = activeRoute(); if (!node || !route) return;
+  state.nodeId = node.id; if (!state.visited.includes(node.id)) state.visited.push(node.id); state.ending = node.code.toLowerCase().startsWith('final');
+  renderStoryHeader(route); renderMedia(node, route); renderMarks(); renderLog(); renderScience(route);
+  setText('#scene-title', node.title); setText('#scene-index', node.code); setText('#science-chip', t('science'));
+  const script = asText(node.script).replace(/^Viñeta(?:\s*\d+)?\.\s*/g, '').trim();
+  $('#scene-script').innerHTML = script.split(/(?=Viñeta(?:\s*\d+)?\.)/).filter(Boolean).map((part) => `<p>${part.trim()}</p>`).join('') || '<p>La bitácora espera una nueva escena.</p>';
+  const choices = $('#choices'); choices.innerHTML = '';
+  node.choices.forEach((choice, index) => { const button = document.createElement('button'); button.type = 'button'; button.className = 'choice-button'; button.innerHTML = `<span class="choice-number">OPCIÓN ${String(index + 1).padStart(2, '0')}</span><span class="choice-label">${choice.label}</span><span class="choice-effect">${conditionLabel(choice)}</span>`; button.addEventListener('click', () => choose(node, choice)); choices.appendChild(button); });
+  $('#continue-wrap').innerHTML = '';
+  if (!node.choices.length && !state.ending) { const button = document.createElement('button'); button.type = 'button'; button.className = 'primary-button'; button.textContent = `${t('continue')} →`; const next = inferNext(node); if (next) button.addEventListener('click', () => renderNode(next.id)); else button.disabled = true; $('#continue-wrap').appendChild(button); }
+  $('#decision-state').textContent = state.ending ? t('end') : node.choices.length ? t('open') : 'ESCENA';
+  $('#ending-panel').classList.toggle('is-hidden', !state.ending); if (state.ending) { setText('#ending-title', node.title); setText('#ending-copy', script); }
+  updateProgress();
+}
+
+function inferNext(node) { const text = asText(node.script); const targetCode = text.match(/(?:Continúa en|Ve a)\s+([A-Z0-9-]+)/i)?.[1]; if (!targetCode) return null; return state.story.nodes.find((candidate) => candidate.code.toUpperCase() === targetCode.toUpperCase()) || null; }
+function choose(node, choice) { state.choiceHistory.push({ from: node.id, choice: choice.id, target: choice.target, conditions: choice.conditions || [] }); applyChoiceEffects(choice); renderNode(choice.target); }
+function updateProgress() { const total = state.story?.nodes?.length || 1; const visited = state.visited.length; $('#progress-fill').style.width = `${Math.max(18, Math.min(100, 18 + (visited / total) * 82))}%`; }
+
+function startRoute() { const route = activeRoute(); if (!route) { showToast(t('routeRequired')); return; } state.nodeId = route.startNode; state.visited = []; state.marks = []; state.choiceHistory = []; screen('story'); renderNode(route.startNode); }
+function restart() { state.nodeId = null; state.marks = []; state.choiceHistory = []; state.visited = []; state.ending = null; screen('map'); renderRouteCards(); if (state.route) selectRoute(state.route); }
 
 async function boot() {
-  try {
-    const response = await fetch("./data/story.json", { cache: "no-store" });
-    if (!response.ok) throw new Error(`story.json ${response.status}`);
-    story = await response.json();
-    const savedState = localStorage.getItem("red-hope-v1-state");
-    const savedHistory = localStorage.getItem("red-hope-v1-history");
-    gameState = savedState ? { ...initialState(), ...JSON.parse(savedState) } : initialState();
-    history = savedHistory ? JSON.parse(savedHistory) : [];
-    bindEvents();
-    loadNode(story.startNode || "p001");
-    renderMissionIntel();
-  } catch (error) {
-    console.error(error);
-    $("#placeholderTitle").textContent = "No se pudo cargar la historia";
-    $("#controlNote").textContent = "Sirve el sitio desde un servidor estático para habilitar story.json.";
-  }
+  try { const [story, routes] = await Promise.all([fetch('./data/story.json').then((r) => r.json()), fetch('./data/routes.json').then((r) => r.json())]); state.story = story; state.routes = routes; applyLanguage(); renderRouteCards(); if (state.route) selectRoute(state.route); $('#open-map').disabled = false; }
+  catch (error) { console.error(error); showToast('No se pudo cargar el paquete narrativo.'); }
 }
 
+$$('.language-card').forEach((card) => card.addEventListener('click', () => { state.language = card.dataset.language; applyLanguage(); }));
+$('#open-map').addEventListener('click', () => screen('map'));
+$('#start-route').addEventListener('click', startRoute);
+$('#change-language').addEventListener('click', () => screen('language'));
+$('#back-to-map').addEventListener('click', () => screen('map'));
+$('#restart-mission').addEventListener('click', restart);
 boot();

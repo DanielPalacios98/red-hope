@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "2.0.0",
+  "project": "red-hope",
+  "revision": "v2.0",
+  "languages": {
+    "es": {"label": "Español", "required": true, "audioFormat": "wav-source-aac-delivery"},
+    "en": {"label": "English", "required": true, "audioFormat": "wav-source-aac-delivery"}
+  },
+  "selection": {
+    "screen": "before-map",
+    "storageKey": "redHope.audioLanguage",
+    "default": "es",
+    "requiresUserGesture": true,
+    "captionLanguageFollowsAudio": true
+  },
+  "voicePolicy": {
+    "sameCharacterIdentityAcrossLanguages": true,
+    "noAutomaticTranslationAtRuntime": true,
+    "noApiKeysInFrontend": true,
+    "deliverablePerScene": ["es.wav", "en.wav", "es.vtt", "en.vtt"]
+  },
+  "status": "pending-bilingual-casting"
+}

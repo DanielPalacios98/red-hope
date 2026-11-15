@@ -1,390 +1,4368 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "2.0.0",
   "project": "red-hope",
-  "revision": "v1.0",
-  "status": "draft-awaiting-science-validation",
-  "title": "RED HOPE",
-  "subtitle": "Las tres medallas",
-  "language": "es",
-  "canonSource": [
-    "C:/Users/Mauro/Downloads/RED HOPE.docx",
-    "C:/Users/Mauro/Downloads/Historia.txt"
+  "revision": "v2.0",
+  "title": "Crónica de dos mundos",
+  "subtitle": "El rastro de James",
+  "status": "narrative-rules-normalized",
+  "sourceDocument": "C:\\Users\\Mauro\\Downloads\\Cronica de dos mundos - Libreto completo.docx",
+  "languages": [
+    "es",
+    "en"
   ],
-  "playerRole": "Cadete de 15 a 18 años seleccionado para el programa marciano del año 2050.",
-  "premise": "En un planeta unido que se recupera del calentamiento global, el jugador debe superar tres escenarios terrestres análogos a Marte para reunir tres medallas y obtener autorización para viajar al planeta rojo.",
-  "narrativeRules": [
-    "Las decisiones seguras avanzan por el entrenamiento.",
-    "Las decisiones arriesgadas llevan a una emergencia, pero permiten recuperarse mediante una nueva decisión.",
-    "El jugador no recibe una muerte arbitraria: aprende el procedimiento correcto y conserva la agencia.",
-    "Los valores científicos que no estén verificados se muestran como estimaciones narrativas y no como telemetría NASA confirmada."
+  "startNode": "intro",
+  "intro": [
+    "Crónica de dos mundos",
+    "El rastro de James",
+    "Libreto completo de la historieta",
+    "Cómo jugar",
+    "Tú eres quien protagoniza la historieta. En cada reto, elige una de las tres opciones. Salta al código que indica tu opción. Lee únicamente esa nueva escena, actualiza tu bitácora y sigue el destino indicado al final de la viñeta. Los códigos intermedios (por ejemplo, J1-B) identifican escenas que solo ocurren si las eliges. Empieza con la bitácora vacía. Conserva los códigos de tus elecciones y tus marcas hasta el final. En Word puedes pulsar los códigos de destino en azul o buscarlos por su nombre. Cada partida recorre una zona completa, desde el entrenamiento en la Tierra hasta el rescate en Marte. Las otras dos zonas quedan disponibles para una nueva partida.",
+    "Las tablas de los briefings presentan los valores de referencia del simulacro dentro de la historia. Cada campo reproduce las condiciones relevantes para sus pruebas.",
+    "Inicio",
+    "Viñeta 1. Cambridge, Massachusetts. 15:00. Llegas del colegio y empujas la puerta del cuarto de James. La maqueta que tu hermano preparaba para su pasantía está abierta por la mitad. En la mesa queda un tazón de cereal. Esa noche, su cama sigue intacta.",
+    "Viñeta 2. Cinco días después. En el televisor aparecen las fotos de ingenieros desaparecidos en varios países. Reconoces a dos. Estuvieron en casa la última vez que James presentó sus planos del MIT.",
+    "Locutora. Una investigación vincula a Nueva Era con los secuestros. La organización habría recibido dinero de traficantes de armas para levantar instalaciones militares en Marte.",
+    "Viñeta 3. Camino al colegio. En el semáforo, alguien con capucha se para junto a ti. Reconoces la voz de Brad, el mejor amigo de James.",
+    "Brad. Yo escapé antes del lanzamiento. James iba a bordo. Alcancé a copiar tres destinos posibles, pero alguien me siguió hasta aquí.",
+    "Brad te pasa una tarjeta de memoria. El semáforo cambia.",
+    "Continúa en I1."
   ],
-  "runtime": {
-    "playerStrategy": "buffer-swap",
-    "maxVideoPlayers": 2,
-    "preloadPolicy": "on-choice-visible",
-    "audioMode": "single-owner",
-    "captions": true,
-    "fallbackMedia": "mp4",
-    "productionMedia": "hls",
-    "choicePresentation": "overlay-before-end-plus-end-lock"
+  "state": {
+    "language": "es",
+    "route": null,
+    "firstClue": null,
+    "marks": [],
+    "choiceHistory": [],
+    "ending": null
   },
-  "variables": {
-    "training.medals": { "type": "integer", "min": 0, "max": 3 },
-    "training.chimborazo.completed": { "type": "boolean" },
-    "training.siloli.completed": { "type": "boolean" },
-    "training.payunia.completed": { "type": "boolean" },
-    "rover.control": { "type": "number", "min": 0, "max": 1 },
-    "equipment.integrity": { "type": "number", "min": 0, "max": 1 },
-    "safety.anchor": { "type": "number", "min": 0, "max": 1 },
-    "thermal.control": { "type": "number", "min": 0, "max": 1 },
-    "signal.stability": { "type": "number", "min": 0, "max": 1 },
-    "route.risk": { "type": "number", "min": 0, "max": 1 }
+  "routes": {
+    "jezero": {
+      "start": "j0",
+      "earthAnalog": "Gran Arenal del Chimborazo"
+    },
+    "arcadia": {
+      "start": "a0",
+      "earthAnalog": "Siloli"
+    },
+    "arsia": {
+      "start": "p0",
+      "earthAnalog": "La Payunia"
+    }
   },
-  "initialState": {
-    "training.medals": 0,
-    "training.chimborazo.completed": false,
-    "training.siloli.completed": false,
-    "training.payunia.completed": false,
-    "rover.control": 0.5,
-    "equipment.integrity": 1,
-    "safety.anchor": 0.5,
-    "thermal.control": 0.5,
-    "signal.stability": 0.5,
-    "route.risk": 0
-  },
-  "scienceDataPolicy": {
-    "liveDataRequired": false,
-    "defaultMode": "curated-snapshot",
-    "displayLabels": ["NASA source", "measurement or estimate", "date", "confidence"],
-    "unverifiedValuesMustBeMarked": true
-  },
-  "media": {
-    "baseUrl": null,
-    "hlsRoot": null,
-    "posterRoot": null,
-    "status": "not-generated"
-  },
-  "startNode": "p001",
-  "nodes": {
-    "p001": {
-      "page": 1,
-      "type": "video",
-      "mvp": true,
-      "scene": "prologue",
-      "title": "06:45 en el año 2050",
-      "targetDurationSec": 45,
-      "durationSec": null,
-      "narrationDraft": "A las 06:45 de una mañana despejada del año 2050, el timbre matinal marca el inicio de tu jornada. Tienes entre 15 y 18 años y perteneces a la generación convocada para llevar ciencia y futuro a Marte. En el comedor, el boletín global cuenta que las guerras quedaron atrás y que la humanidad trabaja como un solo planeta para sanar las heridas del calentamiento global. Antes de viajar debes reunir tres medallas, una por cada escenario terrestre y sus tres pruebas.",
-      "dataRefs": ["future-world-context", "mission-structure"],
+  "nodes": [
+    {
+      "id": "i1",
+      "code": "I1",
+      "title": "El semáforo",
+      "script": [],
       "choices": [
-        { "id": "controlled_torque", "label": "Dosificar el torque y avanzar con control", "next": "p002", "route": "safe", "effects": [{ "var": "rover.control", "operation": "set", "value": 0.8 }, { "var": "route.risk", "operation": "add", "value": 0.02 }] },
-        { "id": "full_acceleration", "label": "Acelerar a fondo por la ceniza suelta", "next": "p003", "route": "risk", "effects": [{ "var": "rover.control", "operation": "subtract", "value": 0.25 }, { "var": "route.risk", "operation": "add", "value": 0.25 }] }
-      ]
+        {
+          "id": "choice_1",
+          "label": "Pedir a Brad el código que usaban cuando trabajaban juntos.",
+          "targetCode": "I1-A",
+          "target": "i1_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "CÓDIGO",
+              "sourceText": "Anota CÓDIGO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "I1-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Llamar a tu madre y enviarle una copia de la tarjeta.",
+          "targetCode": "I1-B",
+          "target": "i1_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "PRENSA",
+              "sourceText": "Anota PRENSA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "I1-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Acompañar a Brad hasta la caseta de seguridad del colegio.",
+          "targetCode": "I1-C",
+          "target": "i1_c",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "SÍMBOLO",
+              "sourceText": "Anota SÍMBOLO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "I1-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
     },
-    "p002": {
-      "page": 2,
-      "type": "video",
-      "mvp": true,
-      "scene": "chimborazo_rover",
-      "title": "El taladro robótico",
-      "targetDurationSec": 35,
-      "durationSec": null,
-      "narrationDraft": "Controlas el empuje de las seis ruedas y avanzas sobre la ceniza del Chimborazo sin que patinen. Ahora debes usar el taladro robot para extraer un tubito de roca volcánica dura. El brazo se apoya sobre un afloramiento compacto: una mala maniobra puede dañar el núcleo o provocar un desprendimiento.",
-      "dataRefs": ["earth.chimborazo", "mars.jezero", "rover.traction"],
-      "choices": [
-        { "id": "controlled_drill", "label": "Fijar el chasis, regular el giro y extraer con control", "next": "p005", "route": "safe", "effects": [{ "var": "equipment.integrity", "operation": "subtract", "value": 0.03 }, { "var": "route.risk", "operation": "subtract", "value": 0.05 }] },
-        { "id": "maximum_drill_power", "label": "Exigir máxima potencia sin regular el calor", "next": "p006", "route": "risk", "effects": [{ "var": "thermal.control", "operation": "subtract", "value": 0.3 }, { "var": "route.risk", "operation": "add", "value": 0.3 }] }
-      ]
-    },
-    "p003": {
-      "page": 3,
-      "type": "video",
-      "mvp": true,
-      "scene": "chimborazo_drift",
-      "title": "Derrape en la ceniza",
-      "targetDurationSec": 30,
-      "durationSec": null,
-      "narrationDraft": "Las ruedas muerden la ceniza suelta y comienzan a patinar. El rover se desliza hacia un corte rocoso y la situación queda comprometida. No hay retorno automático: debes recuperar el control ahora.",
-      "dataRefs": ["earth.chimborazo", "rover.traction", "safety.anchor"],
-      "choices": [
-        { "id": "recover_rover", "label": "Frenar, anclar la línea y recuperar el control", "next": "p002", "route": "recovery", "effects": [{ "var": "rover.control", "operation": "set", "value": 0.65 }, { "var": "safety.anchor", "operation": "add", "value": 0.2 }] },
-        { "id": "reverse_turn", "label": "Girar violentamente en reversa", "next": "p004", "route": "risk", "effects": [{ "var": "rover.control", "operation": "subtract", "value": 0.3 }, { "var": "route.risk", "operation": "add", "value": 0.3 }] }
-      ]
-    },
-    "p004": {
-      "page": 4,
-      "type": "video",
-      "mvp": false,
-      "scene": "chimborazo_cliff",
-      "title": "Al borde del precipicio",
-      "targetDurationSec": 28,
-      "durationSec": null,
-      "narrationDraft": "El giro brusco hace ceder el borde de ceniza y piedra. El rover oscila y quedas a centímetros de un desnivel mortal. El frío de altura y la tensión aprietan el pecho.",
-      "dataRefs": ["earth.chimborazo", "safety.anchor", "crew.health"],
-      "choices": [
-        { "id": "emergency_anchor", "label": "Clavar el ancla, soltar carga y trepar a zona firme", "next": "p002", "route": "recovery", "effects": [{ "var": "safety.anchor", "operation": "set", "value": 0.8 }, { "var": "equipment.integrity", "operation": "subtract", "value": 0.08 }] },
-        { "id": "hold_heavy_gear", "label": "Aferrarte al equipo pesado mientras cede el talud", "next": "p003", "route": "risk", "effects": [{ "var": "safety.anchor", "operation": "subtract", "value": 0.25 }, { "var": "route.risk", "operation": "add", "value": 0.2 }] }
-      ]
-    },
-    "p005": {
-      "page": 5,
-      "type": "video",
-      "mvp": false,
-      "scene": "chimborazo_cameras",
-      "title": "Cámaras automáticas sin vegetación",
-      "targetDurationSec": 34,
-      "durationSec": null,
-      "narrationDraft": "Extraes el tubito y superas la segunda prueba. Ahora debes calibrar las cámaras automáticas para distinguir relieves y sombras donde no hay árboles ni plantas. Un error de lectura puede dejarte expuesto a un cambio brusco del clima de altura.",
-      "dataRefs": ["mars.jezero", "earth.chimborazo", "optical.calibration"],
-      "choices": [
-        { "id": "calibrate_cameras", "label": "Calibrar relieves y sombras antes de avanzar", "next": "p007", "route": "safe", "effects": [{ "var": "equipment.integrity", "operation": "add", "value": 0.02 }, { "var": "training.chimborazo.completed", "operation": "set", "value": true }, { "var": "training.medals", "operation": "add", "value": 1 }] },
-        { "id": "vegetation_mode", "label": "Dejar el modo de vegetación y avanzar sin revisar", "next": "p008", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.2 }] }
-      ]
-    },
-    "p006": {
-      "page": 6,
-      "type": "video",
-      "mvp": false,
-      "scene": "chimborazo_overheat",
-      "title": "Sobrecalentamiento y desprendimiento",
-      "targetDurationSec": 26,
-      "durationSec": null,
-      "narrationDraft": "La broca se sobrecalienta al golpear la roca dura. El borde se fractura y libera piedras hacia tu posición. Debes responder de inmediato.",
-      "dataRefs": ["earth.chimborazo", "thermal.control", "safety.anchor"],
-      "choices": [
-        { "id": "cut_power", "label": "Cortar energía, buscar resguardo y evaluar el daño", "next": "p002", "route": "recovery", "effects": [{ "var": "thermal.control", "operation": "set", "value": 0.65 }, { "var": "equipment.integrity", "operation": "subtract", "value": 0.12 }] },
-        { "id": "pull_stuck_arm", "label": "Insistir con el brazo robótico atascado", "next": "p004", "route": "risk", "effects": [{ "var": "equipment.integrity", "operation": "subtract", "value": 0.25 }, { "var": "route.risk", "operation": "add", "value": 0.25 }] }
-      ]
-    },
-    "p007": {
-      "page": 7,
-      "type": "video",
-      "mvp": true,
-      "scene": "medal_one_siloli",
-      "title": "Medalla 1 y el radar GPR",
-      "targetDurationSec": 40,
-      "durationSec": null,
-      "narrationDraft": "Las cámaras registran con nitidez el paisaje sin vegetación. Completas las tres pruebas del Gran Arenal del Chimborazo y ganas la Medalla 1. El siguiente escenario es el Desierto de Siloli, donde debes pasar un carrito con radar GPR para detectar hielo enterrado.",
-      "dataRefs": ["mars.jezero", "earth.chimborazo", "earth.siloli", "subsurface.ice"],
-      "choices": [
-        { "id": "steady_gpr", "label": "Deslizar el GPR a paso firme y parejo", "next": "p009", "route": "safe", "effects": [{ "var": "training.medals", "operation": "set", "value": 1 }, { "var": "route.risk", "operation": "subtract", "value": 0.05 }] },
-        { "id": "fast_gpr", "label": "Empujar el GPR a toda velocidad en la ráfaga", "next": "p010", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.25 }] }
-      ]
-    },
-    "p008": {
-      "page": 8,
-      "type": "video",
-      "mvp": false,
-      "scene": "chimborazo_blind_reading",
-      "title": "Lectura ciega y tormenta de altura",
-      "targetDurationSec": 25,
-      "durationSec": null,
-      "narrationDraft": "Sin vegetación de referencia y con las cámaras mal ajustadas, pierdes nitidez justo cuando una ráfaga seca levanta polvo y te acerca a un desnivel.",
-      "dataRefs": ["earth.chimborazo", "optical.calibration", "weather.wind"],
-      "choices": [
-        { "id": "recalibrate_shelter", "label": "Detener, recalibrar y buscar abrigo", "next": "p007", "route": "recovery", "effects": [{ "var": "equipment.integrity", "operation": "add", "value": 0.03 }] },
-        { "id": "advance_blind", "label": "Avanzar a ciegas esperando que despeje", "next": "p004", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.25 }] }
-      ]
-    },
-    "p009": {
-      "page": 9,
-      "type": "video",
-      "mvp": false,
-      "scene": "siloli_thermal_drill",
-      "title": "Taladro térmico en costra salina",
-      "targetDurationSec": 34,
-      "durationSec": null,
-      "narrationDraft": "El radar GPR confirma indicios de hielo enterrado. Ahora debes perforar la costra dura de sal y tierra congelada con un taladro térmico. El frío extremo y la resistencia de la costra exigen precisión.",
-      "dataRefs": ["mars.arcadia", "earth.siloli", "subsurface.ice", "thermal.control"],
-      "choices": [
-        { "id": "controlled_thermal_drill", "label": "Aplicar calor controlado y perforar por etapas", "next": "p012", "route": "safe", "effects": [{ "var": "thermal.control", "operation": "set", "value": 0.8 }] },
-        { "id": "force_thermal_drill", "label": "Forzar el taladro sin regular la temperatura", "next": "p013", "route": "risk", "effects": [{ "var": "thermal.control", "operation": "subtract", "value": 0.3 }, { "var": "route.risk", "operation": "add", "value": 0.25 }] }
-      ]
-    },
-    "p010": {
-      "page": 10,
-      "type": "video",
-      "mvp": false,
-      "scene": "siloli_blizzard",
-      "title": "Ventisca helada y pérdida de señal",
-      "targetDurationSec": 27,
-      "durationSec": null,
-      "narrationDraft": "La velocidad y el viento levantan una cortina de polvo y frío que borra el horizonte y altera el GPR. Perder el rumbo o sufrir hipotermia representa un riesgo de vida o muerte.",
-      "dataRefs": ["earth.siloli", "weather.wind", "signal.stability"],
-      "choices": [
-        { "id": "protect_gpr", "label": "Fijar el GPR, activar protección térmica y retomar con calma", "next": "p009", "route": "recovery", "effects": [{ "var": "signal.stability", "operation": "add", "value": 0.15 }] },
-        { "id": "cross_blind", "label": "Cruzar la cortina sin referencia hacia una depresión", "next": "p011", "route": "risk", "effects": [{ "var": "signal.stability", "operation": "subtract", "value": 0.25 }, { "var": "route.risk", "operation": "add", "value": 0.25 }] }
-      ]
-    },
-    "p011": {
-      "page": 11,
-      "type": "video",
-      "mvp": false,
-      "scene": "siloli_crack",
-      "title": "Grieta helada y frío extremo",
-      "targetDurationSec": 26,
-      "durationSec": null,
-      "narrationDraft": "El borde de una grieta oculta bajo la costra helada cede. El viento congelante golpea de lleno y la exposición prolongada al frío severo pone tu vida en peligro.",
-      "dataRefs": ["earth.siloli", "weather.cold", "safety.anchor"],
-      "choices": [
-        { "id": "secure_route", "label": "Asegurar el apoyo, activar abrigo térmico y trazar ruta", "next": "p009", "route": "recovery", "effects": [{ "var": "safety.anchor", "operation": "add", "value": 0.2 }] },
-        { "id": "jump_crack", "label": "Saltar la zona cargando todo el equipo", "next": "p010", "route": "risk", "effects": [{ "var": "safety.anchor", "operation": "subtract", "value": 0.25 }, { "var": "route.risk", "operation": "add", "value": 0.25 }] }
-      ]
-    },
-    "p012": {
-      "page": 12,
-      "type": "video",
-      "mvp": false,
-      "scene": "siloli_solar_panels",
-      "title": "Paneles solares en la llanura",
-      "targetDurationSec": 35,
-      "durationSec": null,
-      "narrationDraft": "El taladro térmico atraviesa la costra y completas la segunda prueba. Solo queda armar los paneles solares sobre la llanura plana sin que el viento los mueva.",
-      "dataRefs": ["mars.arcadia", "earth.siloli", "power.solar", "weather.wind"],
-      "choices": [
-        { "id": "anchor_panels", "label": "Fijar los paneles con anclajes firmes", "next": "p014", "route": "safe", "effects": [{ "var": "training.siloli.completed", "operation": "set", "value": true }, { "var": "training.medals", "operation": "set", "value": 2 }, { "var": "equipment.integrity", "operation": "add", "value": 0.03 }] },
-        { "id": "loose_panels", "label": "Colocar los paneles sin asegurar los anclajes", "next": "p015", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.25 }] }
-      ]
-    },
-    "p013": {
-      "page": 13,
-      "type": "video",
-      "mvp": false,
-      "scene": "siloli_pressure",
-      "title": "Presión térmica en la costra",
-      "targetDurationSec": 25,
-      "durationSec": null,
-      "narrationDraft": "La costra libera vapor y fragmentos helados bajo presión. El riesgo aparece en pleno altiplano y debes actuar antes de que el equipo falle.",
-      "dataRefs": ["earth.siloli", "thermal.control", "safety.anchor"],
-      "choices": [
-        { "id": "vent_bore", "label": "Reducir potencia, retroceder y ventilar la perforación", "next": "p012", "route": "recovery", "effects": [{ "var": "thermal.control", "operation": "set", "value": 0.65 }] },
-        { "id": "keep_max_heat", "label": "Mantener el taladro a máxima temperatura", "next": "p011", "route": "risk", "effects": [{ "var": "thermal.control", "operation": "subtract", "value": 0.3 }, { "var": "route.risk", "operation": "add", "value": 0.25 }] }
-      ]
-    },
-    "p014": {
-      "page": 14,
-      "type": "video",
-      "mvp": true,
-      "scene": "medal_two_payunia",
-      "title": "Medalla 2 y el tubo de lava",
-      "targetDurationSec": 42,
-      "durationSec": null,
-      "narrationDraft": "Los paneles quedan firmes pese al viento. Superas las tres pruebas del Desierto de Siloli y ganas la Medalla 2. Tu tercer campo es Payunia, donde los tubos de lava preparan la exploración de Arsia Mons. Comienza el descenso vertical.",
-      "dataRefs": ["mars.arsia_mons", "earth.payunia", "volcanic_caves"],
-      "choices": [
-        { "id": "check_harness", "label": "Verificar el arnés y bajar con cuerda controlada", "next": "p016", "route": "safe", "effects": [{ "var": "safety.anchor", "operation": "set", "value": 0.85 }, { "var": "training.medals", "operation": "set", "value": 2 }] },
-        { "id": "rush_descent", "label": "Descender sin revisar arnés ni freno", "next": "p017", "route": "risk", "effects": [{ "var": "safety.anchor", "operation": "subtract", "value": 0.3 }, { "var": "route.risk", "operation": "add", "value": 0.3 }] }
-      ]
-    },
-    "p015": {
-      "page": 15,
-      "type": "video",
-      "mvp": false,
-      "scene": "siloli_panel_burst",
-      "title": "Ráfaga cortante",
-      "targetDurationSec": 25,
-      "durationSec": null,
-      "narrationDraft": "Una ráfaga levanta los paneles mal sujetos como velas metálicas y te golpea en la llanura expuesta. En el frío extremo, un golpe o pérdida de equipo implica un riesgo de vida o muerte.",
-      "dataRefs": ["earth.siloli", "weather.wind", "safety.anchor"],
-      "choices": [
-        { "id": "secure_structure", "label": "Tirarte lejos de los paneles y asegurar la estructura", "next": "p014", "route": "recovery", "effects": [{ "var": "safety.anchor", "operation": "set", "value": 0.75 }] },
-        { "id": "stop_panels_body", "label": "Intentar detener los paneles con el cuerpo", "next": "p011", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.3 }] }
-      ]
-    },
-    "p016": {
-      "page": 16,
-      "type": "video",
-      "mvp": false,
-      "scene": "payunia_lidar",
-      "title": "Escaneo 3D LiDAR",
-      "targetDurationSec": 34,
-      "durationSec": null,
-      "narrationDraft": "Bajas por la entrada vertical con el arnés controlado y superas la primera prueba. Ahora debes escanear en la oscuridad el techo de la cueva con un láser 3D LiDAR.",
-      "dataRefs": ["mars.arsia_mons", "earth.payunia", "lidar.mapping", "radiation.shelter"],
-      "choices": [
-        { "id": "stable_lidar", "label": "Estabilizar el LiDAR y barrer el techo ordenadamente", "next": "p018", "route": "safe", "effects": [{ "var": "equipment.integrity", "operation": "subtract", "value": 0.03 }] },
-        { "id": "blind_lidar", "label": "Avanzar a ciegas moviendo el LiDAR sin estabilidad", "next": "p019", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.25 }] }
-      ]
-    },
-    "p017": {
-      "page": 17,
-      "type": "video",
-      "mvp": false,
-      "scene": "payunia_rope_friction",
-      "title": "Fricción en el basalto",
-      "targetDurationSec": 25,
-      "durationSec": null,
-      "narrationDraft": "La cuerda roza contra una arista de basalto y el freno se traba a varios metros del fondo. Una falla del cabo significa una caída mortal.",
-      "dataRefs": ["earth.payunia", "safety.anchor", "volcanic_caves"],
-      "choices": [
-        { "id": "safety_knot", "label": "Bloquear el descenso, desviar la cuerda y bajar con calma", "next": "p016", "route": "recovery", "effects": [{ "var": "safety.anchor", "operation": "set", "value": 0.8 }] },
-        { "id": "drop_fast", "label": "Soltar el freno para caer más rápido", "next": "p004", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.35 }] }
-      ]
-    },
-    "p018": {
-      "page": 18,
-      "type": "video",
-      "mvp": false,
-      "scene": "payunia_repeater",
-      "title": "Antenas repetidoras",
-      "targetDurationSec": 35,
-      "durationSec": null,
-      "narrationDraft": "El LiDAR registra el techo con precisión y completas la segunda prueba. Solo queda colocar antenas repetidoras en la puerta de la cueva para no perder la señal de radio.",
-      "dataRefs": ["mars.arsia_mons", "earth.payunia", "signal.stability"],
-      "choices": [
-        { "id": "anchored_repeaters", "label": "Mantener la sujeción y colocar las antenas anclado", "next": "p020", "route": "safe", "effects": [{ "var": "signal.stability", "operation": "set", "value": 0.85 }, { "var": "training.payunia.completed", "operation": "set", "value": true }, { "var": "training.medals", "operation": "set", "value": 3 }] },
-        { "id": "unanchored_repeaters", "label": "Asomarte sin anclaje al borde exterior", "next": "p021", "route": "risk", "effects": [{ "var": "signal.stability", "operation": "subtract", "value": 0.25 }, { "var": "route.risk", "operation": "add", "value": 0.25 }] }
-      ]
-    },
-    "p019": {
-      "page": 19,
-      "type": "video",
-      "mvp": false,
-      "scene": "payunia_darkness",
-      "title": "Desorientación en la oscuridad",
-      "targetDurationSec": 26,
-      "durationSec": null,
-      "narrationDraft": "Pierdes la noción del relieve y un bloque suelto cae cerca de ti. El tubo de lava se convierte en un problema de iluminación, equilibrio y lectura del techo.",
-      "dataRefs": ["earth.payunia", "lidar.mapping", "safety.anchor"],
-      "choices": [
-        { "id": "backup_light", "label": "Encender luz de respaldo y estabilizar el LiDAR", "next": "p018", "route": "recovery", "effects": [{ "var": "equipment.integrity", "operation": "subtract", "value": 0.05 }] },
-        { "id": "run_dark", "label": "Correr por el túnel sin iluminar piso ni techo", "next": "p017", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.3 }] }
-      ]
-    },
-    "p020": {
-      "page": 20,
-      "type": "ending",
-      "mvp": true,
-      "scene": "three_medals_launch",
-      "title": "Tres medallas: 210 días hacia Marte",
-      "targetDurationSec": 48,
-      "durationSec": null,
-      "narrationDraft": "Colocas las antenas y la señal permanece firme. Con la última prueba superada ganas la Medalla 3. Has reunido las tres medallas exigidas por el programa del año 2050 y tu embarque queda autorizado. Abordas la nave y comienzas un viaje de 210 días a lo largo de 480 millones de kilómetros. Atrás queda un mundo unido que cuida su entorno; adelante, el horizonte rojo de Marte te recibe.",
-      "dataRefs": ["mission.structure", "mars.transfer", "deep_space_communications"],
+    {
+      "id": "i1_a",
+      "code": "I1-A",
+      "title": "Pedir a Brad el código que usaban cuando trabajaban juntos",
+      "script": [
+        "Viñeta. Te dice «marea baja». James reconocerá la frase incluso si la radio falla y solo puedes enviar texto. Anota CÓDIGO. Ve a IB."
+      ],
       "choices": [],
-      "endingId": "e001_mars_authorization"
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
     },
-    "p021": {
-      "page": 21,
-      "type": "video",
-      "mvp": false,
-      "scene": "payunia_cave_edge",
-      "title": "Al filo de la boca del tubo",
-      "targetDurationSec": 25,
-      "durationSec": null,
-      "narrationDraft": "Al inclinarte sin asegurar el cabo, la grava basáltica cede y quedas al borde de una caída fatal mientras la señal parpadea.",
-      "dataRefs": ["earth.payunia", "signal.stability", "safety.anchor"],
+    {
+      "id": "i1_b",
+      "code": "I1-B",
+      "title": "Llamar a tu madre y enviarle una copia de la tarjeta",
+      "script": [
+        "Viñeta. Ella consigue que una periodista verifique los archivos y se compromete a publicar las pruebas desde la Tierra si tú se las envías. Anota PRENSA. Ve a IM."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "i1_c",
+      "code": "I1-C",
+      "title": "Acompañar a Brad hasta la caseta de seguridad del colegio",
+      "script": [
+        "Viñeta. Allí puede informar del secuestro sin exponerse en la calle. Antes de irse, te dibuja el símbolo de mantenimiento que usaba la tripulación del carguero. Anota SÍMBOLO. Ve a IE."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "ib",
+      "code": "IB",
+      "title": "La nota de voz",
+      "script": [
+        "Viñeta. En el auditorio anuncian el inicio de la carrera por establecer una colonia marciana. Te inscribes sin avisar a tus padres. Al salir, tu teléfono recibe tres grabaciones que Brad dejó programadas. Solo una puede reproducirse antes de que el servidor borre los archivos. Para volar debes terminar el colegio, cumplir dieciocho años y superar las tres pruebas del campo elegido."
+      ],
       "choices": [
-        { "id": "anchor_and_link", "label": "Enganchar la línea, fijar antenas y asegurar el enlace", "next": "p020", "route": "recovery", "effects": [{ "var": "safety.anchor", "operation": "set", "value": 0.85 }, { "var": "signal.stability", "operation": "set", "value": 0.8 }, { "var": "training.payunia.completed", "operation": "set", "value": true }, { "var": "training.medals", "operation": "set", "value": 3 }] },
-        { "id": "lean_further", "label": "Inclinarte aún más sin anclarte", "next": "p019", "route": "risk", "effects": [{ "var": "safety.anchor", "operation": "subtract", "value": 0.3 }, { "var": "route.risk", "operation": "add", "value": 0.3 }] }
-      ]
+        {
+          "id": "choice_1",
+          "label": "Escuchar el audio del taller.",
+          "targetCode": "IB-A",
+          "target": "ib_a",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "IB-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Escuchar el audio del almacén.",
+          "targetCode": "IB-B",
+          "target": "ib_b",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "IB-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Escuchar el audio del túnel.",
+          "targetCode": "IB-C",
+          "target": "ib_c",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "IB-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "ib_a",
+      "code": "IB-A",
+      "title": "Escuchar el audio del taller",
+      "script": [
+        "Viñeta. La grabación recoge el número de serie del taladro de James y la orden de enviarlo a Jezero. Presentas el número a la reclutadora y solicitas el campo de Ecuador. Ve a J0."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "ib_b",
+      "code": "IB-B",
+      "title": "Escuchar el audio del almacén",
+      "script": [
+        "Viñeta. Oyes a James corregir una lectura de radar. La persona al otro lado responde que necesita esos datos en Arcadia. Enseñas el fragmento a la agencia y solicitas el campo de Bolivia. Ve a A0."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "ib_c",
+      "code": "IB-C",
+      "title": "Escuchar el audio del túnel",
+      "script": [
+        "Viñeta. Se oye a James dictar la profundidad de un pozo. La etiqueta del archivo dice Arsia Mons. Entregas esa pista y solicitas el campo de Argentina. Ve a P0."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "im",
+      "code": "IM",
+      "title": "La llamada de tu madre",
+      "script": [
+        "Viñeta. En el colegio te inscribes a escondidas en el programa. Por la tarde, tu madre te presenta a la periodista. Ha reconocido tres facturas en la tarjeta de Brad. Una puede cotejarse hoy con los registros que conserva la agencia. Para volar debes terminar el colegio, cumplir dieciocho años y superar las tres pruebas del campo elegido."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Seguir la factura de los taladros.",
+          "targetCode": "IM-A",
+          "target": "im_a",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "IM-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Seguir la compra de sensores de hielo.",
+          "targetCode": "IM-B",
+          "target": "im_b",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "IM-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Seguir el envío de cuerdas y repetidores.",
+          "targetCode": "IM-C",
+          "target": "im_c",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "IM-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "im_a",
+      "code": "IM-A",
+      "title": "Seguir la factura de los taladros",
+      "script": [
+        "Viñeta. La factura vincula a un proveedor de Nueva Era con el manifiesto de Jezero. La periodista conserva el documento y tú te preparas en Ecuador. Ve a J0."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "im_b",
+      "code": "IM-B",
+      "title": "Seguir la compra de sensores de hielo",
+      "script": [
+        "Viñeta. Un intermediario pagó los sensores destinados a Arcadia. La periodista empieza a investigar sus cuentas y tú pides entrenar en Bolivia. Ve a A0."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "im_c",
+      "code": "IM-C",
+      "title": "Seguir el envío de cuerdas y repetidores",
+      "script": [
+        "Viñeta. La factura identifica el vuelo que llevó las cuerdas a Arsia Mons. La periodista busca a quienes cargaron la nave y tú eliges el campo de Argentina. Ve a P0."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "ie",
+      "code": "IE",
+      "title": "El registro de seguridad",
+      "script": [
+        "Viñeta. El personal de seguridad presenta a Brad ante un enlace de la agencia. Después de inscribirte en secreto en el auditorio, vuelves a la caseta. El enlace ha encontrado el símbolo que dibujó Brad en tres imágenes de cargamentos. Te deja examinar una antes de que cierren el archivo. Para volar debes terminar el colegio, cumplir dieciocho años y superar las tres pruebas del campo elegido."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Ampliar el símbolo del contenedor de herramientas.",
+          "targetCode": "IE-A",
+          "target": "ie_a",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "IE-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Ampliar el símbolo del depósito de agua.",
+          "targetCode": "IE-B",
+          "target": "ie_b",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "IE-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Ampliar el símbolo de la escotilla.",
+          "targetCode": "IE-C",
+          "target": "ie_c",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "IE-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "ie_a",
+      "code": "IE-A",
+      "title": "Ampliar el símbolo del contenedor de herramientas",
+      "script": [
+        "Viñeta. El símbolo señala un compartimiento con el número de serie de la broca de James. El manifiesto lo sitúa en Jezero. Solicitas el campo de Ecuador. Ve a J0."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "ie_b",
+      "code": "IE-B",
+      "title": "Ampliar el símbolo del depósito de agua",
+      "script": [
+        "Viñeta. El símbolo está junto a una toma de emergencia. El registro la sitúa en Arcadia. Solicitas el campo de Bolivia para aprender a intervenir en una instalación como esa. Ve a A0."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "ie_c",
+      "code": "IE-C",
+      "title": "Ampliar el símbolo de la escotilla",
+      "script": [
+        "Viñeta. El símbolo funciona como marca de mantenimiento junto a una compuerta de Arsia Mons. Brad te muestra cómo reconocerlo incluso si la imagen llega incompleta. Solicitas el campo de Argentina. Ve a P0.",
+        "Ruta de Jezero"
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j0",
+      "code": "J0",
+      "title": "Briefing de Jezero y el Gran Arenal del Chimborazo",
+      "script": [
+        "Viñeta. En una pantalla, el entrenador superpone el mapa del antiguo delta de Jezero al perfil del Gran Arenal. En una esquina aparece el vehículo Perseverance.",
+        "Entrenador. Una carga de 30 kg conserva su masa en los dos mundos. En Marte pesa alrededor del 38 % de lo que pesa aquí. Van a entrenar cómo subir por la ceniza, extraer un testigo de roca y calibrar las cámaras en un paisaje con pocas referencias visuales.",
+        "Continúa en J1."
+      ],
+      "choices": [],
+      "media": {
+        "visual": "media/video/v2/jezero/master.m3u8",
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "media/video/v2/jezero/j0-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "durationSeconds": 8.042667,
+          "verifiedOn": "2026-11-15",
+          "embeddedAudio": "preview-only; bilingual ElevenLabs tracks still pending",
+          "earthTrainingVerified": true
+        }
+      }
+    },
+    {
+      "id": "j1",
+      "code": "J1",
+      "title": "El vehículo en la ceniza",
+      "script": [
+        "Viñeta. Las ruedas del vehículo de seis ruedas se hunden en la ceniza del Gran Arenal. Jezero también tiene pendientes y material suelto. En Marte, el vehículo pesará menos, pero seguirá teniendo la misma masa.",
+        "Entrenador. Lleva el equipo de perforación al puesto de arriba. Mira el terreno antes de mover las ruedas."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Subir en diagonal por una franja compacta.",
+          "targetCode": "J1-A",
+          "target": "j1_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "BATERÍA",
+              "sourceText": "Marca BATERÍA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J1-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Rodear la cuesta por el camino pedregoso.",
+          "targetCode": "J1-B",
+          "target": "j1_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "CRESTA",
+              "sourceText": "Marca CRESTA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J1-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Intentar la subida directa por la ceniza.",
+          "targetCode": "J1-C",
+          "target": "j1_c",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J1-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j1_a",
+      "code": "J1-A",
+      "title": "Subir en diagonal por una franja compacta",
+      "script": [
+        "Viñeta. Llegas con todo el equipo. Marca BATERÍA. Tendrás energía para repetir una medición. Ve a J2-J1A."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j1_b",
+      "code": "J1-B",
+      "title": "Rodear la cuesta por el camino pedregoso",
+      "script": [
+        "Viñeta. El rodeo consume la reserva, pero desde arriba reconoces una cresta que luego podrás localizar en el mapa de Jezero. Marca CRESTA. Ve a J2-J1B."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j1_c",
+      "code": "J1-C",
+      "title": "Intentar la subida directa por la ceniza",
+      "script": [
+        "Viñeta. La ceniza cede y las ruedas patinan. Sueltas el mando. El entrenador inmoviliza el vehículo antes de que se deslice. Ve a JR."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "jr",
+      "code": "JR",
+      "title": "Recuperación en la ladera",
+      "script": [
+        "Entrenador. Elige cómo completar la maniobra antes de seguir."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Pedir el torno de apoyo.",
+          "targetCode": "JR-A",
+          "target": "jr_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "TORNO",
+              "sourceText": "Marca TORNO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "JR-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Retroceder hasta la franja compacta.",
+          "targetCode": "JR-B",
+          "target": "jr_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "BATERÍA",
+              "sourceText": "Marca BATERÍA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "JR-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Descargar el taladro y reconocer el rodeo.",
+          "targetCode": "JR-C",
+          "target": "jr_c",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "CRESTA",
+              "sourceText": "Marca CRESTA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "JR-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "jr_a",
+      "code": "JR-A",
+      "title": "Pedir el torno de apoyo",
+      "script": [
+        "Viñeta. Enganchas el vehículo bajo supervisión y el torno lo saca de la ceniza. Marca TORNO. Ve a J2-JRA."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "jr_b",
+      "code": "JR-B",
+      "title": "Retroceder hasta la franja compacta",
+      "script": [
+        "Viñeta. El vehículo vuelve a terreno firme. Subes en diagonal y conservas la carga de repuesto. Marca BATERÍA. Ve a J2-JRB."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "jr_c",
+      "code": "JR-C",
+      "title": "Descargar el taladro y reconocer el rodeo",
+      "script": [
+        "Viñeta. Tu equipo traslada el taladro mientras encuentras un paso protegido por la cresta. Marca CRESTA. Ve a J2-JRC."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j2_j1a",
+      "code": "J2-J1A",
+      "title": "El testigo de roca",
+      "script": [
+        "Viñeta. La batería de repuesto llega intacta. Puedes ensayar una segunda medición, pero la broca ya vibra al entrar en el basalto."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Perforar por intervalos.",
+          "targetCode": "J2-A",
+          "target": "j2_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "PULSOS",
+              "sourceText": "Marca PULSOS."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Cambiar a una veta lateral y documentar el desvío.",
+          "targetCode": "J2-B",
+          "target": "j2_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "FISURA",
+              "sourceText": "Marca FISURA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Completar dos lecturas antes de reanudar.",
+          "targetCode": "J2-C",
+          "target": "j2_c",
+          "conditions": [
+            {
+              "type": "hasAll",
+              "marks": [
+                "BATERÍA"
+              ],
+              "sourceText": "Si tienes BATERÍA, úsala y bórrala."
+            },
+            {
+              "type": "lacksAll",
+              "marks": [
+                "BATERÍA"
+              ],
+              "sourceText": "Si te falta, el equipo instala una batería de apoyo y tienes que repetir la calibración."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "VIBRACIÓN",
+              "sourceText": "Marca VIBRACIÓN."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "alternative-branches",
+          "conditionalEffects": [
+            {
+              "type": "removeMark",
+              "mark": "BATERÍA",
+              "sourceText": "Si tienes BATERÍA, úsala y bórrala."
+            }
+          ],
+          "ruleSource": "J2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j2_j1b",
+      "code": "J2-J1B",
+      "title": "El testigo de roca",
+      "script": [
+        "Viñeta. Por el rodeo entras al puesto alto. Desde allí ves dos vetas y una nube de ceniza que amenaza con tapar la cámara."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Perforar por intervalos.",
+          "targetCode": "J2-A",
+          "target": "j2_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "PULSOS",
+              "sourceText": "Marca PULSOS."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Cambiar a una veta lateral y documentar el desvío.",
+          "targetCode": "J2-B",
+          "target": "j2_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "FISURA",
+              "sourceText": "Marca FISURA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Completar dos lecturas antes de reanudar.",
+          "targetCode": "J2-C",
+          "target": "j2_c",
+          "conditions": [
+            {
+              "type": "hasAll",
+              "marks": [
+                "BATERÍA"
+              ],
+              "sourceText": "Si tienes BATERÍA, úsala y bórrala."
+            },
+            {
+              "type": "lacksAll",
+              "marks": [
+                "BATERÍA"
+              ],
+              "sourceText": "Si te falta, el equipo instala una batería de apoyo y tienes que repetir la calibración."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "VIBRACIÓN",
+              "sourceText": "Marca VIBRACIÓN."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "alternative-branches",
+          "conditionalEffects": [
+            {
+              "type": "removeMark",
+              "mark": "BATERÍA",
+              "sourceText": "Si tienes BATERÍA, úsala y bórrala."
+            }
+          ],
+          "ruleSource": "J2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j2_jra",
+      "code": "J2-JRA",
+      "title": "El testigo de roca",
+      "script": [
+        "Viñeta. El torno deja el taladro junto a un bloque de basalto poco uniforme. La vibración empieza al rozar la primera veta."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Perforar por intervalos.",
+          "targetCode": "J2-A",
+          "target": "j2_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "PULSOS",
+              "sourceText": "Marca PULSOS."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Cambiar a una veta lateral y documentar el desvío.",
+          "targetCode": "J2-B",
+          "target": "j2_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "FISURA",
+              "sourceText": "Marca FISURA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Completar dos lecturas antes de reanudar.",
+          "targetCode": "J2-C",
+          "target": "j2_c",
+          "conditions": [
+            {
+              "type": "hasAll",
+              "marks": [
+                "BATERÍA"
+              ],
+              "sourceText": "Si tienes BATERÍA, úsala y bórrala."
+            },
+            {
+              "type": "lacksAll",
+              "marks": [
+                "BATERÍA"
+              ],
+              "sourceText": "Si te falta, el equipo instala una batería de apoyo y tienes que repetir la calibración."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "VIBRACIÓN",
+              "sourceText": "Marca VIBRACIÓN."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "alternative-branches",
+          "conditionalEffects": [
+            {
+              "type": "removeMark",
+              "mark": "BATERÍA",
+              "sourceText": "Si tienes BATERÍA, úsala y bórrala."
+            }
+          ],
+          "ruleSource": "J2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j2_jrb",
+      "code": "J2-JRB",
+      "title": "El testigo de roca",
+      "script": [
+        "Viñeta. Regresas por la franja compacta con la batería intacta. La evaluadora prepara el sensor mientras la broca empieza a calentarse."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Perforar por intervalos.",
+          "targetCode": "J2-A",
+          "target": "j2_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "PULSOS",
+              "sourceText": "Marca PULSOS."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Cambiar a una veta lateral y documentar el desvío.",
+          "targetCode": "J2-B",
+          "target": "j2_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "FISURA",
+              "sourceText": "Marca FISURA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Completar dos lecturas antes de reanudar.",
+          "targetCode": "J2-C",
+          "target": "j2_c",
+          "conditions": [
+            {
+              "type": "hasAll",
+              "marks": [
+                "BATERÍA"
+              ],
+              "sourceText": "Si tienes BATERÍA, úsala y bórrala."
+            },
+            {
+              "type": "lacksAll",
+              "marks": [
+                "BATERÍA"
+              ],
+              "sourceText": "Si te falta, el equipo instala una batería de apoyo y tienes que repetir la calibración."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "VIBRACIÓN",
+              "sourceText": "Marca VIBRACIÓN."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "alternative-branches",
+          "conditionalEffects": [
+            {
+              "type": "removeMark",
+              "mark": "BATERÍA",
+              "sourceText": "Si tienes BATERÍA, úsala y bórrala."
+            }
+          ],
+          "ruleSource": "J2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j2_jrc",
+      "code": "J2-JRC",
+      "title": "El testigo de roca",
+      "script": [
+        "Viñeta. El rodeo termina junto a una pared fracturada. Puedes cambiar de veta, aunque tendrás que documentar el desvío."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Perforar por intervalos.",
+          "targetCode": "J2-A",
+          "target": "j2_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "PULSOS",
+              "sourceText": "Marca PULSOS."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Cambiar a una veta lateral y documentar el desvío.",
+          "targetCode": "J2-B",
+          "target": "j2_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "FISURA",
+              "sourceText": "Marca FISURA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Completar dos lecturas antes de reanudar.",
+          "targetCode": "J2-C",
+          "target": "j2_c",
+          "conditions": [
+            {
+              "type": "hasAll",
+              "marks": [
+                "BATERÍA"
+              ],
+              "sourceText": "Si tienes BATERÍA, úsala y bórrala."
+            },
+            {
+              "type": "lacksAll",
+              "marks": [
+                "BATERÍA"
+              ],
+              "sourceText": "Si te falta, el equipo instala una batería de apoyo y tienes que repetir la calibración."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "VIBRACIÓN",
+              "sourceText": "Marca VIBRACIÓN."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "alternative-branches",
+          "conditionalEffects": [
+            {
+              "type": "removeMark",
+              "mark": "BATERÍA",
+              "sourceText": "Si tienes BATERÍA, úsala y bórrala."
+            }
+          ],
+          "ruleSource": "J2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j2_a",
+      "code": "J2-A",
+      "title": "Perforar por intervalos",
+      "script": [
+        "Viñeta. Obtienes un testigo intacto y practicas cómo detener y reanudar el taladro sin atascarlo. Marca PULSOS.",
+        "Viñeta de transición. El testigo intacto sigue sujeto al portamuestras. Desde ese soporte puedes calibrar la cámara sin mover el vehículo. Ve a J3."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j2_b",
+      "code": "J2-B",
+      "title": "Cambiar a una veta lateral y documentar el desvío",
+      "script": [
+        "Viñeta. La muestra es más corta, pero aprendes a reconocer roca con fracturas ocultas. Marca FISURA.",
+        "Viñeta de transición. La veta lateral dejó el vehículo fuera del recorrido marcado. Desde allí una de las cámaras capta el reflejo de metal entre las piedras. Ve a J3."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j2_c",
+      "code": "J2-C",
+      "title": "Completar dos lecturas antes de reanudar",
+      "script": [
+        "Viñeta. Si tienes BATERÍA, úsala y bórrala. Si te falta, el equipo instala una batería de apoyo y tienes que repetir la calibración. El registro de ambas lecturas revela el patrón de vibración de una máquina cercana. Marca VIBRACIÓN.",
+        "Viñeta de transición. La cámara y el sensor del taladro coinciden en un pulso. El equipo te deja comparar ambos registros durante la prueba. Ve a J3."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j3",
+      "code": "J3",
+      "title": "La cámara y la señal",
+      "script": [
+        "Viñeta. Calibras las cámaras con rocas de referencia. En una toma aparece una baliza que no figura en el inventario del campo. Desde la cabina, la evaluadora confirma que el mismo emisor contacta con un receptor en Jezero."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Estimar de dónde llega la señal.",
+          "targetCode": "J3-A",
+          "target": "j3_a",
+          "conditions": [
+            {
+              "type": "hasAll",
+              "marks": [
+                "CRESTA"
+              ],
+              "sourceText": "Con CRESTA, acotas el punto usando el mapa."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "COORDENADAS",
+              "sourceText": "Marca COORDENADAS."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J3-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Apagar el enlace y grabar en la memoria de la cámara.",
+          "targetCode": "J3-B",
+          "target": "j3_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "IMAGEN",
+              "sourceText": "Marca IMAGEN."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J3-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Grabar el ritmo de las transmisiones.",
+          "targetCode": "J3-C",
+          "target": "j3_c",
+          "conditions": [
+            {
+              "type": "has",
+              "marks": [
+                "VIBRACIÓN"
+              ],
+              "sourceText": "Si tienes VIBRACIÓN, distingues además cuándo se pone en marcha el equipo conectado a la baliza."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "INTERVALO",
+              "sourceText": "Marca INTERVALO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J3-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j3_a",
+      "code": "J3-A",
+      "title": "Estimar de dónde llega la señal",
+      "script": [
+        "Viñeta. Con CRESTA, acotas el punto usando el mapa. Si te falta, haces una segunda toma desde otro puesto. Marca COORDENADAS.",
+        "Viñeta de transición. La tripulación dibuja un corredor de aproximación con las coordenadas que reuniste. Ve a J4."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j3_b",
+      "code": "J3-B",
+      "title": "Apagar el enlace y grabar en la memoria de la cámara",
+      "script": [
+        "Viñeta. El emisor deja de recibir respuesta. Conservas un fotograma legible con las marcas de la baliza. Marca IMAGEN.",
+        "Viñeta de transición. Durante la aproximación, comparas las marcas del fotograma con las de una baliza enterrada. Ve a J4."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j3_c",
+      "code": "J3-C",
+      "title": "Grabar el ritmo de las transmisiones",
+      "script": [
+        "Viñeta. Registras un breve intervalo de silencio entre los envíos. Si tienes VIBRACIÓN, distingues además cuándo se pone en marcha el equipo conectado a la baliza. Marca INTERVALO.",
+        "Viñeta de transición. Pides a la tripulación esperar el silencio que detectaste antes de transmitir hacia el módulo. Ve a J4."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j4",
+      "code": "J4",
+      "title": "La esclusa enterrada",
+      "script": [
+        "Viñeta. Ya tienes dieciocho años y tu acreditación. Meses después del despegue, llegas a Jezero con la tripulación de la agencia. Entre dos lomas encuentras el módulo. James está al otro lado de una esclusa atascada. El equipo de seguridad mantiene abierta la vía de retirada.",
+        "James, por radio. Dentro hay un registro de los envíos. Puedo llevármelo si conseguimos abrir."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Abrir el acceso de servicio.",
+          "targetCode": "J4-A",
+          "target": "j4_a",
+          "conditions": [
+            {
+              "type": "hasAny",
+              "marks": [
+                "COORDENADAS",
+                "FISURA"
+              ],
+              "sourceText": "Con COORDENADAS o FISURA, ubicas el acceso sin atravesar el sector vigilado."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "PRUEBAS",
+              "sourceText": "Marca PRUEBAS."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J4-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Liberar la esclusa desde fuera.",
+          "targetCode": "J4-B",
+          "target": "j4_b",
+          "conditions": [
+            {
+              "type": "hasAny",
+              "marks": [
+                "TORNO",
+                "PULSOS"
+              ],
+              "sourceText": "Con TORNO o PULSOS, desbloqueas la cubierta a tiempo para que James saque la unidad de datos."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "PRUEBAS",
+              "sourceText": "Marca PRUEBAS."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "J4-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Copiar el registro por el enlace de mantenimiento mientras la tripulación evacúa a James.",
+          "targetCode": "J4-C",
+          "target": "j4_c",
+          "conditions": [
+            {
+              "type": "hasAny",
+              "marks": [
+                "INTERVALO",
+                "CÓDIGO"
+              ],
+              "sourceText": "Con INTERVALO o CÓDIGO, consigues la copia completa."
+            },
+            {
+              "type": "hasAll",
+              "marks": [
+                "IMAGEN"
+              ],
+              "sourceText": "Con IMAGEN, demuestras que la baliza registrada en Ecuador pertenece al módulo."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "PRUEBAS",
+              "sourceText": "Marca PRUEBAS."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "alternative-branches",
+          "conditionalEffects": [
+            {
+              "type": "addMark",
+              "mark": "RASTRO",
+              "sourceText": "En ese caso, marca RASTRO."
+            }
+          ],
+          "ruleSource": "J4-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j4_a",
+      "code": "J4-A",
+      "title": "Abrir el acceso de servicio",
+      "script": [
+        "Viñeta. Con COORDENADAS o FISURA, ubicas el acceso sin atravesar el sector vigilado. Si te faltan ambas, pides un reconocimiento desde el vehículo y James sale cuando regresa la patrulla de la agencia. En ambos casos, sale con el registro. Marca PRUEBAS.",
+        "Viñeta de transición. James se quita el polvo de la manga. «La salida de servicio daba al otro lado de donde esperaban que apareciéramos». Ve a F1."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j4_b",
+      "code": "J4-B",
+      "title": "Liberar la esclusa desde fuera",
+      "script": [
+        "Viñeta. Con TORNO o PULSOS, desbloqueas la cubierta a tiempo para que James saque la unidad de datos. Marca PRUEBAS. Si te faltan ambos, la tripulación abre la cubierta y evacúa a James mientras la unidad queda dentro.",
+        "Viñeta de transición. En el hangar todavía se oye el torno. James mira por la ventanilla y te hace un gesto con la mano. Ve a F1."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "j4_c",
+      "code": "J4-C",
+      "title": "Copiar el registro por el enlace de mantenimiento mientras la tripulación evacúa a James",
+      "script": [
+        "Viñeta. Con INTERVALO o CÓDIGO, consigues la copia completa. Marca PRUEBAS. Si te faltan ambos, solo recibes una cabecera. Con IMAGEN, demuestras que la baliza registrada en Ecuador pertenece al módulo. En ese caso, marca RASTRO.",
+        "Viñeta de transición. Junto a la nave, cierras por última vez el enlace de mantenimiento que usaste durante la evacuación. Ve a F1.",
+        "Ruta de Arcadia Planitia"
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a0",
+      "code": "A0",
+      "title": "Briefing de Arcadia Planitia y el desierto de Siloli",
+      "script": [
+        "Viñeta. El mapa orbital cambia a un corte del subsuelo. La evaluadora señala las capas donde los datos orbitales sugieren la presencia de hielo.",
+        "Entrenador. Aquí las sales complican la lectura del radar. En Marte, además, el hielo muy frío endurece la perforación y puede sublimarse si queda expuesto. A igual velocidad, el viento de Siloli ejerce más fuerza sobre un panel porque el aire es más denso. Harán tres pruebas: detectar un blanco enterrado, extraer un núcleo congelado y montar paneles frente a las ráfagas. En superficie usen la protección ultravioleta del campo.",
+        "Continúa en A1."
+      ],
+      "choices": [],
+      "media": {
+        "visual": "media/video/v2/arcadia/master.m3u8",
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "media/video/v2/arcadia/a0-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "durationSeconds": 8.042667,
+          "verifiedOn": "2026-11-15",
+          "embeddedAudio": "preview-only; bilingual ElevenLabs tracks still pending",
+          "earthTrainingVerified": true
+        }
+      }
+    },
+    {
+      "id": "a1",
+      "code": "A1",
+      "title": "Dos ecos bajo la sal",
+      "script": [
+        "Viñeta. Empujas un carro con radar por el campo de Siloli. En Arcadia, el equipo buscará hielo enterrado. Aquí practicas sobre un blanco instalado bajo un terreno salino. En la pantalla aparecen dos ecos muy parecidos."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Cruzar el terreno en una segunda dirección.",
+          "targetCode": "A1-A",
+          "target": "a1_a",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A1-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Comparar la lectura con una parcela de referencia.",
+          "targetCode": "A1-B",
+          "target": "a1_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "FILTRO",
+              "sourceText": "Marca FILTRO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A1-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Ajustar el radar para distinguir las capas superficiales.",
+          "targetCode": "A1-C",
+          "target": "a1_c",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A1-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a1_a",
+      "code": "A1-A",
+      "title": "Cruzar el terreno en una segunda dirección",
+      "script": [
+        "Viñeta. El eco del blanco coincide en las dos pasadas. Marca MAPA. Ve a A2-A1A."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a1_b",
+      "code": "A1-B",
+      "title": "Comparar la lectura con una parcela de referencia",
+      "script": [
+        "Viñeta. Aprendes a identificar el patrón de la costra salina. Marca FILTRO. Ve a A2-A1B."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a1_c",
+      "code": "A1-C",
+      "title": "Ajustar el radar para distinguir las capas superficiales",
+      "script": [
+        "Viñeta. La costra ocupa casi toda la pantalla. El eco del blanco desaparece y la evaluadora te pide una comprobación antes de autorizar la perforación. Ve a AR."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "ar",
+      "code": "AR",
+      "title": "Calibración en la llanura",
+      "script": [
+        "Entrenador. Elige cómo completar la maniobra antes de seguir."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Repetir la pasada cruzando la primera trayectoria.",
+          "targetCode": "AR-A",
+          "target": "ar_a",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "AR-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Calibrar el radar en la parcela de referencia.",
+          "targetCode": "AR-B",
+          "target": "ar_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "FILTRO",
+              "sourceText": "Marca FILTRO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "AR-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Combinar una lectura superficial con la sonda auxiliar.",
+          "targetCode": "AR-C",
+          "target": "ar_c",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "COSTRA",
+              "sourceText": "Marca COSTRA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "AR-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "ar_a",
+      "code": "AR-A",
+      "title": "Repetir la pasada cruzando la primera trayectoria",
+      "script": [
+        "Viñeta. Los dos perfiles coinciden sobre el blanco. Marca MAPA. Ve a A2-ARA."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "ar_b",
+      "code": "AR-B",
+      "title": "Calibrar el radar en la parcela de referencia",
+      "script": [
+        "Viñeta. Reconoces el eco de la sal y lo distingues del blanco enterrado. Marca FILTRO. Ve a A2-ARB."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "ar_c",
+      "code": "AR-C",
+      "title": "Combinar una lectura superficial con la sonda auxiliar",
+      "script": [
+        "Viñeta. La sonda confirma el blanco y el radar dibuja dónde se adelgaza la costra. Marca COSTRA. Ve a A2-ARC."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a2_a1a",
+      "code": "A2-A1A",
+      "title": "El núcleo congelado",
+      "script": [
+        "Viñeta. Los perfiles señalan el centro del blanco, pero una capa dura cubre el acceso directo."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Aumentar el calor por etapas.",
+          "targetCode": "A2-A",
+          "target": "a2_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "SONDA",
+              "sourceText": "Marca SONDA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Perforar en el borde de la formación.",
+          "targetCode": "A2-B",
+          "target": "a2_b",
+          "conditions": [
+            {
+              "type": "hasAny",
+              "marks": [
+                "COSTRA"
+              ],
+              "sourceText": "Con MAPA o COSTRA, eliges el borde más delgado."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "RESERVA",
+              "sourceText": "Marca RESERVA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Extraer un núcleo corto y sellarlo.",
+          "targetCode": "A2-C",
+          "target": "a2_c",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "SELLO",
+              "sourceText": "Marca SELLO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a2_a1b",
+      "code": "A2-A1B",
+      "title": "El núcleo congelado",
+      "script": [
+        "Viñeta. El patrón de la sal desaparece de tu lectura y deja visible una franja más delgada. Debes recuperar la muestra sin mezclar las capas."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Aumentar el calor por etapas.",
+          "targetCode": "A2-A",
+          "target": "a2_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "SONDA",
+              "sourceText": "Marca SONDA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Perforar en el borde de la formación.",
+          "targetCode": "A2-B",
+          "target": "a2_b",
+          "conditions": [
+            {
+              "type": "hasAny",
+              "marks": [
+                "COSTRA"
+              ],
+              "sourceText": "Con MAPA o COSTRA, eliges el borde más delgado."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "RESERVA",
+              "sourceText": "Marca RESERVA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Extraer un núcleo corto y sellarlo.",
+          "targetCode": "A2-C",
+          "target": "a2_c",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "SELLO",
+              "sourceText": "Marca SELLO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a2_ara",
+      "code": "A2-ARA",
+      "title": "El núcleo congelado",
+      "script": [
+        "Viñeta. La segunda pasada revela que el blanco está desplazado hacia el borde. El taladro ya está montado en el centro."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Aumentar el calor por etapas.",
+          "targetCode": "A2-A",
+          "target": "a2_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "SONDA",
+              "sourceText": "Marca SONDA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Perforar en el borde de la formación.",
+          "targetCode": "A2-B",
+          "target": "a2_b",
+          "conditions": [
+            {
+              "type": "hasAny",
+              "marks": [
+                "COSTRA"
+              ],
+              "sourceText": "Con MAPA o COSTRA, eliges el borde más delgado."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "RESERVA",
+              "sourceText": "Marca RESERVA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Extraer un núcleo corto y sellarlo.",
+          "targetCode": "A2-C",
+          "target": "a2_c",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "SELLO",
+              "sourceText": "Marca SELLO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a2_arb",
+      "code": "A2-ARB",
+      "title": "El núcleo congelado",
+      "script": [
+        "Viñeta. La parcela de referencia te permite distinguir la costra del suelo congelado. Al perforar aparece la primera capa húmeda."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Aumentar el calor por etapas.",
+          "targetCode": "A2-A",
+          "target": "a2_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "SONDA",
+              "sourceText": "Marca SONDA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Perforar en el borde de la formación.",
+          "targetCode": "A2-B",
+          "target": "a2_b",
+          "conditions": [
+            {
+              "type": "hasAny",
+              "marks": [
+                "COSTRA"
+              ],
+              "sourceText": "Con MAPA o COSTRA, eliges el borde más delgado."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "RESERVA",
+              "sourceText": "Marca RESERVA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Extraer un núcleo corto y sellarlo.",
+          "targetCode": "A2-C",
+          "target": "a2_c",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "SELLO",
+              "sourceText": "Marca SELLO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a2_arc",
+      "code": "A2-ARC",
+      "title": "El núcleo congelado",
+      "script": [
+        "Viñeta. La sonda auxiliar hace visible el punto más delgado. Tu compañera pregunta si perforar ahí o conservar una muestra superficial."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Aumentar el calor por etapas.",
+          "targetCode": "A2-A",
+          "target": "a2_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "SONDA",
+              "sourceText": "Marca SONDA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Perforar en el borde de la formación.",
+          "targetCode": "A2-B",
+          "target": "a2_b",
+          "conditions": [
+            {
+              "type": "hasAny",
+              "marks": [
+                "COSTRA"
+              ],
+              "sourceText": "Con MAPA o COSTRA, eliges el borde más delgado."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "RESERVA",
+              "sourceText": "Marca RESERVA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Extraer un núcleo corto y sellarlo.",
+          "targetCode": "A2-C",
+          "target": "a2_c",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "SELLO",
+              "sourceText": "Marca SELLO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a2_a",
+      "code": "A2-A",
+      "title": "Aumentar el calor por etapas",
+      "script": [
+        "Viñeta. Atraviesas la costra y conservas la estructura del núcleo. Marca SONDA.",
+        "Viñeta de transición. Tu muestra conserva las capas de hielo y sal. La evaluadora te pide mantener alimentado el equipo que la conserva mientras montas los paneles. Ve a A3."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a2_b",
+      "code": "A2-B",
+      "title": "Perforar en el borde de la formación",
+      "script": [
+        "Viñeta. Con MAPA o COSTRA, eliges el borde más delgado. Si te faltan ambos, necesitas una perforación de reconocimiento. Llegas al final con combustible de sobra para el equipo de apoyo. Marca RESERVA.",
+        "Viñeta de transición. Traes el combustible del equipo de apoyo. Puedes conectar otro banco si la instalación pierde corriente. Ve a A3."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a2_c",
+      "code": "A2-C",
+      "title": "Extraer un núcleo corto y sellarlo",
+      "script": [
+        "Viñeta. La evaluadora valida la muestra superficial y te enseña a aislar una toma del circuito para contener una fuga. Marca SELLO.",
+        "Viñeta de transición. Dejas el núcleo en el contenedor sellado antes de salir. Junto a los paneles reconoces un corte de aislamiento igual al que practicaron. Ve a A3."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a3",
+      "code": "A3",
+      "title": "Paneles en la ráfaga",
+      "script": [
+        "Viñeta. Una ráfaga levanta un extremo de los paneles. En el receptor aparece al mismo tiempo una orden de apagado con el logotipo de la agencia. La evaluadora dice que ella jamás envió esa orden."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Bajar los paneles y reforzar los anclajes.",
+          "targetCode": "A3-A",
+          "target": "a3_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "ANCLAJES",
+              "sourceText": "Marca ANCLAJES."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A3-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Separar el control remoto de la instalación.",
+          "targetCode": "A3-B",
+          "target": "a3_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "EMISOR",
+              "sourceText": "Marca EMISOR."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A3-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Montar un banco auxiliar mientras tu equipo fija los paneles.",
+          "targetCode": "A3-C",
+          "target": "a3_c",
+          "conditions": [
+            {
+              "type": "hasAll",
+              "marks": [
+                "RESERVA"
+              ],
+              "sourceText": "Con RESERVA, terminas las conexiones antes de que caiga la alimentación."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "ENERGÍA",
+              "sourceText": "Marca ENERGÍA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A3-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a3_a",
+      "code": "A3-A",
+      "title": "Bajar los paneles y reforzar los anclajes",
+      "script": [
+        "Viñeta. El conjunto resiste el viento y sostiene los equipos esenciales. Marca ANCLAJES.",
+        "Viñeta de transición. El equipo baja los paneles durante la aproximación y deja solo los circuitos esenciales en marcha. Ve a A4."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a3_b",
+      "code": "A3-B",
+      "title": "Separar el control remoto de la instalación",
+      "script": [
+        "Viñeta. Conservas el suministro en modo local y guardas el identificador del emisor. Marca EMISOR.",
+        "Viñeta de transición. Pides arrancar el control en modo local. En el panel aparece el mismo identificador que registraste en Siloli. Ve a A4."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a3_c",
+      "code": "A3-C",
+      "title": "Montar un banco auxiliar mientras tu equipo fija los paneles",
+      "script": [
+        "Viñeta. Con RESERVA, terminas las conexiones antes de que caiga la alimentación. Si te falta, pides apoyo y repites la prueba de carga. Marca ENERGÍA.",
+        "Viñeta de transición. La tripulación lleva el banco auxiliar que aprendiste a montar. Puede sostener un circuito más si lo conectas a tiempo. Ve a A4."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a4",
+      "code": "A4",
+      "title": "La planta de hielo",
+      "script": [
+        "Viñeta. Llegas a Arcadia Planitia tras terminar el colegio, cumplir dieciocho años y superar el entrenamiento. En la planta, alguien ha cortado la corriente de los módulos. James se refugia en la sala de control. En el panel de emergencia hay indicadores para un archivo de contratos y para los habitáculos donde retienen al resto de los ingenieros.",
+        "James, por el intercomunicador. La reserva se agota. Dime a qué circuito le damos corriente."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Alimentar los habitáculos y abrir sus esclusas.",
+          "targetCode": "A4-A",
+          "target": "a4_a",
+          "conditions": [
+            {
+              "type": "hasAny",
+              "marks": [
+                "ENERGÍA",
+                "ANCLAJES"
+              ],
+              "sourceText": "Con ENERGÍA o ANCLAJES, mantienes vivo el archivo mientras James lo copia."
+            }
+          ],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [
+            {
+              "type": "addMark",
+              "mark": "PRUEBAS",
+              "sourceText": "Marca PRUEBAS si tienes alguna de esas marcas."
+            }
+          ],
+          "ruleSource": "A4-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Aislar el archivo y extraerlo durante la evacuación.",
+          "targetCode": "A4-B",
+          "target": "a4_b",
+          "conditions": [
+            {
+              "type": "hasAny",
+              "marks": [
+                "SELLO",
+                "SONDA"
+              ],
+              "sourceText": "Con SELLO o SONDA, separas el circuito averiado sin perder el registro."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "PRUEBAS",
+              "sourceText": "Marca PRUEBAS."
+            },
+            {
+              "type": "addMark",
+              "mark": "RASTRO",
+              "sourceText": "Marca RASTRO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A4-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Rastrear el apagón antes de transferir el control a la agencia.",
+          "targetCode": "A4-C",
+          "target": "a4_c",
+          "conditions": [
+            {
+              "type": "hasAny",
+              "marks": [
+                "EMISOR",
+                "FILTRO"
+              ],
+              "sourceText": "Con EMISOR o FILTRO, separas la señal intrusa, guardas su historial y encuentras las órdenes firmadas."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "PRUEBAS",
+              "sourceText": "Marca PRUEBAS."
+            },
+            {
+              "type": "addMark",
+              "mark": "RASTRO",
+              "sourceText": "Marca RASTRO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "A4-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a4_a",
+      "code": "A4-A",
+      "title": "Alimentar los habitáculos y abrir sus esclusas",
+      "script": [
+        "Viñeta. La tripulación evacúa a James y a los demás ingenieros. Con ENERGÍA o ANCLAJES, mantienes vivo el archivo mientras James lo copia. Marca PRUEBAS si tienes alguna de esas marcas.",
+        "Viñeta de transición. Los ingenieros evacuados ocupan dos filas de asientos. James se sienta junto a la compuerta. Ve a F1."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a4_b",
+      "code": "A4-B",
+      "title": "Aislar el archivo y extraerlo durante la evacuación",
+      "script": [
+        "Viñeta. Con SELLO o SONDA, separas el circuito averiado sin perder el registro. Marca PRUEBAS. Si te faltan ambas, la unidad se apaga y solo se recupera durante la evacuación el tablero de operaciones. Marca RASTRO. James y los demás salen con la tripulación.",
+        "Viñeta de transición. Al cerrar la planta, la tripulación etiqueta la toma del archivo que aislaste. James lleva consigo el número del circuito. Ve a F1."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "a4_c",
+      "code": "A4-C",
+      "title": "Rastrear el apagón antes de transferir el control a la agencia",
+      "script": [
+        "Viñeta. Con EMISOR o FILTRO, separas la señal intrusa, guardas su historial y encuentras las órdenes firmadas. Marca PRUEBAS. Si te faltan ambos, guardas solo la hora y el origen aproximado del apagón. Marca RASTRO. La tripulación evacúa a los ingenieros.",
+        "Viñeta de transición. En el informe de evacuación guardas la hora exacta en que volvió la corriente. James quiere compararla con las órdenes de la planta. Ve a F1.",
+        "Ruta de Arsia Mons"
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p0",
+      "code": "P0",
+      "title": "Briefing de Arsia Mons y La Payunia",
+      "script": [
+        "Viñeta. El entrenador proyecta una imagen orbital de una abertura oscura en Arsia Mons. Al lado pone una fotografía del tubo de lava donde vas a entrenar.",
+        "Entrenador. En Marte buscamos cavidades que puedan servir de refugio. Aquí vas a descender con cuerda y arnés, escanear la bóveda en tres dimensiones y restablecer la comunicación desde el interior del tubo.",
+        "Continúa en P1."
+      ],
+      "choices": [],
+      "media": {
+        "visual": "media/video/v2/arsia/master.m3u8",
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "earth-training-visual-ready-audio-pending",
+        "visualMp4": "media/video/v2/arsia/p0-training-earth.mp4",
+        "qa": {
+          "provider": "Google Flow",
+          "mp4": "passed",
+          "hls": "passed",
+          "resolution": "1280x720",
+          "durationSeconds": 8.042667,
+          "verifiedOn": "2026-11-15",
+          "embeddedAudio": "preview-only; bilingual ElevenLabs tracks still pending",
+          "earthTrainingVerified": true
+        }
+      }
+    },
+    {
+      "id": "p1",
+      "code": "P1",
+      "title": "El descenso",
+      "script": [
+        "Viñeta. En La Payunia, el entrenador verifica el arnés y la línea de seguridad. Bajo la entrada del tubo de lava hay un rellano y, más abajo, una cámara oscura."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Bajar por el centro con el equipo de aseguramiento.",
+          "targetCode": "P1-A",
+          "target": "p1_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "IZADO",
+              "sourceText": "Marca IZADO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P1-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Detenerte en el rellano para observar la pared.",
+          "targetCode": "P1-B",
+          "target": "p1_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "RELLANO",
+              "sourceText": "Marca RELLANO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P1-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Pedir que bajen primero el escáner y después descender con las manos libres.",
+          "targetCode": "P1-C",
+          "target": "p1_c",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P1-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p1_a",
+      "code": "P1-A",
+      "title": "Bajar por el centro con el equipo de aseguramiento",
+      "script": [
+        "Viñeta. Alcanzas directamente la cámara y aprendes a guiar una carga suspendida. Marca IZADO. Ve a P2-P1A."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p1_b",
+      "code": "P1-B",
+      "title": "Detenerte en el rellano para observar la pared",
+      "script": [
+        "Viñeta. Ves una fisura que explica por qué parte del techo quedó fuera del mapa. Marca RELLANO. Ve a P2-P1B."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p1_c",
+      "code": "P1-C",
+      "title": "Pedir que bajen primero el escáner y después descender con las manos libres",
+      "script": [
+        "Viñeta. La bolsa del escáner gira y se engancha en un saliente. El entrenador detiene el descenso. Tu equipo puede recuperar el escáner desde la línea de apoyo. Ve a PR."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "pr",
+      "code": "PR",
+      "title": "Aseguramiento en el tubo de lava",
+      "script": [
+        "Entrenador. Elige cómo completar la maniobra antes de seguir."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Guiar el izado desde la línea de apoyo.",
+          "targetCode": "PR-A",
+          "target": "pr_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "IZADO",
+              "sourceText": "Marca IZADO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "PR-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Descender con el equipo hasta el rellano.",
+          "targetCode": "PR-B",
+          "target": "pr_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "RELLANO",
+              "sourceText": "Marca RELLANO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "PR-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Pedir que cambien el ángulo de la línea auxiliar.",
+          "targetCode": "PR-C",
+          "target": "pr_c",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "ANCLAJE",
+              "sourceText": "Marca ANCLAJE."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "PR-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "pr_a",
+      "code": "PR-A",
+      "title": "Guiar el izado desde la línea de apoyo",
+      "script": [
+        "Viñeta. La bolsa vuelve al borde y baja por el centro sin rozar la roca. Marca IZADO. Ve a P2-PRA."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "pr_b",
+      "code": "PR-B",
+      "title": "Descender con el equipo hasta el rellano",
+      "script": [
+        "Viñeta. Desde allí señalas el saliente y ves una fisura por encima. El equipo libera la bolsa desde arriba. Marca RELLANO. Ve a P2-PRB."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "pr_c",
+      "code": "PR-C",
+      "title": "Pedir que cambien el ángulo de la línea auxiliar",
+      "script": [
+        "Viñeta. La bolsa pasa por un punto firme que también serviría para montar el repetidor. Marca ANCLAJE. Ve a P2-PRC."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p2_p1a",
+      "code": "P2-P1A",
+      "title": "Lo que esconde la bóveda",
+      "script": [
+        "Viñeta. Desde el fondo de la cámara ves un saliente que tapa parte del corredor de regreso. El escáner espera en la línea de izado."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Completar el modelo desde dos posiciones.",
+          "targetCode": "P2-A",
+          "target": "p2_a",
+          "conditions": [
+            {
+              "type": "has",
+              "marks": [
+                "RELLANO"
+              ],
+              "sourceText": "Si tienes RELLANO, ya sabes dónde montar la segunda estación."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "MAPA 3D",
+              "sourceText": "Marca MAPA 3D."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Escanear primero el corredor de salida y sus fracturas.",
+          "targetCode": "P2-B",
+          "target": "p2_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "TECHO",
+              "sourceText": "Marca TECHO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Escanear el recodo con mayor resolución.",
+          "targetCode": "P2-C",
+          "target": "p2_c",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "GALERÍA",
+              "sourceText": "Marca GALERÍA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p2_p1b",
+      "code": "P2-P1B",
+      "title": "Lo que esconde la bóveda",
+      "script": [
+        "Viñeta. Sigues la fisura que viste desde el rellano. En la pantalla, la grieta desaparece justo donde el techo se curva."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Completar el modelo desde dos posiciones.",
+          "targetCode": "P2-A",
+          "target": "p2_a",
+          "conditions": [
+            {
+              "type": "has",
+              "marks": [
+                "RELLANO"
+              ],
+              "sourceText": "Si tienes RELLANO, ya sabes dónde montar la segunda estación."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "MAPA 3D",
+              "sourceText": "Marca MAPA 3D."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Escanear primero el corredor de salida y sus fracturas.",
+          "targetCode": "P2-B",
+          "target": "p2_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "TECHO",
+              "sourceText": "Marca TECHO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Escanear el recodo con mayor resolución.",
+          "targetCode": "P2-C",
+          "target": "p2_c",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "GALERÍA",
+              "sourceText": "Marca GALERÍA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p2_pra",
+      "code": "P2-PRA",
+      "title": "Lo que esconde la bóveda",
+      "script": [
+        "Viñeta. El equipo deja el escáner a salvo bajo el pozo. Desde esa posición, una costilla de basalto impide medir la mitad de la bóveda."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Completar el modelo desde dos posiciones.",
+          "targetCode": "P2-A",
+          "target": "p2_a",
+          "conditions": [
+            {
+              "type": "has",
+              "marks": [
+                "RELLANO"
+              ],
+              "sourceText": "Si tienes RELLANO, ya sabes dónde montar la segunda estación."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "MAPA 3D",
+              "sourceText": "Marca MAPA 3D."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Escanear primero el corredor de salida y sus fracturas.",
+          "targetCode": "P2-B",
+          "target": "p2_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "TECHO",
+              "sourceText": "Marca TECHO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Escanear el recodo con mayor resolución.",
+          "targetCode": "P2-C",
+          "target": "p2_c",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "GALERÍA",
+              "sourceText": "Marca GALERÍA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p2_prb",
+      "code": "P2-PRB",
+      "title": "Lo que esconde la bóveda",
+      "script": [
+        "Viñeta. La bolsa queda libre. Desde el rellano puedes ver el extremo de la fisura, pero el corredor sigue fuera del barrido."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Completar el modelo desde dos posiciones.",
+          "targetCode": "P2-A",
+          "target": "p2_a",
+          "conditions": [
+            {
+              "type": "has",
+              "marks": [
+                "RELLANO"
+              ],
+              "sourceText": "Si tienes RELLANO, ya sabes dónde montar la segunda estación."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "MAPA 3D",
+              "sourceText": "Marca MAPA 3D."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Escanear primero el corredor de salida y sus fracturas.",
+          "targetCode": "P2-B",
+          "target": "p2_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "TECHO",
+              "sourceText": "Marca TECHO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Escanear el recodo con mayor resolución.",
+          "targetCode": "P2-C",
+          "target": "p2_c",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "GALERÍA",
+              "sourceText": "Marca GALERÍA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p2_prc",
+      "code": "P2-PRC",
+      "title": "Lo que esconde la bóveda",
+      "script": [
+        "Viñeta. Tras liberar la bolsa, descubres que el punto de anclaje domina un recodo que no aparece en el mapa."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Completar el modelo desde dos posiciones.",
+          "targetCode": "P2-A",
+          "target": "p2_a",
+          "conditions": [
+            {
+              "type": "has",
+              "marks": [
+                "RELLANO"
+              ],
+              "sourceText": "Si tienes RELLANO, ya sabes dónde montar la segunda estación."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "MAPA 3D",
+              "sourceText": "Marca MAPA 3D."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Escanear primero el corredor de salida y sus fracturas.",
+          "targetCode": "P2-B",
+          "target": "p2_b",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "TECHO",
+              "sourceText": "Marca TECHO."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Escanear el recodo con mayor resolución.",
+          "targetCode": "P2-C",
+          "target": "p2_c",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "GALERÍA",
+              "sourceText": "Marca GALERÍA."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P2-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p2_a",
+      "code": "P2-A",
+      "title": "Completar el modelo desde dos posiciones",
+      "script": [
+        "Viñeta. Si tienes RELLANO, ya sabes dónde montar la segunda estación. Si te falta, haces un recorrido adicional con el equipo. Marca MAPA 3D.",
+        "Viñeta de transición. Tu modelo completo muestra dónde se pierde la línea de visión. Elige cómo mantener el enlace al doblar ese punto. Ve a P3."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p2_b",
+      "code": "P2-B",
+      "title": "Escanear primero el corredor de salida y sus fracturas",
+      "script": [
+        "Viñeta. La evaluadora cierra un tramo inestable. Aprendes a detectar dónde podrían caer fragmentos sobre la ruta. Marca TECHO.",
+        "Viñeta de transición. La evacuación del tramo fracturado deja libre solo el corredor del regreso. Hay que mantener la radio operativa desde ese lado. Ve a P3."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p2_c",
+      "code": "P2-C",
+      "title": "Escanear el recodo con mayor resolución",
+      "script": [
+        "Viñeta. Encuentras una galería lateral fuera de la línea de visión de la entrada. El equipo completa el barrido general mientras tú registras esa salida. Marca GALERÍA.",
+        "Viñeta de transición. La galería lateral permite rodear el recodo sin usar el tramo cerrado. El equipo espera tu orden para restablecer el enlace. Ve a P3."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p3",
+      "code": "P3",
+      "title": "Voces detrás de la roca",
+      "script": [
+        "Viñeta. La radio pierde señal al doblar el recodo. Entonces se cuela una transmisión externa. Alguien pide a tu equipo que avance por el tramo que acaba de cerrar la evaluadora."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Tender un enlace por cable hasta la entrada.",
+          "targetCode": "P3-A",
+          "target": "p3_a",
+          "conditions": [],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "CABLE",
+              "sourceText": "Marca CABLE."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P3-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Montar dos repetidores orientados hacia el interior.",
+          "targetCode": "P3-B",
+          "target": "p3_b",
+          "conditions": [
+            {
+              "type": "hasAll",
+              "marks": [
+                "ANCLAJE"
+              ],
+              "sourceText": "Con ANCLAJE, aprovechas el punto que marcaste."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "RED",
+              "sourceText": "Marca RED."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P3-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Mantener un puesto de relevo en el recodo y grabar la orden falsa.",
+          "targetCode": "P3-C",
+          "target": "p3_c",
+          "conditions": [],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P3-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p3_a",
+      "code": "P3-A",
+      "title": "Tender un enlace por cable hasta la entrada",
+      "script": [
+        "Viñeta. Recuperas la comunicación con el control de superficie y el intruso pierde acceso al circuito. Marca CABLE.",
+        "Viñeta de transición. La tripulación lleva el enlace por cable hasta el borde del derrumbe. Ve a P4."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p3_b",
+      "code": "P3-B",
+      "title": "Montar dos repetidores orientados hacia el interior",
+      "script": [
+        "Viñeta. Con ANCLAJE, aprovechas el punto que marcaste. Si te falta, el equipo hace una prueba de cobertura para localizarlo. Marca RED.",
+        "Viñeta de transición. Antes de entrar montas el primer repetidor. La segunda estación debe quedar del otro lado del recodo. Ve a P4."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p3_c",
+      "code": "P3-C",
+      "title": "Mantener un puesto de relevo en el recodo y grabar la orden falsa",
+      "script": [
+        "Viñeta. El enlace funciona por turnos. En la grabación queda el identificador que usó el intruso. Marca GRABACIÓN.",
+        "Viñeta de transición. Repasas la grabación de la orden falsa. Cerca de la entrada reconoces el mismo identificador en el terminal de emergencia. Ve a P4."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p4",
+      "code": "P4",
+      "title": "El refugio bajo el volcán",
+      "script": [
+        "Viñeta. Tras acreditar las tres pruebas y cumplir dieciocho años, viajas con la agencia a Arsia Mons. Nueva Era instaló su módulo dentro de una cavidad. Un derrumbe separa la entrada del refugio donde se encuentra James. La tripulación asegura la zona antes de entrar.",
+        "James, por el terminal de emergencia. Tengo el registro de los secuestros. La batería de este terminal apenas aguanta."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Evacuar a James por la galería lateral.",
+          "targetCode": "P4-A",
+          "target": "p4_a",
+          "conditions": [
+            {
+              "type": "hasAny",
+              "marks": [
+                "GALERÍA",
+                "MAPA 3D"
+              ],
+              "sourceText": "Con GALERÍA o MAPA 3D, guías a la tripulación por un paso que permite sacar también el registro."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "PRUEBAS",
+              "sourceText": "Marca PRUEBAS."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P4-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Abrir una salida por el pozo de mantenimiento.",
+          "targetCode": "P4-B",
+          "target": "p4_b",
+          "conditions": [
+            {
+              "type": "hasAny",
+              "marks": [
+                "TECHO",
+                "IZADO"
+              ],
+              "sourceText": "Con TECHO o IZADO, ayudas a instalar la línea por un tramo estable."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "PRUEBAS",
+              "sourceText": "Marca PRUEBAS."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "single",
+          "conditionalEffects": [],
+          "ruleSource": "P4-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Descargar el archivo mientras se prepara la extracción.",
+          "targetCode": "P4-C",
+          "target": "p4_c",
+          "conditions": [
+            {
+              "type": "hasAny",
+              "marks": [
+                "CABLE",
+                "RED"
+              ],
+              "sourceText": "Con CABLE o RED, instalas un enlace a tiempo."
+            },
+            {
+              "type": "has",
+              "marks": [
+                "SÍMBOLO"
+              ],
+              "sourceText": "Si tienes GRABACIÓN o SÍMBOLO, puedes vincular una parte del archivo con el equipo de Nueva Era."
+            }
+          ],
+          "effects": [
+            {
+              "type": "addMark",
+              "mark": "PRUEBAS",
+              "sourceText": "Marca PRUEBAS."
+            }
+          ],
+          "conditionStatus": "normalized",
+          "conditionMode": "alternative-branches",
+          "conditionalEffects": [
+            {
+              "type": "addMark",
+              "mark": "RASTRO",
+              "sourceText": "En ese caso, marca RASTRO."
+            }
+          ],
+          "ruleSource": "P4-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p4_a",
+      "code": "P4-A",
+      "title": "Evacuar a James por la galería lateral",
+      "script": [
+        "Viñeta. Con GALERÍA o MAPA 3D, guías a la tripulación por un paso que permite sacar también el registro. Marca PRUEBAS. Si te faltan ambos, el equipo localiza un paso estrecho y evacúa a James. El registro queda en el refugio.",
+        "Viñeta de transición. Antes de subir a la nave, James traza en tu bitácora el contorno de la galería por la que salió. Ve a F1."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p4_b",
+      "code": "P4-B",
+      "title": "Abrir una salida por el pozo de mantenimiento",
+      "script": [
+        "Viñeta. Con TECHO o IZADO, ayudas a instalar la línea por un tramo estable. Suben James y el equipo de almacenamiento. Marca PRUEBAS. Si te faltan ambos, la tripulación monta un rescate asistido y solo sube a James antes del cierre del pozo.",
+        "Viñeta de transición. Devuelves el equipo de izado a la tripulación. Desde la nave, James pregunta si aún queda alguien cerca del pozo. Ve a F1."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "p4_c",
+      "code": "P4-C",
+      "title": "Descargar el archivo mientras se prepara la extracción",
+      "script": [
+        "Viñeta. Con CABLE o RED, instalas un enlace a tiempo. Marca PRUEBAS. Si te faltan ambos, la descarga se corta. Si tienes GRABACIÓN o SÍMBOLO, puedes vincular una parte del archivo con el equipo de Nueva Era. En ese caso, marca RASTRO. La tripulación lleva a James a la superficie.",
+        "Viñeta de transición. En la esclusa, James te entrega el terminal de emergencia con el que intentaste recibir el registro. Ve a F1."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "f1",
+      "code": "F1",
+      "title": "La última transmisión",
+      "script": [
+        "Viñeta. James ya está a bordo de la nave que lo llevará a la Tierra. Desde el módulo de la agencia, puedes decidir qué hacer con lo que recuperaste. La oportunidad de enviar un archivo grande se cierra cuando la estación orbital sale del alcance."
+      ],
+      "choices": [
+        {
+          "id": "choice_1",
+          "label": "Publicar con ayuda de la prensa.",
+          "targetCode": "F1-A",
+          "target": "f1_a",
+          "conditions": [
+            {
+              "type": "hasAll",
+              "marks": [
+                "PRUEBAS",
+                "PRENSA"
+              ],
+              "sourceText": "Si tienes PRUEBAS y PRENSA, la periodista verifica el archivo y llama a las familias."
+            },
+            {
+              "type": "composite",
+              "has": [
+                "PRUEBAS"
+              ],
+              "lacks": [
+                "PRENSA"
+              ],
+              "sourceText": "Si tienes PRUEBAS y te falta PRENSA, la editora guarda el archivo y busca una segunda fuente."
+            },
+            {
+              "type": "lacks",
+              "marks": [
+                "PRUEBAS"
+              ],
+              "sourceText": "Si te faltan las PRUEBAS, envías una grabación con el testimonio de James."
+            }
+          ],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "alternative-branches",
+          "conditionalEffects": [],
+          "ruleSource": "F1-A"
+        },
+        {
+          "id": "choice_2",
+          "label": "Entregar el material por el enlace de la agencia.",
+          "targetCode": "F1-B",
+          "target": "f1_b",
+          "conditions": [
+            {
+              "type": "hasAll",
+              "marks": [
+                "PRUEBAS"
+              ],
+              "sourceText": "Si tienes PRUEBAS, envías el archivo cifrado y la agencia prepara una intervención."
+            },
+            {
+              "type": "lacksAll",
+              "marks": [
+                "PRUEBAS"
+              ],
+              "sourceText": "Si te faltan las PRUEBAS, entregas el material disponible y la agencia abre una investigación con el testimonio de James."
+            }
+          ],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "alternative-branches",
+          "conditionalEffects": [],
+          "ruleSource": "F1-B"
+        },
+        {
+          "id": "choice_3",
+          "label": "Guiar un reconocimiento del siguiente emplazamiento.",
+          "targetCode": "F1-C",
+          "target": "f1_c",
+          "conditions": [
+            {
+              "type": "hasAll",
+              "marks": [
+                "PRUEBAS"
+              ],
+              "sourceText": "Si tienes PRUEBAS, dejas el original bajo custodia y guías un reconocimiento para seguir el cargamento."
+            },
+            {
+              "type": "composite",
+              "has": [
+                "RASTRO"
+              ],
+              "lacks": [
+                "PRUEBAS"
+              ],
+              "sourceText": "Si te faltan las PRUEBAS y tienes RASTRO, cruzas tu pista con los sensores y detectas un vehículo abandonado."
+            }
+          ],
+          "effects": [],
+          "conditionStatus": "normalized",
+          "conditionMode": "alternative-branches",
+          "conditionalEffects": [],
+          "ruleSource": "F1-C"
+        }
+      ],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "f1_a",
+      "code": "F1-A",
+      "title": "Publicar con ayuda de la prensa",
+      "script": [
+        "Viñeta. Si tienes PRUEBAS y PRENSA, la periodista verifica el archivo y llama a las familias. Ve a Final A. Si tienes PRUEBAS y te falta PRENSA, la editora guarda el archivo y busca una segunda fuente. Ve a Final E. Si te faltan las PRUEBAS, envías una grabación con el testimonio de James. Ve a Final F."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "f1_b",
+      "code": "F1-B",
+      "title": "Entregar el material por el enlace de la agencia",
+      "script": [
+        "Viñeta. Si tienes PRUEBAS, envías el archivo cifrado y la agencia prepara una intervención. Ve a Final B. Si te faltan las PRUEBAS, entregas el material disponible y la agencia abre una investigación con el testimonio de James. Ve a Final C."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "f1_c",
+      "code": "F1-C",
+      "title": "Guiar un reconocimiento del siguiente emplazamiento",
+      "script": [
+        "Viñeta. Si tienes PRUEBAS, dejas el original bajo custodia y guías un reconocimiento para seguir el cargamento. Ve a Final D. Si te faltan las PRUEBAS y tienes RASTRO, cruzas tu pista con los sensores y detectas un vehículo abandonado. Ve a Final G. Si te faltan ambas marcas, James recuerda la identificación de la nave y la tripulación encuentra el registro de vuelo. Ve a Final H."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "final_a",
+      "code": "Final A",
+      "title": "Los nombres",
+      "script": [
+        "Viñeta 1. El día que James regresa a Massachusetts, la periodista publica los contratos y los nombres de quienes financiaron los secuestros. Las familias reciben por fin una lista de los traslados.",
+        "Viñeta 2. Tu madre gira el teléfono para que veas a James en la cocina de casa. Sobre la mesa está la maqueta que dejó a medio armar.",
+        "James. Guardé la pieza que faltaba. La ponemos cuando vuelvas."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "final_b",
+      "code": "Final B",
+      "title": "Dos llaves",
+      "script": [
+        "Viñeta 1. La agencia usa los registros para intervenir el emplazamiento y asegurar sus archivos. James vuelve a Massachusetts y declara ante los investigadores. Desde su escondite, Brad recibe un mensaje de James: «Ya estoy en casa».",
+        "Viñeta 2. En Marte, te entregan una llave del primer laboratorio civil montado con el equipo recuperado. La otra se la queda la ingeniera que lo operará contigo. Cuando abren la puerta, en el lugar del antiguo tablero de órdenes hay una lista de experimentos propuestos por los equipos de ambos mundos."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "final_c",
+      "code": "Final C",
+      "title": "La silla ocupada",
+      "script": [
+        "Viñeta 1. James vuelve a casa. Al día siguiente declara sobre lo ocurrido. Si anotaste RASTRO, dibuja junto a los investigadores la conexión entre tu pista y las instalaciones. Si te falta esa marca, empieza por nombrar a las personas que recuerda del carguero.",
+        "Viñeta 2. A las tres de la tarde, como el día que desapareció, tu madre te manda una foto de la cocina. James está sentado frente a la ventana con dos tazones de cereal. Uno es el tuyo."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "final_d",
+      "code": "Final D",
+      "title": "La segunda baliza",
+      "script": [
+        "Viñeta 1. Ves partir la nave de James hacia la Tierra desde el módulo de la agencia. Antes de perder el enlace, llega el informe del reconocimiento. El carguero que buscabas está vacío, pero sigue transmitiendo una baliza de carga.",
+        "Viñeta 2. En la imagen de radar, tres puntos responden a la baliza. Uno se mueve. La tripulación prepara el vehículo y tú vuelves a abrir la bitácora."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "final_e",
+      "code": "Final E",
+      "title": "Antes del cierre",
+      "script": [
+        "Viñeta. De regreso en Massachusetts, James identifica para la editora a otra persona que firmó los registros. Esa noche, la redacción llama a la segunda fuente. Desde Marte, ves aparecer los contratos junto a los nombres de quienes confirmaron su origen."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "final_f",
+      "code": "Final F",
+      "title": "La voz de James",
+      "script": [
+        "Viñeta. Tras escuchar la entrevista, una familia llama a la redacción. Su hija mandó una foto de la misma nave. James reconoce en ella a otra persona desaparecida y entrega la imagen a los investigadores."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "final_g",
+      "code": "Final G",
+      "title": "El vehículo vacío",
+      "script": [
+        "Viñeta. Alcanzas el vehículo que detectaste. En su memoria queda la última parada, un refugio que la agencia desconocía. James confirma desde la nave que en ese refugio dormía parte del equipo capturado."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
+    },
+    {
+      "id": "final_h",
+      "code": "Final H",
+      "title": "El depósito",
+      "script": [
+        "Viñeta. Desde Marte envías a James el registro de vuelo. Al llegar a la Tierra, él acompaña a los investigadores al depósito. Detrás de una cortina encuentran la maqueta de un módulo igual al que estaba construyendo cuando desapareció.",
+        "Última viñeta según tu primera pista",
+        "En cualquiera de los ocho finales, lee la última viñeta que corresponde al reto que seguiste después del semáforo.",
+        "Si pasaste por IB. La grabación que conservaste de Brad queda adjunta al informe de la misión.",
+        "Si pasaste por IM. Tu madre y la periodista reciben aviso cuando James sube a la nave.",
+        "Si pasaste por IE. El enlace de la agencia agrega al informe el dibujo que Brad hizo en la caseta."
+      ],
+      "choices": [],
+      "media": {
+        "visual": null,
+        "audio": {
+          "es": null,
+          "en": null
+        },
+        "captions": {
+          "es": null,
+          "en": null
+        },
+        "status": "not-generated"
+      }
     }
+  ],
+  "statistics": {
+    "labeledSections": 103,
+    "explicitChoices": 96,
+    "choicePoints": 32,
+    "endings": 8,
+    "unparsedNumberedLines": []
   },
-  "endings": {
-    "e001_mars_authorization": {
-      "title": "Autorización para Marte",
-      "openQuestion": "¿Qué ciencia llevarás contigo cuando el horizonte rojo aparezca tras 210 días?",
-      "nextExperience": "mars-arrival-v1.1"
-    }
+  "nextGates": [
+    "normalize prose conditions and mark effects",
+    "validate science values against official sources",
+    "approve bilingual translations and voices",
+    "generate and QA visual masters",
+    "generate ES/EN audio and captions"
+  ],
+  "normalization": {
+    "source": "Cronica de dos mundos - Libreto completo.docx",
+    "choiceCount": 96,
+    "state": {
+      "marks": "set of earned field marks",
+      "choiceHistory": "ordered choices",
+      "route": "jezero|arcadia|arsia",
+      "language": "es|en"
+    },
+    "policy": "Rules remain visible in the original prose; the structured fields drive the interactive layer."
   }
 }
