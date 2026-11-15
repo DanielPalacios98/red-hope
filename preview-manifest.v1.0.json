@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": "red-hope",
+  "revision": "v1.0",
+  "status": "local-mvp-ready",
+  "runtime": {
+    "hosting": "static",
+    "hls": "deferred-until-media-lock",
+    "mp4Fallback": true,
+    "statePersistence": "localStorage"
+  },
+  "views": [
+    "mission-stage",
+    "decision-overlay",
+    "science-drawer",
+    "mission-log-drawer",
+    "open-ending"
+  ],
+  "controls": [
+    "start-mission",
+    "play-pause",
+    "open-decisions",
+    "captions-toggle",
+    "mute-toggle",
+    "science-toggle",
+    "log-toggle",
+    "restart-mission",
+    "ending-replay",
+    "ending-science"
+  ],
+  "verified": {
+    "storyNodesLoaded": 21,
+    "choicesSupported": true,
+    "audioMvpSegmentsCopied": 6,
+    "videoMvpSegmentsCopied": 1,
+    "staticHttpSmokeTest": true,
+    "javascriptSyntaxCheck": true
+  }
+}

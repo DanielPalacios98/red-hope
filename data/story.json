@@ -1,0 +1,390 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": "red-hope",
+  "revision": "v1.0",
+  "status": "draft-awaiting-science-validation",
+  "title": "RED HOPE",
+  "subtitle": "Las tres medallas",
+  "language": "es",
+  "canonSource": [
+    "C:/Users/Mauro/Downloads/RED HOPE.docx",
+    "C:/Users/Mauro/Downloads/Historia.txt"
+  ],
+  "playerRole": "Cadete de 15 a 18 años seleccionado para el programa marciano del año 2050.",
+  "premise": "En un planeta unido que se recupera del calentamiento global, el jugador debe superar tres escenarios terrestres análogos a Marte para reunir tres medallas y obtener autorización para viajar al planeta rojo.",
+  "narrativeRules": [
+    "Las decisiones seguras avanzan por el entrenamiento.",
+    "Las decisiones arriesgadas llevan a una emergencia, pero permiten recuperarse mediante una nueva decisión.",
+    "El jugador no recibe una muerte arbitraria: aprende el procedimiento correcto y conserva la agencia.",
+    "Los valores científicos que no estén verificados se muestran como estimaciones narrativas y no como telemetría NASA confirmada."
+  ],
+  "runtime": {
+    "playerStrategy": "buffer-swap",
+    "maxVideoPlayers": 2,
+    "preloadPolicy": "on-choice-visible",
+    "audioMode": "single-owner",
+    "captions": true,
+    "fallbackMedia": "mp4",
+    "productionMedia": "hls",
+    "choicePresentation": "overlay-before-end-plus-end-lock"
+  },
+  "variables": {
+    "training.medals": { "type": "integer", "min": 0, "max": 3 },
+    "training.chimborazo.completed": { "type": "boolean" },
+    "training.siloli.completed": { "type": "boolean" },
+    "training.payunia.completed": { "type": "boolean" },
+    "rover.control": { "type": "number", "min": 0, "max": 1 },
+    "equipment.integrity": { "type": "number", "min": 0, "max": 1 },
+    "safety.anchor": { "type": "number", "min": 0, "max": 1 },
+    "thermal.control": { "type": "number", "min": 0, "max": 1 },
+    "signal.stability": { "type": "number", "min": 0, "max": 1 },
+    "route.risk": { "type": "number", "min": 0, "max": 1 }
+  },
+  "initialState": {
+    "training.medals": 0,
+    "training.chimborazo.completed": false,
+    "training.siloli.completed": false,
+    "training.payunia.completed": false,
+    "rover.control": 0.5,
+    "equipment.integrity": 1,
+    "safety.anchor": 0.5,
+    "thermal.control": 0.5,
+    "signal.stability": 0.5,
+    "route.risk": 0
+  },
+  "scienceDataPolicy": {
+    "liveDataRequired": false,
+    "defaultMode": "curated-snapshot",
+    "displayLabels": ["NASA source", "measurement or estimate", "date", "confidence"],
+    "unverifiedValuesMustBeMarked": true
+  },
+  "media": {
+    "baseUrl": null,
+    "hlsRoot": null,
+    "posterRoot": null,
+    "status": "not-generated"
+  },
+  "startNode": "p001",
+  "nodes": {
+    "p001": {
+      "page": 1,
+      "type": "video",
+      "mvp": true,
+      "scene": "prologue",
+      "title": "06:45 en el año 2050",
+      "targetDurationSec": 45,
+      "durationSec": null,
+      "narrationDraft": "A las 06:45 de una mañana despejada del año 2050, el timbre matinal marca el inicio de tu jornada. Tienes entre 15 y 18 años y perteneces a la generación convocada para llevar ciencia y futuro a Marte. En el comedor, el boletín global cuenta que las guerras quedaron atrás y que la humanidad trabaja como un solo planeta para sanar las heridas del calentamiento global. Antes de viajar debes reunir tres medallas, una por cada escenario terrestre y sus tres pruebas.",
+      "dataRefs": ["future-world-context", "mission-structure"],
+      "choices": [
+        { "id": "controlled_torque", "label": "Dosificar el torque y avanzar con control", "next": "p002", "route": "safe", "effects": [{ "var": "rover.control", "operation": "set", "value": 0.8 }, { "var": "route.risk", "operation": "add", "value": 0.02 }] },
+        { "id": "full_acceleration", "label": "Acelerar a fondo por la ceniza suelta", "next": "p003", "route": "risk", "effects": [{ "var": "rover.control", "operation": "subtract", "value": 0.25 }, { "var": "route.risk", "operation": "add", "value": 0.25 }] }
+      ]
+    },
+    "p002": {
+      "page": 2,
+      "type": "video",
+      "mvp": true,
+      "scene": "chimborazo_rover",
+      "title": "El taladro robótico",
+      "targetDurationSec": 35,
+      "durationSec": null,
+      "narrationDraft": "Controlas el empuje de las seis ruedas y avanzas sobre la ceniza del Chimborazo sin que patinen. Ahora debes usar el taladro robot para extraer un tubito de roca volcánica dura. El brazo se apoya sobre un afloramiento compacto: una mala maniobra puede dañar el núcleo o provocar un desprendimiento.",
+      "dataRefs": ["earth.chimborazo", "mars.jezero", "rover.traction"],
+      "choices": [
+        { "id": "controlled_drill", "label": "Fijar el chasis, regular el giro y extraer con control", "next": "p005", "route": "safe", "effects": [{ "var": "equipment.integrity", "operation": "subtract", "value": 0.03 }, { "var": "route.risk", "operation": "subtract", "value": 0.05 }] },
+        { "id": "maximum_drill_power", "label": "Exigir máxima potencia sin regular el calor", "next": "p006", "route": "risk", "effects": [{ "var": "thermal.control", "operation": "subtract", "value": 0.3 }, { "var": "route.risk", "operation": "add", "value": 0.3 }] }
+      ]
+    },
+    "p003": {
+      "page": 3,
+      "type": "video",
+      "mvp": true,
+      "scene": "chimborazo_drift",
+      "title": "Derrape en la ceniza",
+      "targetDurationSec": 30,
+      "durationSec": null,
+      "narrationDraft": "Las ruedas muerden la ceniza suelta y comienzan a patinar. El rover se desliza hacia un corte rocoso y la situación queda comprometida. No hay retorno automático: debes recuperar el control ahora.",
+      "dataRefs": ["earth.chimborazo", "rover.traction", "safety.anchor"],
+      "choices": [
+        { "id": "recover_rover", "label": "Frenar, anclar la línea y recuperar el control", "next": "p002", "route": "recovery", "effects": [{ "var": "rover.control", "operation": "set", "value": 0.65 }, { "var": "safety.anchor", "operation": "add", "value": 0.2 }] },
+        { "id": "reverse_turn", "label": "Girar violentamente en reversa", "next": "p004", "route": "risk", "effects": [{ "var": "rover.control", "operation": "subtract", "value": 0.3 }, { "var": "route.risk", "operation": "add", "value": 0.3 }] }
+      ]
+    },
+    "p004": {
+      "page": 4,
+      "type": "video",
+      "mvp": false,
+      "scene": "chimborazo_cliff",
+      "title": "Al borde del precipicio",
+      "targetDurationSec": 28,
+      "durationSec": null,
+      "narrationDraft": "El giro brusco hace ceder el borde de ceniza y piedra. El rover oscila y quedas a centímetros de un desnivel mortal. El frío de altura y la tensión aprietan el pecho.",
+      "dataRefs": ["earth.chimborazo", "safety.anchor", "crew.health"],
+      "choices": [
+        { "id": "emergency_anchor", "label": "Clavar el ancla, soltar carga y trepar a zona firme", "next": "p002", "route": "recovery", "effects": [{ "var": "safety.anchor", "operation": "set", "value": 0.8 }, { "var": "equipment.integrity", "operation": "subtract", "value": 0.08 }] },
+        { "id": "hold_heavy_gear", "label": "Aferrarte al equipo pesado mientras cede el talud", "next": "p003", "route": "risk", "effects": [{ "var": "safety.anchor", "operation": "subtract", "value": 0.25 }, { "var": "route.risk", "operation": "add", "value": 0.2 }] }
+      ]
+    },
+    "p005": {
+      "page": 5,
+      "type": "video",
+      "mvp": false,
+      "scene": "chimborazo_cameras",
+      "title": "Cámaras automáticas sin vegetación",
+      "targetDurationSec": 34,
+      "durationSec": null,
+      "narrationDraft": "Extraes el tubito y superas la segunda prueba. Ahora debes calibrar las cámaras automáticas para distinguir relieves y sombras donde no hay árboles ni plantas. Un error de lectura puede dejarte expuesto a un cambio brusco del clima de altura.",
+      "dataRefs": ["mars.jezero", "earth.chimborazo", "optical.calibration"],
+      "choices": [
+        { "id": "calibrate_cameras", "label": "Calibrar relieves y sombras antes de avanzar", "next": "p007", "route": "safe", "effects": [{ "var": "equipment.integrity", "operation": "add", "value": 0.02 }, { "var": "training.chimborazo.completed", "operation": "set", "value": true }, { "var": "training.medals", "operation": "add", "value": 1 }] },
+        { "id": "vegetation_mode", "label": "Dejar el modo de vegetación y avanzar sin revisar", "next": "p008", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.2 }] }
+      ]
+    },
+    "p006": {
+      "page": 6,
+      "type": "video",
+      "mvp": false,
+      "scene": "chimborazo_overheat",
+      "title": "Sobrecalentamiento y desprendimiento",
+      "targetDurationSec": 26,
+      "durationSec": null,
+      "narrationDraft": "La broca se sobrecalienta al golpear la roca dura. El borde se fractura y libera piedras hacia tu posición. Debes responder de inmediato.",
+      "dataRefs": ["earth.chimborazo", "thermal.control", "safety.anchor"],
+      "choices": [
+        { "id": "cut_power", "label": "Cortar energía, buscar resguardo y evaluar el daño", "next": "p002", "route": "recovery", "effects": [{ "var": "thermal.control", "operation": "set", "value": 0.65 }, { "var": "equipment.integrity", "operation": "subtract", "value": 0.12 }] },
+        { "id": "pull_stuck_arm", "label": "Insistir con el brazo robótico atascado", "next": "p004", "route": "risk", "effects": [{ "var": "equipment.integrity", "operation": "subtract", "value": 0.25 }, { "var": "route.risk", "operation": "add", "value": 0.25 }] }
+      ]
+    },
+    "p007": {
+      "page": 7,
+      "type": "video",
+      "mvp": true,
+      "scene": "medal_one_siloli",
+      "title": "Medalla 1 y el radar GPR",
+      "targetDurationSec": 40,
+      "durationSec": null,
+      "narrationDraft": "Las cámaras registran con nitidez el paisaje sin vegetación. Completas las tres pruebas del Gran Arenal del Chimborazo y ganas la Medalla 1. El siguiente escenario es el Desierto de Siloli, donde debes pasar un carrito con radar GPR para detectar hielo enterrado.",
+      "dataRefs": ["mars.jezero", "earth.chimborazo", "earth.siloli", "subsurface.ice"],
+      "choices": [
+        { "id": "steady_gpr", "label": "Deslizar el GPR a paso firme y parejo", "next": "p009", "route": "safe", "effects": [{ "var": "training.medals", "operation": "set", "value": 1 }, { "var": "route.risk", "operation": "subtract", "value": 0.05 }] },
+        { "id": "fast_gpr", "label": "Empujar el GPR a toda velocidad en la ráfaga", "next": "p010", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.25 }] }
+      ]
+    },
+    "p008": {
+      "page": 8,
+      "type": "video",
+      "mvp": false,
+      "scene": "chimborazo_blind_reading",
+      "title": "Lectura ciega y tormenta de altura",
+      "targetDurationSec": 25,
+      "durationSec": null,
+      "narrationDraft": "Sin vegetación de referencia y con las cámaras mal ajustadas, pierdes nitidez justo cuando una ráfaga seca levanta polvo y te acerca a un desnivel.",
+      "dataRefs": ["earth.chimborazo", "optical.calibration", "weather.wind"],
+      "choices": [
+        { "id": "recalibrate_shelter", "label": "Detener, recalibrar y buscar abrigo", "next": "p007", "route": "recovery", "effects": [{ "var": "equipment.integrity", "operation": "add", "value": 0.03 }] },
+        { "id": "advance_blind", "label": "Avanzar a ciegas esperando que despeje", "next": "p004", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.25 }] }
+      ]
+    },
+    "p009": {
+      "page": 9,
+      "type": "video",
+      "mvp": false,
+      "scene": "siloli_thermal_drill",
+      "title": "Taladro térmico en costra salina",
+      "targetDurationSec": 34,
+      "durationSec": null,
+      "narrationDraft": "El radar GPR confirma indicios de hielo enterrado. Ahora debes perforar la costra dura de sal y tierra congelada con un taladro térmico. El frío extremo y la resistencia de la costra exigen precisión.",
+      "dataRefs": ["mars.arcadia", "earth.siloli", "subsurface.ice", "thermal.control"],
+      "choices": [
+        { "id": "controlled_thermal_drill", "label": "Aplicar calor controlado y perforar por etapas", "next": "p012", "route": "safe", "effects": [{ "var": "thermal.control", "operation": "set", "value": 0.8 }] },
+        { "id": "force_thermal_drill", "label": "Forzar el taladro sin regular la temperatura", "next": "p013", "route": "risk", "effects": [{ "var": "thermal.control", "operation": "subtract", "value": 0.3 }, { "var": "route.risk", "operation": "add", "value": 0.25 }] }
+      ]
+    },
+    "p010": {
+      "page": 10,
+      "type": "video",
+      "mvp": false,
+      "scene": "siloli_blizzard",
+      "title": "Ventisca helada y pérdida de señal",
+      "targetDurationSec": 27,
+      "durationSec": null,
+      "narrationDraft": "La velocidad y el viento levantan una cortina de polvo y frío que borra el horizonte y altera el GPR. Perder el rumbo o sufrir hipotermia representa un riesgo de vida o muerte.",
+      "dataRefs": ["earth.siloli", "weather.wind", "signal.stability"],
+      "choices": [
+        { "id": "protect_gpr", "label": "Fijar el GPR, activar protección térmica y retomar con calma", "next": "p009", "route": "recovery", "effects": [{ "var": "signal.stability", "operation": "add", "value": 0.15 }] },
+        { "id": "cross_blind", "label": "Cruzar la cortina sin referencia hacia una depresión", "next": "p011", "route": "risk", "effects": [{ "var": "signal.stability", "operation": "subtract", "value": 0.25 }, { "var": "route.risk", "operation": "add", "value": 0.25 }] }
+      ]
+    },
+    "p011": {
+      "page": 11,
+      "type": "video",
+      "mvp": false,
+      "scene": "siloli_crack",
+      "title": "Grieta helada y frío extremo",
+      "targetDurationSec": 26,
+      "durationSec": null,
+      "narrationDraft": "El borde de una grieta oculta bajo la costra helada cede. El viento congelante golpea de lleno y la exposición prolongada al frío severo pone tu vida en peligro.",
+      "dataRefs": ["earth.siloli", "weather.cold", "safety.anchor"],
+      "choices": [
+        { "id": "secure_route", "label": "Asegurar el apoyo, activar abrigo térmico y trazar ruta", "next": "p009", "route": "recovery", "effects": [{ "var": "safety.anchor", "operation": "add", "value": 0.2 }] },
+        { "id": "jump_crack", "label": "Saltar la zona cargando todo el equipo", "next": "p010", "route": "risk", "effects": [{ "var": "safety.anchor", "operation": "subtract", "value": 0.25 }, { "var": "route.risk", "operation": "add", "value": 0.25 }] }
+      ]
+    },
+    "p012": {
+      "page": 12,
+      "type": "video",
+      "mvp": false,
+      "scene": "siloli_solar_panels",
+      "title": "Paneles solares en la llanura",
+      "targetDurationSec": 35,
+      "durationSec": null,
+      "narrationDraft": "El taladro térmico atraviesa la costra y completas la segunda prueba. Solo queda armar los paneles solares sobre la llanura plana sin que el viento los mueva.",
+      "dataRefs": ["mars.arcadia", "earth.siloli", "power.solar", "weather.wind"],
+      "choices": [
+        { "id": "anchor_panels", "label": "Fijar los paneles con anclajes firmes", "next": "p014", "route": "safe", "effects": [{ "var": "training.siloli.completed", "operation": "set", "value": true }, { "var": "training.medals", "operation": "set", "value": 2 }, { "var": "equipment.integrity", "operation": "add", "value": 0.03 }] },
+        { "id": "loose_panels", "label": "Colocar los paneles sin asegurar los anclajes", "next": "p015", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.25 }] }
+      ]
+    },
+    "p013": {
+      "page": 13,
+      "type": "video",
+      "mvp": false,
+      "scene": "siloli_pressure",
+      "title": "Presión térmica en la costra",
+      "targetDurationSec": 25,
+      "durationSec": null,
+      "narrationDraft": "La costra libera vapor y fragmentos helados bajo presión. El riesgo aparece en pleno altiplano y debes actuar antes de que el equipo falle.",
+      "dataRefs": ["earth.siloli", "thermal.control", "safety.anchor"],
+      "choices": [
+        { "id": "vent_bore", "label": "Reducir potencia, retroceder y ventilar la perforación", "next": "p012", "route": "recovery", "effects": [{ "var": "thermal.control", "operation": "set", "value": 0.65 }] },
+        { "id": "keep_max_heat", "label": "Mantener el taladro a máxima temperatura", "next": "p011", "route": "risk", "effects": [{ "var": "thermal.control", "operation": "subtract", "value": 0.3 }, { "var": "route.risk", "operation": "add", "value": 0.25 }] }
+      ]
+    },
+    "p014": {
+      "page": 14,
+      "type": "video",
+      "mvp": true,
+      "scene": "medal_two_payunia",
+      "title": "Medalla 2 y el tubo de lava",
+      "targetDurationSec": 42,
+      "durationSec": null,
+      "narrationDraft": "Los paneles quedan firmes pese al viento. Superas las tres pruebas del Desierto de Siloli y ganas la Medalla 2. Tu tercer campo es Payunia, donde los tubos de lava preparan la exploración de Arsia Mons. Comienza el descenso vertical.",
+      "dataRefs": ["mars.arsia_mons", "earth.payunia", "volcanic_caves"],
+      "choices": [
+        { "id": "check_harness", "label": "Verificar el arnés y bajar con cuerda controlada", "next": "p016", "route": "safe", "effects": [{ "var": "safety.anchor", "operation": "set", "value": 0.85 }, { "var": "training.medals", "operation": "set", "value": 2 }] },
+        { "id": "rush_descent", "label": "Descender sin revisar arnés ni freno", "next": "p017", "route": "risk", "effects": [{ "var": "safety.anchor", "operation": "subtract", "value": 0.3 }, { "var": "route.risk", "operation": "add", "value": 0.3 }] }
+      ]
+    },
+    "p015": {
+      "page": 15,
+      "type": "video",
+      "mvp": false,
+      "scene": "siloli_panel_burst",
+      "title": "Ráfaga cortante",
+      "targetDurationSec": 25,
+      "durationSec": null,
+      "narrationDraft": "Una ráfaga levanta los paneles mal sujetos como velas metálicas y te golpea en la llanura expuesta. En el frío extremo, un golpe o pérdida de equipo implica un riesgo de vida o muerte.",
+      "dataRefs": ["earth.siloli", "weather.wind", "safety.anchor"],
+      "choices": [
+        { "id": "secure_structure", "label": "Tirarte lejos de los paneles y asegurar la estructura", "next": "p014", "route": "recovery", "effects": [{ "var": "safety.anchor", "operation": "set", "value": 0.75 }] },
+        { "id": "stop_panels_body", "label": "Intentar detener los paneles con el cuerpo", "next": "p011", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.3 }] }
+      ]
+    },
+    "p016": {
+      "page": 16,
+      "type": "video",
+      "mvp": false,
+      "scene": "payunia_lidar",
+      "title": "Escaneo 3D LiDAR",
+      "targetDurationSec": 34,
+      "durationSec": null,
+      "narrationDraft": "Bajas por la entrada vertical con el arnés controlado y superas la primera prueba. Ahora debes escanear en la oscuridad el techo de la cueva con un láser 3D LiDAR.",
+      "dataRefs": ["mars.arsia_mons", "earth.payunia", "lidar.mapping", "radiation.shelter"],
+      "choices": [
+        { "id": "stable_lidar", "label": "Estabilizar el LiDAR y barrer el techo ordenadamente", "next": "p018", "route": "safe", "effects": [{ "var": "equipment.integrity", "operation": "subtract", "value": 0.03 }] },
+        { "id": "blind_lidar", "label": "Avanzar a ciegas moviendo el LiDAR sin estabilidad", "next": "p019", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.25 }] }
+      ]
+    },
+    "p017": {
+      "page": 17,
+      "type": "video",
+      "mvp": false,
+      "scene": "payunia_rope_friction",
+      "title": "Fricción en el basalto",
+      "targetDurationSec": 25,
+      "durationSec": null,
+      "narrationDraft": "La cuerda roza contra una arista de basalto y el freno se traba a varios metros del fondo. Una falla del cabo significa una caída mortal.",
+      "dataRefs": ["earth.payunia", "safety.anchor", "volcanic_caves"],
+      "choices": [
+        { "id": "safety_knot", "label": "Bloquear el descenso, desviar la cuerda y bajar con calma", "next": "p016", "route": "recovery", "effects": [{ "var": "safety.anchor", "operation": "set", "value": 0.8 }] },
+        { "id": "drop_fast", "label": "Soltar el freno para caer más rápido", "next": "p004", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.35 }] }
+      ]
+    },
+    "p018": {
+      "page": 18,
+      "type": "video",
+      "mvp": false,
+      "scene": "payunia_repeater",
+      "title": "Antenas repetidoras",
+      "targetDurationSec": 35,
+      "durationSec": null,
+      "narrationDraft": "El LiDAR registra el techo con precisión y completas la segunda prueba. Solo queda colocar antenas repetidoras en la puerta de la cueva para no perder la señal de radio.",
+      "dataRefs": ["mars.arsia_mons", "earth.payunia", "signal.stability"],
+      "choices": [
+        { "id": "anchored_repeaters", "label": "Mantener la sujeción y colocar las antenas anclado", "next": "p020", "route": "safe", "effects": [{ "var": "signal.stability", "operation": "set", "value": 0.85 }, { "var": "training.payunia.completed", "operation": "set", "value": true }, { "var": "training.medals", "operation": "set", "value": 3 }] },
+        { "id": "unanchored_repeaters", "label": "Asomarte sin anclaje al borde exterior", "next": "p021", "route": "risk", "effects": [{ "var": "signal.stability", "operation": "subtract", "value": 0.25 }, { "var": "route.risk", "operation": "add", "value": 0.25 }] }
+      ]
+    },
+    "p019": {
+      "page": 19,
+      "type": "video",
+      "mvp": false,
+      "scene": "payunia_darkness",
+      "title": "Desorientación en la oscuridad",
+      "targetDurationSec": 26,
+      "durationSec": null,
+      "narrationDraft": "Pierdes la noción del relieve y un bloque suelto cae cerca de ti. El tubo de lava se convierte en un problema de iluminación, equilibrio y lectura del techo.",
+      "dataRefs": ["earth.payunia", "lidar.mapping", "safety.anchor"],
+      "choices": [
+        { "id": "backup_light", "label": "Encender luz de respaldo y estabilizar el LiDAR", "next": "p018", "route": "recovery", "effects": [{ "var": "equipment.integrity", "operation": "subtract", "value": 0.05 }] },
+        { "id": "run_dark", "label": "Correr por el túnel sin iluminar piso ni techo", "next": "p017", "route": "risk", "effects": [{ "var": "route.risk", "operation": "add", "value": 0.3 }] }
+      ]
+    },
+    "p020": {
+      "page": 20,
+      "type": "ending",
+      "mvp": true,
+      "scene": "three_medals_launch",
+      "title": "Tres medallas: 210 días hacia Marte",
+      "targetDurationSec": 48,
+      "durationSec": null,
+      "narrationDraft": "Colocas las antenas y la señal permanece firme. Con la última prueba superada ganas la Medalla 3. Has reunido las tres medallas exigidas por el programa del año 2050 y tu embarque queda autorizado. Abordas la nave y comienzas un viaje de 210 días a lo largo de 480 millones de kilómetros. Atrás queda un mundo unido que cuida su entorno; adelante, el horizonte rojo de Marte te recibe.",
+      "dataRefs": ["mission.structure", "mars.transfer", "deep_space_communications"],
+      "choices": [],
+      "endingId": "e001_mars_authorization"
+    },
+    "p021": {
+      "page": 21,
+      "type": "video",
+      "mvp": false,
+      "scene": "payunia_cave_edge",
+      "title": "Al filo de la boca del tubo",
+      "targetDurationSec": 25,
+      "durationSec": null,
+      "narrationDraft": "Al inclinarte sin asegurar el cabo, la grava basáltica cede y quedas al borde de una caída fatal mientras la señal parpadea.",
+      "dataRefs": ["earth.payunia", "signal.stability", "safety.anchor"],
+      "choices": [
+        { "id": "anchor_and_link", "label": "Enganchar la línea, fijar antenas y asegurar el enlace", "next": "p020", "route": "recovery", "effects": [{ "var": "safety.anchor", "operation": "set", "value": 0.85 }, { "var": "signal.stability", "operation": "set", "value": 0.8 }, { "var": "training.payunia.completed", "operation": "set", "value": true }, { "var": "training.medals", "operation": "set", "value": 3 }] },
+        { "id": "lean_further", "label": "Inclinarte aún más sin anclarte", "next": "p019", "route": "risk", "effects": [{ "var": "safety.anchor", "operation": "subtract", "value": 0.3 }, { "var": "route.risk", "operation": "add", "value": 0.3 }] }
+      ]
+    }
+  },
+  "endings": {
+    "e001_mars_authorization": {
+      "title": "Autorización para Marte",
+      "openQuestion": "¿Qué ciencia llevarás contigo cuando el horizonte rojo aparezca tras 210 días?",
+      "nextExperience": "mars-arrival-v1.1"
+    }
+  }
+}

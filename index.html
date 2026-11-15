@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#090a0d" />
+    <title>RED HOPE — Las tres medallas</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell" id="appShell">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <span class="brand-mark">RH</span>
+          <div>
+            <p class="eyebrow">NASA analog mission / 2050</p>
+            <h1>RED HOPE</h1>
+          </div>
+        </div>
+        <div class="top-actions" aria-label="Controles de misión">
+          <button class="icon-button" id="scienceButton" type="button" title="Abrir panel científico">⌁ <span>Ciencia</span></button>
+          <button class="icon-button" id="captionsButton" type="button" title="Activar subtítulos">CC</button>
+          <button class="icon-button" id="muteButton" type="button" title="Silenciar audio">♫</button>
+          <button class="icon-button" id="restartButton" type="button" title="Reiniciar misión">↺</button>
+        </div>
+      </header>
+
+      <main class="mission-layout">
+        <aside class="mission-rail" aria-label="Estado de misión">
+          <div class="rail-heading">
+            <span>CADete / 15–18</span>
+            <span class="live-dot">● LIVE</span>
+          </div>
+          <div class="medal-panel">
+            <p class="eyebrow">Medallas de entrenamiento</p>
+            <div class="medals" id="medals" aria-label="Medallas conseguidas">
+              <span class="medal" data-medal="1">01</span>
+              <span class="medal" data-medal="2">02</span>
+              <span class="medal" data-medal="3">03</span>
+            </div>
+          </div>
+          <div class="telemetry-card">
+            <div class="telemetry-line"><span>CONTROL ROVER</span><strong id="roverValue">50%</strong></div>
+            <div class="meter"><span id="roverMeter"></span></div>
+            <div class="telemetry-line"><span>EQUIPO</span><strong id="equipmentValue">100%</strong></div>
+            <div class="meter"><span id="equipmentMeter"></span></div>
+            <div class="telemetry-line"><span>RIESGO DE RUTA</span><strong id="riskValue">0%</strong></div>
+            <div class="meter danger"><span id="riskMeter"></span></div>
+          </div>
+          <div class="rail-log" id="railLog" aria-live="polite">
+            <p class="eyebrow">Bitácora</p>
+            <p>Esperando inicio de misión.</p>
+          </div>
+          <button class="rail-button" id="logButton" type="button">Abrir bitácora completa <span>↗</span></button>
+        </aside>
+
+        <section class="story-stage" aria-label="Escena interactiva">
+          <div class="stage-header">
+            <div>
+              <p class="eyebrow" id="stageScene">PRÓLOGO</p>
+              <h2 id="stageTitle">06:45 en el año 2050</h2>
+            </div>
+            <div class="progress-readout"><span id="nodeReadout">01</span><span>/ 21</span></div>
+          </div>
+
+          <div class="media-frame" id="mediaFrame">
+            <div class="media-placeholder" id="mediaPlaceholder">
+              <div class="placeholder-grid"></div>
+              <div class="placeholder-copy">
+                <span class="placeholder-kicker">PLACA VISUAL PENDIENTE</span>
+                <strong id="placeholderTitle">La historia continúa en producción</strong>
+                <small>La interacción, audio y datos científicos ya están activos.</small>
+              </div>
+            </div>
+            <video id="sceneVideo" class="scene-video" playsinline preload="metadata"></video>
+            <div class="media-vignette"></div>
+            <div class="media-status"><span id="mediaMode">MVP / MP4 local</span><span id="mediaDuration">—</span></div>
+            <div class="caption" id="caption" role="status"></div>
+            <button class="start-overlay" id="startButton" type="button">
+              <span class="play-glyph">▶</span>
+              <span>Iniciar misión</span>
+            </button>
+          </div>
+
+          <div class="scene-controls">
+            <button class="control-button" id="playButton" type="button">▶ Reproducir</button>
+            <button class="control-button" id="showChoicesButton" type="button">Abrir decisiones</button>
+            <span class="control-note" id="controlNote">Las decisiones aparecerán sobre el final de la escena.</span>
+          </div>
+
+          <section class="choice-panel" id="choicePanel" aria-live="polite" aria-label="Decisiones del jugador">
+            <div class="choice-heading">
+              <div>
+                <p class="eyebrow">DECISIÓN DE CAMPO</p>
+                <h3 id="choiceQuestion">Elige cómo responder</h3>
+              </div>
+              <span class="choice-lock" id="choiceLock">BLOQUEADO</span>
+            </div>
+            <div class="choices" id="choices"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div class="drawer" id="scienceDrawer" aria-hidden="true">
+      <div class="drawer-card">
+        <button class="drawer-close" data-close="scienceDrawer" type="button">×</button>
+        <p class="eyebrow">NASA DATA LAYER</p>
+        <h2>Lo que estás aprendiendo</h2>
+        <p class="drawer-intro">Este panel distingue una fuente NASA de una analogía terrestre o una licencia narrativa.</p>
+        <div id="scienceContent"></div>
+      </div>
+    </div>
+
+    <div class="drawer" id="logDrawer" aria-hidden="true">
+      <div class="drawer-card log-card">
+        <button class="drawer-close" data-close="logDrawer" type="button">×</button>
+        <p class="eyebrow">MISSION LOG</p>
+        <h2>Decisiones registradas</h2>
+        <div id="logContent"></div>
+      </div>
+    </div>
+
+    <div class="ending-screen" id="endingScreen" aria-hidden="true">
+      <div class="ending-card">
+        <p class="eyebrow">AUTORIZACIÓN DE EMBARQUE</p>
+        <div class="ending-medals">✦ ✦ ✦</div>
+        <h2 id="endingTitle">Tres medallas. Un horizonte rojo.</h2>
+        <p id="endingCopy"></p>
+        <div class="ending-actions">
+          <button class="primary-button" id="endingReplay" type="button">Volver a jugar</button>
+          <button class="secondary-button" id="endingScience" type="button">Revisar ciencia</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
