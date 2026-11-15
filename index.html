@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#090a0d" />
     <title>RED HOPE — Las tres medallas</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -19,6 +20,7 @@
         </div>
         <div class="top-actions" aria-label="Controles de misión">
           <button class="icon-button" id="scienceButton" type="button" title="Abrir panel científico">⌁ <span>Ciencia</span></button>
+          <button class="icon-button" id="missionMapButton" type="button" title="Abrir mapas y misión">⌖ <span>Mapa / misión</span></button>
           <button class="icon-button" id="captionsButton" type="button" title="Activar subtítulos">CC</button>
           <button class="icon-button" id="muteButton" type="button" title="Silenciar audio">♫</button>
           <button class="icon-button" id="restartButton" type="button" title="Reiniciar misión">↺</button>
@@ -121,6 +123,49 @@
       </div>
     </div>
 
+    <div class="drawer intel-drawer" id="missionIntelDrawer" aria-hidden="true">
+      <div class="drawer-card intel-card">
+        <button class="drawer-close" data-close="missionIntelDrawer" type="button">×</button>
+        <div class="intel-heading">
+          <div>
+            <p class="eyebrow">CAPA DE MISIÓN / NASA SPACE APPS</p>
+            <h2>Mapa, historia y objetivo</h2>
+          </div>
+          <span class="intel-live">DATOS DE CONTEXTO</span>
+        </div>
+        <p class="drawer-intro">Elige un escenario para comparar su análogo terrestre, el paisaje marciano y las tres pruebas que desbloquean la historia.</p>
+        <div class="intel-tabs" role="tablist" aria-label="Capa de misión">
+          <button class="intel-tab active" data-intel-tab="map" role="tab" aria-selected="true" type="button">MAPA</button>
+          <button class="intel-tab" data-intel-tab="story" role="tab" aria-selected="false" type="button">HISTORIA</button>
+          <button class="intel-tab" data-intel-tab="mission" role="tab" aria-selected="false" type="button">MISIÓN</button>
+        </div>
+        <div class="intel-panel active" id="intelMapPanel" data-intel-panel="map">
+          <label class="intel-select-label" for="missionSiteSelect">Escenario de entrenamiento</label>
+          <select class="intel-select" id="missionSiteSelect"></select>
+          <div class="map-grid">
+            <article class="map-card">
+              <div class="map-card-heading"><span id="intelMarsTitle">Marte</span><small>NASA MOLA / Viking · contexto de superficie</small></div>
+              <div class="map-box" id="mapMars"></div>
+            </article>
+            <article class="map-card">
+              <div class="map-card-heading"><span id="intelEarthTitle">Tierra</span><small>Esri World Imagery · análogo terrestre</small></div>
+              <div class="map-box" id="mapEarth"></div>
+            </article>
+          </div>
+          <p class="map-attribution" id="mapAttribution">Las capas cartográficas son referencias educativas; no representan telemetría en vivo.</p>
+        </div>
+        <div class="intel-panel" id="intelStoryPanel" data-intel-panel="story" hidden>
+          <div class="story-bridge" id="storyBridge"></div>
+          <div class="chapter-track" id="chapterTrack"></div>
+        </div>
+        <div class="intel-panel" id="intelMissionPanel" data-intel-panel="mission" hidden>
+          <div class="mission-brief" id="missionBrief"></div>
+          <div class="mission-checklist" id="missionChecklist"></div>
+          <div class="mission-telemetry" id="missionTelemetry"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="ending-screen" id="endingScreen" aria-hidden="true">
       <div class="ending-card">
         <p class="eyebrow">AUTORIZACIÓN DE EMBARQUE</p>
@@ -135,6 +180,7 @@
     </div>
 
     <div class="toast" id="toast" role="status"></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script type="module" src="./app.js"></script>
   </body>
 </html>

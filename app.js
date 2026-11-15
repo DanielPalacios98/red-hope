@@ -56,6 +56,74 @@ const scienceLibrary = {
   "deep_space_communications": ["CONCEPTO EDUCATIVO", "La señal estable se presenta como problema de diseño y redundancia, no como telemetría de una misión real."]
 };
 
+// Capa frontal derivada de Historia.html: cada lugar conecta el entrenamiento
+// terrestre con una hipótesis de exploración marciana y con tres pruebas del guion.
+const missionSites = [
+  {
+    id: "chimborazo",
+    label: "1. El lago antiguo / Cráter Jezero",
+    earthTitle: "Tierra: Gran Arenal del Chimborazo, Ecuador",
+    marsTitle: "Marte: Cráter Jezero",
+    earthCoords: [-1.469, -78.855],
+    earthZoom: 12,
+    marsCoords: [18.38, 77.58],
+    marsZoom: 5,
+    bridge: "Perseverance estudia un antiguo delta; el Chimborazo entrena el control de ruedas, perforación y lectura óptica en terreno volcánico sin vegetación.",
+    tasks: [
+      "Conducir el rover de seis ruedas sobre la ceniza sin que patinen las llantas.",
+      "Extraer un tubito de roca volcánica dura con el taladro robot.",
+      "Calibrar las cámaras automáticas para distinguir relieves y sombras."
+    ],
+    telemetry: [
+      ["Inclinación", "2°–10° · MOLA", "5.2°–9.1° · SRTM"],
+      ["Temperatura", "Hasta −80 °C de noche · MEDA", "+11 °C / −1 °C · MODIS"],
+      ["Presión", "6.1 hPa · no respirable", "≈580 hPa · alta montaña"]
+    ]
+  },
+  {
+    id: "siloli",
+    label: "2. Cazadores de hielo / Arcadia Planitia",
+    earthTitle: "Tierra: Desierto de Siloli, Bolivia",
+    marsTitle: "Marte: Arcadia Planitia",
+    earthCoords: [-22.15, -67.85],
+    earthZoom: 11,
+    marsCoords: [39.2, 8],
+    marsZoom: 4,
+    bridge: "SHARAD y MRO inspiran la búsqueda de hielo enterrado; Siloli entrena radar GPR, perforación térmica y despliegue solar en una planicie fría.",
+    tasks: [
+      "Pasar el carrito GPR a ritmo firme para detectar hielo enterrado.",
+      "Perforar la costra salina congelada regulando el calor.",
+      "Fijar los paneles solares para resistir las ráfagas."
+    ],
+    telemetry: [
+      ["Inclinación", "0.5°–3° · MOLA", "1.1°–2.8° · SRTM"],
+      ["Temperatura", "Hasta −95 °C de noche · MRO", "+14 °C / −12 °C · MODIS"],
+      ["Agua bajo tierra", "Hielo a baja temperatura", "Costra congelada y sales"]
+    ]
+  },
+  {
+    id: "payunia",
+    label: "3. Cuevas secretas / Arsia Mons",
+    earthTitle: "Tierra: Campo volcánico Payunia, Argentina",
+    marsTitle: "Marte: flancos de Arsia Mons",
+    earthCoords: [-36.05, -69.2],
+    earthZoom: 10,
+    marsCoords: [-9, -121],
+    marsZoom: 4,
+    bridge: "HiRISE observó pozos asociados a tubos de lava; Payunia entrena descenso con arnés, LiDAR y repetidores de radio en roca basáltica.",
+    tasks: [
+      "Verificar arnés y freno antes de bajar por la entrada vertical.",
+      "Estabilizar el LiDAR y escanear el techo de la cueva en oscuridad.",
+      "Colocar antenas repetidoras sin perder el anclaje ni la señal."
+    ],
+    telemetry: [
+      ["Pendiente", "4°–15° · MOLA", "4.5°–13° · SRTM"],
+      ["Temperatura", "Hasta −90 °C · THEMIS", "Variación exterior · MODIS"],
+      ["Radiación", "Contexto RAD / refugio rocoso", "Atmósfera y campo magnético protectores"]
+    ]
+  }
+];
+
 let story;
 let currentNodeId = "p001";
 let gameState;
@@ -64,6 +132,8 @@ let started = false;
 let muted = false;
 let captionsOn = true;
 let sceneTimer;
+let selectedMissionSite = 0;
+let missionMaps = { mars: null, earth: null, marsMarker: null, earthMarker: null };
 
 const video = $("#sceneVideo");
 const audio = new Audio();
@@ -211,6 +281,7 @@ function loadNode(nodeId) {
   setRailLog(`Nodo ${String(node.page || 1).padStart(2, "0")}: ${node.title}`);
   renderTelemetry();
   renderScience(node);
+  renderMissionIntel();
   if (started) {
     playCurrentMedia();
     sceneTimer = window.setTimeout(openChoices, media.video[nodeId] ? 4500 : 1800);
@@ -254,6 +325,129 @@ function renderScience(node) {
   });
 }
 
+function currentMissionSite() {
+  return missionSites[selectedMissionSite] || missionSites[0];
+}
+
+function chapterIndexForNode(nodeId) {
+  const page = Number(story?.nodes?.[nodeId]?.page || 1);
+  if (page < 9) return 0;
+  if (page < 15) return 1;
+  return 2;
+}
+
+function renderMissionSelector() {
+  const select = $("#missionSiteSelect");
+  if (!select.options.length) {
+    missionSites.forEach((site, index) => {
+      const option = document.createElement("option");
+      option.value = String(index);
+      option.textContent = site.label;
+      select.appendChild(option);
+    });
+    select.addEventListener("change", () => {
+      selectedMissionSite = Number(select.value);
+      renderMissionIntel();
+      if (missionMaps.mars) {
+        const site = currentMissionSite();
+        missionMaps.mars.setView(site.marsCoords, site.marsZoom);
+        missionMaps.earth.setView(site.earthCoords, site.earthZoom);
+        missionMaps.marsMarker.setLatLng(site.marsCoords);
+        missionMaps.earthMarker.setLatLng(site.earthCoords);
+        window.setTimeout(() => {
+          missionMaps.mars.invalidateSize();
+          missionMaps.earth.invalidateSize();
+        }, 80);
+      }
+    });
+  }
+  select.value = String(selectedMissionSite);
+}
+
+function ensureMissionMaps() {
+  if (missionMaps.mars || !window.L) return;
+  const site = currentMissionSite();
+  missionMaps.mars = window.L.map("mapMars", { zoomControl: false }).setView(site.marsCoords, site.marsZoom);
+  window.L.control.zoom({ position: "bottomright" }).addTo(missionMaps.mars);
+  window.L.tileLayer("https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-2/all/{z}/{x}/{y}.png", {
+    attribution: "NASA MOLA / Viking / OpenPlanetaryMap",
+    maxZoom: 8
+  }).addTo(missionMaps.mars);
+  missionMaps.marsMarker = window.L.circleMarker(site.marsCoords, {
+    radius: 10, color: "#f1c56a", weight: 2, fillColor: "#e15a46", fillOpacity: .78
+  }).addTo(missionMaps.mars);
+
+  missionMaps.earth = window.L.map("mapEarth", { zoomControl: false }).setView(site.earthCoords, site.earthZoom);
+  window.L.control.zoom({ position: "bottomright" }).addTo(missionMaps.earth);
+  window.L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+    attribution: "Esri / Maxar / NASA SRTM",
+    maxZoom: 16
+  }).addTo(missionMaps.earth);
+  missionMaps.earthMarker = window.L.circleMarker(site.earthCoords, {
+    radius: 10, color: "#91d4d2", weight: 2, fillColor: "#36b6a3", fillOpacity: .78
+  }).addTo(missionMaps.earth);
+  window.setTimeout(() => {
+    missionMaps.mars.invalidateSize();
+    missionMaps.earth.invalidateSize();
+  }, 120);
+}
+
+function renderMissionIntel() {
+  if (!story) return;
+  const site = currentMissionSite();
+  renderMissionSelector();
+  $("#intelMarsTitle").textContent = site.marsTitle;
+  $("#intelEarthTitle").textContent = site.earthTitle;
+  $("#mapAttribution").textContent = `${site.bridge} Las capas cartográficas son referencias educativas, no telemetría en vivo.`;
+
+  const currentNode = story.nodes[currentNodeId];
+  const currentChapter = chapterIndexForNode(currentNodeId);
+  $("#storyBridge").innerHTML = "";
+  const bridgeTitle = document.createElement("strong");
+  bridgeTitle.textContent = `Página ${String(currentNode.page || 1).padStart(2, "0")}: ${currentNode.title}`;
+  const bridgeCopy = document.createElement("small");
+  bridgeCopy.textContent = currentNode.narrationDraft || site.bridge;
+  $("#storyBridge").append(bridgeTitle, bridgeCopy);
+  $("#chapterTrack").innerHTML = "";
+  missionSites.forEach((chapter, index) => {
+    const node = document.createElement("article");
+    node.className = `chapter-node${index === currentChapter ? " active" : ""}`;
+    node.innerHTML = `<span>ESCENARIO 0${index + 1}</span><strong></strong><small></small>`;
+    node.querySelector("strong").textContent = chapter.label;
+    node.querySelector("small").textContent = chapter.bridge;
+    $("#chapterTrack").appendChild(node);
+  });
+
+  $("#missionBrief").innerHTML = `<h3>${site.label}</h3><p>${site.bridge}</p>`;
+  $("#missionChecklist").innerHTML = "";
+  site.tasks.forEach((task, index) => {
+    const label = document.createElement("label");
+    label.className = "mission-check";
+    label.innerHTML = `<input type="checkbox" /><span>Prueba ${index + 1}: ${task}</span>`;
+    $("#missionChecklist").appendChild(label);
+  });
+  $("#missionTelemetry").innerHTML = `<table class="telemetry-table"><thead><tr><th>Variable</th><th>Marte</th><th>Análogo</th></tr></thead><tbody>${site.telemetry.map((row) => `<tr><td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td></tr>`).join("")}</tbody></table>`;
+}
+
+function setIntelTab(tabId) {
+  document.querySelectorAll("[data-intel-tab]").forEach((tab) => {
+    const active = tab.dataset.intelTab === tabId;
+    tab.classList.toggle("active", active);
+    tab.setAttribute("aria-selected", String(active));
+  });
+  document.querySelectorAll("[data-intel-panel]").forEach((panel) => {
+    panel.hidden = panel.dataset.intelPanel !== tabId;
+    panel.classList.toggle("active", panel.dataset.intelPanel === tabId);
+  });
+  if (tabId === "map") {
+    ensureMissionMaps();
+    window.setTimeout(() => {
+      missionMaps.mars?.invalidateSize();
+      missionMaps.earth?.invalidateSize();
+    }, 100);
+  }
+}
+
 function renderLog() {
   const content = $("#logContent");
   content.innerHTML = history.length ? "" : "<p class='drawer-intro'>Todavía no has tomado una decisión.</p>";
@@ -270,6 +464,11 @@ function openDrawer(id) {
   drawer.classList.add("open");
   drawer.setAttribute("aria-hidden", "false");
   if (id === "logDrawer") renderLog();
+  if (id === "missionIntelDrawer") {
+    renderMissionIntel();
+    ensureMissionMaps();
+    setIntelTab("map");
+  }
 }
 
 function closeDrawer(id) {
@@ -304,6 +503,7 @@ function bindEvents() {
   });
   $("#showChoicesButton").addEventListener("click", openChoices);
   $("#scienceButton").addEventListener("click", () => openDrawer("scienceDrawer"));
+  $("#missionMapButton").addEventListener("click", () => openDrawer("missionIntelDrawer"));
   $("#logButton").addEventListener("click", () => openDrawer("logDrawer"));
   $("#restartButton").addEventListener("click", restartMission);
   $("#captionsButton").addEventListener("click", () => {
@@ -317,6 +517,7 @@ function bindEvents() {
     $("#muteButton").textContent = muted ? "♫̸" : "♫";
   });
   document.querySelectorAll("[data-close]").forEach((button) => button.addEventListener("click", () => closeDrawer(button.dataset.close)));
+  document.querySelectorAll("[data-intel-tab]").forEach((button) => button.addEventListener("click", () => setIntelTab(button.dataset.intelTab)));
   $("#endingReplay").addEventListener("click", restartMission);
   $("#endingScience").addEventListener("click", () => {
     $("#endingScreen").classList.remove("open");
@@ -339,6 +540,7 @@ async function boot() {
     history = savedHistory ? JSON.parse(savedHistory) : [];
     bindEvents();
     loadNode(story.startNode || "p001");
+    renderMissionIntel();
   } catch (error) {
     console.error(error);
     $("#placeholderTitle").textContent = "No se pudo cargar la historia";
