@@ -78,8 +78,6 @@ body.story-mode #screen-story{min-height:200svh}
 body.story-mode .science-panel{position:absolute;top:100svh;left:clamp(24px,6vw,96px);right:clamp(24px,6vw,96px);margin:0;padding:34px 0;background:#080b13}
 body.story-mode .ending-panel{position:absolute;top:calc(100svh + 360px);left:clamp(24px,6vw,96px);right:clamp(24px,6vw,96px);margin:0;background:#101522}
 .transition-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.secondary-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border:1px solid #ffffff42;border-radius:999px;background:#101724cc;color:var(--text);cursor:pointer;backdrop-filter:blur(8px);transition:.2s}
-.secondary-button:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
 
 @media (max-width:900px){
   body.story-mode .topbar{height:66px;padding:0 18px}

@@ -217,9 +217,8 @@ function renderNode(nodeId) {
   $('#continue-wrap').innerHTML = '';
   if (!node.choices.length && !state.ending) {
     const next = inferNext(node); const actions = document.createElement('div'); actions.className = 'transition-actions';
-    const continueButton = document.createElement('button'); continueButton.type = 'button'; continueButton.className = 'primary-button'; continueButton.textContent = `${state.language === 'en' ? 'Continue with' : 'Continuar en'} ${routeEarth(route)} →`; if (next) continueButton.addEventListener('click', () => renderNode(next.id)); else continueButton.disabled = true;
-    const changeButton = document.createElement('button'); changeButton.type = 'button'; changeButton.className = 'secondary-button'; changeButton.textContent = state.language === 'en' ? 'Choose another scenario' : 'Elegir otro escenario'; changeButton.addEventListener('click', () => screen('map'));
-    actions.append(continueButton, changeButton); $('#continue-wrap').appendChild(actions);
+    const continueButton = document.createElement('button'); continueButton.type = 'button'; continueButton.className = 'primary-button'; continueButton.textContent = next ? `${state.language === 'en' ? 'Open choices for' : 'Abrir opciones de'} ${next.code}: ${next.title} →` : `${t('continue')} →`; if (next) continueButton.addEventListener('click', () => renderNode(next.id)); else continueButton.disabled = true;
+    actions.appendChild(continueButton); $('#continue-wrap').appendChild(actions);
   }
   $('#decision-state').textContent = state.ending ? t('end') : node.choices.length ? t('open') : 'ESCENA';
   $('#ending-panel').classList.toggle('is-hidden', !state.ending); if (state.ending) { setText('#ending-title', node.title); setText('#ending-copy', script); }
