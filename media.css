@@ -1,7 +1,7 @@
 .scene-audio{width:100%;margin:10px 0 0;border:1px solid #2a3850;border-radius:8px;background:#101724;color:#f4f1e9;accent-color:#ff713f}
 .scene-audio::-webkit-media-controls-panel{background:#101724}
 .intro-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:24px;align-items:stretch;margin-top:28px}
-.intro-art{margin:0;min-height:420px;border:1px solid var(--line);background:#0a0e18;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.intro-art{position:relative;margin:0;min-height:420px;border:1px solid var(--line);background:#0a0e18;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
 .intro-art img{display:block;width:100%;height:100%;min-height:420px;object-fit:cover}
 .intro-art figcaption{padding:11px 14px;color:var(--muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:#0c121d}
 .intro-copy{border:1px solid var(--line);background:#111722dd;border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;justify-content:center}
@@ -10,6 +10,7 @@
 .intro-briefing p{font-family:Georgia,serif;color:var(--text);font-size:17px;line-height:1.5;margin:8px 0 0}
 .intro-copy .primary-button{align-self:flex-start}
 .video-stage{position:absolute;inset:0;z-index:1;overflow:hidden;background:#070a12}
+.video-stage::after,.intro-art::after,.rh-intro-frame::after{content:'AI-generated · Generado con IA';position:absolute;top:12px;right:12px;z-index:30;pointer-events:none;white-space:nowrap;padding:5px 8px;border:1px solid rgba(255,255,255,.28);border-radius:4px;background:rgba(5,8,14,.72);color:#fff;font:600 11px/1.1 Inter,system-ui,sans-serif;letter-spacing:.02em;text-shadow:0 1px 2px #000}
 .video-frame .video-layer{position:absolute;inset:0;width:100%;height:100%;min-height:0;object-fit:cover;opacity:0;pointer-events:none;transition:none}
 .video-frame .video-layer.is-active{opacity:1;pointer-events:auto}
 .video-frame .scene-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;display:block;background:#070a12}
@@ -18,6 +19,7 @@
 @media (max-width:900px){.video-frame .video-layer{min-height:360px}}
 @media (max-width:620px){.video-frame .video-layer{min-height:315px}}
 @media (max-width:900px){.intro-grid{grid-template-columns:1fr}.intro-art,.intro-art img{min-height:300px}.intro-copy{padding:22px}}
+@media (max-width:620px){.video-stage::after,.intro-art::after,.rh-intro-frame::after{top:8px;right:8px;font-size:11px;padding:4px 6px}}
 
 /* Netflix-like narrative overlay: the story breathes over the image/video. */
 .story-main{position:relative}
