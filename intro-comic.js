@@ -42,8 +42,22 @@
     { img: 'intro-10.webp', focus: '40% 35%', move: 'out', last: true,
       es: [['n', 'Tu entrenamiento empieza ahora. Tres terrenos. Una sola misión. Elige dónde comenzar.']],
       en: [['n', 'Your training starts now. Three terrains. One mission. Choose where to begin.']] }
-  ].map((p, i) => ({ ...p, audio: { es: null, en: null }, n: i + 1 }));
-  // Para usar audio de ElevenLabs: PANELS[0].audio.es = './media/audio/v2/es/intro-01.mp3', etc.
+  ];
+  // Grabaciones del equipo: el prólogo conserva narración del navegador en el
+  // panel 04 porque todavía no hay una toma equivalente para los planos.
+  // En inglés se mantiene la locución inglesa sintetizada y sus subtítulos.
+  const RECORDED_AUDIO = {
+    1: './media/audio/v2/es/intro-01.mp3',
+    2: './media/audio/v2/es/intro-02.mp3',
+    3: './media/audio/v2/es/intro-03.mp3',
+    5: './media/audio/v2/es/intro-05.mp3',
+    6: './media/audio/v2/es/intro-06.mp3',
+    7: './media/audio/v2/es/intro-07.mp3',
+    8: './media/audio/v2/es/intro-08.mp3',
+    9: './media/audio/v2/es/intro-09.mp3',
+    10: './media/audio/v2/es/intro-10.mp3'
+  };
+  PANELS.forEach((p, i) => { p.audio = { es: RECORDED_AUDIO[i + 1] || null, en: null }; p.n = i + 1; });
 
   const UI = {
     es: { kicker: 'PRÓLOGO', skip: 'Saltar intro', prev: 'Anterior', next: 'Siguiente', pause: 'Pausar', play: 'Reanudar', voiceOn: 'Voz activada', voiceOff: 'Voz desactivada', open: 'Abrir mapa de misión', choose: '¿Qué haces?', noted: 'Anotado en tu bitácora', place: ['CAMBRIDGE · 15:00', 'CASA · DÍAS DESPUÉS', 'NOTICIERO', 'CUARTO DE JAMES', 'SEMÁFORO', 'SEMÁFORO', 'AUDITORIO', 'AUDITORIO', 'AUDITORIO', 'AUDITORIO'],

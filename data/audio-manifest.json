@@ -1,7 +1,7 @@
 {
   "schemaVersion": "2.0.0",
   "provider": "ElevenLabs",
-  "status": "partial-bilingual-audio",
+  "status": "partial-bilingual-audio-with-recorded-prologue",
   "sourceStory": "data/story.json",
   "languages": [
     "es",
@@ -35,7 +35,25 @@
       "en": "David Boles - Well-spoken and Calm"
     }
   },
+  "introRecordings": {
+    "source": "C:/Users/Mauro/Desktop/Evento/Audios",
+    "language": "es",
+    "recordedTracks": 9,
+    "browserFallbackPanels": [4],
+    "files": {
+      "1": "media/audio/v2/es/intro-01.mp3",
+      "2": "media/audio/v2/es/intro-02.mp3",
+      "3": "media/audio/v2/es/intro-03.mp3",
+      "5": "media/audio/v2/es/intro-05.mp3",
+      "6": "media/audio/v2/es/intro-06.mp3",
+      "7": "media/audio/v2/es/intro-07.mp3",
+      "8": "media/audio/v2/es/intro-08.mp3",
+      "9": "media/audio/v2/es/intro-09.mp3",
+      "10": "media/audio/v2/es/intro-10.mp3"
+    },
+    "subtitlePolicy": "Intro captions remain in story data and switch with the selected language; recorded Spanish audio is never played for English."
+  },
   "outputPattern": "media/audio/v2/{language}/{nodeCode}.mp3",
   "captionPattern": "media/audio/v2/{language}/{nodeCode}.vtt",
-  "policy": "No v1 audio is mapped into the v2 story. A track becomes playable only after an approved ElevenLabs export is placed at the output path."
+  "policy": "No v1 audio is mapped into the v2 story. Route tracks become playable only after an approved ElevenLabs export is placed at the output path; the intro may use approved human recordings listed in introRecordings."
 }
